@@ -1,7 +1,8 @@
-import { existsSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { gitOrigin, resolveDeployment } from "../scripts/pages-base";
+import { hasBuiltDeckLink } from "./support/built-deck-link";
 
 interface ApiNode {
   id: string;
@@ -40,25 +41,10 @@ describe("assignment 2 spec promises", () => {
       deployment.site ?? "http://localhost",
     );
     const linkedDeck = nodesOfType("lectures").some((lecture) => {
-      const page = readFileSync(resolve("dist", lecture.id, "index.html"), "utf8")
-        .replace(/<!--[\s\S]*?-->/g, "");
+      const page = readFileSync(resolve("dist", lecture.id, "index.html"), "utf8");
       // Both slides metadata and Markdown links render as anchors. Inspect
       // their output so the check does not prescribe an authoring method.
-      const links = page.matchAll(/<a\b[^>]*?\shref\s*=\s*(["'])(.*?)\1/gi);
-      return [...links].some((link) => {
-        try {
-          const target = new URL(link[2], new URL(`${lecture.id}/`, siteUrl));
-          if (target.origin !== siteUrl.origin || !target.pathname.startsWith(siteUrl.pathname)) {
-            return false;
-          }
-          const path = decodeURIComponent(target.pathname.slice(siteUrl.pathname.length));
-          if (!path.startsWith("decks/") || path === "decks/") return false;
-          const builtPage = path.endsWith(".html") ? path : `${path.replace(/\/$/, "")}/index.html`;
-          return existsSync(resolve("dist", builtPage));
-        } catch {
-          return false;
-        }
-      });
+      return hasBuiltDeckLink(page, new URL(`${lecture.id}/`, siteUrl), siteUrl, resolve("dist"));
     });
     expect(linkedDeck, "no rendered lecture links to an existing built deck page").toBe(true);
   });
