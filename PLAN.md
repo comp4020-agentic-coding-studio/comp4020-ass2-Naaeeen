@@ -137,8 +137,14 @@ independent review's window-placement finding is resolved. Cloud-edge clipping
 and a paragraph selector were refined after inspection. Full required checks
 retain only the known incomplete-course failure; production audit is clear.
 
-Next: push the reviewed checkpoint, present revised C for human review and wait
-for actual feedback. Do not infer approval from the successful checks.
+Implementation and verification checkpoints were pushed through `73ac508`; the
+remote hash matched and the working tree was clean. Repository visibility remains
+private. The current preview is also available at
+`http://localhost:4321/comp4020-ass2-Naaeeen/review/c/`.
+
+Next: wait for human review of revised C's resemblance and motion amplitude.
+Do not infer approval from successful checks. The goal pauses at this requested
+review gate; the assignment itself is still unfinished.
 After approval, build the representative week/source comparison with a real deck
 and correct the test oracle before scaling to twelve weeks.
 

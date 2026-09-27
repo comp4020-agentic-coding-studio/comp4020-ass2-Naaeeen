@@ -163,3 +163,10 @@ it was not rerun on this revision. Final human judgement is still required.
 
 Implementation: [06ce955](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/06ce955).
 Goals/reference rule: [8d518f9](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/8d518f9).
+
+Final clean browser: measured 1920x1080, one ready canvas, no console warnings or
+errors. Running scene-only captures differed; paused captures were identical.
+Final desktop capture: `gate1-c2-desktop.jpg`. Phone introduction and chapter
+captures are retained in the same local visualization directory. The viewport
+override was reset after verification. Source and evidence commits were pushed
+through `73ac508`; remote and local hashes matched, with private visibility retained.
