@@ -10,6 +10,9 @@ ritual. For uncertain or cross-cutting work, record the outcome, constraints and
 verification in `PLAN.md` first. Ask only when missing input materially affects the
 result or an action needs authorization; continue independent work meanwhile.
 Read-only requests do not call for edits, plan updates or commits.
+At gate starts, scope changes and delivery, refresh the live brief/upstream and
+relevant local requirements using `docs/planning/requirements-audit.md`. Distinguish
+mandatory requirements from chosen enhancements before sizing the next work.
 Follow `docs/planning/implementation-goals.md` throughout implementation. Review
 and refine it at resumes, milestones and consequential new evidence; keep the
 current handoff in `PLAN.md`. Present the reviewable result and wait for the
@@ -85,7 +88,8 @@ Chrome-compatible tooling, including affected links and console output. After a
 rebuild, reload the document and verify its actual viewport size before comparing
 screenshots. For in-page
 navigation, verify destination visibility, keyboard focus and mobile menu state
-after activation. For enhanced content, inspect the first usable frame, reduced
+after activation. Preserve native skip links and browser history when enhancing
+navigation. For enhanced content, inspect the first usable frame, reduced
 motion and the HTML fallback as well as the settled view. Before submission, read
 non-adjacent weeks, an assessment and a deck. Report unavailable
 browser verification honestly; neither a build nor a model review proves student

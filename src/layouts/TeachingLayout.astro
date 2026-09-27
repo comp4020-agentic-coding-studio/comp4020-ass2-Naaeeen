@@ -46,7 +46,7 @@ const contents = headings.filter((heading) => heading.depth === 2).map((heading)
       {contents.length > 0 && <nav class="teaching-contents" aria-labelledby="teaching-contents-label"><p id="teaching-contents-label">On this page</p><ol>{contents.map((heading, index) => <li><a href={`#${heading.slug}`} data-teaching-anchor><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{heading.text}</a></li>)}</ol></nav>}
       <article class="teaching-prose"><slot /></article>
     </div>
-    <footer class="teaching-page-footer teaching-shell"><a href={withBase("/")}>← Back to the course</a><a href={withBase("/#weeks")}>Twelve-week outline ↑</a></footer>
+    <footer class="teaching-page-footer teaching-shell"><a href={withBase("/")}>← Back to the course</a><nav aria-label="Course support"><a href={withBase("/people/")}>People & support</a><a href={withBase("/policies/")}>Course policies</a><a href={withBase("/#weeks")}>Twelve-week outline ↑</a></nav></footer>
   </div>
 </BaseLayout>
 

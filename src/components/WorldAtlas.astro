@@ -1,0 +1,129 @@
+---
+import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
+import { getPublishedCollection } from "astro-course-university/content";
+import { withBase } from "astro-theme-university/url";
+import { courseMeta } from "../course-config";
+import { siteConfig } from "../site-config";
+import { atlasWorlds } from "../data/world-atlas";
+import "../styles/world-atlas.css";
+
+const sessions = await getPublishedCollection("sessions");
+const byWeek = new Map(sessions.map((session) => [session.data.week, session]));
+const studyLink = (week: number) => {
+  const session = byWeek.get(week);
+  return { label: session ? `Week ${week} · ${session.data.title}` : `Week ${week} · Course outline`, href: session ? `/sessions/${session.id}/` : `/#week-${String(week).padStart(2, "0")}` };
+};
+const threads = [
+  { from: "aincrad", to: "alo", path: "M145 212C250 205 255 325 380 325" },
+  { from: "alo", to: "ggo", path: "M380 325C482 329 478 180 605 180" },
+  { from: "ggo", to: "augma", path: "M605 180C725 177 721 325 840 325" },
+  { from: "augma", to: "underworld", path: "M840 325C960 330 953 190 1065 190" },
+  { from: "underworld", to: "aincrad", path: "M1065 190C1125 10 250-35 145 190" },
+];
+const bands = Array.from({ length: 23 }, (_, i) => ({ y: -88 + i * 6.1, radius: 8 + Math.pow(i / 22, .83) * 66 }));
+---
+
+<BaseLayout {...siteConfig} title={`World atlas · ${courseMeta.code}`} description="Explore five settings and interfaces through technology, everyday life, and power. Follow the sources and find the seminars connected to each world." clientRouter={false} colorScheme="light" mainAttrs={{ class: "world-atlas-main" }}>
+  <div class="world-atlas" data-world-atlas>
+    <noscript><style is:inline>body:has(.world-atlas-main) .at-nav-toggle, body:has(.world-atlas-main) .at-search-trigger { display: none; }</style><nav class="wa-shell wa-fallback-nav" aria-label="Course contents">{siteConfig.links?.map((link) => <a href={withBase(link.href)}>{link.text}</a>)}</nav></noscript>
+    <header class="wa-header wa-shell">
+      <nav class="wa-breadcrumb" aria-label="Breadcrumb"><a href={withBase("/")}>After Aincrad</a><span aria-hidden="true">/</span><span aria-current="page">World atlas</span></nav>
+      <div class="wa-heading-row"><div><p class="wa-eyebrow">Five settings. One recurring question.</p><h1>Why enter,<br /><em>inhabit, protect?</em></h1></div><div class="wa-introduction"><p>Follow the thread from an interface to a life, and from a life to a question of power.</p><p class="wa-course-mark">{courseMeta.code} <span>{courseMeta.year}</span></p></div></div>
+    </header>
+
+    <div class="wa-toolbar-anchor" data-toolbar-anchor aria-hidden="true"></div>
+    <div class="wa-toolbar" id="atlas-controls" tabindex="-1">
+      <div class="wa-shell wa-toolbar-inner">
+        <div class="wa-view-switch" data-atlas-views hidden role="group" aria-label="Presentation"><button type="button" data-atlas-view="atlas" aria-pressed="true"><span aria-hidden="true">⌘</span> Atlas</button><button type="button" data-atlas-view="reading" aria-pressed="false"><span aria-hidden="true">≡</span> Reading list</button></div>
+        <p class="wa-fallback-label">Explore a setting, then read its notes.</p>
+        <div class="wa-toolbar-actions"><a href="#study-aincrad" data-study-jump>Find seminars <span aria-hidden="true">↓</span></a><button type="button" data-atlas-motion hidden><span data-atlas-motion-symbol aria-hidden="true">Ⅱ</span><span data-atlas-motion-label>Pause motion</span></button></div>
+      </div>
+    </div>
+
+    <div class="wa-map" data-atlas-scene>
+      <div class="wa-shell wa-map-inner">
+        <p class="wa-map-caption"><span>Choose a setting</span><span>A map of course connections.</span></p>
+        <svg class="wa-symbol-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wa-steel" x1="0" y1="0" x2="1" y2=".3"><stop stop-color="#596468"/><stop offset=".45" stop-color="#bfc1ae"/><stop offset="1" stop-color="#414b4e"/></linearGradient>
+            <linearGradient id="wa-bronze" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e1c68d"/><stop offset="1" stop-color="#735332"/></linearGradient>
+            <symbol id="wa-emblem-aincrad" viewBox="-110 -120 220 240">
+              <path d="M-8-90 0-113 8-90 77 48Q0 75-77 48Z" fill="url(#wa-steel)" stroke="#b9bba8" stroke-width="1"/>
+              {bands.map((band, i) => <g><path d={`M${-band.radius} ${band.y}Q0 ${band.y + band.radius * .38} ${band.radius} ${band.y}`} fill="none" stroke={i % 5 === 0 ? "#e3d7b7" : "#333e40"} stroke-width={i % 5 === 0 ? "1.7" : "1.3"}/></g>)}
+              <path d="M-77 48Q0 77 77 48L60 74 29 91 9 94 0 114-10 95-31 90-61 74Z" fill="#4f5a5a" stroke="#aab09d"/>
+              <path d="M-69 48-104 42-103 50-69 59M69 48 104 42 103 50 69 59M-65 66-92 83-89 88-58 76M65 66 92 83 89 88 58 76" fill="url(#wa-steel)" stroke="#aab09d"/>
+              <path d="M-93 45V20m14 27V17m172 28V20m-14 27V17M-17 91l17 12 17-12" fill="none" stroke="#b9bba8" stroke-width="2"/>
+              <path d="M-45 57-34 83m23-17 5 31m51-40-11 26m-23-17-5 31" stroke="#273438" fill="none" stroke-width="5"/>
+            </symbol>
+            <symbol id="wa-emblem-alo" viewBox="-110 -120 220 240">
+              <ellipse cx="0" cy="83" rx="86" ry="20" fill="#34433c" stroke="#8eaa89"/>
+              <path d="M-76 80Q-63 106-22 108L0 118 22 108Q63 106 76 80" fill="#354539" stroke="#769170"/>
+              <path d="M-17 84Q-3 50-10 12L-50-20-21-8-38-57-10-25-5-79 9-28 50-62 21-15 64-33 17 19Q6 53 23 86Z" fill="url(#wa-bronze)" stroke="#e0cb98" stroke-width="1"/>
+              <g fill="#4b6550" stroke="#a4b68b" stroke-width="1.4"><path d="M-84-15Q-101-56-54-56Q-60-103-17-93Q13-122 35-86Q88-87 82-43Q116-14 76 11Q62 31 32 8Q10 34-19 14Q-57 44-68 9Q-96 16-84-15Z"/><path d="M-55-24Q-20-55 8-68m-40 77 22-40m20 43 32-52m-67-12 42 17m8 1 44-7" fill="none" stroke="#ced8ad" stroke-opacity=".6"/></g>
+              <path d="M-38 88Q0 66 39 88M-53 79Q0 56 56 79" fill="none" stroke="#d8bb7f" stroke-width="1.5"/>
+              <g fill="#dfd9b2"><circle cx="-86" cy="-70" r="2"/><circle cx="88" cy="-77" r="2.5"/><circle cx="64" cy="39" r="2"/></g>
+            </symbol>
+            <symbol id="wa-emblem-ggo" viewBox="-110 -120 220 240">
+              <path d="M0-42 102 19 0 88-102 22Z" fill="#303d41" stroke="#b7aa89"/>
+              <g fill="none" stroke="#677980" stroke-width="1"><path d="m-74 7 103 62m-80-76 104 60m-79-75 103 59M-77 39 27-26M-51 55 51-11M-26 71 78 6"/></g>
+              <g stroke="#a2afb0" stroke-width="1"><path d="M-62 16V-55l26-14 26 15v71l-27 16Z" fill="#738083"/><path d="M-36-69v102l26-16v-71Z" fill="#45535a"/><path d="M4 31V-91l26-15 29 17V32L30 49Z" fill="#869092"/><path d="M30-106V49l29-17V-89Z" fill="#4f5f66"/><path d="M-8 53V-20l23-13 18 10V52l-20 14Z" fill="#596e73"/></g>
+              <g fill="none" stroke="#dfbe7c" stroke-width="2"><path d="M-55-41l12-7m-12 22 12-7m-12 22 12-7M11-76l12-7m-12 24 12-7m-12 24 12-7m-12 24 12-7m-12 24 12-7M1-6l7-4M1 9l7-4M1 24l7-4"/></g>
+              <path d="M-96 73h30v18m162-51v30H76M-79-79v-19h24M72-81v-20H53" fill="none" stroke="#c5aa78" stroke-width="2"/>
+            </symbol>
+            <symbol id="wa-emblem-augma" viewBox="-110 -120 220 240">
+              <path d="m-88 63 87-34 89 34-88 42Z" fill="#343c3b" stroke="#bba77d"/>
+              <g fill="none" stroke="#6b7772"><path d="m-59 51 88 42m-62-55 87 42M-65 75 19 36m-59 54 85-42"/></g>
+              <path d="M-69 67V-62l141-27V51Z" fill="#748f7a" fill-opacity=".13" stroke="#c5d3b1" stroke-width="1.7"/>
+              <path d="M-52 31V-84L89-59V57Z" fill="#c9b680" fill-opacity=".1" stroke="#e0c590" stroke-width="1.7"/>
+              <ellipse cx="7" cy="-10" rx="42" ry="46" fill="none" stroke="#e8d4a1" stroke-width="2"/>
+              <ellipse cx="7" cy="-10" rx="28" ry="31" fill="none" stroke="#acbb9c" stroke-dasharray="3 6"/>
+              <path d="m7-29 17 11-6 23H-4l-6-23Z" fill="url(#wa-bronze)"/>
+              <path d="M-86-89h20m-10-10v20M83 0h23M94-11v22M-50 84v-12m16 17V66m16 29V55" stroke="#c7d0a9" stroke-width="2"/>
+              <g fill="#e2c287"><circle cx="-31" cy="49" r="3"/><circle cx="52" cy="-65" r="3"/><circle cx="72" cy="33" r="3"/></g>
+            </symbol>
+            <symbol id="wa-emblem-underworld" viewBox="-110 -120 220 240">
+              <g fill="none" stroke="#7e948b" stroke-width="1.5"><path d="M0-83-80-15-54 73 51 73 82-16 0-83ZM-80-15 0 21 82-16M-54 73 0 21 51 73M0-83v104"/><ellipse cy="18" rx="94" ry="83" stroke-dasharray="2 7"/></g>
+              <path d="M-23 49V-32Q0-64 23-32v81Z" fill="#657065" stroke="#d0bd92" stroke-width="1.4"/>
+              <path d="M-12 49V-27Q0-45 12-27v76Z" fill="#293831" stroke="#a79875"/>
+              <path d="M-34 50H34v10H-34ZM-28-37h56L0-72Z" fill="url(#wa-bronze)" stroke="#d3c6a5"/>
+              <g fill="#d7c28b" stroke="#e7d9b3" stroke-width="1"><circle cy="-84" r="8"/><circle cx="-81" cy="-15" r="8"/><circle cx="82" cy="-16" r="8"/><circle cx="-54" cy="74" r="8"/><circle cx="52" cy="74" r="8"/></g>
+              <g fill="none" stroke="#d7c28b" stroke-width="2"><path d="M-14-66q14-12 28 0M-95 3q14-12 28 0M68 2q14-12 28 0M-68 92q14-12 28 0M38 92q14-12 28 0"/></g>
+            </symbol>
+          </defs>
+        </svg>
+        <div class="wa-stage">
+        <svg class="wa-map-art" viewBox="0 0 1210 500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <g class="wa-map-grid" fill="none"><ellipse cx="605" cy="245" rx="540" ry="201"/><ellipse cx="605" cy="245" rx="420" ry="160"/><path d="M31 245h1150M605 22v447"/><path d="M109 100 1104 397M109 397 1104 100"/></g>
+          {threads.map((thread) => <g><path class="wa-thread" d={thread.path} data-atlas-path data-from={thread.from} data-to={thread.to}/><circle class="wa-tracer" r="3.4" data-atlas-tracer/></g>)}
+          <g class="wa-map-coordinates"><text x="30" y="27">ENTER</text><text x="1180" y="27" text-anchor="end">INHABIT</text><text x="1180" y="472" text-anchor="end">PROTECT</text><text x="30" y="472">FIVE CONNECTED INQUIRIES</text></g>
+          {atlasWorlds.map((world) => <g transform={`translate(${world.x} ${world.y})`}><ellipse class="wa-world-orbit" rx="91" ry="34" cy="65"/><circle class="wa-selection-ring" r="114" data-atlas-ring={world.id}/><g data-world-symbol={world.id}><g data-atlas-float><use href={`#wa-emblem-${world.id}`} x="-99" y="-124" width="198" height="216"/></g></g></g>)}
+        </svg>
+        <svg class="wa-mobile-stage" viewBox="-150 -135 300 280" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><ellipse cy="12" rx="134" ry="108"/><ellipse cy="12" rx="110" ry="81"/>{atlasWorlds.map((world) => <g data-mobile-world={world.id}><g data-atlas-float><use href={`#wa-emblem-${world.id}`} x="-104" y="-122" width="208" height="227"/></g></g>)}</svg>
+        <nav class="wa-world-nav" aria-label="Explore the five settings" data-world-nav>{atlasWorlds.map((world) => <a id={`atlas-tab-${world.id}`} href={`#world-${world.id}`} class="wa-world-node" data-atlas-node={world.id} data-select-world={world.id} style={`--wa-x:${world.x / 12.1}%;--wa-y:${(world.y + 108) / 5}%;`}><span class="wa-emblem-hit" data-atlas-hit aria-hidden="true"></span><span class="wa-node-number">{world.number}</span><span class="wa-node-name">{world.name}</span><span class="wa-node-short">{world.shortName}</span><span class="wa-node-marker" aria-hidden="true">↗</span></a>)}</nav>
+        </div>
+        <div class="wa-map-bottom"><p>Original emblems for the course's five settings and interfaces.</p><a href="#world-aincrad" data-notes-jump>Read selected notes <span aria-hidden="true">↓</span></a></div>
+      </div>
+    </div>
+
+    <div class="wa-notes wa-shell" data-atlas-panels>
+      {atlasWorlds.map((world) => {
+        const next = atlasWorlds.find((candidate) => candidate.id === world.next)!;
+        return <section id={`world-${world.id}`} class="wa-world-panel" data-world-panel={world.id} aria-labelledby={`world-heading-${world.id}`}>
+          <header class="wa-panel-heading"><div><p class="wa-eyebrow"><span>{world.number} / {world.name}</span><span>{world.mode}</span></p><h2 id={`world-heading-${world.id}`} tabindex="-1">{world.title}</h2></div><p>{world.invitation}</p></header>
+          <div class="wa-evidence-grid"><div><h3><span>01</span> The interface</h3><p>{world.technology}</p></div><div><h3><span>02</span> A lived world</h3><p>{world.everyday}</p></div><div class="wa-power-question"><h3><span>03</span> A question of power</h3><p>{world.power}</p><span class="wa-interpretation-label">A question for your interpretation</span></div></div>
+          <div class="wa-resource-grid"><div><h3 id={`sources-heading-${world.id}`}>Read the sources</h3><ul class="wa-source-links">{world.sources.map((source) => <li><a href={source.href}>{source.label}<span aria-hidden="true">↗</span></a><p>{source.purpose}</p></li>)}</ul></div><div id={`study-${world.id}`} class="wa-study" tabindex="-1"><h3 id={`study-heading-${world.id}`}>Take it into the seminar</h3><ul>{world.weeks.map((week) => { const link = studyLink(week); return <li><a href={withBase(link.href)}>{link.label}<span aria-hidden="true">↗</span></a></li>; })}</ul></div></div>
+          <a class="wa-next-connection" href={`#world-${next.id}`} data-select-world={next.id} data-atlas-connection><span><small>Make a connection · {world.name} to {next.name}</small><strong>{world.connection}</strong></span><span aria-hidden="true">↗</span></a>
+          <a class="wa-return-controls" href="#atlas-controls" data-controls-jump>Back to atlas controls ↑</a>
+        </section>;
+      })}
+    </div>
+    <footer class="wa-footnote wa-shell"><p>These official publicity summaries are selected accounts. The questions above are invitations to interpret them. <a href={withBase("/sources/")}>Read the source guide.</a></p><nav aria-label="Course support"><a href={withBase("/people/")}>People &amp; support</a><a href={withBase("/policies/")}>Course policies</a><a href={withBase("/")}>← Return to the course</a></nav></footer>
+    <p class="visually-hidden" role="status" aria-live="polite" data-atlas-status></p>
+  </div>
+</BaseLayout>
+
+<script>
+  import { mountWorldAtlas } from "../lib/world-atlas";
+  const root = document.querySelector<HTMLElement>("[data-world-atlas]");
+  if (root) mountWorldAtlas(root);
+</script>

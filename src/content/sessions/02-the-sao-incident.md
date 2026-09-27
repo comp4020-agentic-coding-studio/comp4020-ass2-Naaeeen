@@ -8,6 +8,8 @@ date: 2035-02-26
 durationMinutes: 90
 preparationMinutes: 20
 sourcePacket: /sources/aincrad/
+teachers:
+  - ren-ito
 spec:
   - Build a short chronology with a source attached to each event.
   - Separate a source statement from an inference and explain one limitation.

@@ -46,6 +46,9 @@ sources beyond this free English packet, or access to a full episode or film.
 
 ## What to hand in
 
+Use the [course hand-in procedure](/policies/#handing-in-work-and-receiving-feedback).
+It gives the delivery arrangements and when feedback returns.
+
 Submit **one accessible PDF or DOCX** containing your comparison and reference
 list. Include a title, your student identifier and the body word count. PDF
 text must be selectable. The 600-800 words include quotations and in-text

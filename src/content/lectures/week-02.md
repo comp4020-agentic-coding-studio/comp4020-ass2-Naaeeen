@@ -6,6 +6,8 @@ description:
 week: 2
 date: 2035-02-26
 slides: /decks/week-02/
+teachers:
+  - mara-vale
 related:
   - assessments/source-comparison
 ---

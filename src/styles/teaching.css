@@ -64,7 +64,7 @@ body:has(.teaching-main) .at-nav-links a { min-height: 44px; display: flex; alig
 .teaching-prose .related-content ul { padding: 0; }
 .teaching-prose .related-content li { padding: 0; }
 .teaching-prose .related-content a { display: inline-block; min-height: 44px; padding-block: 9px; font-size: 14px; }
-.teaching-page-footer { display: flex; justify-content: space-between; gap: 20px; padding-block: 22px; border-top: 1px solid var(--teaching-line); font-size: 12px; }
+.teaching-page-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding-block: 22px; border-top: 1px solid var(--teaching-line); font-size: 12px; }
 .teaching-page-footer a { display: inline-flex; align-items: center; min-height: 44px; }
 .teaching-schedule { margin: 0; padding: 0 !important; list-style: none; }
 .teaching-schedule > li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px; padding: 24px 0; border-top: 1px solid var(--teaching-line); margin: 0; }
@@ -117,3 +117,5 @@ body:has(.teaching-main) .at-nav-links a { min-height: 44px; display: flex; alig
 
 .teaching-fallback-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; padding-block: 12px; border-bottom: 1px solid var(--teaching-line); }
 .teaching-fallback-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
+
+.teaching-page-footer nav { display: flex; flex-wrap: wrap; gap: 8px 25px; }

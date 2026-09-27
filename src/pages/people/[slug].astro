@@ -1,8 +1,8 @@
 ---
 import { render } from "astro:content";
 import { getPublishedCollection } from "astro-course-university/content";
-import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import { siteConfig } from "../../site-config";
+import TeachingLayout from "../../layouts/TeachingLayout.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const people = await getPublishedCollection("people");
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 }
 
 const { person } = Astro.props;
-const { Content } = await render(person);
+const { Content, headings } = await render(person);
 
 // Map the role enum (convenor|tutor|guest|other) to display labels rather than
 // rendering the raw lowercase value.
@@ -30,13 +30,14 @@ const photoAlt = typeof rawPhotoAlt === "string" ? rawPhotoAlt : "";
 const description = person.data.description;
 ---
 
-<ContentLayout
+<TeachingLayout
   title={person.data.title}
   description={description}
-  heroImage={person.data.photo ?? undefined}
-  heroImageAlt={photoAlt}
-  {...siteConfig}
+  eyebrow="People & support"
+  breadcrumbs={[{ label: "People", href: "/people/" }]}
+  headings={headings}
 >
+  {person.data.photo && <Image src={person.data.photo} alt={photoAlt} /> }
   <dl>
     {roleLabel && (
       <>
@@ -71,4 +72,4 @@ const description = person.data.description;
   </dl>
 
   <Content />
-</ContentLayout>
+</TeachingLayout>
