@@ -137,3 +137,9 @@ has not selected a final direction. Deliver the revised working preview and
 verification before the next human review. Do not bulk-author twelve weeks before
 that review. The active work has resumed at the student's request; the app's Goal
 status still reports paused and requires its user-side Resume control.
+
+The student also requested a curated record for the later process account.
+[PROCESS-EVIDENCE.md](docs/PROCESS-EVIDENCE.md) now records consequential decisions,
+observed problems, justified harness changes, real checks and commits, including
+explicitly unresolved findings. Keep it current alongside the research and goals;
+it is not the student's final PROCESS.md.

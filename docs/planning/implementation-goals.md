@@ -34,6 +34,27 @@ visual direction. This is a revision of Gate 1, not approval of either existing
 A/B design. Preserve useful comparison evidence and deliver a revised interactive
 preview for another human review before extending the whole curriculum.
 
+## Evidence for the later process account
+
+Maintain [docs/PROCESS-EVIDENCE.md](../PROCESS-EVIDENCE.md) as a curated English
+record of distinctive or consequential problems, reviews, refinements and decisions.
+Add an entry when the evidence is fresh, then update its status after verification
+and commit/push. Record what happened rather than reconstructing an impressive
+story at the end. Link detailed research and test records instead of duplicating
+all routine output.
+
+For each worthwhile entry include the trigger, observable evidence, alternatives
+considered, decision and reason, changed files, any exact CLAUDE.md rule change and
+why it belongs there, checks actually run, remaining limits, commit links and real
+human feedback. Distinguish an agent's suggestion from a parent-verified finding,
+and a code-level fix from a browser-verified result. Preserve corrections when a
+review or test oracle was wrong. Mark unresolved items explicitly.
+
+This file is an evidence bank for the student's later PROCESS.md, not a substitute
+for their personal judgement or a prewritten first-person account. Select the
+entries that explain what this particular course should be and how that shaped
+the harness; do not turn the final account into a list of unrelated bug fixes.
+
 ## Motion, interaction and additional tools
 
 Research excellent websites beyond education: product narratives, interactive
@@ -109,6 +130,7 @@ for that effect before pushing; the repo was verified private at this revision.
 | Natural English; no defensive writing | Prefer specific questions, concrete activity verbs and evidence; remove filler, repeated disclaimers and empty prestige claims | Editorial comparison and human judgement, not an AI detector score |
 | Rich media where useful | Use original/reusable media or official permitted embeds, with provenance and meaningful alternatives | Media ledger, attribution and accessibility checks |
 | Immersive design and suitable extra tools | Research notable sites and primary implementation docs; adopt justified APIs/packages within platform rules; compare the actual result | Source-to-design decisions, dependency changes, motion/fallback tests and human feedback |
+| Preserve consequential process evidence | Keep a curated English problem/decision/refinement log, including justified CLAUDE.md changes | docs/PROCESS-EVIDENCE.md entries linked to actual checks, commits and human feedback |
 | Keep goals current | Review this file at resumes, milestones and consequential new evidence; preserve existing commitments | Updated goals, reason for refinements and current handoff |
 | Commit and push during implementation | Commit coherent verified checkpoints and push to the existing remote under the authorization above | Commit hashes, remote verification and honest check status |
 | Human review at every node | Present the deliverable and a small number of specific decisions, then wait for feedback | User's actual response and resulting changes |

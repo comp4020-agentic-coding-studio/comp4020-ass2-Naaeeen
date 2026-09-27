@@ -38,3 +38,27 @@ will decide the direction; model review supplies findings to check, not that ans
 Full teaching units, revised catalogue metadata, real course decks, final media,
 PROCESS.md and public shipping are still later work. Existing twelve-week data
 coverage and submission-evidence failures are not hidden by the new preview.
+
+## First implementation observations
+
+The first build failed `landmark-unique`: chapter panels and weekly-outline regions
+shared three accessible names. The parent parsed the output to reproduce the six
+colliding regions and added distinct weekly-outline names. The next build passed
+19-page accessibility/link validation; spec remained four pass/one known coverage
+failure. Typecheck reported no errors, warnings or hints. Vite retained the scene
+chunk-size warning; measured optional scene gzip is 142,285 bytes, controller/GSAP
+29,084 bytes. The threshold was not suppressed.
+
+Browser at 1920×1080: one real canvas, no horizontal overflow; World, Settlement
+and Citadel views differ visibly. A rotate action changed a scene-only screenshot.
+Two paused screenshots were byte-identical; after resume, scene-only screenshots
+changed. No console warnings/errors were returned for the normal path. These
+observations establish visible behavior, not measured GPU frame-rate performance.
+
+Phone at 390×844: orientation ends around y=582 and there is no horizontal overflow.
+The earliest capture exposed an opacity-zero entrance that temporarily made text
+unreadable. Model controls computed to 10px and caption to 9px; increase these
+sizes. Tab arrows/Home changed selection and panel visibility correctly on desktop.
+Tab then skipped the panel's introductory text to its first week link; add a
+focusable tabpanel following W3C's recommended pattern. Source review also raised
+the stale-fragment/BFCache case; verify the refined handling.

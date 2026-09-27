@@ -1,0 +1,216 @@
+---
+import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import { courseMeta } from "../course-config";
+import { siteConfig } from "../site-config";
+import { courseOutline, courseActs, courseWeeks, courseAssessments, courseSources } from "../data/course-outline";
+import "../styles/immersive-course.css";
+
+const anchor = (id: string) => withBase(`/review/c/#${id}`);
+const previewLinks = [
+  { text: "Course", href: anchor("course") },
+  { text: "Explore", href: anchor("explore") },
+  { text: "Weeks", href: anchor("weeks") },
+  { text: "Assessment", href: anchor("assessment") },
+  { text: "Sources", href: anchor("sources") },
+];
+const levels = [
+  { y: 190, rx: 75, ry: 23, depth: 21 },
+  { y: 247, rx: 111, ry: 34, depth: 26 },
+  { y: 312, rx: 151, ry: 46, depth: 29 },
+  { y: 382, rx: 192, ry: 56, depth: 33 },
+  { y: 456, rx: 233, ry: 68, depth: 38 },
+];
+const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
+---
+
+<BaseLayout
+  {...siteConfig}
+  title={`${courseMeta.code}: ${courseOutline.title} · Preview C`}
+  description={courseOutline.description}
+  socialImage={undefined}
+  socialImageAlt={undefined}
+  links={previewLinks}
+  search={false}
+  clientRouter={false}
+  colorScheme="light"
+  unlisted={true}
+  mainAttrs={{ class: "immersive-course-main" }}
+>
+  <div class="immersive-course" data-immersive-course>
+    <aside class="ic-review-strip" aria-label="Design comparison">
+      <div class="ic-shell ic-review-inner">
+        <p><strong>Course preview</strong><span>Gate 1 · direction C</span></p>
+        <div class="ic-review-tools">
+          <nav class="ic-review-links" aria-label="Preview direction">
+            <a href={withBase("/review/a/")} aria-label="Preview A: Archive">A</a>
+            <a href={withBase("/review/b/")} aria-label="Preview B: Syllabus">B</a>
+            <a href={withBase("/review/c/")} aria-label="Preview C: Immersive" aria-current="page">C</a>
+          </nav>
+          <button type="button" class="ic-motion-toggle" data-motion-toggle hidden>
+            <span class="ic-motion-symbol" aria-hidden="true">Ⅱ</span><span data-motion-label>Pause motion</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <header id="course" class="ic-hero">
+      <div class="ic-shell ic-hero-grid">
+        <div class="ic-hero-copy">
+          <p class="ic-eyebrow ic-hero-index" data-hero-enter><span>{courseMeta.code}</span><span>First year · twelve weeks</span></p>
+          <h1 data-hero-enter><span class="ic-title-after">After</span><span class="ic-title-aincrad">Aincrad<span aria-hidden="true">.</span></span></h1>
+          <p class="ic-subtitle" data-hero-enter>{courseOutline.subtitle}</p>
+          <div class="ic-hero-introduction" data-hero-enter>
+            <p class="ic-hook">{courseOutline.hook}</p>
+            <p class="ic-orientation">{courseOutline.premise}</p>
+          </div>
+          <div class="ic-hero-actions" data-hero-enter>
+            <a class="ic-primary-link" href={anchor("explore")}>Enter the chapters <span aria-hidden="true">↘</span></a>
+            <a class="ic-text-link" href={anchor("weeks")}>View all twelve weeks <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <figure class="ic-world">
+          <div class="ic-world-label"><span>Aincrad · study 01</span><span>Worlds we inhabit</span></div>
+          <div class="ic-scene-stage" data-scene-stage role="img" aria-label="An original interpretive miniature of a floating world: layered stone terraces, a settlement and a citadel.">
+            <div class="ic-scene-host" data-scene-host aria-hidden="true"></div>
+            <svg class="ic-scene-fallback" data-scene-fallback viewBox="0 0 700 620" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="ic-stone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8aa8d"/><stop offset="1" stop-color="#625846"/></linearGradient>
+                <linearGradient id="ic-rock" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#665741"/><stop offset="1" stop-color="#262820"/></linearGradient>
+                <radialGradient id="ic-world-glow"><stop stop-color="#b97d1c" stop-opacity=".14"/><stop offset="1" stop-color="#b97d1c" stop-opacity="0"/></radialGradient>
+              </defs>
+              <ellipse cx="350" cy="332" rx="316" ry="273" fill="url(#ic-world-glow)" />
+              <g fill="none" stroke="#b8a77f" stroke-opacity=".22" stroke-width="1">
+                <ellipse cx="350" cy="374" rx="296" ry="113" transform="rotate(-17 350 374)" />
+                <path d="M70 479H138M561 242H630M350 31V72M350 564V597" />
+                <circle cx="350" cy="319" r="271" stroke-dasharray="2 9" />
+              </g>
+              {levels.toReversed().map(({ y, rx, ry, depth }) => (
+                <g>
+                  <path d={`M${350-rx} ${y}A${rx} ${ry} 0 0 0 ${350+rx} ${y}L${350+rx-19} ${y+depth}Q350 ${y+ry+depth+40} ${350-rx+19} ${y+depth}Z`} fill="url(#ic-rock)" stroke="#9f8a60" stroke-opacity=".5" />
+                  <ellipse cx="350" cy={y} rx={rx} ry={ry} fill="url(#ic-stone)" stroke="#cfb57c" stroke-opacity=".7" />
+                  <ellipse cx="350" cy={y-2} rx={rx-11} ry={ry-5} fill="none" stroke="#534d3f" stroke-opacity=".65" />
+                  <path d={`M${350-rx+15} ${y+12}Q350 ${y+ry+16} ${350+rx-15} ${y+12}`} fill="none" stroke="#b97d1c" stroke-opacity=".7" />
+                </g>
+              ))}
+              <g fill="#484b3c" stroke="#8e916e" stroke-width=".7">
+                <path d="m208 434 9-32 10 31-9 8Zm33 13 9-39 12 36-11 10Zm218 6 9-36 11 33-10 10Zm32-19 9-29 10 27-9 9ZM236 360l8-25 10 25-9 7Z" />
+                <path d="m439 354 8-27 10 28-9 7ZM275 292l8-24 9 24-8 6Z" />
+              </g>
+              <g stroke="#5e4c31" stroke-width="1">
+                <path d="m306 377 20-9 18 9v19l-20 9-18-9Z" fill="#c5ad79"/><path d="m303 377 21-20 23 20-21 9Z" fill="#8a5c13"/>
+                <path d="m359 359 18-8 16 8v19l-18 8-16-8Z" fill="#c5ad79"/><path d="m356 359 20-18 20 18-19 8Z" fill="#8a5c13"/>
+                <path d="m389 385 15-7 15 7v16l-15 7-15-7Z" fill="#baaa88"/><path d="m386 385 18-18 18 18-18 7Z" fill="#8a5c13"/>
+              </g>
+              <g stroke="#4f412d" stroke-width="1.3">
+                <path d="m301 169 47-22 53 23v31l-50 23-50-23Z" fill="#b2a17d"/>
+                <path d="m301 169 50 22 50-21v31l-50 23-50-23Z" fill="#9d8961"/>
+                <path d="M320 180v-48l12-6 12 6v48l-12 6Z" fill="#d0bd92"/><path d="m317 132 15-31 15 31-15 7Z" fill="#8a5c13"/>
+                <path d="M350 175v-77l15-7 15 7v77l-15 7Z" fill="#d6c39b"/><path d="m347 98 18-39 18 39-18 8Z" fill="#b97d1c"/>
+                <path d="M383 183v-43l11-5 11 5v43l-11 5Z" fill="#c3ad82"/><path d="m380 140 14-28 14 28-14 6Z" fill="#8a5c13"/>
+                <path d="M352 213v-22q9-14 18-2v17" fill="#39372f"/>
+              </g>
+              <g fill="#dfc998"><circle cx="365" cy="120" r="2.5"/><circle cx="332" cy="151" r="2"/><circle cx="394" cy="157" r="2"/></g>
+              <g fill="#b8a77f"><circle cx="115" cy="205" r="2"/><circle cx="569" cy="397" r="2"/><circle cx="518" cy="129" r="1.5"/></g>
+            </svg>
+          </div>
+          <div class="ic-world-controls" data-scene-controls hidden>
+            <div class="ic-view-controls" role="group" aria-label="Miniature view">
+              <button type="button" data-scene-view="world" aria-pressed="true">World</button>
+              <button type="button" data-scene-view="settlement" aria-pressed="false">Settlement</button>
+              <button type="button" data-scene-view="citadel" aria-pressed="false">Citadel</button>
+            </div>
+            <div class="ic-rotate-controls" role="group" aria-label="Rotate miniature">
+              <button type="button" data-scene-rotate="-1" aria-label="Rotate miniature left"><span aria-hidden="true">↶</span></button>
+              <button type="button" data-scene-rotate="1" aria-label="Rotate miniature right"><span aria-hidden="true">↷</span></button>
+            </div>
+          </div>
+          <figcaption><span>A world, and the lives within it.</span><span>Original interpretive model</span></figcaption>
+          <p class="visually-hidden" role="status" data-scene-status>Static illustration.</p>
+        </figure>
+      </div>
+      <div class="ic-shell ic-hero-foot"><span>A history of technology & society</span><a href={anchor("explore")}>Continue exploring <span aria-hidden="true">↓</span></a></div>
+    </header>
+
+    <div class="ic-course-body">
+      <section class="ic-shell ic-invitation" aria-labelledby="ic-question">
+        <div><p class="ic-eyebrow">The question we follow</p><h2 id="ic-question" data-reveal>{courseOutline.question}</h2></div>
+        <div class="ic-invitation-copy"><p>{courseOutline.invitation}</p><p>{courseOutline.access}</p></div>
+      </section>
+
+      <section id="explore" class="ic-chapters" aria-labelledby="ic-chapters-title">
+        <div class="ic-shell">
+          <div class="ic-section-heading">
+            <div><p class="ic-eyebrow">Explore the course</p><h2 id="ic-chapters-title" data-reveal>Three connected histories.</h2></div>
+            <p>Begin with the promise. Follow the return. Consider what remains.</p>
+          </div>
+          <div class="ic-chapter-tabs" data-chapter-tabs aria-label="Course chapters">
+            {courseActs.map((act, index) => (
+              <a id={`chapter-tab-${act.id}`} href={anchor(`chapter-${act.id}`)} data-chapter-tab={index}>
+                <span class="ic-tab-number">{act.number}</span><span><strong>{act.title}</strong><small>Weeks {act.range}</small></span><span class="ic-tab-arrow" aria-hidden="true">↘</span>
+              </a>
+            ))}
+          </div>
+          <div class="ic-chapter-panels">
+            {courseActs.map((act, index) => (
+              <section id={`chapter-${act.id}`} class="ic-chapter-panel" data-chapter-panel={index} aria-labelledby={`chapter-title-${act.id}`}>
+                <div class="ic-chapter-intro"><span class="ic-chapter-numeral" aria-hidden="true">{act.number}</span><div><p class="ic-eyebrow">Chapter {act.number} · weeks {act.range}</p><h3 id={`chapter-title-${act.id}`}>{act.title}</h3><p>{act.description}</p></div></div>
+                <ol class="ic-chapter-questions">
+                  {courseWeeks.filter((week) => week.act === act.id).map((week) => (
+                    <li><a href={anchor(weekId(week.number))}><span class="ic-question-number">{String(week.number).padStart(2, "0")}</span><span><strong>{week.title}</strong><span>{week.question}</span></span><span class="ic-question-arrow" aria-hidden="true">↗</span></a></li>
+                  ))}
+                </ol>
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="weeks" class="ic-shell ic-weeks" aria-labelledby="ic-weeks-title">
+        <div class="ic-section-heading"><div><p class="ic-eyebrow">The full course outline</p><h2 id="ic-weeks-title" data-reveal>Twelve weeks of inquiry.</h2></div><p>{courseOutline.method}</p></div>
+        {courseActs.map((act) => (
+          <section class="ic-week-act" aria-label={`Weekly outline: ${act.title}`}>
+            <div class="ic-week-act-heading"><span aria-hidden="true">{act.number}</span><h3 id={`outline-${act.id}`}>{act.title}</h3><p>Weeks {act.range}</p></div>
+            <ol class="ic-week-list" start={Number(act.range.slice(0, 2))}>
+              {courseWeeks.filter((week) => week.act === act.id).map((week) => (
+                <li id={weekId(week.number)}>
+                  <span class="ic-week-number" aria-hidden="true">{String(week.number).padStart(2, "0")}</span>
+                  <div class="ic-week-title"><h4><span class="visually-hidden">Week {week.number}: </span>{week.title}</h4><p>{week.material}</p></div>
+                  <p class="ic-week-question">{week.question}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))}
+      </section>
+
+      <section id="assessment" class="ic-assessment" aria-labelledby="ic-assessment-title">
+        <div class="ic-shell">
+          <div class="ic-section-heading"><div><p class="ic-eyebrow">Assessment</p><h2 id="ic-assessment-title" data-reveal>Make a history<br />you can share.</h2></div><p>Three pieces of work take you from reading an account to curating an argument.</p></div>
+          <ol class="ic-assessment-list">
+            {courseAssessments.map((assessment) => (
+              <li><span class="ic-assessment-number" aria-hidden="true">{assessment.number}</span><div><h3>{assessment.title}</h3><p>{assessment.description}</p></div><p class="ic-assessment-weight">{assessment.weight}<span>%</span><span class="visually-hidden"> of the final grade</span></p></li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section id="sources" class="ic-shell ic-sources" aria-labelledby="ic-sources-title">
+        <div class="ic-sources-copy"><p class="ic-eyebrow">The source desk</p><h2 id="ic-sources-title" data-reveal>Begin with<br />the works.</h2><p>{courseOutline.sourceBoundary}</p></div>
+        <ul class="ic-source-list">
+          {courseSources.map((source, index) => (
+            <li><a href={source.href}><span class="ic-source-index" aria-hidden="true">0{index + 1}</span><span><strong>{source.title}</strong><span>{source.detail}</span></span><span class="ic-source-arrow" aria-hidden="true">↗</span></a></li>
+          ))}
+        </ul>
+      </section>
+      <div class="ic-shell ic-course-end"><p>{courseMeta.code}<span>{courseOutline.shortTitle}</span></p><a href={anchor("course")}>Back to course <span aria-hidden="true">↑</span></a></div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import { mountImmersiveCourse } from "../lib/immersive-course";
+  const root = document.querySelector<HTMLElement>("[data-immersive-course]");
+  if (root) mountImmersiveCourse(root);
+</script>
