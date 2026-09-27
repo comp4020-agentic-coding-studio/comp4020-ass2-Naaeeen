@@ -1,6 +1,6 @@
 # Implementation goals and human review gates
 
-Status: Gate 1 is being revised after actual human feedback: Aincrad needs a more faithful appearance and the experience needs substantially richer motion. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
+Status: Gate 1 revision 2 is verified and ready for human review: reference-led Aincrad, larger 3D motion and animated chapter graphics. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
 to 27 September 2026 (28 September, Australia/Sydney); exact cutoff time has not
 been supplied. The public course deadline is different. This plan records the
 student's working deadline without claiming that an extension has been verified.
@@ -267,8 +267,8 @@ source checking, genuine user gates and truthful reporting remain in scope.
 ## Latest checkpoint
 
 Candidate C received real feedback: improve canonical resemblance and add more
-motion. A reference-led revision is in progress; prior checks describe the earlier
-version in [the verification record](gate-1-motion-review.md). [The process evidence bank](../PROCESS-EVIDENCE.md) records the consequential
+motion. The reference-led revision is implemented and checked; both candidate
+histories and the new results are retained in [the verification record](gate-1-motion-review.md). [The process evidence bank](../PROCESS-EVIDENCE.md) records the consequential
 findings and exact harness changes. The goal was confirmed active during this
 revision; the next stage still depends on the student's design feedback. The
 assignment as a whole is not complete. Once the direction is accepted, continue

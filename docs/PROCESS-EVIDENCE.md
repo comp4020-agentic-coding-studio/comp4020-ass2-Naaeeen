@@ -207,9 +207,23 @@ inspect a primary visual reference and compare the rendered silhouette, proporti
 and materials before presenting it for human review.” This addresses an observed
 failure to ground visual work, rather than adding a generic longer design checklist.
 
-**Status.** Implementation and browser verification pending. No new approval or
-preference is claimed. Record the actual revision, checks and commit below when
-complete; the whole course remains unfinished.
+**Changes and verification.** The new continuous fortress, clouds and wider camera
+motion are paired with three animated chapter diagrams, a moving selection rail
+and reading progress. Parent browser checks at both marking sizes verified the
+visible output, pause, live reduced motion, views, keyboard tabs, mobile focus,
+Back selection and no-script navigation/artwork. A cloud-edge artifact found in
+the rendered scene was softened with a horizontal mask. The independent geometry
+review also rejected an insufficient centre-only fix for embedded windows; the
+final wall-aligned planes resolved its finding. See the motion record for actual
+checks and limits, including the unreproduced worker-only mock-renderer checks.
+
+The full check still has only the known incomplete twelve-week failure; type,
+build, accessibility and internal links pass. No new package or service was
+required for the richer motion. The parent verified private repository visibility.
+[8d518f9](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/8d518f9)
+records the goals/research/harness; [06ce955](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/06ce955)
+records implementation and refinements. Human acceptance of this revision remains
+pending; the whole course is unfinished.
 
 ## Entry checklist
 
@@ -221,8 +235,8 @@ participants to make the eventual PROCESS account look stronger.
 
 ## Current checkpoint
 
-The first C candidate was reviewed by the student; E11 records the requested
-revision now in progress. See [the complete motion test record](planning/gate-1-motion-review.md).
+The first C candidate was reviewed by the student; E11 records the revised
+candidate now ready for another human review. See [the complete motion test record](planning/gate-1-motion-review.md).
 The actual course collections, student PROCESS.md and public shipping are still
 unfinished. E04 remains an explicit follow-up before the representative unit.
 No human preference or learning outcome has been invented for this record.

@@ -1,6 +1,6 @@
 # Gate 1 motion revision: acceptance and review
 
-Status: revision 2 is in progress after human feedback on 27 September 2026.
+Status: revision 2 is verified and ready for human review, 27 September 2026.
 The first-candidate results below are retained as history; current work and checks
 appear under Revision 2. The student requested greater fidelity and motion.
 
@@ -112,7 +112,7 @@ and its acceptance evidence are recorded below.
 
 ## Revision 2: faithful fortress and larger 2D/3D motion
 
-Status: implementation in progress after human review. The student explicitly
+Status: implementation, independent source review and parent browser checks complete; human review pending. The student explicitly
 requested existing media/model research, more varied animation and greater
 amplitude. The parent inspected the official original-anime exterior and a CC BY
 fan model; the latter required login for its official download. No asset was
@@ -125,16 +125,41 @@ paired design comparison, not a randomized user study. Human acceptance is pendi
 
 | Check | Evidence required | Current status |
 | --- | --- | --- |
-| Reference comparison | Continuous tapered body, dense bands, lower foundation and radial bridges, cooler material; visually compare the actual output | Pending |
-| Desktop and phone | Verified 1920x1080 and 390x844, no overflow, readable first frame and usable controls | Pending |
-| Larger normal motion | Observe cloud travel, fortress/camera movement, chapter illustration and reading timeline in use | Pending |
-| Pause / live reduced motion | New 2D and 3D animation stop, interactive state changes remain usable | Pending |
-| Scene views and scroll | All three views and rotation work; native scrolling remains normal and focus targets stay stable | Pending |
-| Chapters and navigation | Pointer/keyboard selection, orientation after resize, fragment/Back state, menu focus | Pending |
-| HTML and module fallback | Useful matching static artwork, all course content, no dead controls | Pending |
-| Independent review and required checks | Resolve supported findings; preserve known incomplete-course failure only | Pending |
-| Cost / outgoing scope | Measure compiled chunks, inspect changed files/credentials, preserve private visibility | Pending |
+| Reference comparison | Continuous tapered body, dense bands, lower foundation and radial bridges, cooler material; visually compare the actual output | Parent inspected the official exterior and actual render. Those structural features are now present; still an original interpretation. Human judgement pending. |
+| Desktop and phone | Verified 1920x1080 and 390x844, no overflow, readable first frame and usable controls | PASS at both measured CSS viewport sizes, DPR 1. Phone title opacity 1 and introductory text readable; scene controls remain usable. |
+| Larger normal motion | Observe cloud travel, fortress/camera movement, chapter illustration and reading timeline in use | Observed new scene/cloud composition, viewpoint changes, drawn chapter graphics and top reading progress. Visible SVG traveler coordinates changed between captures. No FPS claim. |
+| Pause / live reduced motion | New 2D and 3D animation stop, interactive state changes remain usable | PASS: paused hero captures identical; live reduced mode disabled motion control and CSS haze. Chapter captures identical under reduced mode; model view controls still work. |
+| Scene views and scroll | All three views and rotation work; native scrolling remains normal and focus targets stay stable | PASS: Exterior/Lower ring/Summit states and different views inspected, rotation used, normal scrolling retained. Scene visibility flag becomes false offscreen. GPU suspension is source-reviewed, not profiled. |
+| Chapters and navigation | Pointer/keyboard selection, orientation after resize, fragment/Back state, menu focus | PASS: horizontal Right and phone Down select matching panel/hash; resized orientation is vertical; Back restores legacies selection; phone menu closes and focuses assessment, heading top around 135px. |
+| HTML and module fallback | Useful matching static artwork, all course content, no dead controls | PASS: scripts disabled gives 0 canvases, all 3 panels, 5 contents links, hidden menu toggle and visible fortress SVG. Blocking built scene URL gives fallback with model controls hidden and functional chapter selection. |
+| Independent review and required checks | Resolve supported findings; preserve known incomplete-course failure only | Final source review: no outstanding actionable finding. Full check: types/build/19-page accessibility/links pass; spec 4 pass, only existing twelve-week coverage failure. |
+| Cost / outgoing scope | Measure compiled chunks, inspect changed files/credentials, preserve private visibility | Scene/controller gzip total 174888 bytes, raw chunk warning retained. No new dependencies; production audit zero advisories. Only intended preview and evidence files; private visibility reconfirmed. |
 
 Saved before image: `gate1-c-before-fidelity-desktop.jpg` in the current local
 visualization directory. Source references and rejected alternatives are in the
 research register and process entry E11.
+
+### Revision 2 refinements and verification limits
+
+Source review found window quads partly inside the wall. The initial correction
+fixed their centres only; the reviewer supplied a remaining lower-edge case. The
+final placement follows the actual wall slope and clears the projecting lip.
+Independent review confirmed the final relationship and the controller lifecycle.
+Worker-only mock-renderer/corner checks were reported but their inline harness
+was not retained; they are not parent-reproduced or live GPU results.
+
+The parent also corrected a description selector invalidated by inserting SVG
+after the paragraph and softened abrupt cloud clipping at the canvas sides. Final
+full-check log: `/tmp/a2-aincrad-final-77p3_n74.log`; final CSS build:
+`/tmp/a2-cloud-edge-refinement-jqe4o4x6.log`. Scene raw/gzip 575292/144638 bytes;
+controller+GSAP 79314/30250. No hosted transfer, frame-rate or native BFCache claim.
+
+Browser verification moved to the same build at localhost after disappearing tab
+handles and 127.0.0.1 zoom-related dimension mismatches. The accepted measurements
+were read from the actual page at DPR 1; the unknown tab-disappearance cause was
+not described as a code defect. Script, network-blocking and media overrides were
+reset after the tests. Earlier slow-network verification belongs to candidate 1;
+it was not rerun on this revision. Final human judgement is still required.
+
+Implementation: [06ce955](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/06ce955).
+Goals/reference rule: [8d518f9](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/8d518f9).

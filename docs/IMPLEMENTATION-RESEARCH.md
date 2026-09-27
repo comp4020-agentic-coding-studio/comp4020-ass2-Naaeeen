@@ -334,8 +334,8 @@ match for the reference. Slop's UI palette remains fixed; that does not justify
 recolouring the depicted architecture. The revision retains the course's identity
 while using a cooler material palette inside the artwork.
 
-Implementation and verification are in progress. Compare the new render with the
-inspected reference and the saved old C screenshot, then exercise pause, device
+Initial acceptance plan: compare the new render with the inspected reference and
+the saved old C screenshot, then exercise pause, device
 preference changes, native scroll, responsive tabs and fallback. Do not report a
 build or a source review as proof of resemblance or smooth frame rate.
 
@@ -348,3 +348,62 @@ build or a source review as proof of resemblance or smooth frame rate.
 
 These source accounts inform design decisions. They do not establish that our
 implementation shares those studios' quality, performance or production budget.
+
+### Revision 2 implementation and verified outcome
+
+The new scene uses Three.js 0.186.1 with an original revolved shell of 100 floor
+bands, lower foundation, radial bridges, a small summit, generated surface maps
+and layered cloud cards. No remote image, model, account or additional service is
+required at runtime. The student subsequently asked for both more 2D/3D animation
+and larger amplitude: normal mode now uses about +/-18 degrees of slow yaw,
+larger cloud travel and a bounded scroll-dependent camera change. The site adds
+three chapter SVG compositions, path drawing and a traveling marker, a moving
+selection rail, stronger finite entrances, hover feedback and a reading indicator.
+
+The installed GSAP timeline API was checked against the
+[primary timeline documentation](https://gsap.com/docs/v3/GSAP/Timeline/). Native
+passive scroll events plus one scheduled animation-frame callback were sufficient;
+ScrollTrigger was evaluated but not added. Reading progress is functional and
+continues under reduced motion; nonessential movement is stopped.
+
+The parent inspected the render at verified 1920x1080 and 390x844. The continuous
+body, foundation and bridges now correspond to the inspected exterior reference,
+while the actual artwork remains an original interpretation. The larger effects
+were checked in use, not inferred from CSS duration values. Paused hero captures
+were identical. The visible SVG marker changed coordinates while running and
+reduced-motion chapter captures were identical. All three views remained usable
+in reduced mode; mobile navigation closed and focused the requested assessment.
+Responsive keyboard tabs, selected-fragment Back behavior and the no-script
+content/navigation/artwork were checked. See the revision test record for limits.
+
+Independent source review found windows embedded in the sloping exterior. The
+first centre-offset correction was insufficient at their lower corners. The final
+planes follow the actual wall normal above the floor lip; the reviewer confirmed
+that this resolves the geometry relationship. A separate worker reported isolated
+mock-renderer geometry/lifecycle checks; its inline harness was not retained, so
+those are not described as parent-reproduced tests or real GPU profiling.
+
+Parent visual inspection found abruptly clipped clouds at the canvas edges. A
+horizontal edge mask softens those boundaries without fading the central fortress.
+No style or integration change was made to the fixed Slop branding or platform.
+
+Full check: `/tmp/a2-aincrad-final-77p3_n74.log`, zero type errors/warnings/hints,
+19-page build/accessibility/links passed, spec four passed/one known incomplete
+twelve-week failure. After the cloud-only CSS refinement the build passed again:
+`/tmp/a2-cloud-edge-refinement-jqe4o4x6.log`. Optional scene raw/gzip bytes:
+575292 / 144638; controller+GSAP: 79314 / 30250; combined gzip 174888 bytes.
+This measures compressed output, not hosted transfer or GPU timing. The raw chunk
+warning remains visible. Production dependency audit returned zero advisories.
+
+Implementation: [06ce955](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/06ce955).
+Goals, research and reference-checking harness rule: [8d518f9](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/8d518f9).
+
+### Browser-check recovery
+
+Two test-tab handles disappeared from the browser session, and the 127.0.0.1
+origin later reported DPR 1.8 and a smaller CSS viewport than requested. These
+were recorded as verification-environment problems, not website bugs. Reusing
+the connected browser and opening the same local build at localhost produced
+DPR 1 with measured 1920x1080 and 390x844 viewports. No browser profile, global
+setting or permission was changed. The cause of the disappearing tabs was not
+established; the successful replacement checks are the acceptance evidence.

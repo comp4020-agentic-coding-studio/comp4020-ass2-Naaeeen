@@ -100,7 +100,7 @@ Follow [the detailed goals and five review gates](docs/planning/implementation-g
 [process evidence](docs/PROCESS-EVIDENCE.md). Working deadline: 28 September 2026,
 exact cutoff unspecified. The Goal is active; the full assignment is unfinished.
 
-Current stage: **Gate 1 revision after human feedback**. Do not begin Gate 2 until
+Current stage: **Gate 1 revision 2 ready for human review**. Do not begin Gate 2 until
 the student accepts the revised direction. A/B/C share the proposed course outline
 under `/review/`; the main catalogue and teaching collections remain starter content.
 The [dated course map](docs/planning/course-map.md) proposes twelve distinct questions
@@ -129,9 +129,16 @@ PROCESS.md. E04's reproduced false-positive lecture-link regex is still to be
 corrected before accepting Gate 2's real deck. Native BFCache, GPU frame-rate
 profiling and forced context loss were not browser-verified in the earlier pass.
 
-Next: integrate the bounded scene/UI changes, inspect both marking viewports and
-reference fidelity, reconcile independent review, record actual results, commit
-and push the reviewed checkpoint, then present revised C for human review.
+Revision 2 is implemented in `06ce955`, following the goals/research/harness change
+`8d518f9`. Parent browser checks covered both marking sizes, scene views/rotation,
+pause/live reduced motion, moving 2D diagrams, responsive keyboard tabs, phone
+menu focus, Back selection and both no-script and blocked-scene fallbacks. The
+independent review's window-placement finding is resolved. Cloud-edge clipping
+and a paragraph selector were refined after inspection. Full required checks
+retain only the known incomplete-course failure; production audit is clear.
+
+Next: push the reviewed checkpoint, present revised C for human review and wait
+for actual feedback. Do not infer approval from the successful checks.
 After approval, build the representative week/source comparison with a real deck
 and correct the test oracle before scaling to twelve weeks.
 
