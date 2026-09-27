@@ -2,16 +2,21 @@
   "stage": "Gate 5 evidence draft; student review pending",
   "sources": {
     "PROCESS.md": "e097332bb265e95c9490fdfbd64f84deef6c6c0430562b3dfe11f9ccfb53605a",
-    "CLAUDE.md": "d6cbf06da4124d772b9704e7bf9ede94ee833c416229e4d07801a6b5ca6003cd"
+    "CLAUDE.md": "d6cbf06da4124d772b9704e7bf9ede94ee833c416229e4d07801a6b5ca6003cd",
+    "docs/planning/implementation-goals.md": "b23f825730f9a4284b9a3bd14905cad9137609c4891c928c6e271706853513ee",
+    "docs/IMPLEMENTATION-RESEARCH.md": "a221acd2bf214a3a8a0932bd3fdf5358aa158f94baf1ead31429b1f07354a9d2"
   },
   "process_english_words": 512,
   "translations": [
     "PROCESS.zh-CN.md",
-    "CLAUDE.zh-CN.md"
+    "CLAUDE.zh-CN.md",
+    "implementation-goals.zh-CN.md",
+    "IMPLEMENTATION-RESEARCH.zh-CN.md"
   ],
   "student_review": [
     "Confirm the first-person account matches your decisions and intended reasoning.",
     "Correct or rewrite any sentence that does not sound like you."
   ],
-  "release": "No public publication or repository visibility change."
+  "release": "No public publication or repository visibility change.",
+  "translation_notes": "Full translations retain historical stage records; canonical English files remain unchanged. Source hashes identify the reviewed versions."
 }
