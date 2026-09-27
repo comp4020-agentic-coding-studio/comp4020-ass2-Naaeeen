@@ -1,8 +1,14 @@
 ---
 import MdxPageLayout from "astro-theme-university/layouts/MdxPageLayout.astro";
+import TeachingLayout from "./TeachingLayout.astro";
 import { siteConfig } from "../site-config";
+const page = Astro.props.frontmatter ?? Astro.props;
+const breadcrumbs = typeof page.parentHref === "string" && page.parentHref !== "/" && typeof page.parentLabel === "string" ? [{ label: page.parentLabel, href: page.parentHref }] : [];
 ---
-
-<MdxPageLayout siteConfig={siteConfig} {...Astro.props}>
-  <slot />
-</MdxPageLayout>
+{page.readingLayout ? (
+  <TeachingLayout title={page.title} description={page.description} eyebrow={page.sectionLabel} breadcrumbs={breadcrumbs} headings={Astro.props.headings ?? []} unlisted={page.unlisted ?? false}>
+    <slot />
+  </TeachingLayout>
+) : (
+  <MdxPageLayout siteConfig={siteConfig} {...Astro.props}><slot /></MdxPageLayout>
+)}

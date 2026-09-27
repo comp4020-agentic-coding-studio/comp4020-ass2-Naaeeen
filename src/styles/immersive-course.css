@@ -1,4 +1,4 @@
-/* Gate 1 C: a self-contained exhibition treatment, inside the fixed Slop shell. */
+/* The course exhibition, inside the fixed Slop shell. */
 body:has(.immersive-course-main)::after { display: none; }
 body:has(.immersive-course-main) .at-nav { border-bottom: 1px solid #d2cabb; }
 body:has(.immersive-course-main) .at-nav-inner,
@@ -135,7 +135,7 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
 .ic-assessment-weight { text-align: right; font-family: Georgia, "Times New Roman", serif; font-size: 58px; line-height: 1; color: var(--ic-bronze); letter-spacing: -.045em; }
 .ic-assessment-weight > span:not(.visually-hidden) { font-size: 25px; margin-left: 3px; }
 .ic-sources { display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); gap: 126px; padding-block: 105px 87px; }
-.ic-sources-copy > p:last-child { max-width: 44ch; margin-top: 26px; color: var(--ic-muted); font-size: 16px; line-height: 1.75; }
+.ic-sources-copy > p:not(.ic-eyebrow) { max-width: 44ch; margin-top: 26px; color: var(--ic-muted); font-size: 16px; line-height: 1.75; }
 .ic-source-list { padding-top: 6px !important; }
 .ic-source-list > li { border-top: 1px solid var(--ic-line); }
 .ic-source-list > li:last-child { border-bottom: 1px solid var(--ic-line); }
@@ -213,7 +213,7 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
   .ic-assessment-weight { font-size: 48px; }
   .ic-sources { grid-template-columns: minmax(0, 1fr); gap: 37px; padding-block: 70px; }
   .ic-sources h2 br { display: none; }
-  .ic-sources-copy > p:last-child { max-width: 60ch; }
+  .ic-sources-copy > p:not(.ic-eyebrow) { max-width: 60ch; }
 }
 @media (max-width: 480px) {
   .ic-shell, body:has(.immersive-course-main) .at-nav-inner, body:has(.immersive-course-main) .at-footer > * { width: calc(100% - 40px); }
@@ -280,7 +280,7 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
   .ic-assessment-weight { font-size: 42px; }
   .ic-assessment-weight > span:not(.visually-hidden) { font-size: 20px; }
   .ic-sources { padding-block: 58px; }
-  .ic-sources-copy > p:last-child { margin-top: 22px; font-size: 15px; }
+  .ic-sources-copy > p:not(.ic-eyebrow) { margin-top: 22px; font-size: 15px; }
   .ic-source-list a { grid-template-columns: 18px minmax(0, 1fr) 20px; gap: 15px; padding-block: 23px; }
   .ic-source-list strong { font-size: 23px; }
   .ic-source-list a > span:nth-child(2) > span { font-size: 12px; }
@@ -354,3 +354,27 @@ html:has(.immersive-course[data-motion="paused"]) { scroll-behavior: auto; }
   .ic-primary-link::after { transition: none !important; }
 }
 .immersive-course[data-motion="paused"] .ic-primary-link::after { transition: none !important; }
+
+/* A short route from the exhibition to the working seminar materials. */
+.ic-course-strip .ic-review-inner { min-height: 48px; }
+.ic-course-strip .ic-motion-toggle { border-left: 0; }
+.ic-study-path { padding-block: 58px; border-bottom: 1px solid var(--ic-line); background: #eee7d9; }
+.ic-study-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 100px; }
+.ic-study-intro h2 { margin-top: 18px; font-family: Georgia, "Times New Roman", serif; font-size: 42px; font-weight: 400; line-height: 1.1; letter-spacing: -.035em; }
+.ic-study-intro > p:not(.ic-eyebrow) { max-width: 53ch; margin-top: 20px; color: var(--ic-muted); font-size: 16px; }
+.ic-study-intro > a, .ic-source-packet-link { display: inline-flex; align-items: center; gap: 28px; min-height: 44px; margin-top: 20px; font-size: 14px; font-weight: 650; }
+.ic-study-links li + li { border-top: 1px solid var(--ic-line); }
+.ic-study-links a { display: grid; grid-template-columns: 20px minmax(0, 1fr) 20px; gap: 20px; align-items: center; min-height: 83px; padding-block: 15px; text-decoration: none; }
+.ic-study-links a > span:first-child { color: var(--ic-bronze); font-size: 11px; }
+.ic-study-links strong { display: block; font-size: 15px; font-weight: 600; }
+.ic-study-links small { display: block; margin-top: 4px; color: var(--ic-muted); font-size: 13px; line-height: 1.45; }
+.ic-study-links a:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+.ic-week-title h4 a { text-decoration-thickness: 1px; text-decoration-color: #a48b61; }
+.ic-week-status { display: inline-block; margin-top: 9px; color: #6c4b18; font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.ic-assessment-list h3 a { text-decoration-thickness: 1px; text-decoration-color: #a48b61; text-underline-offset: 6px; }
+@media (max-width: 800px) {
+  .ic-study-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .ic-study-path { padding-block: 42px; }
+  .ic-study-intro h2 { font-size: 34px; }
+  .ic-study-intro > p:not(.ic-eyebrow) { margin-top: 16px; }
+}

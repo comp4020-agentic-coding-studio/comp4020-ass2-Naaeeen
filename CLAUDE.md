@@ -97,9 +97,11 @@ Write direct, concrete student-facing prose. Preserve the user's voice and scope
 omit generic marketing, unnecessary disclaimers and irrelevant implementation
 details. Retain qualifications that affect a reader's understanding or decision.
 
-Separate verified facts, fictional framing and design proposals. Propose learning
-outcomes within the brief; record consequential open choices instead of presenting
-them as settled. Verify citations; do not invent readings, results or feedback.
+Separate verified facts, fictional framing and design proposals. For each teaching
+unit, connect its question and preparation to a student action, a concrete output
+and an assessment. Keep teaching claims traceable to source passages; identify a
+source's purpose before treating it as evidence. Record consequential open choices
+and verify citations; do not invent readings, results or feedback.
 
 `PROCESS.md` must be the student's truthful account of their work and judgement.
 Help assemble commit evidence and faithfully draft or edit from their supplied

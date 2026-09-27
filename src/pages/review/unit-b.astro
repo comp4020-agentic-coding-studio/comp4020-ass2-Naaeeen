@@ -1,0 +1,7 @@
+---
+import { getEntry } from "astro:content";
+import TeachingSession from "../../components/TeachingSession.astro";
+const session = await getEntry("sessions", "02-the-sao-incident");
+if (!session) throw new Error("The reading comparison requires the Week 2 seminar.");
+---
+<TeachingSession session={session} comparison="B" />

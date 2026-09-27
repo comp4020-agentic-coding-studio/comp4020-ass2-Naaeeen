@@ -1,0 +1,119 @@
+/* Reading pages share the course's paper, ink, and Slop bronze palette. */
+body:has(.teaching-main) { background: #f5f1e8; }
+body:has(.teaching-main)::after { display: none; }
+body:has(.teaching-main) .at-nav { border-bottom: 1px solid #ccc4b3; }
+body:has(.teaching-main) .at-nav-inner, body:has(.teaching-main) .at-footer > * { grid-column: full; width: min(1280px, calc(100% - 112px)); margin-inline: auto; }
+body:has(.teaching-main) .at-nav-brand { transform: none; }
+body:has(.teaching-main) .at-nav-links a { min-height: 44px; display: flex; align-items: center; }
+.at-main.teaching-main { grid-column: full; display: block; padding: 0; }
+.teaching-page { --teaching-ink: #292a25; --teaching-muted: #686254; --teaching-line: #ccc4b3; color: var(--teaching-ink); font-size: 17px; line-height: 1.75; }
+.teaching-shell { width: min(1280px, calc(100% - 112px)); margin-inline: auto; }
+.teaching-page a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+.teaching-page :is(a, button, summary):focus-visible { outline: 3px solid var(--at-secondary); outline-offset: 5px; box-shadow: none; }
+.teaching-header { padding-top: 25px; padding-bottom: 38px; border-bottom: 1px solid var(--teaching-line); }
+.teaching-breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 7px 12px; margin: 0; padding: 0; list-style: none; color: var(--teaching-muted); font-size: 12px; line-height: 1.55; }
+.teaching-breadcrumbs li + li::before { content: "/"; margin-right: 12px; color: #8c806c; }
+.teaching-breadcrumbs [aria-current] { color: var(--teaching-ink); }
+.teaching-breadcrumbs a { display: inline-block; padding-block: 9px; margin-block: -9px; }
+.teaching-heading { display: grid; grid-template-columns: minmax(0, 1fr) 140px; gap: 55px; margin-top: 54px; }
+.teaching-eyebrow { margin: 0 0 20px; color: #775216; font-size: 11px; font-weight: 650; line-height: 1.5; letter-spacing: .13em; text-transform: uppercase; }
+.teaching-heading h1 { max-width: 20ch; margin: 0; color: var(--teaching-ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 4.2vw, 4.7rem); font-weight: 400; letter-spacing: -.045em; line-height: 1.06; text-wrap: pretty; }
+.teaching-lead { max-width: 66ch; margin: 25px 0 0; color: #605947; font-size: 18px; line-height: 1.7; }
+.teaching-course-stamp { margin: 5px 0 0; padding-top: 15px; border-top: 2px solid #a8772c; font-size: 12px; line-height: 1.8; }
+.teaching-course-stamp strong, .teaching-course-stamp span { display: block; }
+.teaching-course-stamp strong { margin-bottom: 8px; font-weight: 650; }
+.teaching-course-stamp span { color: var(--teaching-muted); }
+.teaching-metadata { display: flex; flex-wrap: wrap; gap: 20px 45px; margin: 30px 0 0; padding: 0; }
+.teaching-metadata dt { color: var(--teaching-muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.teaching-metadata dd { margin: 3px 0 0; font-size: 14px; font-weight: 550; }
+.teaching-actions { display: flex; flex-wrap: wrap; gap: 6px 27px; margin-top: 20px; }
+.teaching-actions a { display: inline-flex; align-items: center; gap: 20px; min-height: 44px; font-size: 13px; font-weight: 600; }
+.teaching-actions a > span { color: #805818; font-size: 19px; }
+.teaching-body { display: grid; grid-template-columns: minmax(0, 820px); justify-content: center; padding-block: 52px 74px; }
+.teaching-body-with-contents { grid-template-columns: 230px minmax(0, 820px); justify-content: space-between; gap: 70px; }
+.teaching-contents { position: sticky; top: calc(var(--at-nav-height, 7rem) + 24px); align-self: start; padding-right: 10px; }
+.teaching-contents > p { margin: 0 0 17px; font-size: 10px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; color: var(--teaching-muted); }
+.teaching-contents ol { margin: 0; padding: 0; list-style: none; }
+.teaching-contents li + li { border-top: 1px solid #ded6c7; }
+.teaching-contents a { display: flex; align-items: baseline; gap: 13px; min-height: 44px; padding-block: 9px; font-size: 12px; line-height: 1.5; text-decoration: none; }
+.teaching-contents a:hover { text-decoration: underline; }
+.teaching-contents a > span { color: #8a652a; font-size: 10px; flex: 0 0 17px; }
+.teaching-prose { min-width: 0; overflow-wrap: anywhere; }
+.teaching-prose > :first-child, .teaching-prose > section:first-child > :first-child { margin-top: 0; }
+.teaching-prose :is(h2, h3, h4) { color: var(--teaching-ink); scroll-margin-top: 28px; text-wrap: pretty; }
+.teaching-prose h2 { margin-top: 2.1em; margin-bottom: .7em; font-family: Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 400; line-height: 1.22; letter-spacing: -.025em; }
+.teaching-prose h3 { margin-top: 1.6em; font-size: 19px; line-height: 1.45; letter-spacing: -.01em; }
+.teaching-prose p { margin-block: 1em; }
+.teaching-prose :is(ul, ol) { padding-left: 1.3em; }
+.teaching-prose li { margin-block: .45em; padding-left: .2em; }
+.teaching-prose li::marker { color: #81591d; }
+.teaching-prose strong { font-weight: 650; }
+.teaching-prose a { text-decoration-color: #9a793f; }
+.teaching-prose a:hover { text-decoration-thickness: 2px; }
+.teaching-prose blockquote { margin-inline: 0; padding: 2px 0 2px 24px; border-left: 2px solid #a8772c; color: #605947; }
+.teaching-prose blockquote p { font-family: Georgia, "Times New Roman", serif; font-size: 23px; line-height: 1.5; }
+.teaching-prose table { width: 100%; margin-block: 25px; border-collapse: collapse; font-size: 14px; }
+.teaching-prose th { background: #e9e2d4; color: #423e32; font-weight: 600; }
+.teaching-prose :is(th, td) { padding: 13px 16px; border-bottom: 1px solid var(--teaching-line); text-align: left; vertical-align: top; }
+.teaching-prose .spec-list { margin-top: 46px; padding: 25px 30px; border-left: 3px solid #a8772c; background: #ece5d7; }
+.teaching-prose .spec-list h2 { margin-top: 0; font-size: 27px; }
+.teaching-prose .spec-list > p { font-size: 15px; color: #605947; }
+.teaching-prose .spec-list ul { margin-bottom: 0; }
+.teaching-prose .related-content { margin-top: 48px; }
+.teaching-prose .related-content h2 { font-family: inherit; font-size: 11px; font-weight: 650; }
+.teaching-prose .related-content ul { padding: 0; }
+.teaching-prose .related-content li { padding: 0; }
+.teaching-prose .related-content a { display: inline-block; min-height: 44px; padding-block: 9px; font-size: 14px; }
+.teaching-page-footer { display: flex; justify-content: space-between; gap: 20px; padding-block: 22px; border-top: 1px solid var(--teaching-line); font-size: 12px; }
+.teaching-page-footer a { display: inline-flex; align-items: center; min-height: 44px; }
+.teaching-schedule { margin: 0; padding: 0 !important; list-style: none; }
+.teaching-schedule > li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px; padding: 24px 0; border-top: 1px solid var(--teaching-line); margin: 0; }
+.teaching-schedule-number { color: #805818; font-size: 13px; font-variant-numeric: tabular-nums; }
+.teaching-schedule h2 { margin: 0; font-size: 25px; }
+.teaching-schedule p { margin: 9px 0 0; font-size: 15px; color: #605947; }
+.teaching-schedule small { display: block; margin-top: 10px; font-size: 11px; color: var(--teaching-muted); }
+.teaching-comparison { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 25px; padding: 14px 0; margin-block: 24px; border-block: 1px solid #ccc4b3; font-size: 12px; }
+.teaching-comparison p { margin: 0; }
+.teaching-comparison nav { display: flex; flex-wrap: wrap; gap: 7px 22px; }
+.teaching-comparison a { display: inline-flex; align-items: center; min-height: 44px; }
+.teaching-comparison [aria-current] { font-weight: 700; text-decoration-thickness: 2px; }
+@media (max-width: 1050px) {
+  .teaching-shell, body:has(.teaching-main) .at-nav-inner, body:has(.teaching-main) .at-footer > * { width: calc(100% - 64px); }
+  .teaching-body-with-contents { grid-template-columns: 180px minmax(0, 1fr); gap: 40px; }
+  .teaching-heading { gap: 35px; }
+}
+@media (max-width: 760px) {
+  .teaching-shell, body:has(.teaching-main) .at-nav-inner, body:has(.teaching-main) .at-footer > * { width: calc(100% - 40px); }
+  .teaching-header { padding-top: 21px; padding-bottom: 28px; }
+  .teaching-heading { grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 35px; }
+  .teaching-eyebrow { font-size: 10px; margin-bottom: 18px; }
+  .teaching-heading h1 { font-size: clamp(2.5rem, 8.8vw, 3.5rem); }
+  .teaching-lead { margin-top: 20px; font-size: 16px; line-height: 1.7; }
+  .teaching-course-stamp { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; padding-top: 12px; font-size: 10px; border-top-width: 1px; }
+  .teaching-course-stamp strong { margin: 0; }
+  .teaching-metadata { gap: 16px 30px; margin-top: 18px; }
+  .teaching-metadata dd { font-size: 13px; }
+  .teaching-actions { column-gap: 24px; margin-top: 17px; }
+  .teaching-body, .teaching-body-with-contents { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 28px 48px; }
+  .teaching-contents { position: static; padding: 0 0 22px; border-bottom: 1px solid var(--teaching-line); }
+  .teaching-contents > p { margin-bottom: 8px; }
+  .teaching-contents ol { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 20px; }
+  .teaching-contents li + li { border: 0; }
+  .teaching-contents a { gap: 8px; font-size: 11px; }
+  .teaching-contents a > span { flex-basis: 14px; }
+  .teaching-prose { font-size: 16px; line-height: 1.75; }
+  .teaching-prose h2 { font-size: 28px; }
+  .teaching-prose h3 { font-size: 18px; }
+  .teaching-prose .spec-list { padding: 22px 20px; }
+  .teaching-prose .spec-list h2 { font-size: 25px; }
+  .teaching-prose blockquote { padding-left: 18px; }
+  .teaching-prose blockquote p { font-size: 21px; }
+  .teaching-prose table { font-size: 12px; }
+  .teaching-prose :is(th, td) { padding: 11px 9px; }
+  .teaching-schedule > li { gap: 13px; grid-template-columns: 30px minmax(0, 1fr); }
+  .teaching-schedule h2 { font-size: 24px; }
+  .teaching-page-footer { font-size: 11px; gap: 15px; }
+}
+
+.teaching-fallback-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; padding-block: 12px; border-bottom: 1px solid var(--teaching-line); }
+.teaching-fallback-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }

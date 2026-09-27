@@ -1,0 +1,9 @@
+---
+import { withBase } from "astro-theme-university/url";
+interface Props { current: "A" | "B"; sessionId: string; }
+const { current, sessionId } = Astro.props;
+---
+<aside class="teaching-comparison" aria-label="Reading layout comparison">
+  <p>One seminar, two reading layouts.</p>
+  <nav aria-label="Reading layout"><a href={withBase("/review/unit-a/")} aria-current={current === "A" ? "page" : undefined}>A · Standard</a><a href={withBase("/review/unit-b/")} aria-current={current === "B" ? "page" : undefined}>B · Course reading room</a><a href={withBase(`/sessions/${sessionId}/`)}>Open the seminar ↗</a></nav>
+</aside>

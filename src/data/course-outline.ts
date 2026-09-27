@@ -1,11 +1,12 @@
-// Gate 1 course-outline preview. The catalogue record remains in course-config.ts.
+import { courseMeta } from "../course-config";
+
+// Course interpretation and topic progression; shared catalogue facts live in courseMeta.
 export const courseOutline = {
-  title: "After Aincrad: A History of the Full-Dive Age",
+  title: courseMeta.title,
   shortTitle: "After Aincrad",
   subtitle: "A History of the Full-Dive Age",
-  year: "2035",
-  description:
-    "A twelve-week, first-year history seminar about technology, everyday life and belonging in the virtual worlds of Sword Art Online.",
+  year: String(courseMeta.year),
+  description: courseMeta.description,
   hook: "Why would anyone log in again?",
   question:
     "Why do people keep entering, inhabiting and protecting virtual worlds after the SAO incident?",

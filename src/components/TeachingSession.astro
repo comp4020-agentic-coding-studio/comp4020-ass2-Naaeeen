@@ -1,0 +1,40 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import { getPublishedCollection } from "astro-course-university/content";
+import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import TeachingLayout from "../layouts/TeachingLayout.astro";
+import SessionMaterial from "./SessionMaterial.astro";
+import UnitComparisonNav from "./UnitComparisonNav.astro";
+import { formatCourseDate } from "../lib/dates";
+import { sessionLabels, siteConfig } from "../site-config";
+
+interface Props { session: CollectionEntry<"sessions">; comparison?: "A" | "B"; }
+const { session, comparison } = Astro.props;
+const { Content, headings } = await render(session);
+const lectures = await getPublishedCollection("lectures");
+const lecture = lectures.find((entry) => entry.data.week === session.data.week);
+const metadata = [
+  { label: "Date", value: formatCourseDate(session.data.date) },
+  ...(typeof session.data.durationMinutes === "number" ? [{ label: sessionLabels.singular, value: `${session.data.durationMinutes} minutes` }] : []),
+  ...(typeof session.data.preparationMinutes === "number" ? [{ label: "Preparation", value: `${session.data.preparationMinutes} minutes` }] : []),
+];
+const actions = [
+  ...(typeof session.data.sourcePacket === "string" ? [{ label: "Source packet", href: session.data.sourcePacket }] : []),
+  ...(lecture ? [{ label: "Lecture", href: `/lectures/${lecture.id}/` }] : []),
+  ...(lecture?.data.slides ? [{ label: "Slides", href: lecture.data.slides }] : []),
+];
+---
+{comparison === "A" ? (
+  <ContentLayout {...siteConfig} title={`Week ${session.data.week}: ${session.data.title}`} description={session.data.description} unlisted={true} colorScheme="light" clientRouter={false}>
+    <UnitComparisonNav current="A" sessionId={session.id} />
+    <p>{metadata.map((item, index) => <><strong>{item.label}:</strong> {item.value}{index < metadata.length - 1 ? " · " : ""}</>)}</p>
+    <ul>{actions.map((action) => <li><a href={withBase(action.href)}>{action.label}</a></li>)}</ul>
+    <SessionMaterial session={session}><Content /></SessionMaterial>
+  </ContentLayout>
+) : (
+  <TeachingLayout title={session.data.title} description={session.data.description} eyebrow={`Week ${String(session.data.week).padStart(2, "0")} · ${sessionLabels.singular}`} breadcrumbs={[{ label: sessionLabels.plural, href: "/sessions/" }]} metadata={metadata} actions={actions} headings={headings} unlisted={Boolean(comparison)}>
+    <Fragment slot="notice">{comparison && <UnitComparisonNav current={comparison} sessionId={session.id} />}</Fragment>
+    <SessionMaterial session={session}><Content /></SessionMaterial>
+  </TeachingLayout>
+)}

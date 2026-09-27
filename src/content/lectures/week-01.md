@@ -4,7 +4,8 @@ description:
   The first lecture — what the course is, why it is shaped this way, and what
   happens in week 1
 week: 1
-date: 2027-02-22
+date: 2035-02-19
+published: false
 teachers:
   - marisol-quaye
 slides: /decks/week-01/

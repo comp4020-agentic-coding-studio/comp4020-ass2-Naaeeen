@@ -2,26 +2,27 @@
 import { render } from "astro:content";
 import { getPublishedCollection } from "astro-course-university/content";
 import RelatedContent from "astro-course-university/components/RelatedContent.astro";
-import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import { withBase } from "astro-theme-university/url";
+import TeachingLayout from "../../layouts/TeachingLayout.astro";
 import TeachingTeam from "../../components/TeachingTeam.astro";
 import { formatCourseDate } from "../../lib/dates";
-import { graphCollections, siteConfig } from "../../site-config";
+import { graphCollections } from "../../site-config";
 
 export async function getStaticPaths() {
   const lectures = await getPublishedCollection("lectures");
   return lectures.map((lecture) => ({ params: { slug: lecture.id }, props: { lecture } }));
 }
-
 const { lecture } = Astro.props;
-const { Content } = await render(lecture);
-const title = `Week ${lecture.data.week}: ${lecture.data.title}`;
+const { Content, headings } = await render(lecture);
+const sessions = await getPublishedCollection("sessions");
+const session = sessions.find((entry) => entry.data.week === lecture.data.week);
+const actions = [
+  ...(lecture.data.slides ? [{ label: "Open the slides", href: lecture.data.slides }] : []),
+  ...(session ? [{ label: "Go to the seminar", href: `/sessions/${session.id}/` }] : []),
+  ...(typeof session?.data.sourcePacket === "string" ? [{ label: "Source packet", href: session.data.sourcePacket }] : []),
+];
 ---
-
-<ContentLayout title={title} description={lecture.data.description} {...siteConfig}>
-  <p><strong>{formatCourseDate(lecture.data.date)}</strong></p>
-  {lecture.data.slides && <p><a href={withBase(lecture.data.slides)}>Open the slides</a></p>}
+<TeachingLayout title={lecture.data.title} description={lecture.data.description} eyebrow={`Week ${String(lecture.data.week).padStart(2, "0")} · Lecture`} breadcrumbs={[{ label: "Lectures", href: "/lectures/" }]} metadata={[{ label: "Date", value: formatCourseDate(lecture.data.date) }]} actions={actions} headings={headings}>
   <Content />
   <TeachingTeam teachers={lecture.data.teachers} />
-  <RelatedContent entry={lecture} collections={graphCollections} />
-</ContentLayout>
+  <RelatedContent entry={lecture} collections={graphCollections} heading="Continue this week" />
+</TeachingLayout>

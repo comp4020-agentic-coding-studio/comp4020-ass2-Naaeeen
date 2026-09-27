@@ -46,17 +46,15 @@ export const slopCourseMetaSchema = z
 // The code's last three digits were assigned to this repo when it was
 // provisioned, and no other course in the cohort has them. Change the first
 // digit to your course's level (and `level` to match); keep the other three.
-// STARTER_CONTENT: replace this course record, then remove this comment.
 export const courseMeta = slopCourseMetaSchema.parse({
   code: "SLOP1897",
-  title: "Course Title Goes Here",
+  title: "After Aincrad: A History of the Full-Dive Age",
   session: "Semester 1",
-  year: 2027,
+  year: 2035,
   level: 1,
-  startDate: "2027-02-22",
-  endDate: "2027-05-28",
+  startDate: "2035-02-19",
+  endDate: "2035-05-11",
   description:
-    "One concise paragraph explaining what this course is, who it is for, " +
-    "and why somebody would choose to spend a semester taking it.",
-  tags: ["replace me"],
+    "A first-year history seminar set in a fictional 2035: investigate technology, everyday life and belonging in Sword Art Online, from the Aincrad incident to artificial lives in the Underworld.",
+  tags: ["Virtual worlds", "History of technology", "Sword Art Online"],
 }) satisfies CourseMetaInput;

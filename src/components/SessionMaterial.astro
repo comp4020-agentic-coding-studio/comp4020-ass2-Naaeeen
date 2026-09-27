@@ -1,0 +1,13 @@
+---
+import type { CollectionEntry } from "astro:content";
+import RelatedContent from "astro-course-university/components/RelatedContent.astro";
+import SpecList from "astro-course-university/components/SpecList.astro";
+import TeachingTeam from "./TeachingTeam.astro";
+import { graphCollections } from "../site-config";
+interface Props { session: CollectionEntry<"sessions">; }
+const { session } = Astro.props;
+---
+<slot />
+<SpecList spec={session.data.spec} heading="Seminar checklist">Check that your work includes each of the following.</SpecList>
+<TeachingTeam teachers={session.data.teachers} />
+<RelatedContent entry={session} collections={graphCollections} heading="Continue your study" />

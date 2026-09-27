@@ -1,0 +1,63 @@
+---
+import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import { courseMeta } from "../course-config";
+import { siteConfig } from "../site-config";
+import "../styles/teaching.css";
+
+interface Props {
+  title: string;
+  description?: string | null;
+  eyebrow?: string;
+  breadcrumbs?: { label: string; href: string }[];
+  metadata?: { label: string; value: string }[];
+  actions?: { label: string; href: string }[];
+  headings?: { depth: number; slug: string; text: string }[];
+  unlisted?: boolean;
+}
+const { title, description: descriptionInput, eyebrow = "Course guide", breadcrumbs = [], metadata = [], actions = [], headings = [], unlisted = false } = Astro.props;
+const description = descriptionInput ?? undefined;
+// The theme appends a hash permalink to rendered headings. Exclude its label here.
+const contents = headings.filter((heading) => heading.depth === 2).map((heading) => ({ ...heading, text: heading.text.replace(/\s*#$/, "") }));
+---
+
+<BaseLayout {...siteConfig} title={`${title} · ${courseMeta.code}`} description={description} colorScheme="light" clientRouter={false} unlisted={unlisted} mainAttrs={{ class: "teaching-main" }}>
+  <slot name="head" slot="head" />
+  <div class="teaching-page">
+    <noscript>
+      <style is:inline>body:has(.teaching-main) .at-nav-toggle, body:has(.teaching-main) .at-search-trigger { display: none; }</style>
+      <nav class="teaching-fallback-nav teaching-shell" aria-label="Course contents">
+        {siteConfig.links?.map((link) => <a href={withBase(link.href)}>{link.text}</a>)}
+      </nav>
+    </noscript>
+    <header class="teaching-header teaching-shell">
+      <nav class="teaching-breadcrumbs" aria-label="Breadcrumb">
+        <ol><li><a href={withBase("/")}>Course</a></li>{breadcrumbs.map((crumb) => <li><a href={withBase(crumb.href)}>{crumb.label}</a></li>)}<li aria-current="page">{title}</li></ol>
+      </nav>
+      <div class="teaching-heading">
+        <div><p class="teaching-eyebrow">{eyebrow}</p><h1>{title}</h1>{description && <p class="teaching-lead">{description}</p>}</div>
+        <p class="teaching-course-stamp"><strong>{courseMeta.code}</strong><span>{courseMeta.session}</span><span>{courseMeta.year}</span></p>
+      </div>
+      {metadata.length > 0 && <dl class="teaching-metadata">{metadata.map((item) => <div><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>}
+      {actions.length > 0 && <nav class="teaching-actions" aria-label="Study materials">{actions.map((action) => <a href={withBase(action.href)}>{action.label}<span aria-hidden="true">↗</span></a>)}</nav>}
+      <slot name="notice" />
+    </header>
+    <div class:list={["teaching-shell", "teaching-body", { "teaching-body-with-contents": contents.length > 0 }]}>
+      {contents.length > 0 && <nav class="teaching-contents" aria-labelledby="teaching-contents-label"><p id="teaching-contents-label">On this page</p><ol>{contents.map((heading, index) => <li><a href={`#${heading.slug}`} data-teaching-anchor><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{heading.text}</a></li>)}</ol></nav>}
+      <article class="teaching-prose"><slot /></article>
+    </div>
+    <footer class="teaching-page-footer teaching-shell"><a href={withBase("/")}>← Back to the course</a><a href={withBase("/#weeks")}>Twelve-week outline ↑</a></footer>
+  </div>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>("[data-teaching-anchor]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+      if (!target) return;
+      target.setAttribute("tabindex", "-1");
+      requestAnimationFrame(() => target.focus({ preventScroll: true }));
+    });
+  });
+</script>
