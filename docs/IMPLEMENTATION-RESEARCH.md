@@ -197,3 +197,97 @@ The first phone composition delayed course orientation. Moving the premise and
 prerequisites into the shared opening brought them into the first viewport in both
 variants. We retained two valid alternatives for the student to judge. No human
 A/B result has been collected, and no full course-completion claim is made.
+
+## Immersive design revision — 27 September
+
+The student asked for a more vivid, immersive result, research beyond course
+websites, suitable additional APIs/packages, and implementation commits/pushes.
+The [goals](planning/implementation-goals.md) were expanded and pushed in
+`2bdf84d`; the remote hash was checked against the local commit. This is a Gate 1
+revision, not an assumed A/B preference or permission to skip human review.
+
+### Platform permission
+
+The live [brief](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/assignment-2/)
+and [upstream README](https://github.com/comp4020-agentic-coding-studio/template-course-site/blob/main/README.md)
+allow custom components and visual treatment while retaining Slop identity,
+collections, build and generated API. They do not impose a general ban on added
+browser libraries. We infer that a self-hosted decorative scene and motion library
+fit these customization points; neither replaces the Astro stack or course API.
+No hosted service, account, live-data API or key is needed for this candidate.
+
+### References examined and their use
+
+| Reference | What was actually examined | Transfer to After Aincrad |
+| --- | --- | --- |
+| [Apple AirPods Pro](https://www.apple.com/airpods-pro/) | Live browser opening and scrolled sections: large product image, clear type, retained navigation, transitions into short visual chapters | A single dominant hero scene, readable introduction and sectional storytelling; no copied product assets or claim about Apple's private implementation |
+| [Bruno Simon](https://bruno-simon.com/) and [Folio 2025 source](https://github.com/brunosimon/folio-2025/blob/main/readme.md) | Live opening miniature scene and author README describing ordered simulation/rendering and an asset pipeline | A cohesive original miniature world with a controlled palette; use a small inspectable scene, without recreating a driving game or borrowing its art |
+| [a-lign: Webflow Symphony](https://www.a-lign.studio/work/the-webflow-symphony) | Original author case study describing chapters, timeline navigation and GSAP sequencing | Tie animation to a narrative structure; keep the story understandable without motion. The full live Symphony experience was not browser-tested here |
+| [The Pudding: Scrollama](https://pudding.cool/process/introducing-scrollama/) | Original 2017 explanation of intersection-triggered story steps and a persistent graphic | Learn the text-to-visual relationship; use current browser/layout techniques and ordinary mobile flow rather than importing an old desktop implementation |
+
+A research subagent supplied leads and limitations. The parent independently read
+the original sources and inspected the Apple/Bruno pages. Bruno's rendered entry
+scene demonstrates art direction; its minimal accessibility-tree text also reinforces
+our decision to keep course navigation and meaning in ordinary HTML. This is a
+local design inference, not an accessibility audit of his portfolio.
+
+### Dependency decision
+
+| Candidate | Verified current evidence | Decision |
+| --- | --- | --- |
+| Native CSS/Web Animations | [MDN Web Animations guide](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API) documents playback controls; existing CSS handles normal hover/focus feedback | Keep native styling for small states and maintain visible default content |
+| GSAP | npm and installed package **3.15.0**; [official docs](https://gsap.com/docs/v3/) cover sequencing and [media-query cleanup](https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/) | Adopt one coordinator for finite entrances and chapter transitions, with explicit pause/reduced-motion handling |
+| Motion | npm **13.4.4**, MIT; [vanilla quick start](https://motion.dev/docs/quick-start) confirms React is not required | Credible alternative, not installed alongside GSAP because two coordinators add little to this candidate |
+| Three.js | npm and installed package **0.186.1**, MIT; current renderer source inspected; **@types/three 0.186.0** installed | Lazy-load one original procedural illustration with HTML controls and a static SVG alternative |
+
+The researcher's Three.js development-branch version differed from the published
+package. We used the registry and installed manifest to resolve it. GSAP is under
+its [standard no-charge licence](https://gsap.com/standard-license), not MIT;
+Three.js's installed MIT licence was checked. Package versions are pinned. These
+choices reflect this proposed experience, not a benchmark proving one library best.
+Registry unpacked size is not the website's transfer size; measure built chunks.
+
+### Motion and access decisions
+
+[W3C's pause/stop/hide guidance](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html)
+and [tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) inform the controls.
+The scene will have a clear pause control; reduced motion will produce immediate
+state changes. Canvas contains illustration only. Chapter content exists in the
+server-rendered page and becomes an accessible tab interface after initialization.
+Keyboard support follows its actual orientation and must survive live resizing.
+
+Candidate C combines an inspectable floating world, finite typographic entrance,
+chapter selection and the complete twelve-week outline. Its illustration is a
+course interpretation, not a canonical map. Self-hosted code and procedural artwork
+avoid blocking the course on an external content service.
+
+Provisional engineering targets: additional compressed animation/scene JavaScript
+around 300 KB or less, one canvas, device pixel ratio capped at 1.5, and no running
+scene loop while hidden/offscreen/paused. These are our targets to inspect, not
+assignment requirements or measured outcomes. Actual results belong in the
+[motion review record](planning/gate-1-motion-review.md).
+
+### Dependency audit follow-up
+
+`pnpm audit --prod` reported seven advisory entries in the existing platform
+(Astro, sharp, js-yaml, SVGO and devalue); neither added animation library appeared
+in the report. The [Astro AVIF advisory](https://github.com/withastro/astro/security/advisories/GHSA-26w7-cxv4-gfx2)
+and [sharp advisory](https://github.com/lovell/sharp/security/advisories/GHSA-rgj7-g3m4-5g8c)
+require processing malicious image input. Static deployment does not eliminate
+image decoding during builds, so the compatible patch was worthwhile before
+adding new media. This was an advisory finding, not evidence of compromise.
+
+An independent source triage agreed on Astro 7.2.8 and sharp 0.35.4. The parent
+checked the actual installed manifests and lockfile after a targeted update:
+Astro **7.2.8**, sharp **0.35.4**, js-yaml **4.3.2**, SVGO **4.1.0**, devalue
+**5.9.4**. Existing Slop/theme package versions and integration configuration are
+unchanged. The devalue advisory's metadata and description disagree on its first
+fixed version; the installed 5.9.4 exceeds both stated thresholds.
+
+The follow-up production audit exited 0 with zero reported advisories. The
+post-update baseline build checked 18 pages, with no type/accessibility/link error;
+four spec checks passed and the existing twelve-week coverage check remained red.
+Local build log: `/tmp/a2-motion-dependencies-0q0k4auc.log`. This validates the
+compatible refresh, not the still-in-progress C preview or all possible security
+properties. The working three-dimensional scene module also typechecked in this
+run; its visual and real browser lifecycle validation remain separate.
