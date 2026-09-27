@@ -10,8 +10,10 @@ ritual. For uncertain or cross-cutting work, record the outcome, constraints and
 verification in `PLAN.md` first. Ask only when missing input materially affects the
 result or an action needs authorization; continue independent work meanwhile.
 Read-only requests do not call for edits, plan updates or commits.
-Respect the human review gates recorded in `PLAN.md`: present the reviewable
-result and wait for the student's feedback before entering the next stage.
+Follow `docs/planning/implementation-goals.md` throughout implementation. Review
+and refine it at resumes, milestones and consequential new evidence; keep the
+current handoff in `PLAN.md`. Present the reviewable result and wait for the
+student's feedback before entering the next gated stage.
 
 Inspect relevant files and Git status. `README.md` owns the fixed platform and
 `PLAN.md` owns current decisions, known failures and next work. Read what the task

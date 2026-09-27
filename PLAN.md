@@ -121,3 +121,19 @@ and rechecked. Final check: type/build/link/accessibility passed, spec four pass
 one expected coverage failure, evidence gate still red for starter content and
 PROCESS. Independent follow-up review returned no actionable issue. The student's
 choice and feedback are pending; resume with Gate 2 after they respond.
+
+## Design revision requested on 27 September
+
+The student requested a more vivid, immersive design, research beyond course sites,
+and suitable additional packages/APIs within the fixed course platform. The
+[detailed goals](docs/planning/implementation-goals.md) now specify continuous
+review/refinement, motion acceptance and the new authorization to commit and push
+implementation checkpoints. The repository is currently private with push access;
+visibility/publication remain unchanged.
+
+Current work: Gate 1 revision. Research actual reference sites and build an
+immersive candidate at `/review/c/`, preserving A/B for comparison. The student
+has not selected a final direction. Deliver the revised working preview and
+verification before the next human review. Do not bulk-author twelve weeks before
+that review. The active work has resumed at the student's request; the app's Goal
+status still reports paused and requires its user-side Resume control.

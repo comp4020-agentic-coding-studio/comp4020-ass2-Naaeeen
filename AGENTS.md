@@ -17,6 +17,7 @@ Keep changes scoped, preserve unrelated work, collect evidence from commands
 and browser reading, and commit coherent checkpoints with honest check results.
 Document intentionally red acceptance checks; do not introduce regressions.
 
-The current session is local implementation only. Do not push, publish, change
-repository visibility or invoke the course ship workflow without an explicit
-user request.
+The student has explicitly authorized implementation commits and ordinary pushes
+to the existing remote. Follow the scope in `PLAN.md` and the detailed goals.
+Keep repository visibility unchanged; public publication and the course ship
+workflow still require a separate explicit request.

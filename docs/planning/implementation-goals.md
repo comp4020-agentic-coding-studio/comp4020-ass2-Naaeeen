@@ -1,6 +1,6 @@
 # Implementation goals and human review gates
 
-Status: Gate 1 package ready; awaiting student review. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
+Status: Gate 1 design revision in progress after the student requested a more immersive result. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
 to 27 September 2026 (28 September, Australia/Sydney); exact cutoff time has not
 been supplied. The public course deadline is different. This plan records the
 student's working deadline without claiming that an extension has been verified.
@@ -19,6 +19,81 @@ operational. PLAN.md is the current handoff, the research record explains decisi
 and CLAUDE.md contains compact standing instructions. None replaces PROCESS.md,
 which must reflect the student's actual decisions and participation.
 
+## Keeping this goal current
+
+Follow this document throughout implementation. At the start of a resumed work
+block, before a human review gate, and whenever new evidence changes scope or the
+approach, compare actual work with these requirements. Update the relevant goal,
+acceptance criteria and PLAN.md handoff; record the reason and evidence in the
+living research record. Keep completed findings and genuine feedback traceable.
+Refine the plan when needed without quietly dropping earlier requirements or
+turning an unfinished stage into a completed one.
+
+The student resumed work on 27 September and requested a stronger, more immersive
+visual direction. This is a revision of Gate 1, not approval of either existing
+A/B design. Preserve useful comparison evidence and deliver a revised interactive
+preview for another human review before extending the whole curriculum.
+
+## Motion, interaction and additional tools
+
+Research excellent websites beyond education: product narratives, interactive
+exhibitions, creative portfolios, visual journalism and other strong examples.
+Inspect real interactions and, where available, their authors' explanations or
+source. Identify a specific transferable technique and explain its purpose in
+this course. Study their approaches rather than copying branded assets or adding
+effects solely because a famous site uses them.
+
+Additional browser APIs, npm packages, components and external APIs are allowed
+when compatible with the course's fixed platform. Verify that compatibility from
+the live brief, upstream template and installed dependencies before adoption.
+Retain Slop identity/palette, Astro integration, collection keys and generated API.
+Choose tools by the desired experience, not only by what happens to be installed.
+Document why a dependency helps, its current version/licence, runtime/build cost
+and actual outcome. Ordinary suitable project dependencies are authorized; a paid
+service, new account, credential change or unrelated integration needs separate
+scoped authorization. Never put a secret in the client bundle.
+
+Aim for an expressive historical exhibition: a memorable scene, meaningful depth,
+well-timed transitions and responsive feedback that invite exploration. Animation
+should connect an event, source or course section with its meaning. Keep course
+orientation, preparation, assessment and navigation easy to read and reach.
+
+For this design revision, compare the existing static direction with a new
+immersive preview. Develop a distinctive scene and an interactive chapter/period
+explorer, then inspect how motion changes orientation and reading. The first
+candidate may use a procedural 3D illustration with a matching static alternative;
+its value must be demonstrated in the actual browser rather than assumed.
+
+Motion acceptance criteria:
+
+- Content and navigation appear without waiting for an intro, remote API or canvas.
+- Normal scrolling, keyboard navigation and touch reading remain usable.
+- Respect reduced motion, including preference changes while the page is open;
+  provide a clear pause/stop control for continuous nonessential movement.
+- A failed or unavailable enhancement leaves useful HTML and artwork in place.
+- Suspend scene work offscreen and in hidden tabs; inspect resize behavior and
+  actual download/runtime cost on desktop and mobile before scaling the pattern.
+- Verify the animation, selection state, focus and static alternative at both
+  marking sizes, with independent review and actual human feedback.
+
+These criteria supplement the five gates below. Gate 2 establishes how the chosen
+motion language supports a real teaching unit; Gate 4 audits it across the whole
+site. Keep the deadline focused on a complete, coherent course while pursuing a
+noticeably stronger visual experience.
+
+## Commit and push authorization
+
+On 27 September the student explicitly requested commits and pushes during
+implementation. Make coherent local commits and push reviewed checkpoints to the
+existing origin/main, preserving ordinary fast-forward history. Inspect the
+outgoing diff/history for secrets and unintended files, run relevant checks and
+report actual remaining failures. Intermediate incomplete-course requirements may
+remain red as already documented; new regressions must be resolved. Verify the
+remote commit after each push. Keep repository visibility unchanged. Publishing,
+changing Pages settings and invoking the course ship workflow remain separate
+from this authorization. If an existing public branch would auto-deploy, account
+for that effect before pushing; the repo was verified private at this revision.
+
 ## Requirements from the student
 
 | Request | How we will carry it out | Evidence to retain |
@@ -33,6 +108,9 @@ which must reflect the student's actual decisions and participation.
 | Use tools and agents critically | Delegate independent research/review with bounded ownership, then verify claims against sources, files and actual output | Sources checked by the parent, reconciled review findings |
 | Natural English; no defensive writing | Prefer specific questions, concrete activity verbs and evidence; remove filler, repeated disclaimers and empty prestige claims | Editorial comparison and human judgement, not an AI detector score |
 | Rich media where useful | Use original/reusable media or official permitted embeds, with provenance and meaningful alternatives | Media ledger, attribution and accessibility checks |
+| Immersive design and suitable extra tools | Research notable sites and primary implementation docs; adopt justified APIs/packages within platform rules; compare the actual result | Source-to-design decisions, dependency changes, motion/fallback tests and human feedback |
+| Keep goals current | Review this file at resumes, milestones and consequential new evidence; preserve existing commitments | Updated goals, reason for refinements and current handoff |
+| Commit and push during implementation | Commit coherent verified checkpoints and push to the existing remote under the authorization above | Commit hashes, remote verification and honest check status |
 | Human review at every node | Present the deliverable and a small number of specific decisions, then wait for feedback | User's actual response and resulting changes |
 
 ## Gate 1 — course structure and visual direction
@@ -119,9 +197,10 @@ failed experiments, review participants or experience. Ensure CLAUDE.md matches 
 workflow actually used and does not contain abandoned rules.
 
 **Human review:** submission candidate, factual/process accuracy and remaining
-limitations. Local completion is separate from deployment. Push, publication,
-visibility changes and the course ship workflow require explicit authorization;
-when authorized, verify the deployed URL rather than inferring it from a local build.
+limitations. Implementation pushes are authorized as recorded above. Public
+publication, visibility changes and the course ship workflow require separate
+authorization; when authorized, verify the deployed URL rather than inferring it
+from a local build.
 
 ## Working loop and stopping rules
 
@@ -132,7 +211,8 @@ when authorized, verify the deployed URL rather than inferring it from a local b
    substantive. Check the reviewer and test oracle rather than accepting a label.
 5. Refine against evidence, compare alternatives where the answer is uncertain,
    and record what changed. Stop iterating when the outcome is demonstrated.
-6. Commit a coherent checkpoint and update the handoff. At a gate, wait for the
+6. Commit and push a reviewed checkpoint under the authorization above, verify
+   its remote state and update the handoff. At a gate, wait for the
    student's feedback; time passing is not approval to move ahead.
 
 Parallel agents may own independent research, bounded files or read-only review.
