@@ -95,34 +95,24 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Current stage: **Gate 4 in progress**, explicitly authorized on 28 September.
-The whole-assignment Goal is active. The student asks for visible lecture slides,
-an obvious first action/reading order, fewer peer-level categories and teaching
-prose that treats SAO as history in 2035 while introducing complete newcomers.
-Follow the [Gate 4 plan](docs/planning/gate-4-plan.md) before and during work.
+Current stage: **Gate 4 ready for human review**, implementation [9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b8908915bac9fda81faf8aad5d7cdde1a7dd).
+The student prioritised finishing organisation/classification carefully and supplied
+an arrow/number overlap screenshot. The guided route, direct resource desk, real
+slide viewer and consistent historical accounts are implemented. The overlap is
+fixed; phone week selection now appears in the opening view.
 
-Starting checkpoint: 37075dc, pushed and clean. Gate 3 has 12 seminars, four
-lecture-note entries, one ten-slide deck and complete assessments/source/atlas
-pages. Its final site check passed 36 tests. The only remaining evidence failures
-are the unfilled PROCESS.md template and sample hashes. Preserve that history in
-[the Gate 3 review](docs/planning/gate-3-review.md).
+Read [the Gate 4 review](docs/planning/gate-4-review.md) for exact browser checks,
+42 passing tests, known runtime/network verification limits and remaining work.
+The latest full site check passed across 45 pages. Evidence remains red only for
+PROCESS.md's unfilled template and two sample hashes. No public deployment exists.
+The whole-assignment Goal pauses for the standing human-review request at delivery.
+Do not advance to Gate 5 until the student accepts continuation or gives revisions.
 
-Primary navigation becomes Start here / Weekly plan / Library. The first route
-introduces the history and leads to Week 1; the planner groups each week's ordered
-preparation, Monday 14:00–15:30 seminar, output, follow-up and deadline. Lecture
-notes are self-paced assigned material, not invented additional live meetings.
-
-Required readings become traceable course-compiled historical case accounts.
-Use a historical voice in teaching prose; keep actual works, publisher sources,
-adaptation limits and the educational premise in linked source credits. Do not
-invent witness records or quotations. Align the Week 2 deck, teaching tasks and
-assessments with this model, including supported event chronology instead of the
-old publication-date exercise. Define unfamiliar terms as they appear.
-
-Ownership, shared metadata and acceptance checks are in the Gate 4 plan. Parent
-integrates and independently verifies worker findings, the real browser and final
-source/copy consistency. Commit/push reviewed private checkpoints, then wait for
-Gate 4 human feedback. Gate 5 PROCESS/public release remains open.
+Next after feedback: make requested Gate 4 corrections if needed; otherwise help
+the student assemble their genuine PROCESS account, verify the release candidate,
+and obtain the separate public-release authorization. Preserve all five gates.
+The user's five-hour report at 07:01 Canberra time gives a working noon submission
+target; it does not authorize skipping the current organisation review.
 
 ## Authorized external actions
 
@@ -130,3 +120,8 @@ The student explicitly authorized ordinary commits and pushes during implementat
 Inspect outgoing changes and verify the remote checkpoint. Repo is private; retain
 visibility. This preview stays private. Public Pages publication, visibility changes
 and the course ship workflow remain separately authorized release tasks.
+
+
+Submission planning timestamp: the five-hour report was received at approximately
+07:01 Canberra time on 28 September 2026 (21:01 UTC on 27 September). Use about
+12:00 Canberra time as the working submission target, derived from that report.

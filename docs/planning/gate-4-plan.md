@@ -40,9 +40,9 @@ of learning gains in our course.
 
 ## The student experience
 
-### Three primary routes, one obvious beginning
+### A clear beginning with prominent exploration
 
-Use **Start here / Weekly plan / Library** as the primary navigation. The brand
+Use **Start here / Weekly plan / World atlas / Library** as the primary navigation. The brand
 and course breadcrumbs still link home. Keep the accepted exhibition/atlas as
 exploration, but let a student begin without interpreting six resource categories.
 
@@ -182,7 +182,7 @@ Gate 5 work; do not write invented personal experience or publish automatically.
 ## Further design steering: the learning route is more than a menu
 
 The student explicitly invited alternatives to navigation and more imaginative
-presentations. The three primary links remain a utility layer. The parent is
+presentations. The primary links remain a utility layer. The parent is
 adding a visible SemesterTrail near the top of the homepage: one course, three
 acts, twelve dated nodes, a highlighted Week 1 start and direct access to every
 week. The worker's weekly dossiers then give the actual ordered tasks. These are
@@ -196,3 +196,39 @@ A timetable-based university course needs direct revisits and deadlines. Nicky
 Case's [Evolution of Trust](https://ncase.me/trust/) was identified as an explorable
 narrative reference, but the web reader exposed little of its interactive content;
 no completed walkthrough is claimed. Parent owns SemesterTrail.astro and its CSS.
+
+
+### Atlas visibility refinement
+
+The student then clarified that the atlas is too important and interesting to be
+reached only through Library. Restore it as a primary World atlas link and add a
+contextual entrance beside the homepage's Aincrad illustration. Keep the guided
+start and weekly route prominent; four purpose-led entrances are a better fit
+for this feedback than enforcing the earlier three-link proposal as a quota.
+
+
+### Important resources remain directly visible
+
+The student's next clarification extends beyond Atlas. Add a secondary Study desk
+on the homepage and learning/resource pages with direct Notes & slides, Case files,
+Assessments and People & help routes, each labelled by purpose. Keep the four
+primary route links and the visual semester journey. The first-use Start page
+retains its focused action rather than adding another resource row before it;
+its routes remain available in the main navigation and following study pages.
+The Library also gains an explicit complete lecture-catalogue link. This separates
+recommended sequence from reference access without hiding important material.
+
+### Organisation review and rhythm spacing
+
+The student explicitly prioritised finishing organisation over rushing delivery.
+Keep the guided route and the secondary resource desk; verify both in the real
+browser before presenting the result. Their screenshot identified a real compact
+weekly-rhythm defect: its 28px column gap inherited an arrow offset of 30px,
+placing the arrow over the next number. Centre the connector in the actual shared
+gap and preserve the vertical phone sequence. Check compact and full variants.
+
+The parent's 390x844 walkthrough then found the week selector at y=1384, below
+the full rhythm explanation. Move the existing selector into the Weekly plan
+header, retain every week as a native anchor, and reuse the existing focus handling.
+Increase resource-desk link labels from 12px to 14px. These changes address actual
+findability/readability observations; they do not establish learner success.

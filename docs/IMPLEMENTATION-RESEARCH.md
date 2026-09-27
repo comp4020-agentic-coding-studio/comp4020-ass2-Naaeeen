@@ -734,3 +734,43 @@ They cover per-week preparation routes/order, matching preparation budgets,
 Week 9's cross-week note assignment and consistent meeting facts. They do not
 measure clarity or teaching quality. Final browser outcomes and commit links will
 be recorded after integration rather than predicted here.
+
+### Organisation refinement after the first browser walkthrough
+
+The student asked to keep important pages visible, then explicitly asked to finish
+organisation carefully before rushing release. The design now pairs four primary
+routes (Start here, Weekly plan, World atlas, Library) with a separate Study desk
+(Notes & slides, Case files, Assessments, People & help). The desk is static and
+the first-use Start page omits it to preserve its single first action. The Library
+explains resource purpose; it is not the only route to important material.
+
+The parent read [NN/g's distinction between IA and navigation](https://www.nngroup.com/articles/ia-vs-navigation/):
+page grouping, labels and relationships need design beyond the visible menu. The
+semester trail and each week's before/together/after dossier supply those
+relationships. No participant study or measured learning benefit is claimed.
+
+At 390x844 the first weekly selector was at y=1384, below the full rhythm
+explanation. The selector now sits in the Weekly plan header with native anchors
+and the existing keyboard-focus handling. Study-desk link labels grew from 12px
+to 14px after visual review.
+
+The student's screenshot also revealed arrows touching numbered circles. The
+compact variant had a 28px grid gap but retained a 30px external arrow offset;
+the parent confirmed that geometry in the browser. Following the actual gutter
+model described in [MDN gap](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/gap),
+the connector is centred in the shared gap, with a fixed width and separate
+vertical phone styling. A visual CSS defect needs rendered geometry verification,
+not a test that merely checks whether a particular CSS string was written.
+
+### Gate 4 integrated result
+
+Implementation [9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b8908915bac9fda81faf8aad5d7cdde1a7dd) completes the plan above. Final evidence is in
+[the review record](planning/gate-4-review.md): 42 passing checks, 45 built pages,
+actual desktop/phone navigation and all ten slides both embedded and standalone.
+The critical refinements came from rendered output, including double vertical
+centering, hidden-but-accessible old slides, transformed MDX script quotes and
+the student's arrow/number screenshot. The observer error and failed-network
+verification remain bounded, explicit limitations. No additional package or
+service was needed. The research-informed workflow remained bounded ownership,
+independent review, parent reproduction and selective harness updates, not a
+claim that a more elaborate agent recipe guarantees quality.

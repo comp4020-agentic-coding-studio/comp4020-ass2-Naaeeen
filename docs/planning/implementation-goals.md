@@ -1,11 +1,10 @@
 # Implementation goals and human review gates
 
-Status: **Gate 4 active**. The student accepted Gate 3 for continuation on
-28 September 2026 and requested visible lecture slides, a clear first action and
-weekly routine, fewer categories, and a consistent 2035 historical voice with an
-accessible introduction for newcomers. Follow [the Gate 4 plan](gate-4-plan.md).
-The working deadline supplied by the student is 28 September; exact cutoff has
-not been supplied. The assignment and Gate 5 remain unfinished.
+Status: **Gate 4 ready for human review**. Organisation, weekly study routes,
+visible slides and historical copy are implemented and verified as recorded in
+[the Gate 4 review](gate-4-review.md). Gates 1–3 were accepted for continuation;
+Gate 5 and submission remain unfinished. The user's five-hour report at 07:01
+Canberra time supplies an approximate noon working target on 28 September.
 
 ## Outcome
 
@@ -328,10 +327,33 @@ remains open, and no grade or public deployment has been claimed.
 ### Gate 4 user steering — 28 September 2026
 
 The student wants a clear first action and reading sequence, not a larger set of
-categories. Prioritize Start here / Weekly plan / Library, keeping needed materials
+categories. Prioritize Start here / Weekly plan / World atlas / Library, keeping needed materials
 and deadlines beside the relevant task. Present the actual lecture deck visibly.
 Teach SAO as events in the course's 2035 historical world and explain the opening
 crisis/terms for newcomers. Keep actual media provenance and the educational
 framing in source credits; never invent archival evidence. The research and
 source/task consequences are documented in [the Gate 4 plan](gate-4-plan.md).
 Stop for human Gate 4 review after implementation and verification.
+
+
+### Submission-time constraint — 28 September 2026
+
+The student reports **five hours remaining until submission** at this update.
+Prioritize the already identified slide/runtime repairs, focused browser checks,
+commit/push and prompt Gate 4 human review. Freeze optional feature growth. Keep
+substantial time for the student's authentic PROCESS account, the final evidence
+gate and authorized public release. Do not substitute passing build checks for
+actual slide visibility or silently remove the remaining human review gates.
+
+
+Submission planning timestamp: the five-hour report was received at approximately
+07:01 Canberra time on 28 September 2026 (21:01 UTC on 27 September). Use about
+12:00 Canberra time as the working submission target, derived from that report.
+
+### Gate 4 delivery refinement
+
+The student said not to rush the organisation/classification work. The final
+reviewable checkpoint preserves important direct resource links alongside a clear
+study route, moves the phone week selector into the first screen and corrects the
+reported arrow/number collision. Follow the Gate 4 review record and wait for
+actual human feedback before starting Gate 5. The Goal pauses at this gate.

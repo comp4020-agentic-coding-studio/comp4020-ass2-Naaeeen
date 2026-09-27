@@ -351,11 +351,79 @@ schema and restored the record unchanged, publishing the outcomes through the
 existing course-outline data instead. The existing validation caught a mistaken
 assumption; it was not relaxed. [1c27051](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/1c27051bc85009e128952a9afff34729670ddc04) preserves the resulting pages.
 
-## Current checkpoint
+## Gate 3 checkpoint (historical)
 
-Gate 3 is ready for the student's review. Gate 2 continuation was explicitly
+Gate 3 was ready for the student's review. Gate 2 continuation was explicitly
 authorized. The full site check passes 36 tests and the configured integrity
 checks across 42 pages; the dependency audit has zero advisories. The only
 remaining evidence-gate failures are the PROCESS.md template and its example
 hashes. The student's narrative, Gate 4 whole-site refinement and Gate 5 public
 release remain open. No Gate 3 human acceptance or public deployment is claimed.
+
+## E18 — Historical framing changed the work, not just the nouns
+
+The student clarified that SAO should be treated as events in a real historical
+world, with an accessible beginning for readers unfamiliar with it. The old Week
+2 compared media publicity and production dates. Merely deleting the word
+“fictional” would have left that underlying assignment unchanged.
+
+The parent rechecked official episode/device sources and the image-based Fairy
+Dance introduction. Required reading became onsite, course-compiled accounts with
+stable paragraphs, while actual works/adaptation provenance moved into linked
+credits. Seminars, selected notes, the deck and assessments now analyse those
+accounts and supported event chronology. No witness documents or quotes were
+invented. Independent review caught three remaining assignment/reading mismatches;
+parent corrections were read back. The implementation and small historical-voice
+CLAUDE.md rule are in [9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b8908915bac9fda81faf8aad5d7cdde1a7dd). Human acceptance remains pending.
+
+## E19 — A menu was not enough to explain the learning route
+
+The student could not tell where to start among peer-level categories, but also
+wanted Atlas and other important pages visible. The chosen response combines a
+Start page and twelve-week itinerary with a separate resource desk. It retains
+direct exploration and reference access rather than hiding every resource in a
+Library. Each week connects reading order, meeting, output, follow-up and deadline.
+
+A browser review then found the phone week picker below the full rhythm explanation
+at y=1384. Moving it to the header made all twelve links visible in the first
+390x844 view. Begin Week 1 is also visible at about y=478–542. The cross-week Week
+9-to-Week 2 note route works and Back restores the chosen week. These observations
+support a design decision; they are not a timed novice study or learning result.
+CLAUDE.md now explicitly checks first-use and returning-student actions at phone
+size. [9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b8908915bac9fda81faf8aad5d7cdde1a7dd) contains the change and six generated-output checks.
+
+## E20 — A compiling deck was still clipped and exposed old links
+
+The actual embedded frame revealed duplicate centering: Reveal's inline top
+offset combined with a full-height grid moved native navigation outside the
+frame. Browser accessibility also exposed old Next links from past slides because
+display:grid overrode hidden state. Finally, MDX smart punctuation changed inline
+JavaScript quotes into invalid code despite a successful build.
+
+The fixes reset the slide inset, scope hidden-slide styling to normal screen
+presentation and move the inline code into an Astro component. The parent checked
+actual emitted-script syntax and all ten slides at both marking sizes, inline and
+standalone; native Next was unambiguous and keyboard focus could leave the frame.
+Independent review separately found a reload-state problem in the outer controller;
+its reset was corrected and reviewed, while a frame-only real-browser reload was
+unavailable. CLAUDE.md now checks emitted code and actual frame/focus behavior.
+[9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b8908915bac9fda81faf8aad5d7cdde1a7dd) records these fixes; the review record retains the unattributed
+observer error and unverified blocked-network case instead of calling everything
+error-free.
+
+## E21 — A student's screenshot caught a compact-layout collision
+
+The student reported arrows overlapping “02” and “03”. Parent inspection confirmed
+the compact rhythm's 28px gap inherited a 30px arrow offset. The connector now
+centres in a shared gap, clearing the following number by about 6px at 1024px and
+10px at 1280/1920px. Phone presentation keeps vertical connectors. An independent
+review also caught a picker-spacing rule losing to a stronger reset; it was fixed
+before the final check. [9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b8908915bac9fda81faf8aad5d7cdde1a7dd) contains both repairs. This is a genuine
+human-reported defect; no artificial red test or invented participant was needed.
+
+## Current checkpoint
+
+Gate 4 is ready for the student's review; the whole-assignment Goal pauses at this
+requested gate. The final site check passes 42 tests across 45 pages. PROCESS.md
+remains the student's unfinished account, with its template and example hashes
+correctly failing the evidence gate. Public release and Gate 5 remain open.

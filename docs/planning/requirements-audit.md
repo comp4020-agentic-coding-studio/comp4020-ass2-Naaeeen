@@ -63,3 +63,12 @@ is unchanged. The new criteria are user-directed UX/content choices, not extra
 course obligations. The wording audit exposed a real mismatch: Week 2 currently
 assesses media publicity/production chronology. Update its accounts, activities,
 assessment and deck together, with honest provenance in separate credits.
+
+### Gate 4 delivery audit
+
+The parent re-opened the live A2 brief and upstream README, then checked upstream
+main through Git: ecd1d71228e40105310fcb25e1bcf00cc5ed5284 remains current. No fixed
+requirement changed. The new information architecture is the student's design
+choice; the code still preserves SLOP1897, twelve dated weeks, 100% weights, fixed
+collections/API and at least one real deck. All 42 tests pass across 45 built
+pages. Evidence remains incomplete in PROCESS.md; Pages is disabled/private.
