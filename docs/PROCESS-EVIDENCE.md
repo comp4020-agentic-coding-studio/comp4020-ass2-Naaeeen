@@ -450,3 +450,15 @@ Independent review corrected ambiguous wording about the instruction variants an
 made the document-creation citation explicit. The Chinese account is synchronized.
 Student confirmation of the narrative remains pending; this is evidence preparation,
 not a new website implementation or a public release.
+
+### Plain-language PROCESS comparison
+
+The student twice asked for less abstract process writing, then requested multiple
+A/B comparisons. The parent fixed facts/criteria before two rounds, each assessed
+by two new reviewers with sample order reversed. The final version combines the
+stronger supported course-change chain with a simpler opening and concrete terms.
+Parent verified the flagged chronology with 4fc9cde / 1c27051 and removed the ungrounded
+personal-motivation sentence. Actual samples and model-review observations are in
+docs/review/process-comparison; they are not human preference data. A small
+CLAUDE.md rule now asks for concrete requests, observations and resulting changes.
+The English account is 520 words; its Chinese copy is synchronized for user review.

@@ -1,12 +1,12 @@
 {
   "stage": "Gate 5 evidence draft; student review pending",
   "sources": {
-    "PROCESS.md": "4f9f6b5c736e80881d1693ebe02f7fa6ea3009baf0c1105c90589981841e6217",
-    "CLAUDE.md": "d6cbf06da4124d772b9704e7bf9ede94ee833c416229e4d07801a6b5ca6003cd",
-    "docs/planning/implementation-goals.md": "e46c4b93b7faaa51d62e016d06aad2363f8ffcda5dc8336d5e1e2b20d0cb532c",
-    "docs/IMPLEMENTATION-RESEARCH.md": "2c5de10599d41e47b000cfbce3957daec2d36ce5bd84dade0de8f998862f5f44"
+    "PROCESS.md": "c10618a1d2669259e549103a292720c49f6aef6f3e575dee7d23361130b2cc7b",
+    "CLAUDE.md": "98435d65f6f98675a90f04391112c1f422bbe0d92ec1e368d82e9fa59008c714",
+    "docs/planning/implementation-goals.md": "c78714d19a8c8cc718c29d87419bf0dec066a9f10666efbb887a759001d0a231",
+    "docs/IMPLEMENTATION-RESEARCH.md": "20ef3672bc608c1d01d07fd36a3dee531a910e4100fc266ee93d9e641ab0b12b"
   },
-  "process_english_words": 510,
+  "process_english_words": 520,
   "translations": [
     "PROCESS.zh-CN.md",
     "CLAUDE.zh-CN.md",
@@ -18,5 +18,6 @@
     "Correct or rewrite any sentence that does not sound like you."
   ],
   "release": "No public publication or repository visibility change.",
-  "translation_notes": "Full translations retain historical stage records. PROCESS and the short goals/research revision records are synchronized with the current English sources; CLAUDE.md is unchanged."
+  "translation_notes": "Current English PROCESS, CLAUDE and appended goals/research records are synchronized with their Chinese review copies. Earlier dated records remain historical.",
+  "process_comparison": "process-comparison/README.md"
 }

@@ -106,6 +106,8 @@ proportions and materials before presenting it for human review.
 Write direct, concrete student-facing prose. Preserve the user's voice and scope;
 omit generic marketing, unnecessary disclaimers and irrelevant implementation
 details. Retain qualifications that affect a reader's understanding or decision.
+When explaining the process, name the actual request, observation and resulting
+change. Explain technical terms through that example.
 
 Write teaching pages from the course's 2035 historical viewpoint. Introduce
 unfamiliar events and terms before requiring analysis; keep actual work provenance

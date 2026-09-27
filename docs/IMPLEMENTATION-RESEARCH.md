@@ -817,3 +817,26 @@ scored runs, eight cited commits and the external frozen grader are checked agai
 repository evidence. The final comparison does not claim a winning model or an
 optimized context setting. The Chinese PROCESS copy is synchronized for student
 review. CLAUDE.md remains unchanged because this revision concerns the account.
+
+## Gate 5 plain-language writing comparisons — 28 September 2026
+
+The student found the previous PROCESS too abstract. The parent checked the
+Australian Government plain-language guide, GOV.UK clear-language guidance and
+current Anthropic writing/review recommendations, recorded with their actual
+application in [the writing research note](review/process-comparison/research.md).
+A fixed evidence packet and rubric preceded two editorial A/B comparisons. Each
+round had two fresh reviewers, anonymous labels and reversed presentation order.
+
+The reviewers favoured the first candidate's verified course-change argument and
+the alternative's simpler opening and explanations. Parent checks caught shared
+citation/reuse omissions, verified the representative-week chronology against git
+and removed an unsupported personal-motivation sentence. The final 520-word account
+explains three actual agent practices through concrete actions and recommends three
+working documents. The [comparison record](review/process-comparison/README.md)
+keeps candidates, criteria and observed decisions. These are model editorial reviews,
+not a learner study or predicted mark. The Chinese account is synchronized.
+
+A small CLAUDE.md addition responds to the repeated writing feedback: name the
+actual request, observation and resulting change, and explain technical terms
+through that example. It changes the next writing task's instructions rather than
+merely asking for an unspecified 'better' tone.

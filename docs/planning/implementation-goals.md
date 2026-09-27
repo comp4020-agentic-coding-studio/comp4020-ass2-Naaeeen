@@ -376,3 +376,12 @@ research and local evaluation, the purpose of maintained documents, and conseque
 review/refinement. It recommends three tutor readings and cites eight verified
 commits. The Chinese account is synchronized; human approval and public release
 remain pending. Use PLAN.md for the latest handoff.
+
+### Plain-language PROCESS comparison — 28 September 2026
+
+The student requested less abstract writing and multiple A/B comparisons. Two
+recorded editorial comparisons and parent verification produced a 520-word account
+with explicit agent practices, three tutor readings and nine commit references.
+The Chinese copy and the small CLAUDE writing-rule addition are synchronized.
+This satisfies the requested drafting/comparison work; student narrative approval
+and public release remain pending. See PLAN.md and the comparison record.

@@ -1,0 +1,102 @@
+{
+  "mapping": {
+    "M": "round-2-control.md",
+    "N": "round-2-synthesis.md"
+  },
+  "score_order": [
+    "clarity",
+    "concrete_practices",
+    "course_argument",
+    "evidence_and_decisions",
+    "voice",
+    "reader_effort"
+  ],
+  "reviews": {
+    "reviewer_1": {
+      "agent": "process_r2_review1",
+      "read_order": [
+        "M",
+        "N"
+      ],
+      "calibration": "Correctly rejected provider superiority,18pairs and learner-gain claims.",
+      "scores": {
+        "M": [
+          2,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "N": [
+          3,
+          3,
+          3,
+          2,
+          3,
+          3
+        ]
+      },
+      "preferred": "M",
+      "reason": "M is the stronger factual basis; N is easier to read but its personal-motivation and development-sequence statements are not established in the supplied packet.",
+      "retain": [
+        "M: coordinated plan/instruction/content change.",
+        "N: course-first opening, plain docs and independent-review explanation."
+      ],
+      "repairs": [
+        "Verify the complete-week chronology or remove it.",
+        "Replace unsupported personal-motivation sentence with the actual student activity.",
+        "Rebase document links when promoting to root."
+      ]
+    },
+    "reviewer_2": {
+      "agent": "process_r2_review2",
+      "read_order": [
+        "N",
+        "M"
+      ],
+      "calibration": "Correctly rejected all3unsupported claims.",
+      "scores": {
+        "N": [
+          3,
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "M": [
+          2,
+          3,
+          3,
+          3,
+          2,
+          2
+        ]
+      },
+      "preferred": "M",
+      "reason": "M connects maintained documents to later tasks and instructions to implementation; borrow N's immediate course framing and plainer words.",
+      "retain": [
+        "M: documents guide subsequent work.",
+        "M: planning and rules changed before coordinated course revision.",
+        "N: plain explanations and explicit actions."
+      ],
+      "repairs": [
+        "Verify chronology and remove ungrounded personal motivation.",
+        "Replace abstract recommendations with direct actions.",
+        "Explain seminar output using actual source-comparison work."
+      ]
+    }
+  },
+  "parent_reconciliation": [
+    "Both reviewers prefer M for factual grounding and identify N as clearer. The final revision uses M's grounded plan/rule/content chain with N's concrete opening, examples and practice descriptions.",
+    "Parent inspected sampleN: the flagged motivation sentence was present. A planned string replacement had not matched; no reviewer error is alleged. The final replacement is checked explicitly.",
+    "Parent verified4fc9cde creates the representative Week2unit before1c27051 completes the course. Keep that supported sequence with a direct4fc9cde citation; its omission from the shared packet explains the reviewer uncertainty.",
+    "The phrase requiring preparation/classwork/assessment to share the same output overstated CLAUDE. Replace it with connecting those activities to assessment.",
+    "No human participants or predicted grades; scores remain ordinal editing notes."
+  ],
+  "sample_hashes": {
+    "sample-m.md": "f1352f09dd6cd8d64a8c8e53ad4a44776b5d0862d3b5c6e4c17f68652db60f4c",
+    "sample-n.md": "e7f80bac5cfb2153418e0923061c8a3b2e4022d4e223308e39180effc698735c"
+  }
+}

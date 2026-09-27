@@ -1,0 +1,107 @@
+{
+  "score_order": [
+    "clarity",
+    "concrete_practices",
+    "course_argument",
+    "evidence_and_decisions",
+    "voice",
+    "reader_effort"
+  ],
+  "reviews": {
+    "reviewer_1": {
+      "agent": "process_r1_review1",
+      "read_order": [
+        "X",
+        "Y"
+      ],
+      "calibration": "Rejected all3unsupported claims (provider superiority,18pairs,classmate learning).",
+      "scores": {
+        "X": [
+          3,
+          3,
+          2,
+          3,
+          2,
+          2
+        ],
+        "Y": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ]
+      },
+      "preferred": "Y",
+      "retain_X": [
+        "Supported personal opening and immediate newcomer needs.",
+        "Concrete preparation-order/cross-week test examples.",
+        "Distinction between automated checks, browser observation and human judgement."
+      ],
+      "retain_Y": [
+        "Week2problem→plan→content→instruction change.",
+        "Documents supply decisions for subsequent tasks.",
+        "Slide clipping demonstrates contribution of browser review."
+      ],
+      "repairs": [
+        "Both lack Crit5reuse acknowledgement.",
+        "Both use descriptive rather than hash-labelled commit citations.",
+        "Y final paragraph is crowded; both documentation passages are dense."
+      ]
+    },
+    "reviewer_2": {
+      "agent": "process_r1_review2",
+      "read_order": [
+        "Y",
+        "X"
+      ],
+      "calibration": "Rejected all3unsupported claims (provider superiority,18pairs,classmate learning).",
+      "scores": {
+        "Y": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "X": [
+          3,
+          3,
+          2,
+          2,
+          3,
+          2
+        ]
+      },
+      "preferred": "Y",
+      "retain_X": [
+        "Course-first opening and direct voice.",
+        "Economical phone-selector example.",
+        "Specific division of automated/browser/human checks."
+      ],
+      "retain_Y": [
+        "Week2mismatch and coordinated correction.",
+        "Plain false-link explanation.",
+        "Document-maintenance purpose."
+      ],
+      "repairs": [
+        "Both lack Crit5reuse.",
+        "Both need hash/range citation labels.",
+        "Both have dense documentation passages."
+      ],
+      "uncertain": "Pinned dea0fe5 document links were not established in the permitted evidence packet; verify or use root-relative links."
+    }
+  },
+  "mapping": {
+    "X": "round-1-b.md",
+    "Y": "round-1-a.md"
+  },
+  "parent_decision": "Use A/Y as the supported control; combine its historical-course correction and link-check explanation with B/X's immediate newcomer framing. Make the three used agent practices explicit and give the documents short individual explanations.",
+  "parent_checks": [
+    "Confirmed both shared citation/reuse omissions.",
+    "Verified dea0fe5 exists; B's pinned links were not false. Root-relative links are preferable for the final current documents.",
+    "No human preference, grade or statistical improvement is inferred from model scores."
+  ]
+}

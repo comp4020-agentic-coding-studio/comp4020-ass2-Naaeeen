@@ -1,0 +1,14 @@
+{
+  "round-1-a.md": {
+    "words": 479,
+    "sha256": "03e468c62b7e3df28468b9df39b3eb38c36b36b19059d0afb3cd5c75bc70df09",
+    "hash_labelled_commit_citations": 0,
+    "mentions_crit5_reuse": false
+  },
+  "round-1-b.md": {
+    "words": 506,
+    "sha256": "e3e20286e203548f5774a44bce96cae0583d4b788ed954824f86713121e1dc9d",
+    "hash_labelled_commit_citations": 0,
+    "mentions_crit5_reuse": false
+  }
+}
