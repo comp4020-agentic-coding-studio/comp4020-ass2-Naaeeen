@@ -291,3 +291,24 @@ Local build log: `/tmp/a2-motion-dependencies-0q0k4auc.log`. This validates the
 compatible refresh, not the still-in-progress C preview or all possible security
 properties. The working three-dimensional scene module also typechecked in this
 run; its visual and real browser lifecycle validation remain separate.
+
+### Motion revision results
+
+[The motion review](planning/gate-1-motion-review.md) records the actual cases and
+limits. The browser showed a near-invisible initial text entrance, tiny phone
+labels, an inherited no-script menu gap and stale chapter return state. We kept
+text opaque, enlarged labels, supplied plain no-script navigation, and used the
+[History API](https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState)
+to keep the selected chapter's deep link current without adding history entries.
+The final source reviewer found no actionable issue. [03159e6](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/03159e6)
+contains the refinements and the corresponding CLAUDE.md checks.
+
+Scene/control compressed files total 171,420 gzip bytes, inside our provisional
+300 KB target. The raw optional scene remains above Vite's 500 KB warning threshold;
+we kept the warning, tested delayed/failed loading and retained the static alternative.
+No GPU frame-rate claim follows from the measurements. Vendor notices stripped by
+minification are carried in a linked public notice file. The student's preference
+between A/B and the immersive C direction is the next decision, not an agent score.
+
+Consequential review findings and rule changes now feed the curated
+[process evidence bank](PROCESS-EVIDENCE.md), as explicitly requested by the student.

@@ -101,7 +101,7 @@ deadline of 28 September 2026 and human feedback required between five stages.
 record every requested workflow requirement. [The living research record](docs/IMPLEMENTATION-RESEARCH.md)
 will connect sources to decisions, comparisons and observed results.
 
-Current stage: Gate 1 ready for human review. [Review record and preview links](docs/planning/gate-1-review.md).
+Current stage: Gate 1 immersive revision ready for human review. [Current review record](docs/planning/gate-1-motion-review.md).
 Do not begin Gate 2 until the student reviews Gate 1.
 Known pre-implementation state: four spec checks pass; the twelve-week coverage
 check fails because only weeks 1 and 2 exist. The final evidence gate remains red
@@ -131,15 +131,34 @@ review/refinement, motion acceptance and the new authorization to commit and pus
 implementation checkpoints. The repository is currently private with push access;
 visibility/publication remain unchanged.
 
-Current work: Gate 1 revision. Research actual reference sites and build an
-immersive candidate at `/review/c/`, preserving A/B for comparison. The student
+The Gate 1 revision produced an immersive candidate at `/review/c/`, preserving
+A/B for comparison. The student
 has not selected a final direction. Deliver the revised working preview and
 verification before the next human review. Do not bulk-author twelve weeks before
-that review. The active work has resumed at the student's request; the app's Goal
-status still reports paused and requires its user-side Resume control.
+that review. The app's Goal status was rechecked and confirmed active during this revision.
 
 The student also requested a curated record for the later process account.
 [PROCESS-EVIDENCE.md](docs/PROCESS-EVIDENCE.md) now records consequential decisions,
 observed problems, justified harness changes, real checks and commits, including
 explicitly unresolved findings. Keep it current alongside the research and goals;
 it is not the student's final PROCESS.md.
+
+## Immersive review handoff
+
+Candidate C: `http://127.0.0.1:4321/comp4020-ass2-Naaeeen/review/c/`. Production
+preview is running on port 4321 with Astro 7.2.8. Commits: initial scene/page
+`99b0491`; runtime/readability/harness refinements `03159e6`. Dependencies and
+research were already pushed in `e1b037f`; publishing/visibility remain unchanged.
+
+C has original inspectable 3D artwork, progressive chapter tabs, pause/reduced-motion
+support, a static artwork fallback and no-script course navigation. Parent browser
+checks covered exact viewports, keyboard/focus/resize, model views, pause/resume,
+failed module, slow connection and return navigation. Final type/build/a11y/links
+pass; the existing twelve-week test and submission evidence remain incomplete.
+The optional scene size warning is measured and retained. Native BFCache and
+GPU profiling/context-loss are not claimed as browser-verified.
+
+The student has been asked to choose C, request adjustments, or retain A/B. Wait
+for that actual feedback before Gate 2. Next, promote the accepted direction and
+build the planned representative week/source comparison with a real deck; correct
+the reproduced lecture-link regex blind spot before using that acceptance test.

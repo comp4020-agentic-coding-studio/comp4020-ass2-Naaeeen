@@ -1,24 +1,24 @@
 # Gate 1 motion revision: acceptance and review
 
-Status: implementation in progress, 27 September 2026. Candidate C will be
+Status: verified review candidate, awaiting human design feedback, 27 September 2026. Candidate C will be
 compared with the preserved A/B previews. No human preference has been recorded.
 
 ## Declared acceptance cases
 
 | Case | Expected observable outcome | Result |
 | --- | --- | --- |
-| Normal desktop 1920×1080 | Course orientation, scene, controls and course links readable; no horizontal overflow | Pending |
-| Phone 390×844 | Orientation before illustration; useful touch targets and normal document scrolling | Pending |
-| Chapter selection with pointer and keyboard | Selected control/panel agree; arrows/Home/End behave correctly; link to chosen week works | Pending |
-| Scene view and rotate controls | World/citadel/settlement views differ meaningfully; buttons retain focus; canvas does not trap page scrolling | Pending |
-| Pause and resume | Nonessential motion stops while the rest of the page remains usable; resumes only on request | Pending |
-| Reduced motion, initial and changed while open | No ambient/camera/reveal animation; state changes and navigation still work | Pending |
-| Menu navigation then resize | Menu state, target visibility and focus remain correct | Pending |
-| JavaScript disabled | Course text, source links, all chapter content and useful static artwork remain available | Pending |
-| Scene module unavailable | Static artwork/content survive; remaining interactions continue | Pending |
-| Slow connection | Course does not wait for the illustration to become usable | Pending |
-| Leave/return to the page and offscreen scene | No duplicate scene or stale disposed callbacks; loop suspension checked at supported evidence level | Pending |
-| Build and outgoing diff | No new type/build/accessibility/link regression; packages and outgoing files intentional | Pending |
+| Normal desktop 1920×1080 | Course orientation, scene, controls and course links readable; no horizontal overflow | PASS: verified size, one ready canvas, no overflow or normal-path console errors. |
+| Phone 390×844 | Orientation before illustration; useful touch targets and normal document scrolling | PASS: readable first frame, orientation within first screen, 12px model controls/11px caption, no overflow. |
+| Chapter selection with pointer and keyboard | Selected control/panel agree; arrows/Home/End behave correctly; link to chosen week works | PASS: selection/panels agree, orientation changes with viewport, Home/arrows/Tab reach the panel; selected deep link survives Back. |
+| Scene view and rotate controls | World/citadel/settlement views differ meaningfully; buttons retain focus; canvas does not trap page scrolling | PASS: three visibly distinct views; a scene-only capture changes after rotation. |
+| Pause and resume | Nonessential motion stops while the rest of the page remains usable; resumes only on request | PASS: paused full captures identical; scene-only captures change after resume. |
+| Reduced motion, initial and changed while open | No ambient/camera/reveal animation; state changes and navigation still work | PASS: motion paused and control disabled on device preference; initial content opaque and tab changes immediate. |
+| Menu navigation then resize | Menu state, target visibility and focus remain correct | PASS: target focus restored, menu closes; 390→1920→390 keeps navigation/tabs usable and Escape returns focus. |
+| JavaScript disabled | Course text, source links, all chapter content and useful static artwork remain available | PASS: zero canvas, all chapter panels readable, static art and plain course-contents links work; dead menu toggle hidden. |
+| Scene module unavailable | Static artwork/content survive; remaining interactions continue | PASS: blocked the observed scene URL; static art and functional chapter tabs remained, model controls hidden. |
+| Slow connection | Course does not wait for the illustration to become usable | PASS: 150ms latency/204800 bytes per second; heading and week link readable while model pending, then scene ready. |
+| Leave/return to the page and offscreen scene | No duplicate scene or stale disposed callbacks; loop suspension checked at supported evidence level | PASS for ordinary return navigation and single-instance output; native BFCache restoration and GPU suspension were not directly measured (source reviewed). |
+| Build and outgoing diff | No new type/build/accessibility/link regression; packages and outgoing files intentional | Type/build/19-page accessibility/links PASS. Existing twelve-week spec failure remains; optional scene size warning retained and measured. |
 
 Run the real browser cases against production preview. Record actual viewport
 sizes rather than assuming a new tab inherits an earlier override. Keep browser
@@ -62,3 +62,48 @@ sizes. Tab arrows/Home changed selection and panel visibility correctly on deskt
 Tab then skipped the panel's introductory text to its first week link; add a
 focusable tabpanel following W3C's recommended pattern. Source review also raised
 the stale-fragment/BFCache case; verify the refined handling.
+
+## Final verification and refinements
+
+The hero now enters with position movement only; its text stays opaque. The
+phone introduction computed to opacity 1 in the first inspected frame. Added
+focusable tab panels, larger small labels, no-script navigation and a single
+anchor offset. Browser pointer/keyboard results agreed with the final markup.
+
+The reviewer initially identified a cache-restore branch. The browser's recorded
+`Page.frameNavigated` events instead reported ordinary Navigation; returning from
+A still exposed the stale URL. Keeping the selected chapter's fragment current
+with `history.replaceState` fixed that observed path without adding tab-selection
+history entries. Retest: selected beginnings → visit A → Back returned to both
+`#chapter-beginnings` and the beginnings tab. Native BFCache was not exercised.
+
+All test-only script disabling, reduced-motion emulation, request blocking,
+network throttling and cache disabling were reset. A fresh normal tab rendered
+one canvas at 1920×1080 and returned no warning/error console entries. The
+intentionally blocked module produced its designed fallback, not a normal-path
+failure. A and B now link back to C and still fit the phone viewport.
+
+Final full check log: `/tmp/a2-immersive-candidate-53q7daje.log`: typecheck zero
+errors/warnings/hints; 19-page build/accessibility/internal links passed; four spec
+checks passed and the existing twelve-week collection-coverage assertion failed.
+Vite warns about the optional 571,138-byte scene chunk. Its measured gzip size is
+142,285 bytes; controller/GSAP is 29,135 bytes (171,420 bytes combined). This is a
+compressed-file measurement, not an actual hosted transfer or frame-rate result.
+
+Minification removed the vendor headers. Their notices are now retained in
+`public/vendor-notices.txt` and linked from the preview head. A final build exited
+0, copied the notice exactly and passed the same 19-page checks:
+`/tmp/a2-immersive-notices-gfbaxakw.log`. This documentation-asset addition did not
+change the already-tested interactions. Production dependency audit previously
+reported zero advisories after the compatible refresh.
+
+Independent source review of the final functional changes returned no actionable
+finding. Actual GPU profiling and forced WebGL context-loss testing remain outside
+this checkpoint. Source-reviewed safeguards are not reported as those runtime tests.
+
+Implementation: [99b0491](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/99b0491).
+Refinements and harness changes: [03159e6](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/03159e6).
+The new review URL is `http://127.0.0.1:4321/comp4020-ass2-Naaeeen/review/c/`.
+
+Human design feedback is pending. Do not extend the full curriculum until the
+student chooses the direction or supplies the next refinement.

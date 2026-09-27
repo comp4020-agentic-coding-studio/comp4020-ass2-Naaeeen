@@ -1,6 +1,6 @@
 # Implementation goals and human review gates
 
-Status: Gate 1 design revision in progress after the student requested a more immersive result. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
+Status: Gate 1 immersive revision is verified and ready for human review. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
 to 27 September 2026 (28 September, Australia/Sydney); exact cutoff time has not
 been supplied. The public course deadline is different. This plan records the
 student's working deadline without claiming that an extension has been verified.
@@ -246,3 +246,12 @@ The deadline favors a coherent, complete course over optional feature growth.
 Do not spend the remaining time repeating a broad harness benchmark, manufacturing
 red tests or polishing a comparison that cannot change a decision. Necessary
 source checking, genuine user gates and truthful reporting remain in scope.
+
+## Latest checkpoint
+
+Candidate C and its [verification record](gate-1-motion-review.md) are ready for
+review. [The process evidence bank](../PROCESS-EVIDENCE.md) records the consequential
+findings and exact harness changes. The goal was confirmed active during this
+revision; the next stage still depends on the student's design feedback. The
+assignment as a whole is not complete. Once the direction is accepted, continue
+with the representative teaching unit and the outstanding test-oracle correction.

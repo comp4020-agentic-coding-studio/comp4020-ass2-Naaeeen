@@ -104,7 +104,7 @@ external model downloads and a new framework were outside the useful scope.
 [2bdf84d](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/2bdf84d).
 Dependencies/research:
 [e1b037f](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/e1b037f).
-Candidate C is still being verified. An initial build measured 142,285 gzip bytes
+Candidate C is now ready for human review. An initial build measured 142,285 gzip bytes
 for the scene chunk and 29,084 for its controller/GSAP chunk. The 571,138-byte
 minified scene triggers Vite's size warning; lazy loading and actual usability,
 not a suppressed threshold, must justify that cost. These are compressed-file
@@ -141,23 +141,22 @@ HTML or the no-script experience.
 keep the checker intact. The repeated production build checked 19 pages with
 zero accessibility violations; the original incomplete twelve-week check remained
 red. Passing build log: `/tmp/a2-immersive-landmarks-g8ucwu3b.log`. First failing log: `/tmp/a2-immersive-first-zib1v8ya.log`.
-Add the verified result and commit link when available.
+The corrected HTML is recorded in [99b0491](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/99b0491).
 
-## E08 — Pending review lead: chapter state on return navigation
+## E08 — A source review lead needed a broader runtime correction
 
-An independent source review found that a stale chapter URL fragment could
-overwrite the latest selected tab after a BFCache restore. This is a source-level
-finding; actual browser restoration has not yet been checked. Preserve current
-selection on restore while still honouring initial deep links and explicit hash
-navigation. Record the reproduction/fix/result before calling it resolved.
+An independent source review identified a stale-fragment issue on cache restore.
+The parent tested navigation away/back and observed the selected chapter revert,
+but protocol events showed ordinary Navigation, not BFCache. A cache-only guard
+therefore did not cover the actual observed path. User selection now updates the
+chapter fragment with history.replaceState, while cached state is retained and
+explicit hash navigation still works. The repeated browser case returned to both
+the selected beginnings chapter and its matching URL.
 
-## Entry checklist
-
-For a new significant event record: trigger; observed evidence; alternative;
-decision and reason; source/file changes; exact harness change if any; actual
-checks; remaining limits; commit link; real human feedback. Revise this entry when
-new evidence corrects it. Do not invent failures, timings, personal learning or
-participants to make the eventual PROCESS account look stronger.
+**Evidence.** [03159e6](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/03159e6). Initial deep links, pointer/keyboard selection
+and ordinary Back behavior were verified. The native BFCache branch received
+source review; it was not exercised by this browser. The distinction matters when
+explaining why the first proposed fix was insufficient.
 
 ## E09 — Inspect the first animated frame, not only the settled page
 
@@ -167,7 +166,39 @@ settled page was readable, but the earliest usable frame did not meet our stated
 orientation goal. A separate phone inspection measured 10px model controls and a
 9px illustration caption; the parent judged these too small for comfortable use.
 
-Planned refinement: keep text opaque during the entrance, retain restrained motion,
-increase small mobile labels, and recheck the first screen and interactions. This
+The refinement keeps text opaque during the entrance and retains restrained
+position movement. Model controls are now 12px, captions 11px and introductory
+body text 16px on the phone. The first frame computed to opacity 1 and the
+introduction fitted in the first viewport. This
 is a visual/readability judgement, not a claim that a minimum font-size rule in the
-assignment was violated. Status: before/after refinement pending.
+assignment was violated. [03159e6](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/03159e6) also adds the CLAUDE.md check for the
+first usable frame, reduced motion and HTML fallback, alongside the settled view.
+
+## E10 — Preserve navigation when enhancements are unavailable
+
+A real browser run with script execution disabled retained all chapter content,
+static illustration and body links, but the inherited theme's menu remained inert
+and its toggle could not operate. Add a plain HTML course-contents navigation for
+that condition and hide the nonfunctional toggle. Also avoid adding a second
+anchor offset on top of the theme's existing scroll padding: the first mobile
+Assessment jump left the heading around y=335 despite a roughly 70px closed nav.
+These are refinements of the student path, not reasons to replace the theme.
+Status: browser verified. With scripting disabled, all three panels and five
+plain course-contents links were available; the menu toggle was hidden and the
+Assessment link worked. The normal menu/resize path was also rechecked.
+[03159e6](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/03159e6) records the fixes.
+
+## Entry checklist
+
+For a new significant event record: trigger; observed evidence; alternative;
+decision and reason; source/file changes; exact harness change if any; actual
+checks; remaining limits; commit link; real human feedback. Revise this entry when
+new evidence corrects it. Do not invent failures, timings, personal learning or
+participants to make the eventual PROCESS account look stronger.
+
+## Current checkpoint
+
+Candidate C is ready for human review. See [the complete motion test record](planning/gate-1-motion-review.md).
+The actual course collections, student PROCESS.md and public shipping are still
+unfinished. E04 remains an explicit follow-up before the representative unit.
+No human preference or learning outcome has been invented for this record.
