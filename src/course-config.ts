@@ -55,6 +55,6 @@ export const courseMeta = slopCourseMetaSchema.parse({
   startDate: "2035-02-19",
   endDate: "2035-05-11",
   description:
-    "A first-year history seminar set in a fictional 2035: investigate technology, everyday life and belonging in Sword Art Online, from the Aincrad incident to artificial lives in the Underworld.",
+    "A first-year history seminar in 2035: investigate the SAO incident, everyday life in virtual worlds and the choices that led people back, from Aincrad to the artificial lives of Underworld.",
   tags: ["Virtual worlds", "History of technology", "Sword Art Online"],
 }) satisfies CourseMetaInput;

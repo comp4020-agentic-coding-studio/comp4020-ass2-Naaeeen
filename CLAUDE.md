@@ -90,7 +90,11 @@ screenshots. For in-page
 navigation, verify destination visibility, keyboard focus and mobile menu state
 after activation. Preserve native skip links and browser history when enhancing
 navigation. For enhanced content, inspect the first usable frame, reduced
-motion and the HTML fallback as well as the settled view. Before submission, read
+motion and the HTML fallback as well as the settled view. For embedded slides,
+check actual frame bounds, hidden-slide focus after navigation and browser script
+errors; a ready signal or successful MDX build does not establish usable slides.
+When Markdown contains interactive code, check the emitted script as well as its source.
+Before submission, read
 non-adjacent weeks, an assessment and a deck. Report unavailable
 browser verification honestly; neither a build nor a model review proves student
 appeal, visual quality or curriculum coherence. When depicting a recognizable
@@ -109,7 +113,8 @@ and compilation limits in linked source credits. Distinguish an account's report
 a student's inference and a classroom proposal without inventing archival records.
 For each unit, connect ordered preparation to a timed meeting, concrete output
 and assessment. Verify the first action and cross-week material links, not only
-the resource categories. Keep required accounts readable on site and traceable by
+the resource categories. Check the first-use action and returning-student week
+selector at phone size before accepting an overview. Keep required accounts readable on site and traceable by
 paragraph. Record consequential choices and verify citations; do not invent
 readings, results or feedback.
 

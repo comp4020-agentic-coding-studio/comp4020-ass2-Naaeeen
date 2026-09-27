@@ -11,76 +11,76 @@ related:
   - assessments/digital-history-exhibition
 ---
 
-The [Week 10 seminar](/sessions/10-artificial-life/) turns these notes into a
-classroom hearing. The [Underworld packet](/sources/underworld/) identifies
-sources A–E and provides the free English preparation. No additional slide
-deck is required for this lecture.
+Read these self-paced notes after Accounts A-C and E in the
+[Underworld case file](/sources/underworld/). They prepare you for the
+[Week 10 classroom hearing](/sessions/10-artificial-life/) within the
+week's existing preparation allowance.
 
 ## Eugeo unsettles an easy category
 
-Source A introduces Eugeo as an apparent NPC while describing emotions comparable
-to a human's. Kirito also remembers a childhood involving Eugeo and Alice that
-he cannot readily explain. The promotional synopsis builds a puzzle around
-relationships and classification. It does not give us a scientific test of
-consciousness.
+Kirito encountered Eugeo as an apparent NPC, a non-player character rather
+than a visiting player, yet Eugeo showed human-like emotions. Kirito also
+recalled a childhood connection with Eugeo and Alice that he could not
+readily explain. Account A brings classification and remembered relationships
+together without giving us a scientific test of consciousness.
 
 For our discussion, **recognition** means taking an inhabitant's account,
-relationships and interests seriously enough to require a response. This is a
-working definition for the seminar. It leaves room to disagree about what kind
-of response is justified. Recognising a claim, accepting every statement and
-granting a particular legal status are different decisions.
+relationships and interests seriously enough to require a response. This
+working definition leaves room to disagree about the response. Hearing a
+claim, accepting every statement and granting a legal status are different
+decisions.
 
-Week 2 taught us to identify the step between a source statement and our
-inference. Apply that discipline here. Eugeo's presentation gives us a reason
-to question whether a category settles everything we need to know about him.
-It does not make one observed behaviour a complete account of personhood.
+Week 2 distinguished an account's report from our inference. Apply that
+method here. A technical category may tell us something about a system
+without settling every responsibility toward its inhabitants.
 
 ## Running a world and ruling its inhabitants
 
-Source B describes Cardinal as an autonomous program operating Underworld and
-Administrator as a ruler of the Human Empire. These descriptions invite us
-to distinguish technical operation from institutional authority. The ability
-to maintain a system does not itself explain why its decisions deserve the
-agreement of those affected.
+Account B identifies Cardinal as an autonomous program operating Underworld
+and Administrator as a ruler of the Human Empire. The Human Empire was a
+society within Underworld. Distinguish technical operation from institutional
+authority: the ability to maintain a system does not itself explain why its
+decisions deserve the agreement of those affected.
 
-Computing enters the historical argument through this difference. Ask what a
-system can do, which rules organise its use, and who can challenge those rules.
-Those questions require different evidence. A character profile naming an
-operator is not a record of consultation. Nor should we infer that residents
-have no interests simply because the available text gives little space to them.
+Ask what a system can do, which rules organise life within it, and who can
+challenge those rules. These questions need different evidence. Naming an
+operator does not document consultation. A brief account's limited attention
+to residents also does not establish that they had no interests of their own.
 
 ## Memory changes the problem
 
-In source C, Kirito and Eugeo face punishment for violating the Taboo Index.
-Alice appears as an Integrity Knight and seems not to remember their childhood.
-Keep the wording tentative: this short account reports an apparent absence of
-memory without explaining its full mechanism.
+In Account C, Kirito and Eugeo face punishment for violating the Taboo Index,
+a set of rules enforced in Underworld. Alice appears in the role of an
+Integrity Knight and seems not to remember their childhood. Keep the wording
+tentative: the account reports an apparent absence of memory without
+explaining its full mechanism.
 
-Now test a proposed recognition rule: an account matters only when its speaker
-can present a continuous, consistent autobiography. That rule may sound easy
-to apply, but the Alice example exposes what it could exclude. Before adopting
-it, identify why memory would be necessary and what other evidence could count.
-Do not repair a gap by inventing Alice's testimony.
+Test this proposed rule: an account matters only when its speaker can give
+a continuous, consistent autobiography. The Alice case exposes what that
+rule might exclude. Before adopting it, explain why memory would be necessary
+and what other evidence could count. Do not fill a gap by inventing Alice's
+testimony.
 
-A more cautious classroom proposal might preserve an account, record uncertainty
-and allow later correction. That is our proposed procedure, not a rule established
-by Underworld's institutions. Connect it to Week 7's care question: what obligations
-might remain when another person's circumstances resist a convenient classification?
+A classroom proposal could preserve an account, record uncertainty and allow
+later correction. This is a procedure we are proposing, not a rule established
+by Underworld's institutions. Connect it to Week 7: what obligations might
+remain when another person's circumstances resist a convenient classification?
 
-## An introduction is not a settled status
+## A public introduction and an unresolved status
 
-Source E places Alice before reporters, introduced by Rinko as artificial general
-intelligence. Alice answers their questions. This makes public recognition visible
-as an event involving a speaker, an institution and an audience. The synopsis
-does not establish citizenship or a completed legal settlement.
+Account E places Alice before reporters, introduced by Rinko as artificial
+general intelligence, a term for broadly capable artificial intelligence.
+Alice answers their questions. Recognition becomes an event involving a
+speaker, an institution and an audience; the account does not establish
+citizenship or a completed legal settlement.
 
-Compare this with Week 9's attention to bodies and interfaces. A history organised
-only around whether a user is immersed or awake can miss the separate question
-of whose world is being entered. For a resident, intervention might change the
-conditions of ordinary life rather than offer another play session.
+Compare this with Week 9's focus on bodies and interfaces. Whether a visitor
+is immersed or awake does not answer whose world they are entering. For a
+resident, outside intervention could change ordinary life's conditions
+rather than offer another play session.
 
-In the hearing, state your criterion, cite two precise passages and name evidence
-that would make you revise your decision. Acknowledge an objection instead of
-writing a unanimous conclusion by default. The resulting decision can support
-an exhibition label explaining why protecting a virtual world might involve
-responsibilities toward its inhabitants, alongside attachment to the place.
+In the hearing, state a criterion, cite two account paragraphs, and name
+evidence that could change the decision. Acknowledge an objection rather
+than assuming unanimity. Your decision can support an exhibition caption
+about why protecting a world may involve responsibilities toward its
+inhabitants as well as attachment to the place.

@@ -1,0 +1,14 @@
+.course-desk { border-bottom: 1px solid #d2c8b5; background: #ede7dc; color: #35372e; font-size: 12px; }
+.course-desk-inner { display: flex; align-items: center; gap: 35px; width: min(1280px, calc(100% - 112px)); margin-inline: auto; padding-block: 9px; }
+.course-desk p { flex: 0 0 100px; margin: 0; color: #735520; font-size: 10px; font-weight: 650; letter-spacing: .07em; text-transform: uppercase; }
+.course-desk p > span { display: block; margin-top: 3px; color: #716855; font-size: 9px; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.course-desk ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); flex: 1; gap: 25px; margin: 0; padding: 0; list-style: none; }
+.course-desk li { min-width: 0; }
+.course-desk a { display: flex; flex-direction: column; justify-content: center; min-height: 44px; color: inherit; text-decoration: none; text-underline-offset: 4px; }
+.course-desk strong { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 14px; font-weight: 600; line-height: 1.5; }
+.course-desk strong > span { color: #8a6428; }
+.course-desk small { margin-top: 3px; color: #69614f; font-size: 12px; line-height: 1.45; }
+.course-desk a:is(:hover,[aria-current]) strong { text-decoration: underline; }
+.course-desk a:focus-visible { outline: 3px solid #9d6e24; outline-offset: 4px; }
+@media (max-width: 1050px) { .course-desk-inner { width: calc(100% - 64px); gap: 25px; } .course-desk ul { gap: 16px; } }
+@media (max-width: 760px) { .course-desk-inner { width: calc(100% - 40px); display: block; padding-block: 9px 10px; } .course-desk p { display: flex; align-items: center; gap: 12px; margin-bottom: 5px; } .course-desk p > span { display: inline; margin: 0; } .course-desk ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 24px; } .course-desk strong { font-size: 14px; } .course-desk small { display: none; } }

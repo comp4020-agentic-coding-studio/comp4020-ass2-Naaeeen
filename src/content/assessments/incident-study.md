@@ -20,7 +20,7 @@ marking:
       weight: 15
 spec:
   - Submit a 1000-1300 word incident study with a short sourced timeline.
-  - Use three or four identifiable sources from the first eight teaching weeks.
+  - Use three or four identifiable case accounts or named optional readings from the first eight weeks.
   - Connect a technical choice to a social consequence and test an alternative explanation.
 related:
   - source-comparison
@@ -37,7 +37,7 @@ how did their response shape the outcome?**
 Choose one incident from **Weeks 1–8** and write a **1000–1300 word study**.
 Keep the question small enough to explain a relationship between a technology,
 a decision and a social consequence. Access, trust, cooperation and belonging
-are useful starting points. A plot summary alone will not explain why an
+are useful starting points. A sequence of events alone will not explain why an
 outcome followed.
 
 Connect your conclusion to the course question: why do people continue to
@@ -46,20 +46,22 @@ can complicate that question without claiming to explain everyone's choices.
 
 ## Choose evidence you can use
 
-Use **three or four identifiable sources** from the required packets or named
-optional material in the first eight [teaching weeks](/sessions/). The free
-English packets are sufficient; watching a full episode or film is optional.
+Use **three or four identifiable sources** from the case files or named
+optional readings in the first eight [teaching weeks](/sessions/). The
+onsite course accounts are sufficient. Each account must make a distinct
+contribution to the argument; several paragraphs from one account remain
+one source for this count.
 
-Where the available material supports it, include at least two source kinds,
-such as an episode synopsis and a film press release, or use a second case
-from Weeks 1–8 to test your explanation. If the incident has only one kind of
-available account, explain that limitation. You are not required to produce
-independent witnesses or documents that the packet does not contain.
+Compare accounts with different emphases, or use a second case from Weeks
+1-8 to test the explanation. Explain what each adds and what none of them
+establishes. Shared course preparation means agreement is not independent
+corroboration. An optional computing or design reading can help frame your
+reasoning, but does not establish an event in the case.
 
-Several official summaries may share a publisher or promotional purpose.
-Their agreement is worth examining, but it does not turn them into independent
-testimony. Identify each source's adaptation, purpose and reading location.
-Label a teaching paraphrase as such; do not present it as words from the work.
+Identify each assigned account by case-file title, account title or label,
+and paragraph ID. Their preparation and underlying materials are available
+through the case files' source credits. You do not need to consult those
+external materials to complete the study.
 
 ## Build the study
 
@@ -71,17 +73,17 @@ Use your own structure, covering these five moves:
    and how a response affected relationships, organisation or participation.
    Separate what the source states from the causal step you infer.
 3. **Compare the evidence.** Use specific passages, not just titles. Explain
-   what each source adds and where their purposes or emphases differ.
+   what each account adds and where its focus or emphasis differs.
 4. **Test an alternative.** Give a plausible competing explanation, such as
    prior relationships, institutional decisions or unequal experience. Show
    why the evidence supports, weakens or cannot distinguish it from yours.
 5. **Bound the conclusion.** Identify an unanswered question and the evidence
    that would help answer it. Technical plausibility is not proof of an event.
 
-Add a timeline of **four to six concise entries**. Give a story date or a
+Add a timeline of **four to six concise entries**. Give an event date or a
 clearly labelled relative order, describe the event, and cite its source.
-Mark an uncertain date as uncertain. Keep publication dates separate from
-this event chronology.
+Mark an uncertain date as uncertain. Do not turn an inferred sequence into
+a precise date that the account does not supply.
 
 ## What to hand in
 
@@ -95,16 +97,18 @@ must be selectable.
 
 The 1000–1300 words include quotations and in-text citations. The title,
 timeline, reference list and assistance note are excluded. Use a consistent
-citation style with enough detail to find each passage: a heading and
-paragraph, PDF page, or episode and timestamp for optional viewing. Give a
-URL and access date for online sources; use “n.d.” where no date is supplied.
+citation style with enough detail to find each passage. For a course account,
+give the case-file title, account title or letter, and paragraph ID. Name
+the course team as compiler in the reference list, with the URL and access
+date. For a named optional reading, give its author, title and precise
+location. Do not invent dates or treat a compiled account as testimony.
 
 ## What the criteria mean
 
 - **Explanation, 35%:** the study connects a specified technical choice,
   people's responses and a social consequence through a defensible argument.
-- **Evidence, 30%:** relevant details are accurate and traceable. The account
-  identifies source purposes and distinguishes adaptations when necessary.
+- **Evidence, 30%:** relevant details are accurate and traceable. The study
+  explains each account's contribution and the limits of a shared compilation.
 - **Alternatives and limits, 20%:** a credible competing explanation is tested,
   and the conclusion states what the available evidence cannot establish.
 - **Chronology and communication, 15%:** the timeline makes the sequence

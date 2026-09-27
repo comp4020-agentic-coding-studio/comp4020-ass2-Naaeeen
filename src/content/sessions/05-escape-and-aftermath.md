@@ -8,6 +8,18 @@ date: 2035-03-19
 durationMinutes: 90
 preparationMinutes: 25
 sourcePacket: /sources/returns/
+takeaway: "A support map separating reported situations, interpretations and proposed responses."
+preparationSteps:
+  - title: "Read the aftermath accounts"
+    minutes: 8
+    detail: "Read R1 and R2 about unfinished return and the decision to enter ALO."
+    href: /sources/returns/
+  - title: "Order the events"
+    minutes: 7
+    detail: "Make a short sequence; distinguish reported events from Kazuto's belief."
+  - title: "Identify support questions"
+    minutes: 10
+    detail: "List the people, organisations and resources named, then write two questions about support."
 teachers:
   - ren-ito
 spec:
@@ -23,18 +35,19 @@ related:
 **What does escape resolve, and what does it leave unfinished?**
 
 An ending can change a technical condition without settling every person's
-situation. The Fairy Dance readings follow continuing relationships and a
-reason for entering another virtual world. We examine the difference between
-an unresolved problem, evidence about it, and a response someone chooses.
+situation. Kazuto, who used the name Kirito in SAO,
+returned while Asuna had not regained consciousness. A later clue led him
+to enter Alfheim Online, or ALO. Follow the difference between an unresolved
+problem, evidence about it, and the response a person chooses.
 
 ## Prepare in 25 minutes
 
-Read [R1 and R2](/sources/returns/#week-5-what-escape-leaves-unfinished) and
-their free English synopses for eight minutes. Spend seven making a short
-sequence of events; distinguish what the account reports from what Kazuto
-believes. For the remaining ten, list people, organisations or resources
-already named in the sources and write two questions about support. You do
-not need to infer a diagnosis or an unexplained technical mechanism.
+Read [R1 and R2](/sources/returns/#week-5-what-escape-leaves-unfinished)
+for eight minutes. Spend seven making a short sequence of events; distinguish
+what the account reports from what Kazuto believes. For the remaining ten,
+list people, organisations or resources named in the accounts and write two
+questions about support. Keep an unexplained medical or technical cause as
+an open question.
 
 ## In the seminar: 90 minutes
 
@@ -47,8 +60,8 @@ not need to infer a diagnosis or an unexplained technical mechanism.
   person's resulting belief. Discuss what further evidence might strengthen
   or challenge that belief.
 - **45-50:** take a break.
-- **50-70:** develop a **classroom support proposal**, not a reconstruction
-  of services that existed in the story. Choose one need from your map.
+- **50-70:** develop a **classroom support proposal**, labelled as a proposal
+  rather than a record of existing services. Choose one need from your map.
   Assign responsibility, explain what information is needed, and identify
   how the affected person's wishes could guide the response.
 - **70-85:** another group challenges the proposal. Check whether it
@@ -61,6 +74,6 @@ not need to infer a diagnosis or an unexplained technical mechanism.
 
 Keep the map with evidence, interpretations and proposals visibly separated.
 It offers a possible question for the [incident study](/assessments/incident-study/),
-not a medical assessment of a character. In
+with the focus on decisions and support. In
 [Phantom Bullet next week](/sessions/06-phantom-bullet/), we investigate how
 people respond when a later threat is reported but its cause remains uncertain.

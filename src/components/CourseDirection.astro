@@ -162,7 +162,7 @@ const plateaus = [
       <div class="sources-intro"><p class="eyebrow">The source desk</p><h2 id="sources-title">Begin with the works</h2><p>{courseOutline.sourceBoundary}</p></div>
       <ul class="source-list">
         {courseSources.map((source) => (
-          <li><a href={source.href}><span><strong>{source.title}</strong><span>{source.detail}</span></span><span class="source-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href={withBase(source.href)}><span><strong>{source.title}</strong><span>{source.detail}</span></span><span class="source-arrow" aria-hidden="true">↗</span></a></li>
         ))}
       </ul>
     </section>

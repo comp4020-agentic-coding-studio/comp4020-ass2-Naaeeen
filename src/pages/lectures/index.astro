@@ -1,0 +1,13 @@
+---
+import { getPublishedCollection } from "astro-course-university/content";
+import TeachingLayout from "../../layouts/TeachingLayout.astro";
+import LecturesGrid from "../../components/LecturesGrid.astro";
+import SlidePreview from "../../components/SlidePreview.astro";
+const lectures = await getPublishedCollection("lectures");
+const featured = lectures.find((lecture) => lecture.data.week === 2 && lecture.data.slides);
+---
+<TeachingLayout title="Lecture notes & slides" description="Read the explanations at your own pace. Your weekly plan shows which notes to use and when to bring them into the seminar." eyebrow="Library · Explanations and presentations" breadcrumbs={[{ label: "Library", href: "/library/" }]} wide={true}>
+  <Fragment slot="media">{featured?.data.slides && <SlidePreview title={featured.data.title} slides={featured.data.slides} notesHref={`/lectures/${featured.id}/#lecture-notes`} week={featured.data.week} />}</Fragment>
+  <p class="lecture-notes-intro">These notes support selected seminars. When a weekly plan assigns them, their reading time is included in preparation. The Week 2 slides also guide our work together in the seminar.</p>
+  <LecturesGrid />
+</TeachingLayout>

@@ -420,3 +420,24 @@ html:has(.immersive-course[data-motion="paused"]) { scroll-behavior: auto; }
 .ic-learning-path p { font-size: 16px; line-height: 1.65; }
 @media (max-width: 1050px) { .ic-learning-path { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 35px; } }
 @media (max-width: 480px) { .ic-learning { padding-bottom: 43px; } .ic-learning-path { grid-template-columns: minmax(0, 1fr); gap: 19px; } .ic-learning-path p { font-size: 15px; } }
+
+/* The course route leads; catalogues remain useful references. */
+.ic-study-path .ic-study-intro { margin-bottom: 28px; }
+.ic-route-actions { display: flex; flex-wrap: wrap; gap: 12px 36px; margin-top: 23px; font-size: 14px; }
+.ic-route-actions a { display: inline-flex; align-items: center; gap: 18px; min-height: 44px; }
+.ic-semester-route { padding-block: 74px; }
+.ic-slide-signpost { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .75fr); gap: 95px; align-items: center; padding-block: 20px 64px; border-bottom: 1px solid var(--ic-line); }
+.ic-slide-signpost h2 { margin-top: 20px; font: 400 38px/1.15 Georgia, serif; max-width: 22ch; letter-spacing: -.03em; }
+.ic-slide-signpost > div > p:last-child { margin-top: 22px; max-width: 45ch; font-size: 16px; color: var(--ic-muted); }
+.ic-slide-signpost > a { text-decoration: none; }
+.ic-slide-paper { display: flex; flex-direction: column; padding: 27px 30px; background: #262c24; color: #eee7d3; border: 1px solid #617055; border-left: 7px solid #b98a39; transition: transform .25s; }
+.ic-slide-paper small { color: #cbbb99; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.ic-slide-paper strong { margin-block: 23px; font: 400 39px/1.05 Georgia, serif; color: #dbc286; }
+.ic-slide-paper > span { font-size: 12px; color: #cbbb99; }
+.ic-slide-open { display: flex; min-height: 52px; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600; }
+.ic-slide-signpost > a:is(:hover,:focus-visible) .ic-slide-paper { transform: translateY(-5px); }
+@media (max-width: 800px) { .ic-semester-route { padding-block: 50px; } .ic-slide-signpost { gap: 30px; } .ic-slide-signpost h2 { font-size: 30px; } }
+@media (max-width: 600px) { .ic-slide-signpost { grid-template-columns: 1fr; padding-bottom: 45px; } .ic-slide-paper strong { font-size: 35px; } .ic-route-actions { font-size: 12px; gap: 4px 18px; } }
+
+.ic-world-atlas-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 44px; flex-basis: 100%; padding-block: 7px; border-bottom: 1px solid #66705a; color: #e0c589 !important; font-size: 13px; font-weight: 600; }
+.ic-world-atlas-link > span { font-size: 18px; }

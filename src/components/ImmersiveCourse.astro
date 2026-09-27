@@ -1,11 +1,14 @@
 ---
 import { getPublishedCollection } from "astro-course-university/content";
 import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
+import StudyDesk from "./StudyDesk.astro";
 import { withBase } from "astro-theme-university/url";
 import { courseMeta } from "../course-config";
 import { siteConfig } from "../site-config";
 import { courseOutline, courseActs, courseWeeks, courseSources } from "../data/course-outline";
 import "../styles/immersive-course.css";
+import WeeklyRhythm from "./WeeklyRhythm.astro";
+import SemesterTrail from "./SemesterTrail.astro";
 
 interface Props { preview?: boolean; }
 const { preview = true } = Astro.props;
@@ -16,17 +19,7 @@ const [sessions, assessments, lectures] = await Promise.all([
 ]);
 const availableWeeks = new Map(sessions.map((session) => [session.data.week, withBase(`/sessions/${session.id}/`)]));
 const courseAssessments = [...assessments].sort((a, b) => a.data.week - b.data.week);
-const firstSession = [...sessions].sort((a, b) => a.data.week - b.data.week)[0];
-const sampleSession = sessions.find((session) => session.data.week === 2);
-const sampleLecture = lectures.find((lecture) => lecture.data.week === 2);
-const firstAssessment = courseAssessments[0];
-const sourcePacket = typeof sampleSession?.data.sourcePacket === "string" ? sampleSession.data.sourcePacket : undefined;
-const studyLinks = [
-  ...(sampleLecture ? [{ label: "Read the lecture", detail: sampleLecture.data.title, href: `/lectures/${sampleLecture.id}/` }] : []),
-  ...(sampleLecture?.data.slides ? [{ label: "Open the slides", detail: "The lecture, one step at a time", href: sampleLecture.data.slides }] : []),
-  ...(sourcePacket ? [{ label: "Prepare your sources", detail: "The Aincrad source packet", href: sourcePacket }] : []),
-  ...(firstAssessment ? [{ label: "Find the assessment", detail: `${firstAssessment.data.title} · ${firstAssessment.data.weight}%`, href: `/assessments/${firstAssessment.id}/` }] : []),
-];
+const sampleLecture = lectures.find((lecture) => lecture.data.week === 2 && lecture.data.slides);
 const anchor = (id: string) => withBase(`${preview ? "/review/c/" : "/"}#${id}`);
 const previewLinks = [
   { text: "Course", href: anchor("course") },
@@ -58,6 +51,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
   mainAttrs={{ class: "immersive-course-main" }}
 >
   <link slot="head" rel="license" href={withBase("/vendor-notices.txt")} title="Third-party JavaScript notices" />
+  {!preview && <StudyDesk />}
   <div class="immersive-course" data-immersive-course>
     <div class="ic-reading-track" data-reading-track hidden aria-hidden="true"><span data-reading-progress></span></div>
     <aside class:list={["ic-review-strip", { "ic-course-strip": !preview }]} aria-label={preview ? "Design comparison" : "Course information and motion"}>
@@ -87,7 +81,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
       <div class="ic-shell ic-hero-grid">
         <div class="ic-hero-copy">
           <span class="ic-hero-rule" data-hero-rule aria-hidden="true"></span>
-          <p class="ic-eyebrow ic-hero-index" data-hero-enter><span>{courseMeta.code}</span><span>{courseMeta.level === 1 ? "First year" : `Level ${courseMeta.level}`} · twelve weeks</span></p>
+          <p class="ic-eyebrow ic-hero-index" data-hero-enter><span>{courseMeta.code}</span><span>One course · twelve weeks · three acts</span></p>
           <h1 data-hero-enter><span class="ic-title-after">After</span><span class="ic-title-aincrad">Aincrad<span aria-hidden="true">.</span></span></h1>
           <p class="ic-subtitle" data-hero-enter>{courseOutline.subtitle}</p>
           <div class="ic-hero-introduction" data-hero-enter>
@@ -95,7 +89,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
             <p class="ic-orientation">{courseOutline.premise}</p>
           </div>
           <div class="ic-hero-actions" data-hero-enter>
-            <a class="ic-primary-link" href={!preview && firstSession ? withBase(`/sessions/${firstSession.id}/`) : anchor("explore")}>{!preview && firstSession ? "Begin with Week 1" : "Enter the chapters"} <span aria-hidden="true">↘</span></a>
+            <a class="ic-primary-link" href={preview ? anchor("explore") : withBase("/start/")}>{preview ? "Enter the chapters" : "Start here"} <span aria-hidden="true">↘</span></a>
             <a class="ic-text-link" href={anchor("weeks")}>View all twelve weeks <span aria-hidden="true">↓</span></a>
           </div>
         </div>
@@ -159,7 +153,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
               <button type="button" data-scene-rotate="1" aria-label="Rotate Aincrad right"><span aria-hidden="true">↷</span></button>
             </div>
           </div>
-          <figcaption><span>Aincrad, above the clouds.</span><span>Original 3D interpretation</span><a class="ic-art-reference" href="https://www.swordart-online.net/SAOA/">Visual reference: official SAO artwork <span aria-hidden="true">↗</span></a></figcaption>
+          <figcaption><span>Aincrad, the floating castle of SAO.</span><span>Original 3D interpretation</span><a class="ic-world-atlas-link" href={withBase("/atlas/#world-aincrad")}>Explore Aincrad in the atlas <span aria-hidden="true">↗</span></a><a class="ic-art-reference" href={withBase("/sources/credits/")}>Artwork and source credits <span aria-hidden="true">↗</span></a></figcaption>
           <p class="visually-hidden" role="status" data-scene-status>Static illustration.</p>
         </figure>
       </div>
@@ -167,12 +161,11 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
     </header>
 
     <div class="ic-course-body">
-      {!preview && sampleSession && <section class="ic-study-path" aria-labelledby="ic-study-title">
-        <div class="ic-shell ic-study-grid">
-          <div class="ic-study-intro"><p class="ic-eyebrow">A seminar in focus · week {String(sampleSession.data.week).padStart(2, "0")}</p><h2 id="ic-study-title">Investigate the incident.</h2><p>{sampleSession.data.description}</p><a href={withBase(`/sessions/${sampleSession.id}/`)}>Open the seminar <span aria-hidden="true">↗</span></a></div>
-          <ol class="ic-study-links">{studyLinks.map((link, index) => <li><a href={withBase(link.href)}><span aria-hidden="true">0{index + 1}</span><span><strong>{link.label}</strong><small>{link.detail}</small></span><span aria-hidden="true">↗</span></a></li>)}</ol>
-        </div>
+      {!preview && <section class="ic-study-path" aria-labelledby="ic-study-title">
+        <div class="ic-shell"><div class="ic-study-intro"><p class="ic-eyebrow">A week in this course</p><h2 id="ic-study-title">Prepare. Meet. Make a history.</h2><p>Read the short briefing when you arrive. Each teaching week then follows the same rhythm, with its own case and question.</p></div><WeeklyRhythm compact={true} /><div class="ic-route-actions"><a href={withBase("/start/")}>New to the course? Begin here <span aria-hidden="true">↗</span></a><a href={withBase("/sessions/")}>Returning? Open your weekly plan <span aria-hidden="true">↗</span></a></div></div>
       </section>}
+      {!preview && <div class="ic-shell ic-semester-route"><SemesterTrail /></div>}
+      {!preview && sampleLecture?.data.slides && <section class="ic-shell ic-slide-signpost" aria-label="Lecture slides"><div><p class="ic-eyebrow">A look ahead · Week {sampleLecture.data.week}</p><h2>{sampleLecture.data.title}</h2><p>Open the actual presentation beside its lecture notes. Your weekly guide tells you when to use it.</p></div><a href={withBase(`/lectures/${sampleLecture.id}/`)}><span class="ic-slide-paper" aria-hidden="true"><small>Week 02 · Lecture slides</small><strong>The SAO<br />incident.</strong><span>Evidence → Inference → Limit</span></span><span class="ic-slide-open">View the lecture slides <span aria-hidden="true">↗</span></span></a></section>}
       <section class="ic-shell ic-invitation" aria-labelledby="ic-question">
         <div><p class="ic-eyebrow">The question we follow</p><h2 id="ic-question" data-reveal>{courseOutline.question}</h2></div>
         <div class="ic-invitation-copy"><p>{courseOutline.invitation}</p><p>{courseOutline.access}</p></div>
@@ -237,13 +230,14 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
 
       {!preview && <section class="ic-atlas-entry" aria-labelledby="ic-atlas-title">
         <div class="ic-shell ic-atlas-entry-grid">
-          <div><p class="ic-eyebrow">Explore the world atlas</p><h2 id="ic-atlas-title" data-reveal>Five worlds.<br /><em>A shared history.</em></h2><p>A castle, a place to meet, a contested street. Trace what changes when the interface changes — and what people carry with them.</p><a class="ic-primary-link" href={withBase("/atlas/")}>Enter the atlas <span aria-hidden="true">↗</span></a></div>
+          <div><p class="ic-eyebrow">Optional exploration · the world atlas</p><h2 id="ic-atlas-title" data-reveal>Five worlds.<br /><em>A shared history.</em></h2><p>A castle, a place to meet, a contested street. Trace what changes when the interface changes — and what people carry with them.</p><a class="ic-primary-link" href={withBase("/atlas/")}>Enter the atlas <span aria-hidden="true">↗</span></a></div>
           <nav class="ic-atlas-path" aria-label="Choose an atlas setting">
             {[{ id: "aincrad", name: "Aincrad", note: "A world people learn to inhabit" }, { id: "alo", name: "ALfheim Online", note: "Reasons to return" }, { id: "ggo", name: "Gun Gale Online", note: "Cooperation under uncertainty" }, { id: "augma", name: "Augma", note: "The game enters the street" }, { id: "underworld", name: "Underworld", note: "Whose home is it to defend?" }].map((world, index) => <a href={withBase(`/atlas/#world-${world.id}`)}><span class="ic-atlas-stop" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><span><strong>{world.name}</strong><small>{world.note}</small></span><span aria-hidden="true">↗</span></a>)}
           </nav>
         </div>
       </section>}
 
+      {preview && <>
       <section id="weeks" class="ic-shell ic-weeks" aria-labelledby="ic-weeks-title">
         <div class="ic-section-heading" data-section-reveal><span class="ic-section-rule" data-section-rule aria-hidden="true"></span><div><p class="ic-eyebrow">The full course outline</p><h2 id="ic-weeks-title" data-reveal>Twelve weeks of inquiry.</h2></div><p>{courseOutline.method}</p></div>
         {courseActs.map((act) => (
@@ -262,6 +256,8 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
         ))}
       </section>
 
+      </>}
+
       <section id="assessment" class="ic-assessment" aria-labelledby="ic-assessment-title">
         <div class="ic-shell">
           <div class="ic-section-heading" data-section-reveal><span class="ic-section-rule" data-section-rule aria-hidden="true"></span><div><p class="ic-eyebrow">Assessment</p><h2 id="ic-assessment-title" data-reveal>Make a history<br />you can share.</h2></div><p>Three pieces of work take you from reading an account to curating an argument.</p></div>
@@ -274,10 +270,10 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
       </section>
 
       <section id="sources" class="ic-shell ic-sources" aria-labelledby="ic-sources-title">
-        <div class="ic-sources-copy"><p class="ic-eyebrow">The source desk</p><h2 id="ic-sources-title" data-reveal>Begin with<br />the works.</h2><p>{courseOutline.sourceBoundary}</p>{!preview && <a class="ic-source-packet-link" href={withBase("/sources/")}>Open the source library <span aria-hidden="true">↗</span></a>}</div>
+        <div class="ic-sources-copy"><p class="ic-eyebrow">The source desk</p><h2 id="ic-sources-title" data-reveal>Begin with<br />the case files.</h2><p>{courseOutline.sourceBoundary}</p>{!preview && <a class="ic-source-packet-link" href={withBase("/sources/")}>Open the case files <span aria-hidden="true">↗</span></a>}</div>
         <ul class="ic-source-list">
           {courseSources.map((source, index) => (
-            <li><a href={source.href}><span class="ic-source-index" aria-hidden="true">0{index + 1}</span><span><strong>{source.title}</strong><span>{source.detail}</span></span><span class="ic-source-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href={withBase(source.href)}><span class="ic-source-index" aria-hidden="true">0{index + 1}</span><span><strong>{source.title}</strong><span>{source.detail}</span></span><span class="ic-source-arrow" aria-hidden="true">↗</span></a></li>
           ))}
         </ul>
       </section>

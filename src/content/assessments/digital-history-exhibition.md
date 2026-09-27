@@ -57,20 +57,22 @@ Choose **two items from each act** of the [course outline](/#weeks):
 An item can be a short sourced passage, an optional still, an annotated event
 record, or a timeline or diagram you make from named sources. Images and
 video are not required. A diagram is your interpretation of evidence; explain
-its basis rather than presenting it as an object from the story.
+its basis rather than presenting it as a recovered historical object.
 
-Use the course's free English packets and named optional material. An item
+Use the course's onsite case accounts and named optional material. An item
 may draw on more than one source, and one source may support more than one
 item if each does different work. Do not split one passage into several items
-just to meet the count. Label adaptation differences and any teaching
-reconstruction you use.
+just to meet the count. Label any classroom reconstruction and distinguish
+an account's report from your interpretation. The required case texts are
+available in full on the site.
 
 ## Write for a first-time visitor
 
 Give each item a title and a **60–100 word caption**. The caption should orient
 the visitor, interpret a specific detail and explain why this item belongs in
-your argument. Attach a precise source reference to it. When a date is needed,
-make clear whether it dates the event or the document's publication.
+your argument. Attach a case-file, account and paragraph reference to it. Use supported
+event dates or a clearly labelled relative sequence; mark uncertainty instead
+of supplying a precise date the account does not give.
 
 Add a **300–400 word curatorial argument** that answers the question, explains
 your selection and sequence, and addresses a competing perspective or a
@@ -106,6 +108,11 @@ not required, and a link to a private editing workspace is not a submission.
 
 Credit the creator and source of every item, including screenshots and images.
 For your own diagrams, name yourself as maker and cite the evidence underneath.
+For compiled accounts, name the course team, case file, account and paragraph
+ID; add its URL and your access date to the reference list. Shared preparation
+does not make the accounts independent corroboration. If you use optional
+material, identify its creator and exact reading location as well.
+
 Use text descriptions or alt text for meaningful images and adequate contrast
 for reading. A text-led exhibition can meet every criterion.
 
@@ -114,7 +121,7 @@ for reading. A text-led exhibition can meet every criterion.
 - **Curatorial argument, 35%:** a clear answer develops across the exhibition
   and connects the three acts without treating everyone as having one motive.
 - **Source interpretation, 25%:** details are accurate and traceable, with
-  source purpose, adaptation and chronology handled carefully.
+  account focus, evidential limits and event chronology handled carefully.
 - **Selection and communication, 20%:** each item contributes something
   distinct; the sequence and captions make the reasoning usable for a newcomer.
 - **Perspectives and limits, 10%:** the exhibition takes a competing account

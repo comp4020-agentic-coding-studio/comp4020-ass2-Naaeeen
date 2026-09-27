@@ -1,0 +1,17 @@
+---
+import { withBase } from "astro-theme-university/url";
+import "../styles/study-desk.css";
+const links = [
+  { title: "Notes & slides", purpose: "Explanations and presentations", href: "/lectures/" },
+  { title: "Case files", purpose: "The accounts you will read", href: "/sources/" },
+  { title: "Assessments", purpose: "Briefs, dates and marking", href: "/assessments/" },
+  { title: "People & help", purpose: "Questions and support", href: "/people/" },
+];
+---
+<nav class="course-desk" aria-label="Course essentials">
+  <div class="course-desk-inner"><p>Study desk<span>Direct access</span></p><ul>{links.map((link) => {
+    const href = withBase(link.href);
+    const current = Astro.url.pathname === href ? "page" : Astro.url.pathname.startsWith(href) ? "location" : undefined;
+    return <li><a href={href} aria-current={current}><strong>{link.title}<span aria-hidden="true">↗</span></strong><small>{link.purpose}</small></a></li>;
+  })}</ul></div>
+</nav>

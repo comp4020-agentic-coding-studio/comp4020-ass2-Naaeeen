@@ -8,21 +8,33 @@ import SessionMaterial from "./SessionMaterial.astro";
 import UnitComparisonNav from "./UnitComparisonNav.astro";
 import { formatCourseDate } from "../lib/dates";
 import { sessionLabels, siteConfig } from "../site-config";
+import { teachingRhythm, seminarTime, getSessionPreparation, formatTeachingDeadline, isDueInTeachingWeek, materialPath } from "../data/teaching-rhythm";
+import "../styles/study-guide.css";
 
 interface Props { session: CollectionEntry<"sessions">; comparison?: "A" | "B"; }
 const { session, comparison } = Astro.props;
 const { Content, headings } = await render(session);
-const lectures = await getPublishedCollection("lectures");
-const lecture = lectures.find((entry) => entry.data.week === session.data.week);
+const [lectures, assessments, sessions] = await Promise.all([
+  getPublishedCollection("lectures"), getPublishedCollection("assessments"), getPublishedCollection("sessions"),
+]);
+const preparation = getSessionPreparation(session);
+// Assigned reading can belong to an earlier week, as the Week 9 comparison does.
+const assignedLectures = lectures.filter((lecture) => preparation.steps.some((step) => step.href && materialPath(step.href) === `/lectures/${lecture.id}`));
+const seminarLectures = lectures.filter((lecture) => session.data.related.includes(`lectures/${lecture.id}`) && !assignedLectures.includes(lecture));
+const due = assessments.filter((assessment) => isDueInTeachingWeek(assessment.data.due, session.data.date));
+const previous = sessions.find((entry) => entry.data.week === session.data.week - 1);
+const next = sessions.find((entry) => entry.data.week === session.data.week + 1);
 const metadata = [
-  { label: "Date", value: formatCourseDate(session.data.date) },
-  ...(typeof session.data.durationMinutes === "number" ? [{ label: sessionLabels.singular, value: `${session.data.durationMinutes} minutes` }] : []),
-  ...(typeof session.data.preparationMinutes === "number" ? [{ label: "Preparation", value: `${session.data.preparationMinutes} minutes` }] : []),
+  { label: "Seminar date", value: `${teachingRhythm.seminarDay}, ${formatCourseDate(session.data.date)}` },
+  { label: "Meeting time", value: `${seminarTime} · ${teachingRhythm.timeZoneLabel}` },
+  { label: "Meeting place", value: teachingRhythm.location },
+  { label: "Before", value: `${preparation.minutes} minutes of preparation` },
+  { label: "After", value: `About ${teachingRhythm.followUpMinutes} minutes of follow-up` },
 ];
 const actions = [
-  ...(typeof session.data.sourcePacket === "string" ? [{ label: "Source packet", href: session.data.sourcePacket }] : []),
-  ...(lecture ? [{ label: "Lecture", href: `/lectures/${lecture.id}/` }] : []),
-  ...(lecture?.data.slides ? [{ label: "Slides", href: lecture.data.slides }] : []),
+  ...preparation.steps.flatMap((step) => step.href ? [{ label: step.title, href: step.href }] : []),
+  ...assignedLectures.flatMap((lecture) => lecture.data.slides ? [{ label: `Slides: ${lecture.data.title}`, href: lecture.data.slides }] : []),
+  ...seminarLectures.flatMap((lecture) => [{ label: `Seminar notes: ${lecture.data.title}`, href: `/lectures/${lecture.id}/` }, ...(lecture.data.slides ? [{ label: `Seminar slides: ${lecture.data.title}`, href: lecture.data.slides }] : [])]),
 ];
 ---
 {comparison === "A" ? (
@@ -33,8 +45,18 @@ const actions = [
     <SessionMaterial session={session}><Content /></SessionMaterial>
   </ContentLayout>
 ) : (
-  <TeachingLayout title={session.data.title} description={session.data.description} eyebrow={`Week ${String(session.data.week).padStart(2, "0")} · ${sessionLabels.singular}`} breadcrumbs={[{ label: sessionLabels.plural, href: "/sessions/" }]} metadata={metadata} actions={actions} headings={headings} unlisted={Boolean(comparison)}>
-    <Fragment slot="notice">{comparison && <UnitComparisonNav current={comparison} sessionId={session.id} />}</Fragment>
+  <TeachingLayout title={session.data.title} description={session.data.description} eyebrow={`Week ${String(session.data.week).padStart(2, "0")} · ${sessionLabels.singular}`} breadcrumbs={[{ label: "Weekly plan", href: "/sessions/" }]} metadata={metadata} headings={headings} unlisted={Boolean(comparison)}>
+    <Fragment slot="notice">{comparison && <UnitComparisonNav current={comparison} sessionId={session.id} />}{due.length > 0 && <aside class="study-guide study-due-this-week study-session-due" data-due-this-week aria-label={`Assessment due in Week ${session.data.week}`}><p class="study-kicker">Due this week</p><ul>{due.map((assessment) => <li><a href={withBase(`/assessments/${assessment.id}/`)}>{assessment.data.title} · {assessment.data.weight}% <span aria-hidden="true">↗</span></a><time datetime={assessment.data.due.toISOString()}>{formatTeachingDeadline(assessment.data.due)}</time></li>)}</ul></aside>}</Fragment>
+    <section class="study-guide study-session-start" aria-labelledby="study-session-prepare-title">
+      <p class="study-kicker">Before the seminar · {preparation.minutes} minutes</p><h2 id="study-session-prepare-title">Prepare in this order</h2>
+      <ol class="study-session-checklist" data-preparation-steps>{preparation.steps.map((step, index) => <li><span aria-hidden="true">{index + 1}</span><div>{step.href ? <a href={withBase(step.href)}>{step.title}</a> : <strong>{step.title}</strong>}<small>{step.minutes} min</small></div></li>)}</ol>
+      {assignedLectures.length > 0 && <p class="study-session-note">Lecture notes are self-paced reading, already included in the preparation above.</p>}
+      <nav class="study-material-links" aria-label="This week's reference materials">{typeof session.data.sourcePacket === "string" && <a href={withBase(session.data.sourcePacket)}>Case file <span aria-hidden="true">↗</span></a>}{assignedLectures.map((lecture) => lecture.data.slides && <a href={withBase(lecture.data.slides)}>Reference slides: {lecture.data.title} <span aria-hidden="true">↗</span></a>)}</nav>
+      {seminarLectures.length > 0 && <><p class="study-output-label">For the seminar</p><nav class="study-material-links" aria-label="Seminar notes and presentation">{seminarLectures.map((lecture) => <><a href={withBase(`/lectures/${lecture.id}/`)}>Seminar notes: {lecture.data.title} <span aria-hidden="true">↗</span></a>{lecture.data.slides && <a href={withBase(lecture.data.slides)}>Seminar slides: {lecture.data.title} <span aria-hidden="true">↗</span></a>}</>)}</nav></>}
+      <p class="study-session-takeaway"><strong>Your seminar output</strong>{preparation.takeaway}</p>
+    </section>
     <SessionMaterial session={session}><Content /></SessionMaterial>
+    <aside class="study-guide study-session-followup"><h2>After the seminar</h2><p>Spend about {teachingRhythm.followUpMinutes} minutes organising your source notes and revising the work you made. Keep the output and any unresolved questions for your next seminar or assessment.</p></aside>
+    <nav class="study-guide study-session-pagination" aria-label="Continue your weekly study">{previous && <a href={withBase(`/sessions/${previous.id}/`)}>← Week {previous.data.week}</a>}<a href={withBase(`/sessions/#week-${String(session.data.week).padStart(2, "0")}`)}>Return to the weekly plan</a>{next && <a href={withBase(`/sessions/${next.id}/`)}>Week {next.data.week} →</a>}</nav>
   </TeachingLayout>
 )}

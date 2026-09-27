@@ -8,6 +8,23 @@ date: 2035-02-26
 durationMinutes: 90
 preparationMinutes: 20
 sourcePacket: /sources/aincrad/
+takeaway: "Two revised account-ledger rows and a 150-word argument about choice during the crisis."
+preparationSteps:
+  - title: "Orient yourself in Aincrad"
+    minutes: 4
+    detail: "Read the case-file introduction and glossary; identify Accounts A, B and C."
+    href: /sources/aincrad/
+  - title: "Read launch conditions and the first month"
+    minutes: 4
+    detail: "Read A and B. Note one change between the launch and the December meeting."
+    href: /sources/aincrad/
+  - title: "Read Asuna's entry"
+    minutes: 8
+    detail: "Read C closely. Mark what her experience adds to the account of the crisis."
+    href: /sources/aincrad/
+  - title: "Start one ledger row"
+    minutes: 4
+    detail: "Record an account paragraph, your inference and a question that remains open."
 teachers:
   - ren-ito
 spec:
@@ -23,9 +40,10 @@ related:
 
 **How can we reconstruct a crisis from partial accounts?**
 
-We begin with the opening of Sword Art Online, usually shortened to SAO.
-Build an account of the crisis that another reader can check, then consider
-whose experience it leaves out. No prior knowledge of SAO or programming is needed.
+Sword Art Online, or SAO, opened on 6 November 2022. Players entered
+Aincrad, its many-floored virtual setting, using NerveGear. The opening
+crisis took away their ability to leave. Reconstruct how their situation
+changed, then ask whose experience a brief account leaves out.
 
 This gives us a starting point for the course's larger question: why would
 people return to virtual worlds after SAO? Before we can discuss returning, we
@@ -34,21 +52,17 @@ how to act within a constraint.
 
 ## Prepare in 20 minutes
 
-Bring paper or a document you can edit. All required reading is free, short,
-and in English; you do not need to watch or buy an episode or film.
+Bring paper or a document you can edit. The required accounts are short,
+in English and available in full on this site.
 
-1. **4 minutes:** open the [Aincrad source packet](/sources/aincrad/). Read the
-   orientation and glossary, then check what A, B and C refer to.
-2. **4 minutes:** read the two official television synopses, A and B. Note
-   one change between the moments they describe.
-3. **8 minutes:** read only the two specified sections of C, the film press
-   release. Mark one detail that changes which player you notice.
-4. **4 minutes:** start one row of the source ledger below. Bring a question
-   about something the packet does not explain.
-
-If a source is unavailable, use its labelled paraphrase in the packet and
-mark your row "paraphrase only". The packet also gives a plain-text route into
-the PDF. Check the original before quoting it in assessed work.
+1. **4 minutes:** open the [Aincrad case file](/sources/aincrad/). Read the
+   introduction and glossary, then identify A, B and C.
+2. **4 minutes:** read A, *Launch conditions*, and B, *The first month*.
+   Note one change between the launch and the December meeting.
+3. **8 minutes:** read C, *Asuna's entry*, closely. Mark what her experience
+   adds to your understanding of the crisis.
+4. **4 minutes:** start one row of the ledger below. Record a paragraph ID
+   and bring a question about something the accounts leave unexplained.
 
 ## Keep a source ledger
 
@@ -56,7 +70,7 @@ A ledger is a small set of notes that lets you retrace an argument. Use these
 five fields for each claim; a spreadsheet is optional.
 
 - **Claim:** one sentence you want to test.
-- **Source and location:** A, B or C, plus a named section or paragraph.
+- **Account and location:** A, B or C, plus the paragraph ID printed beside it.
 - **What it states:** a short quotation or accurate paraphrase.
 - **Your inference:** what you think that statement helps explain.
 - **Limit:** what you would need to know before making a stronger claim.
@@ -66,16 +80,16 @@ For the worked example, read
 
 ## In the seminar: 90 minutes
 
-### 0-10 minutes | Put the accounts in order
+### 0-10 minutes | Build an event chronology
 
-In pairs, identify the event dates and the publication information in the
-packet. Make a short chronology and attach each source to the moment it
-describes. Put a question mark beside a detail
-that has no precise date. Compare your ordering with another pair.
+In pairs, place the launch on 6 November 2022 and the first-floor raid
+meeting in December 2022 on a timeline. A raid is a coordinated group
+attempt at a difficult game challenge. Attach the relevant account
+paragraphs and mark details without a precise date as uncertain.
 
 ### 10-25 minutes | Learn the method
 
-Follow the [lecture and readable notes](/lectures/week-02/) and the
+Use the [self-paced notes](/lectures/week-02/) and the
 [Week 2 slides](/decks/week-02/). Work through one ledger row together.
 Underline the words that come from a source and circle the step made by the
 historian. Suggest a less certain version of any claim that goes too far.
@@ -102,13 +116,13 @@ Name one account or kind of evidence you would seek next.
 
 Use B to test this proposed interpretation: **experience with a technology is
 enough to make someone safe within it**. Find what supports, complicates or
-fails to answer the proposition. Replace it with a claim the packet can bear.
-You do not need to agree as a group, but each version must cite a location.
+fails to answer the proposition. Replace it with a claim the case file can bear.
+You do not need to agree as a group, but each version must cite an account paragraph.
 
 ### 75-90 minutes | Write and check an exit argument
 
 Write about 150 words answering: **What did the opening crisis change about
-players' ability to choose?** Include one claim, two source references, an
+players' ability to choose?** Include one claim, two account references, an
 explanation of their relationship, and one limit. End with a question that
 would help us investigate later decisions to return to virtual worlds.
 
@@ -118,7 +132,7 @@ to your evidence and identify your own reasoning without asking you to explain.
 ## After the seminar
 
 Keep the two revised ledger rows and exit argument. They are practice work,
-not a separate graded submission. Use the feedback to choose a pair of sources
+not a separate graded submission. Use the feedback to choose a pair of accounts
 for the [Source comparison, worth 20%](/assessments/source-comparison/).
 Before next week, note one feature of life inside a virtual world that the
 opening-crisis packet leaves unexplained.

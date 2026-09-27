@@ -17,15 +17,15 @@ export const courseOutline = {
   question:
     "Why do people keep entering, inhabiting and protecting virtual worlds after the SAO incident?",
   premise:
-    "An English history seminar in a fictional 2035, treating Sword Art Online as a history of technology and society. No knowledge of the series or programming is required.",
+    "In 2022, players entered Sword Art Online and could not leave. From 2035, this first-year history course asks how people lived through the crisis and why they returned to virtual worlds.",
   invitation:
     "Follow the people who build a life inside a virtual world: the friendships they form, the institutions they create and the places they choose to call home.",
   access:
-    "Selected scenes and short background notes introduce each period. Bring a question about the people who lived through it.",
+    "Short case files introduce the events and people. Begin with the opening briefing, then bring a question to your weekly seminar.",
   method:
-    "Read scenes as sources, compare perspectives and build an argument. We ask what an account shows, what it leaves out and whose experience it preserves.",
+    "Read case accounts, compare perspectives and build an argument. Ask what an account explains, what it leaves open and whose experience it preserves.",
   sourceBoundary:
-    "The mainline television series and Ordinal Scale form our core material. The two Progressive films revisit early Aincrad from other perspectives; they are not chronological sequels. We distinguish events in the works from our historical interpretations.",
+    "Begin with accounts of the Aincrad crisis. Follow unfinished recovery, new reasons to enter virtual worlds, augmented reality and the recognition of artificial lives. Each case file gives you the context and reading for its weeks.",
 } as const;
 
 export const courseActs = [
@@ -56,7 +56,7 @@ export const courseWeeks = [
   { number: 1, act: "beginnings", title: "The promise of Full-Dive", question: "What did Full-Dive promise its first users?", material: "Full-Dive and its promise" },
   { number: 2, act: "beginnings", title: "The SAO incident", question: "How do we reconstruct a crisis from partial accounts?", material: "Aincrad · the incident" },
   { number: 3, act: "beginnings", title: "Life inside Aincrad", question: "How does a place of confinement become a society?", material: "Aincrad · work, friendship and ordinary life" },
-  { number: 4, act: "beginnings", title: "Who gets to tell Aincrad?", question: "What changes when a familiar event has another witness?", material: "The two Progressive films · early Aincrad revisited" },
+  { number: 4, act: "beginnings", title: "Who gets to tell Aincrad?", question: "What changes when an account begins with another person?", material: "Early Aincrad · entry, information and perspective" },
   { number: 5, act: "returns", title: "Escape and its aftermath", question: "What remains unresolved when people leave a virtual world?", material: "ALO · beyond Aincrad" },
   { number: 6, act: "returns", title: "Phantom Bullet and a reported threat", question: "How does a past crisis shape trust in a new world?", material: "Phantom Bullet" },
   { number: 7, act: "returns", title: "Care and participation", question: "Whose possibilities change when presence can be virtual?", material: "Mother’s Rosario" },
@@ -74,8 +74,8 @@ export const courseAssessments = [
 ] as const;
 
 export const courseSources = [
-  { title: "Sword Art Online", detail: "Official series guide · core television material", href: "https://www.swordart-online.net/" },
-  { title: "Progressive", detail: "Official story and character guide · revisiting early Aincrad", href: "https://sao-p.net/aria/story-character/" },
-  { title: "Ordinal Scale", detail: "Official film story guide · augmented reality", href: "https://sao-movie.net/us/story/story.html" },
-  { title: "Alicization", detail: "Official introduction · the Underworld period", href: "https://sao-alicization.com/intro/" },
+  { title: "The Aincrad crisis", detail: "Launch, confinement and the first month · weeks 1–4", href: "/sources/aincrad/" },
+  { title: "Reasons to return", detail: "Recovery, investigation, care and belonging · weeks 5–8", href: "/sources/returns/" },
+  { title: "Ordinal Scale", detail: "Augmented reality, place and rank · week 9", href: "/sources/ordinal-scale/" },
+  { title: "Artificial lives", detail: "Recognition, institutions and the Underworld conflict · weeks 10–12", href: "/sources/underworld/" },
 ] as const;

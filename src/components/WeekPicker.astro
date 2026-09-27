@@ -1,0 +1,9 @@
+---
+import { getPublishedCollection } from "astro-course-university/content";
+import "../styles/study-guide.css";
+const sessions = (await getPublishedCollection("sessions")).sort((a, b) => a.data.week - b.data.week);
+---
+<nav class="study-guide study-week-jumps" aria-label="Jump to a teaching week">
+  <p class="study-kicker">Choose your week</p>
+  <ol>{sessions.map((session) => <li><a href={`#week-${String(session.data.week).padStart(2, "0")}`} data-teaching-anchor aria-label={`Week ${session.data.week}: ${session.data.title}`}>{String(session.data.week).padStart(2, "0")}</a></li>)}</ol>
+</nav>

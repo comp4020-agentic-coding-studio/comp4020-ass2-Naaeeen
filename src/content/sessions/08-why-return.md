@@ -8,6 +8,22 @@ date: 2035-04-09
 durationMinutes: 90
 preparationMinutes: 25
 sourcePacket: /sources/returns/
+takeaway: "A thesis map and a 120-word comparison with a specific qualification."
+preparationSteps:
+  - title: "Choose an early case"
+    minutes: 5
+    detail: "Reread one account about entering Aincrad or making a life within it."
+    href: /sources/beginnings/
+  - title: "Choose a return or participation case"
+    minutes: 5
+    detail: "Reread a contrasting account from R1-R7."
+    href: /sources/returns/
+  - title: "Compare what people value"
+    minutes: 8
+    detail: "Find one similarity and one consequential difference between the cases."
+  - title: "Draft a shared explanation"
+    minutes: 7
+    detail: "Write a claim that could explain both cases and one limit; bring your incident-study argument."
 teachers:
   - ren-ito
 spec:
@@ -30,12 +46,12 @@ confined in a world and choosing to enter one in view.
 
 ## Prepare in 25 minutes
 
-Choose one case from [the beginnings packet](/sources/beginnings/) and one
-from [the returns packet](/sources/returns/). Spend ten minutes rereading
-the relevant cards and short English originals. Use eight minutes to find
-one similarity and one difference in what the people value. In the final
-seven, draft a claim that could explain both, then name something it leaves
-out. Bring the current argument for your incident study as well.
+Choose one account from [the beginnings case file](/sources/beginnings/)
+and one from [the returns case file](/sources/returns/). Spend five minutes
+rereading each. Use eight minutes to find one similarity and one difference
+in what the people value. In the final seven, draft a claim that could
+explain both, then name something it leaves out. Bring the current argument
+for your incident study as well.
 
 ## In the seminar: 90 minutes
 
@@ -43,7 +59,7 @@ out. Bring the current argument for your incident study as well.
   enjoyment, access and shared memory. These are our interpretive labels;
   one case may fit more than one, or require a different label.
 - **15-35:** build a thesis map. Put a proposed explanation in the centre,
-  two cases around it, and a source location on each connecting line.
+  two cases around it, and an account paragraph on each connecting line.
   Write the reason for each connection rather than drawing an unlabeled arrow.
 - **35-45:** find a counterexample or awkward detail. Ask whether it
   changes the explanation, limits its scope, or reveals a different question.

@@ -11,49 +11,55 @@ related:
   - assessments/source-comparison
 ---
 
-These notes support [Week 1](/sessions/01-the-promise-of-full-dive/).
-Use the [beginnings packet](/sources/beginnings/) for the assigned source.
+Read these self-paced notes first in [Week 1's preparation](/sessions/01-the-promise-of-full-dive/).
+Then follow the [beginnings case file](/sources/beginnings/) to the launch account.
 
 ## Our starting point
 
-We study from a fictional Slop University classroom in 2035, looking back
-on events represented in Sword Art Online. The works remain identifiable
-sources: their release dates and the dates within their stories do different
-jobs. No knowledge of the wider series is assumed.
+From our classroom in 2035, we look back at the opening of Sword Art Online,
+or SAO, in 2022. SAO was a shared virtual game world entered through
+NerveGear, a Full-Dive device. Aincrad was its many-floored setting. When
+players lost the ability to leave, entering a game became living through
+a crisis under conditions they could not freely reject.
 
-Our question is why people continue to enter, inhabit and protect virtual
-worlds after the SAO incident. To investigate it, we need to understand what
-someone could value in such a world before explaining a decision to return.
-Adventure is one possibility. So are shared work, friendship, a place to
-spend time and an opportunity unavailable elsewhere. Treat these as questions
-to test against the cases, rather than motives to assign to every player.
+Our question is why people continued to enter, inhabit and protect virtual
+worlds after that incident. Begin by asking what someone could value in
+such a place. Adventure is one possibility. So are shared work, friendship,
+a place to spend time and an opportunity unavailable elsewhere. Test those
+possibilities against the cases rather than assigning one motive to every
+player. No earlier knowledge of SAO is assumed.
 
 ## Access and control
 
-Source A introduces the Full-Dive promise and the conditions announced at
-SAO's launch. Read its short text before drawing a map. **Access** asks what
-a person can enter or do. **Control** asks who decides the conditions, can
-change them, or can refuse them. The two need not be held by the same actor.
+Account A, *Launch conditions*, introduces the experience NerveGear offered
+and the rules announced by SAO's developer, Akihiko Kayaba. **Access** asks
+what a person can enter or do. **Control** asks who sets the conditions,
+can change them, or can refuse them. The two need not be held by the same actor.
 
 On your map, label each arrow with a verb: enters, enables, announces,
 depends on, or questions. A map with only nouns can hide the relationship
-we need to explain. Leave a question mark where the source gives no answer.
-We do not need to invent the device's engineering to notice a consequential
-relationship between its user and the person setting the rules.
+we need to explain. Leave a question mark where the account gives no answer.
+A consequential relationship between a user and the person setting the
+rules can be examined before we know every engineering detail of a device.
 
 ## Propose, then examine the tradeoff
 
 The seminar's prelaunch review group is a classroom counterfactual. Its
-safeguards are proposals we can assess, not events to add to SAO's history.
-Ask who would implement a proposed rule, how someone could use it, and
-what could stop it working. "Give users control" becomes more useful when
-it names a decision, a responsible actor and a possible obstacle.
+safeguards are proposals we can assess, not recorded actions. Ask who would
+implement a proposed rule, how someone could use it, and what could stop it
+working. "Give users control" becomes more useful when it names a decision,
+a responsible actor and a possible obstacle.
 
-Keep your source observation beside the proposal without confusing them.
-That small habit connects today's map to the
-[Source comparison](/assessments/source-comparison/) and to next week's
-closer reconstruction of the crisis.
+Keep the account's report beside your proposal without confusing them.
+That habit connects today's map to the
+[Source comparison](/assessments/source-comparison/) and next week's
+closer reconstruction of the crisis. The assigned course accounts provide
+the required evidence; their preparation and underlying materials remain
+inspectable through the case files' credits.
 
 ## Further questions
 
-For an optional computing-history comparison, read [Sutherland's display vision](/sources/methods/#m1-what-can-a-display-make-possible). Ask what control a promised experience needs.
+For an optional computing-history comparison, read
+[Sutherland's display vision](/sources/methods/#m1-what-can-a-display-make-possible).
+Ask what control a promised experience needs. This optional reading is
+separate from the week's preparation allowance.

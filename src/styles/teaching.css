@@ -119,3 +119,7 @@ body:has(.teaching-main) .at-nav-links a { min-height: 44px; display: flex; alig
 .teaching-fallback-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
 
 .teaching-page-footer nav { display: flex; flex-wrap: wrap; gap: 8px 25px; }
+
+/* Orientation/planner pages and real teaching media use the wider course shell. */
+.teaching-media { padding-top: 30px; }
+.teaching-body-wide:not(.teaching-body-with-contents) { grid-template-columns: minmax(0, 1fr); justify-content: stretch; }

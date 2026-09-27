@@ -1,0 +1,48 @@
+/* A teaching itinerary: the order is visible, every week remains reachable. */
+.semester-trail { color: #292d25; font-size: 16px; line-height: 1.6; }
+.semester-trail :is(h2,h3,p,ol) { margin: 0; }
+.semester-trail :is(ol) { padding: 0; list-style: none; }
+.semester-trail a { color: inherit; text-underline-offset: .25em; }
+.semester-trail a:focus-visible { outline: 3px solid #9d6e24; outline-offset: 4px; }
+.semester-trail [id] { scroll-margin-top: calc(var(--at-nav-height, 7rem) + 20px); }
+.st-heading { display: grid; grid-template-columns: 1.45fr 1fr; align-items: end; gap: 70px; }
+.st-eyebrow { color: #78541d; font-size: 11px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
+.st-heading h2 { margin-top: 20px; font: 400 clamp(2.5rem, 4.2vw, 4.8rem)/1.07 Georgia, serif; letter-spacing: -.045em; }
+.st-heading h2 em { font-weight: inherit; }
+.st-heading > div:last-child > p:first-child { max-width: 40ch; color: #635b4b; }
+.st-meeting { margin-top: 19px !important; color: #78541d; font-size: 13px; }
+.st-shortcuts { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 30px; margin-top: 35px; padding-block: 14px; border-block: 1px solid #c9c0ae; }
+.st-shortcuts a { display: inline-flex; align-items: center; min-height: 44px; gap: 14px; font-size: 12px; text-decoration: none; }
+.st-shortcuts a > span:first-child { color: #6a6150; font-size: 11px; }
+.st-shortcuts a:hover { text-decoration: underline; }
+.st-shortcuts .st-full-plan { margin-left: auto; font-weight: 600; }
+.st-acts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; margin-top: 35px !important; }
+.st-act { min-width: 0; padding: 28px 26px 24px; border-top: 3px solid #978365; background: #eee7da; }
+.st-act:first-child { border-top-color: #a8772c; }
+.st-act > header { display: flex; align-items: start; gap: 19px; min-height: 82px; }
+.st-act-number { color: #9b7a45; font: 400 51px/1 Georgia, serif; }
+.st-act > header p { color: #6e604a; font-size: 10px; text-transform: uppercase; letter-spacing: .07em; }
+.st-act h3 { margin-top: 9px; font: 400 24px/1.15 Georgia, serif; }
+.st-weeks { position: relative; }
+.st-weeks::before { content: ""; position: absolute; top: 34px; bottom: 54px; left: 20px; border-left: 1px dashed #ad9876; }
+.st-weeks > li { position: relative; }
+.st-weeks a { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 17px; align-items: start; min-height: 116px; padding-block: 17px; text-decoration: none; }
+.st-week-number { display: grid; place-items: center; width: 41px; height: 41px; border: 1px solid #b5a185; border-radius: 50%; background: #eee7da; color: #705324; font-size: 11px; font-variant-numeric: tabular-nums; transition: background .2s, transform .2s; }
+.st-first-week .st-week-number { color: #fff8e9; background: #80591e; border-color: #80591e; box-shadow: 0 0 0 5px #dcccac; }
+.st-week-copy { display: block; padding-top: 1px; }
+.st-week-copy small { display: block; margin-bottom: 5px; color: #6e604a; font-size: 10px; }
+.st-first-week .st-week-copy small { color: #775014; font-weight: 650; }
+.st-week-copy strong { display: block; font-size: 15px; font-weight: 600; line-height: 1.5; }
+.st-week-copy > span { display: inline-flex; align-items: center; gap: 14px; margin-top: 6px; color: #6e604a; font-size: 11px; }
+.st-weeks a:is(:hover,:focus-visible) .st-week-number { transform: translateY(-3px); background: #dac390; color: #302819; }
+.st-weeks a:is(:hover,:focus-visible) strong { text-decoration: underline; text-underline-offset: .23em; }
+.st-deadline { position: relative; display: block; min-height: 120px; margin-top: 15px; padding: 19px 28px 17px 19px; border-left: 2px solid #9a6b24; background: #f8f4eb; text-decoration: none; }
+.st-deadline > span:first-child { display: block; color: #79551b; font-size: 10px; letter-spacing: .05em; text-transform: uppercase; }
+.st-deadline strong { display: block; margin-top: 7px; font-size: 13px; font-weight: 600; }
+.st-deadline small { display: block; margin-top: 7px; color: #6e604a; font-size: 10px; }
+.st-deadline-arrow { position: absolute; top: 18px; right: 15px; color: #8a6225; }
+.st-deadline:hover strong { text-decoration: underline; }
+@media (max-width: 1100px) { .st-acts { gap: 20px; } .st-act { padding-inline: 18px; } .st-weeks a { gap: 11px; } .st-heading { gap: 40px; } }
+@media (max-width: 800px) { .st-heading { grid-template-columns: 1fr; gap: 24px; } .st-heading h2 { font-size: 43px; } .st-acts { grid-template-columns: 1fr; gap: 28px; } .st-act { padding: 26px; } .st-act > header { min-height: 72px; } .st-weeks a { min-height: 100px; gap: 20px; } .st-week-copy strong { font-size: 17px; } .st-shortcuts { gap: 3px 20px; } .st-shortcuts a { gap: 8px; } .st-shortcuts .st-full-plan { margin-left: 0; flex-basis: 100%; } .st-deadline { min-height: 0; } }
+@media (max-width: 420px) { .st-heading h2 { font-size: 38px; } .st-heading > div:last-child { font-size: 15px; } .st-act { padding: 23px 19px; } .st-act h3 { font-size: 26px; } .st-shortcuts a { font-size: 11px; } .st-shortcuts a > span:first-child { font-size: 10px; } }
+@media (prefers-reduced-motion: reduce) { .st-week-number { transition: none; } }

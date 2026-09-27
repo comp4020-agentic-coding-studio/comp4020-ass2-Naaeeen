@@ -17,6 +17,9 @@
 .reveal .slides section.aincrad-deck {
   --deck-gutter: 4rem;
   position: absolute;
+  /* This full-height grid centers its own content. Override Reveal's inline
+   * centering offset so the slide and its bottom navigation stay on canvas. */
+  inset: 0 !important;
   padding: 3.25rem var(--deck-gutter) 6rem;
   gap: 1.5rem;
   align-content: center;
@@ -315,6 +318,15 @@
   }
 }
 
+/* In normal presentation mode, hidden slides must leave layout and the
+ * accessibility tree. Preserve Reveal's overview and all-present reading/print
+ * modes, along with the all-slide fallback before .ready. */
+@media screen {
+  .reveal.ready:not(.overview) .slides section.aincrad-deck[hidden]:not(.present) {
+    display: none !important;
+  }
+}
+
 /* Useful server-rendered reading view before initialization or without JS. */
 @media screen {
   html:has(.reveal:not(.ready) .aincrad-deck),
@@ -365,4 +377,13 @@
   .reveal .slides section.aincrad-deck .deck-nav {
     display: none;
   }
+}
+
+/* Our embedded viewer already supplies visible navigation instructions. Hide
+ * this deck's first-visit overlay only in that context, so it cannot cover
+ * lesson content. Standalone presentation styling is unchanged. */
+html.course-deck-embedded .astromotion-help-hint { display: none !important; }
+.reveal .slides section.aincrad-deck .deck-resource-links { font-size: 1.6rem; }
+@media screen and (max-width: 900px), screen and (max-height: 560px) {
+  .reveal .slides section.aincrad-deck .deck-resource-links { font-size: 1rem; line-height: 1.5; }
 }

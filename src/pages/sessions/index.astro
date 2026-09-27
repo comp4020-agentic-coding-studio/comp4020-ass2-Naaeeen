@@ -1,16 +1,12 @@
 ---
-import { getPublishedCollection } from "astro-course-university/content";
-import { withBase } from "astro-theme-university/url";
 import TeachingLayout from "../../layouts/TeachingLayout.astro";
-import { courseWeeks } from "../../data/course-outline";
-import { sessionLabels } from "../../site-config";
-import { formatCourseDate } from "../../lib/dates";
-const sessions = await getPublishedCollection("sessions");
-const available = new Map(sessions.map((session) => [session.data.week, session]));
+import WeeklyRhythm from "../../components/WeeklyRhythm.astro";
+import WeekPicker from "../../components/WeekPicker.astro";
+import WeeklyPlanner from "../../components/WeeklyPlanner.astro";
+import "../../styles/study-guide.css";
 ---
-<TeachingLayout title={sessionLabels.plural} description="Twelve questions guide our history of the Full-Dive age. Open a seminar to find its preparation, source work, and discussion." eyebrow="The teaching timetable">
-  <ol class="teaching-schedule">{courseWeeks.map((week) => {
-    const session = available.get(week.number);
-    return <li><span class="teaching-schedule-number" aria-label={`Week ${week.number}`}>{String(week.number).padStart(2, "0")}</span><div><h2>{session ? <a href={withBase(`/sessions/${session.id}/`)}>{session.data.title} <span aria-hidden="true">↗</span></a> : week.title}</h2><p>{week.question}</p><small>{session ? `${formatCourseDate(session.data.date)} · Open the seminar` : `${week.material} · Course outline`}</small></div></li>;
-  })}</ol>
+<TeachingLayout title="Weekly plan" description="Choose your teaching week. Follow its preparation in order, bring your work to the Monday seminar, and keep the output for your next step." eyebrow="One course · twelve teaching weeks" wide={true}>
+  <WeekPicker slot="notice" />
+  <WeeklyRhythm />
+  <WeeklyPlanner />
 </TeachingLayout>

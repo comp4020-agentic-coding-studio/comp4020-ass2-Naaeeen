@@ -8,6 +8,18 @@ date: 2035-05-07
 durationMinutes: 90
 preparationMinutes: 25
 sourcePacket: /sources/
+takeaway: "A revised caption and transition, plus a three-priority plan for finishing the exhibition."
+preparationSteps:
+  - title: "Check your references"
+    minutes: 10
+    detail: "Use the case files to check the account and paragraph behind each exhibition item."
+    href: /sources/
+  - title: "Read your sequence as a newcomer"
+    minutes: 10
+    detail: "Check six items and your draft curatorial argument; mark missing context or unfinished work."
+  - title: "Choose a review question"
+    minutes: 5
+    detail: "Name the decision you most need a reader to test in the seminar."
 teachers:
   - ren-ito
 spec:
@@ -30,15 +42,14 @@ order without yet explaining why relationships, institutions or choices changed.
 ## Prepare in 25 minutes
 
 Bring your current [exhibition draft](/assessments/digital-history-exhibition/):
-six curated items across the three course acts and a draft 300–400-word
-curatorial argument. Slides, a document and a simple webpage are equally valid formats.
-Rough items are useful for feedback; identify anything still missing.
+six curated items across the three course acts and a draft 300-400 word
+curatorial argument. Slides, a document and a simple webpage are equally
+valid formats. Rough items are useful for feedback; identify anything missing.
 
-Spend **10 minutes** checking references against the [source desk](/sources/),
-**10 minutes** reading your sequence as a newcomer, and **5 minutes** naming
-one question for your reviewer. All packet reading is free and in English.
-Use a labelled packet paraphrase if a source fails, recording the access gap
-rather than turning it into a quotation.
+Spend **10 minutes** checking account and paragraph references against the
+[case files](/sources/), **10 minutes** reading your sequence as a newcomer,
+and **5 minutes** naming one question for your reviewer. All required case
+accounts are available on the site.
 
 ## In the seminar: 90 minutes
 

@@ -1,0 +1,10 @@
+---
+// Keep browser JavaScript outside Markdown so typographic processing cannot
+// rewrite its string delimiters. The inline timing marks the deck before its
+// deferred presentation runtime can create a first-visit help overlay.
+---
+<script is:inline>
+  if (window.parent !== window) {
+    document.documentElement.classList.add("course-deck-embedded");
+  }
+</script>

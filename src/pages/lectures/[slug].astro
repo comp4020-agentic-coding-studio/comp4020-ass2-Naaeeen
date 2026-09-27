@@ -4,6 +4,7 @@ import { getPublishedCollection } from "astro-course-university/content";
 import RelatedContent from "astro-course-university/components/RelatedContent.astro";
 import TeachingLayout from "../../layouts/TeachingLayout.astro";
 import TeachingTeam from "../../components/TeachingTeam.astro";
+import SlidePreview from "../../components/SlidePreview.astro";
 import { formatCourseDate } from "../../lib/dates";
 import { graphCollections } from "../../site-config";
 
@@ -16,13 +17,14 @@ const { Content, headings } = await render(lecture);
 const sessions = await getPublishedCollection("sessions");
 const session = sessions.find((entry) => entry.data.week === lecture.data.week);
 const actions = [
-  ...(lecture.data.slides ? [{ label: "Open the slides", href: lecture.data.slides }] : []),
-  ...(session ? [{ label: "Go to the seminar", href: `/sessions/${session.id}/` }] : []),
-  ...(typeof session?.data.sourcePacket === "string" ? [{ label: "Source packet", href: session.data.sourcePacket }] : []),
+  ...(lecture.data.slides ? [{ label: "Open presentation", href: lecture.data.slides }] : []),
+  ...(session ? [{ label: `Open Week ${session.data.week} seminar`, href: `/sessions/${session.id}/` }] : []),
+  ...(typeof session?.data.sourcePacket === "string" ? [{ label: "Read the case file", href: session.data.sourcePacket }] : []),
 ];
 ---
-<TeachingLayout title={lecture.data.title} description={lecture.data.description} eyebrow={`Week ${String(lecture.data.week).padStart(2, "0")} · Lecture`} breadcrumbs={[{ label: "Lectures", href: "/lectures/" }]} metadata={[{ label: "Date", value: formatCourseDate(lecture.data.date) }]} actions={actions} headings={headings}>
-  <Content />
+<TeachingLayout title={lecture.data.title} description={lecture.data.description} eyebrow={`Week ${String(lecture.data.week).padStart(2, "0")} · ${lecture.data.slides ? "Notes & slides" : "Lecture notes"}`} breadcrumbs={[{ label: "Library", href: "/library/" }, { label: "Notes & slides", href: "/lectures/" }]} metadata={[{ label: "Format", value: "Self-paced notes" }, { label: "Associated seminar", value: formatCourseDate(lecture.data.date) }]} actions={actions} headings={headings}>
+  <Fragment slot="media">{lecture.data.slides && <SlidePreview title={lecture.data.title} slides={lecture.data.slides} notesHref={`/lectures/${lecture.id}/#lecture-notes`} week={lecture.data.week} />}</Fragment>
+  <div id="lecture-notes" tabindex="-1"><Content /></div>
   <TeachingTeam teachers={lecture.data.teachers} />
-  <RelatedContent entry={lecture} collections={graphCollections} heading="Continue this week" />
+  <RelatedContent entry={lecture} collections={graphCollections} heading="Continue your study" />
 </TeachingLayout>

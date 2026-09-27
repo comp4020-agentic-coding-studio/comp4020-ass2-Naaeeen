@@ -8,6 +8,19 @@ date: 2035-02-19
 durationMinutes: 90
 preparationMinutes: 20
 sourcePacket: /sources/beginnings/
+takeaway: "An annotated access-and-control map and a 100-word safeguard recommendation."
+preparationSteps:
+  - title: "Read the opening notes"
+    minutes: 6
+    detail: "Start with the course question and the distinction between access and control."
+    href: /lectures/week-01/
+  - title: "Read the launch account"
+    minutes: 5
+    detail: "Follow the Week 1 route to Account A, Launch conditions, and check the key terms."
+    href: /sources/beginnings/
+  - title: "Begin your access map"
+    minutes: 9
+    detail: "Draw a player, a device and a shared world. Add an attraction, a dependency and a question."
 teachers:
   - ren-ito
 spec:
@@ -23,25 +36,25 @@ related:
 
 **What did Full-Dive promise its first users, and who controlled that promise?**
 
-We begin before treating the SAO incident as inevitable. Imagine the appeal
-of entering a shared world, then ask which decisions belong to a player and
-which depend on its maker. This course studies technology through the people,
-rules and relationships that give it meaning. No programming or prior SAO
-knowledge is required.
+Sword Art Online, or SAO, was a shared virtual game world entered through
+NerveGear, a Full-Dive device. Begin with the appeal of entering such a place,
+then ask which decisions belonged to a player and which depended on its
+maker. Our history follows technology through people, rules and relationships.
+No programming or earlier knowledge of SAO is required.
 
 ## Prepare in 20 minutes
 
 Read the [opening notes](/lectures/week-01/) for six minutes. Spend five
-minutes on the [Week 1 reading route](/sources/beginnings/#week-1-the-promise-of-full-dive),
-which links the free English episode 1 synopsis and its teaching paraphrase.
-Use the remaining nine minutes to draw a player, a device and a shared
-world. Add one attraction, one possible dependency and one question. Mark
-which points come from the reading and which are your own ideas.
+minutes on the [Week 1 reading route](/sources/beginnings/#week-1-the-promise-of-full-dive)
+and Account A, *Launch conditions*. Use the remaining nine minutes to draw
+a player, a device and a shared world. Add one attraction, one possible
+dependency and one question. Mark which points the account reports and
+which are your own ideas.
 
 ## In the seminar: 90 minutes
 
 - **0-10:** introduce the course question and compare the attractions people
-  identified. Keep our 2035 teaching frame separate from dates in the story.
+  identified. Distinguish what we know in 2035 from what a first user could know at launch.
 - **10-25:** build an access and control map in pairs. Draw arrows for what
   each actor enables or decides. Leave unknown arrangements as questions.
 - **25-45:** try a **classroom counterfactual**: advise an invented prelaunch

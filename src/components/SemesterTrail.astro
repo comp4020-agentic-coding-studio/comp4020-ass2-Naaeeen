@@ -1,0 +1,33 @@
+---
+import { getPublishedCollection } from "astro-course-university/content";
+import { withBase } from "astro-theme-university/url";
+import { courseActs, courseWeeks } from "../data/course-outline";
+import { courseMeta } from "../course-config";
+import { teachingRhythm, seminarTime } from "../data/teaching-rhythm";
+import "../styles/semester-trail.css";
+const [sessions, assessments] = await Promise.all([getPublishedCollection("sessions"), getPublishedCollection("assessments")]);
+const byWeek = new Map(sessions.map((session) => [session.data.week, session]));
+const teachingDate = new Intl.DateTimeFormat("en-AU", { day: "numeric", month: "short", timeZone: "UTC" });
+const dueDate = new Intl.DateTimeFormat("en-AU", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", hour12: false, timeZone: teachingRhythm.timeZone });
+---
+<section id="weeks" class="semester-trail" aria-labelledby="semester-trail-title">
+  <div class="st-heading"><div><p class="st-eyebrow">Your semester · {courseMeta.year}</p><h2 id="semester-trail-title">One course.<br /><em>Twelve connected weeks.</em></h2></div><div><p>Open a week to see what to read first, what to bring and what you will make.</p><p class="st-meeting">{teachingRhythm.seminarDay}s · {seminarTime}<br />{teachingRhythm.timeZoneLabel}</p></div></div>
+  <nav class="st-shortcuts" aria-label="Jump to a course act">{courseActs.map((act) => <a href={`#trail-${act.id}`}>Act {act.number}<span>Weeks {act.range}</span><span aria-hidden="true">↓</span></a>)}<a class="st-full-plan" href={withBase("/sessions/")}>Open the detailed weekly plan <span aria-hidden="true">↗</span></a></nav>
+  <ol class="st-acts">{courseActs.map((act) => {
+    const weeks = courseWeeks.filter((week) => week.act === act.id);
+    const deadlines = assessments.filter((assessment) => weeks.some((week) => week.number === assessment.data.week));
+    return <li id={`trail-${act.id}`} class="st-act">
+      <header><span class="st-act-number" aria-hidden="true">{act.number}</span><div><p>Act {act.number} · Weeks {act.range}</p><h3>{act.title}</h3></div></header>
+      <ol class="st-weeks" start={weeks[0].number}>{weeks.map((week) => {
+        const session = byWeek.get(week.number)!;
+        return <li id={`week-${String(week.number).padStart(2, "0")}`} class:list={[{ "st-first-week": week.number === 1 }]}>
+          <a href={withBase(`/sessions/${session.id}/`)}>
+            <span class="st-week-number" aria-hidden="true">{String(week.number).padStart(2, "0")}</span>
+            <span class="st-week-copy"><small>{week.number === 1 ? "Begin here · " : ""}Monday {teachingDate.format(session.data.date)}</small><strong><span class="visually-hidden">Week {week.number}: </span>{session.data.title}</strong><span>Open week {week.number} <span aria-hidden="true">↗</span></span></span>
+          </a>
+        </li>;
+      })}</ol>
+      {deadlines.map((assessment) => <a class="st-deadline" href={withBase(`/assessments/${assessment.id}/`)}><span>Assessment · {assessment.data.weight}%</span><strong>{assessment.data.title}</strong><small>Due {dueDate.format(assessment.data.due)} · Canberra</small><span class="st-deadline-arrow" aria-hidden="true">↗</span></a>)}
+    </li>;
+  })}</ol>
+</section>

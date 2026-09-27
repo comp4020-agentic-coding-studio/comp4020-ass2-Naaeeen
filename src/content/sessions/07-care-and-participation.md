@@ -8,6 +8,19 @@ date: 2035-04-02
 durationMinutes: 90
 preparationMinutes: 25
 sourcePacket: /sources/returns/
+takeaway: "A participation journey and a 100-word explanation of one consequential change."
+preparationSteps:
+  - title: "Read Yuuki's participation accounts"
+    minutes: 10
+    detail: "Read R5-R7, beginning with her goals and the people involved."
+    href: /sources/returns/
+  - title: "Read the participation notes"
+    minutes: 8
+    detail: "Consider how technical access, practical arrangements and relationships work together."
+    href: /lectures/week-07/
+  - title: "Sketch a participation journey"
+    minutes: 7
+    detail: "Choose one stated goal and mark the people, resources, decisions and remaining questions."
 teachers:
   - ren-ito
 spec:
@@ -23,19 +36,18 @@ related:
 
 **Who can take part when the boundaries of everyday life change?**
 
-Mother's Rosario gives us a different reason to value a virtual world.
-This week begins with what Yuuki wants to do and who she wants to do it
-with. We then ask which parts of participation depend on a device, which
-on other people's work, and which on being included in a shared activity.
+Yuuki led a player group called the Sleeping Knights and used virtual
+worlds while staying in hospital. Begin with what she wanted to do and who
+she wanted to do it with. Then ask which parts of participation depended
+on a device, on other people's work, or on inclusion in a shared activity.
 
 ## Prepare in 25 minutes
 
-Spend ten minutes on [R5-R7](/sources/returns/#week-7-a-world-worth-participating-in)
-and their free English episode synopses. Read the
-[participation notes](/lectures/week-07/) for eight minutes. In the final
-seven, choose one goal named in the packet and sketch the steps needed to
-participate. Mark the people, resources and decisions the source identifies;
-leave unreported arrangements as questions.
+Spend ten minutes reading [R5-R7](/sources/returns/#week-7-a-world-worth-participating-in).
+Read the [participation notes](/lectures/week-07/) for eight minutes. In the
+final seven, choose one goal named in the case file and sketch the steps
+needed to participate. Mark the people, resources and decisions the accounts
+identify; leave unreported arrangements as questions.
 
 ## In the seminar: 90 minutes
 

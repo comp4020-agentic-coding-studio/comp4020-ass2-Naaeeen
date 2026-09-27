@@ -1,0 +1,17 @@
+---
+import { withBase } from "astro-theme-university/url";
+import { teachingRhythm, seminarTime, seminarDurationMinutes } from "../data/teaching-rhythm";
+import "../styles/study-guide.css";
+interface Props { compact?: boolean; preparationMinutes?: number; }
+const { compact = false, preparationMinutes } = Astro.props;
+const preparation = preparationMinutes === undefined ? "20–30 minutes" : `${preparationMinutes} minutes`;
+---
+<section class:list={["study-guide", "study-rhythm", { "study-rhythm-compact": compact }]} data-weekly-rhythm aria-label="Weekly rhythm">
+  <div class="study-rhythm-heading"><p class="study-kicker">How the week works</p><h2>Your weekly rhythm</h2></div>
+  <ol class="study-rhythm-track">
+    <li><span class="study-rhythm-index" aria-hidden="true">01</span><div><h3>Before the seminar</h3><p class="study-rhythm-time">{preparation}</p><p>Follow the week's preparation steps in order. Any notes listed there are included in this time.</p></div></li>
+    <li><span class="study-rhythm-index" aria-hidden="true">02</span><div><h3>Together on {teachingRhythm.seminarDay}</h3><p class="study-rhythm-time">{seminarTime}<span>{teachingRhythm.timeZoneLabel} · {seminarDurationMinutes} minutes</span></p><p class="study-rhythm-place">{teachingRhythm.location}</p><p>A seminar is a small-group working session: discuss the evidence and make the week's output.</p></div></li>
+    <li><span class="study-rhythm-index" aria-hidden="true">03</span><div><h3>Afterwards</h3><p class="study-rhythm-time">About {teachingRhythm.followUpMinutes} minutes</p><p>Organise your notes, revise the output and keep it for later study.</p></div></li>
+  </ol>
+  <p class="study-rhythm-note">Reserve separate work blocks for assessed tasks. Check the <a href={withBase("/sessions/#deadlines")}>assessment deadlines in the weekly plan</a>.</p>
+</section>

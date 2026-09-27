@@ -1,0 +1,22 @@
+---
+import { withBase } from "astro-theme-university/url";
+import "../styles/slide-preview.css";
+interface Props { title: string; slides: string; notesHref: string; week: number; }
+const { title, slides, notesHref, week } = Astro.props;
+const deckHref = withBase(slides);
+const frameHref = `${deckHref}?postMessageEvents=true&touch=false`;
+const id = `slide-preview-week-${week}`;
+---
+<section class="slide-preview" aria-labelledby={`${id}-title`} data-slide-preview data-deck-href={deckHref}>
+  <header class="slide-preview-heading"><div><p class="slide-preview-eyebrow">Week {week} · Presentation</p><h2 id={`${id}-title`}>{title}</h2></div><p>Work through the slides at your own pace, or use them alongside the seminar.</p></header>
+  <div class="slide-preview-tools">
+    <div class="slide-preview-controls" data-slide-controls hidden aria-label="Presentation controls" role="group"><button type="button" data-slide-prev disabled><span aria-hidden="true">←</span> Previous</button><output data-slide-position aria-live="polite" aria-atomic="true">Opening slides</output><button type="button" data-slide-next disabled>Next <span aria-hidden="true">→</span></button></div>
+    <nav class="slide-preview-links" aria-label="Presentation and readable notes"><a href={deckHref} data-open-presentation>Open presentation <span aria-hidden="true">↗</span></a><a href={withBase(notesHref)}>Read the notes <span aria-hidden="true">↓</span></a><button type="button" data-slide-fullscreen hidden disabled>Full screen <span aria-hidden="true">⤢</span></button></nav>
+  </div>
+  <iframe class="slide-preview-frame" data-slide-frame src={frameHref} title={`Week ${week} presentation: ${title}`} width="1280" height="720" loading="eager" allow="fullscreen" allowfullscreen></iframe>
+  <p class="slide-preview-status" data-slide-status role="status">Use Previous and Next in the slides, or open the presentation. Readable notes are always available.</p>
+</section>
+<script>
+  import { mountSlidePreview } from "../lib/slide-preview";
+  document.querySelectorAll<HTMLElement>("[data-slide-preview]").forEach((root) => mountSlidePreview(root));
+</script>

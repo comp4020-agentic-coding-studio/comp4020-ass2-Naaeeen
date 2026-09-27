@@ -11,16 +11,16 @@ marking:
   criteria:
     - name: Accurate use of identifiable evidence
       weight: 35
-    - name: Comparison of perspective and source limits
+    - name: Comparison of emphasis and account limits
       weight: 30
     - name: A supported historical argument
       weight: 25
     - name: Clear writing and traceable citations
       weight: 10
 spec:
-  - Submit a 600-800 word comparison of two sources from the Aincrad packet.
-  - Give page or section locations for each quotation or paraphrase.
-  - Make one argument, explain a source limitation, and include a reference list.
+  - Submit a 600-800 word comparison of two compiled accounts from the Aincrad case file.
+  - Give the account title and paragraph ID for each quotation or paraphrase.
+  - Make one argument, explain an account limitation, and include a reference list.
 related:
   - incident-study
   - digital-history-exhibition
@@ -33,23 +33,29 @@ related:
 **How does the choice of account change what a historian can say about the
 start of the SAO incident?**
 
-Write a 600-800 word comparison using **two of the three sources in the
-[Aincrad packet](/sources/aincrad/)**. Make a claim about how perspective,
-selection or timing affects an interpretation of the opening crisis. Then
-show how particular details support it. You are comparing the accounts, not
-reviewing whether the television series or film is entertaining.
+Write a **600-800 word comparison** using two of the three course-compiled
+accounts in the [Aincrad case file](/sources/aincrad/): A, *Launch conditions*;
+B, *The first month*; and C, *Asuna's entry*. Make a claim about how their
+focus, selection or timing affects our understanding of the crisis. Support
+it with particular details and explain their relationship.
 
-A and C are a useful starting pair because they revisit the opening through
-different narrative emphases. A and B, or B and C, also work: explain how the
-different moments described affect your comparison. You do not need any
-sources beyond this free English packet, or access to a full episode or film.
+A and C are a useful starting pair: one concentrates on the conditions
+imposed on players, the other on a newcomer's entry. A and B, or B and C,
+also work. Explain how the different moments described affect the comparison.
+The complete assigned texts are on the case-file page; no external reading
+is needed to complete this assessment.
+
+These accounts share course preparation. Compare what each helps explain;
+do not treat agreement between them as independent corroboration or invent
+a witness behind an account. Their underlying materials remain available
+through the case file's source credits.
 
 ## What to hand in
 
 Use the [course hand-in procedure](/policies/#handing-in-work-and-receiving-feedback).
 It gives the delivery arrangements and when feedback returns.
 
-Submit **one accessible PDF or DOCX** containing your comparison and reference
+Submit **one accessible PDF or DOCX** containing the comparison and reference
 list. Include a title, your student identifier and the body word count. PDF
 text must be selectable. The 600-800 words include quotations and in-text
 citations; the title and reference list do not count. Use the filename
@@ -58,62 +64,56 @@ citations; the title and reference list do not count. Use the filename
 Your comparison should:
 
 1. State an answer to the question in its opening paragraph.
-2. Introduce the two sources: creator or publisher, document type, adaptation
-   and publication information where supplied.
-3. Compare at least two specific details in relation to your argument. Explain
-   the effect of a difference or agreement instead of listing it.
-4. Distinguish what a source states from your own interpretation. Explain one
-   limit and identify the further evidence a stronger claim would need.
-5. End by explaining what this comparison helps us ask about people's choices
-   in virtual worlds. You do not have to answer the whole course question.
+2. Identify the two accounts by title and course compiler, and explain what
+   each concentrates on: a moment, a person's circumstances or a problem.
+3. Compare at least two specific details in relation to your argument.
+   Explain the effect of a difference or agreement rather than listing it.
+4. Distinguish what an account reports from your interpretation. Explain
+   one limit and identify the evidence a stronger claim would need.
+5. End by explaining what the comparison helps us ask about people's
+   choices in virtual worlds. You need not answer the whole course question.
 
-Use your own structure. A strong comparison can move between the sources
-throughout, rather than giving each one an isolated summary paragraph.
+Use your own structure. A strong comparison can move between the accounts
+throughout, keeping the shared question visible.
 
-## How to cite this packet
+## How to cite the accounts
 
-Any consistent author-date or numbered style is acceptable if a reader can
-locate the exact passage. Include the document title, publisher, date if
-available, URL and access date in the reference list. Do not invent a
-publication date for an undated webpage; use "n.d.".
+Use the **case-file title, account title or letter, and paragraph ID**. For
+example: **(Aincrad case file, C, paragraph C1)**. A reference-list entry
+should name *After Aincrad course team* as compiler, identify the account,
+and give its case-file URL and your access date. Cite the assigned account
+rather than inventing a publication date or an original witness.
 
-For A and B, cite the episode number and the synopsis heading, adding the
-paragraph's opening words when useful. For C, give the PDF page number and
-section. For example: **(Source C, p. 2, "Official Synopsis")**. The
-[packet's source cards](/sources/aincrad/#required-reading) give the complete
-identity of each document.
-
-Prefer concise paraphrases. Put any copied words in quotation marks. The
-packet's teaching paraphrases help you get started, but consult the original
-passages for the assessed comparison. If you cannot access a required source,
-bring the problem to the seminar so an accessible version can be arranged.
+Prefer concise paraphrases. Put copied wording in quotation marks and
+identify its paragraph. A quotation from the course account is a quotation
+from that account, not a participant's spoken words. No special citation
+style is required if a reader can find the exact passage.
 
 ## What the criteria mean
 
-- **Evidence, 35%:** the details are accurate, relevant to the claim and
-  traceable to the selected sources. Event dates and publication dates are
-  kept separate.
-- **Comparison, 30%:** the response explains how perspective, selection or
-  timing changes interpretation. It identifies a specific limit rather
-  than calling a source simply "biased" or "unreliable".
-- **Argument, 25%:** the paragraphs develop one defensible answer. The
-  conclusion follows from the comparison and keeps the claim within the
-  evidence's reach.
-- **Writing and citations, 10%:** the reader can follow the reasoning and
-  find the passages. The file, word count and reference list meet the brief.
+- **Evidence, 35%:** details are accurate, relevant and traceable to the
+  selected account paragraphs. Event sequence and uncertainty are handled
+  carefully.
+- **Comparison, 30%:** the response explains how focus, selection or timing
+  changes interpretation. It identifies a specific limit rather than
+  dismissing an account as simply "biased" or "unreliable".
+- **Argument, 25%:** the paragraphs develop one defensible answer, and the
+  conclusion stays within the evidence's reach.
+- **Writing and citations, 10%:** the reasoning is clear, references locate
+  the passages, and the file and word count meet the brief.
 
-A response may disagree with the lecture's interpretation and still do very
-well. Its evidence and reasoning must make that disagreement convincing.
+A response may disagree with the lecture notes' interpretation. Its evidence
+and reasoning must make that disagreement convincing.
 
 ## Use the seminar work
 
-The [Week 2 seminar](/sessions/02-the-sao-incident/) gives you a source ledger,
-a peer check and a short exit argument. Start by revising those notes. Before
-submitting, ask a reader to mark the sentence that carries your argument and
-find one of your cited passages without help.
+The [Week 2 seminar](/sessions/02-the-sao-incident/) gives you an account
+ledger, a peer check and a short exit argument. Revise those notes first.
+Ask a reader to find the sentence carrying your argument and locate one
+cited paragraph without help.
 
-Write the argument in your own words and acknowledge assistance that shaped
-it in a short note after the reference list; that note is excluded from the
-word count. Keep your source notes so you can explain how the comparison was
-made. The next assessment extends this method from two accounts to an
-[incident study](/assessments/incident-study/).
+Write in your own words and acknowledge assistance that shaped the work in
+a short note after the reference list; that note is excluded from the word
+count. Keep your account notes so you can explain how the comparison was
+made. The [Incident study](/assessments/incident-study/) extends this method
+to a technical choice and its social consequences.

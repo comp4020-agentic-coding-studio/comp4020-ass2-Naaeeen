@@ -12,37 +12,41 @@ related:
   - assessments/source-comparison
 ---
 
-[Open the Week 2 slides](/decks/week-02/) or read the complete notes below.
-The [seminar page](/sessions/02-the-sao-incident/) gives the preparation and
-activities; the [source packet](/sources/aincrad/) identifies A, B and C.
+Use these notes and the [Week 2 slides](/decks/week-02/) during the
+[seminar's worked example](/sessions/02-the-sao-incident/). The complete
+[Aincrad case file](/sources/aincrad/) supplies Accounts A, B and C. These
+notes are also available for self-paced review after the meeting.
 
 ## The problem of a partial record
 
 A short account can tell us something important without answering every
-question we bring to it. Our task is to preserve that distinction. Begin by
-asking who produced the account, what kind of document it is, which moment it
-describes, and what a reader is meant to notice.
+question we bring to it. Begin with the question it helps us investigate,
+the moment it describes and whose circumstances it makes visible.
 
-For this lecture, keep two questions separate. **What does the account say
-happened?** is a question about its content. **Why was this detail selected?**
-is a question about its presentation. The second does not make the first
-useless. It helps us decide which claims the source can support.
+Keep two questions separate. **What does the account report?** asks about
+its content. **What can we reasonably explain from that report?** asks about
+our inference. The course compiles these accounts around different parts
+of the crisis; their agreement is not independent corroboration.
 
-The packet contains material promoting two screen adaptations. Comparing
-their selection and emphasis is useful; counting them as separate eyewitnesses
-would give agreement more weight than it deserves.
+A focuses on launch conditions and control. B follows the first month and
+the difficulty of acting alone. C begins with Asuna, a newcomer to online
+games. Read them together to examine how one crisis placed people with
+different experience under a common constraint.
 
 ## Make a chronology before making a cause
 
-Use the event information in the [three source cards](/sources/aincrad/#required-reading)
-to place the opening and a later moment in order. Add a source label beside
-each entry. Keep dates of events separate from dates when a text was issued.
-Source C's publication date belongs in its reference, not in the event timeline.
+Start with two supported points: **SAO launched on 6 November 2022**; by
+**December 2022**, Diabel was calling players to a first-floor raid meeting.
+A raid is a coordinated group attempt at a difficult game challenge. Use
+the [case accounts](/sources/aincrad/#required-reading) to attach the exact
+paragraphs to these points. Mark any more precise date as unknown unless
+the assigned account supplies it.
 
-Sequence helps us ask causal questions, but it does not settle them. "This
-happened next" and "this happened because of that" are different claims. When
-a source compresses a month into a few sentences, the missing steps matter.
-A useful timeline can therefore include a gap rather than fill it from memory.
+Sequence helps us ask causal questions, but does not settle them. "This
+happened next" and "this happened because of that" are different claims.
+When an account compresses a month into a few paragraphs, the missing steps
+matter. A useful chronology can therefore show a gap rather than fill it
+with an assumption.
 
 ## From a statement to an argument
 
@@ -50,71 +54,66 @@ Here is a worked ledger row. It models a method, not an answer to copy.
 
 **Claim to test:** prior experience guarantees control in a crisis.
 
-**Source and location:** B, *Beater*, the paragraph beginning "One month".
+**Account and location:** B, *The first month*,
+[paragraph B2](/sources/aincrad/#b2).
 
-**Source statement, paraphrased:** Kirito's beta experience does not make the
-dungeon easy to overcome alone.
+**Reported detail, paraphrased:** Kirito's beta experience does not make the
+dungeon easy to overcome alone. A beta tester had tried the game before
+its public launch.
 
-**Our inference:** technical familiarity may help a person act without making
-them self-sufficient. A history centred only on individual skill could miss
-the problem of working with others.
+**Our inference:** technical familiarity may help a person act without
+making them self-sufficient. An explanation centred on individual skill
+could miss the importance of working with others.
 
-**Limit:** this short synopsis does not show how every player used their
-knowledge, or establish which response was safest. We cannot generalise one
-case into a ranking of all players.
+**Limit:** this account does not show how every player used their knowledge
+or establish which response was safest. We cannot generalise one person's
+experience into a ranking of all players.
 
-A careful argument might therefore say: "Source B complicates the idea that
-expertise automatically creates control. Its account makes cooperation a
-question worth investigating, although it cannot tell us how all players
-responded." The first sentence interprets evidence; the second sets the
-scale of the claim. Both could change if we read more material.
+A careful argument might say: "Account B complicates the idea that expertise
+automatically creates control. It makes cooperation worth investigating,
+although it cannot tell us how all players responded." The first sentence
+interprets evidence; the second sets the scale of the claim.
 
 ## Compare what each account makes visible
 
-Return to A and C. Identify their narrative starting points from the original
-texts. Who is introduced, and which kinds of experience seem relevant? Do not
-assume that a detail missing from one short synopsis never occurred.
+Return to A, *Launch conditions*, and C, *Asuna's entry*. What does each
+help us understand about the same opening crisis? A makes the rules of
+participation central; C helps us examine what facing those conditions
+could involve for someone without earlier online-game experience.
 
-A comparison needs a shared question. Two separate plot summaries make the
-reader do the comparison. Instead, use a sentence such as: "A makes us attend
-to ___, while C foregrounds ___; this changes our explanation of ___ because
-___." Fill each gap from an identifiable passage. If the difference comes
-from an adaptation or from the moment described, say so.
+A comparison needs a shared question. Two separate summaries make the
+reader do the comparison. Try: "A helps explain ___, while C brings ___
+into view; together they suggest ___ because ___." Fill each gap from an
+identified paragraph. Explain whether a difference concerns the moment,
+the person or the issue on which the account concentrates.
 
-Agreement can establish a feature shared by these accounts. It cannot by
-itself show how common a feeling was, what every person believed, or whether
-an institution could have prevented the crisis. Those questions would require
-other evidence, such as accounts from a wider range of people or records of
-decisions. Naming the missing evidence improves an argument.
+An omitted detail need not be an event that never happened. Nor does
+agreement establish how common a feeling was or what every person believed.
+Name the missing evidence a stronger claim would need.
 
 ## Choice is not a single moment
 
-Read the packet through three kinds of choice:
+Read the case through three kinds of choice:
 
-- **Entry:** C introduces Asuna as a newcomer who puts on a NerveGear. Ask what
-  knowledge a person needs when deciding to enter an unfamiliar world.
-- **Exit:** A ties escape to clearing the game; C describes the loss of logout
-  access. Together they make control over leaving a central question about
-  the relationship between players and the platform's operator.
-- **Action within the world:** B puts Kirito's difficulty alone beside Diabel's
-  raid meeting. It gives us a reason to investigate collective action, without
-  establishing that every group or strategy was safe.
+- **Entry:** C follows Asuna entering an unfamiliar world. Ask what knowledge
+  a person needs when deciding to join.
+- **Exit:** A and C describe the conditions that prevented players leaving.
+  Ask who controlled those conditions and who had to live with them.
+- **Action within the world:** B connects Kirito's difficulty alone with
+  a meeting to coordinate a response. Ask what collective action could make
+  possible without assuming every group or strategy was safe.
 
-These categories are our interpretation. Use them to ask who can set the
-rules, who can leave, and who can organise help. Technical familiarity,
-control of a platform and the ability to bring people together are different
-kinds of power.
-
-Carry that distinction into the course's question about returning. Which
-powers and relationships would have to change for entry into another virtual
-world to become a meaningful choice?
+These categories are our interpretation. Technical familiarity, control of
+a platform and the ability to bring people together are different kinds
+of power. Carry that distinction into the course question: which powers
+and relationships would need to change for entry into another world to
+become a meaningful choice?
 
 ## Check your exit argument
 
-Read your 150 words once for the claim and once for the evidence. Can another
-student find both sources? Have you explained the connection rather than
-placed two references side by side? Does the final limit identify a particular
-missing piece of evidence?
+Read your 150 words once for the claim and once for the evidence. Can a
+partner find both account paragraphs? Have you explained their relationship?
+Does your limit identify a particular missing piece of evidence?
 
 This same sequence supports the
 [Source comparison assessment](/assessments/source-comparison/): locate,

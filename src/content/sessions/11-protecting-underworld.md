@@ -8,11 +8,24 @@ date: 2035-04-30
 durationMinutes: 90
 preparationMinutes: 25
 sourcePacket: /sources/underworld/
+takeaway: "A one-page council proposal with three conditions, two references and an unresolved disagreement."
+preparationSteps:
+  - title: "Read intervention and aftermath"
+    minutes: 8
+    detail: "Read D and E in the Underworld case file, keeping conflict and aftermath in order."
+    href: /sources/underworld/
+  - title: "Trace the outside intervention"
+    minutes: 7
+    detail: "Reread D and mark who enters, the powers described and whose agreement is uncertain."
+    href: /sources/underworld/
+  - title: "Bring forward your Week 10 decision"
+    minutes: 10
+    detail: "Choose an affected group; write its possible priority, an account location and an open question."
 teachers:
   - ren-ito
 spec:
   - Identify different interests and unequal powers in an account of intervention.
-  - Propose conditions for outside help without inventing canonical consent.
+  - Propose conditions for outside help without assuming unrecorded consent.
   - Explain one trade-off and one unresolved evidential limit.
 related:
   - assessments/digital-history-exhibition
@@ -22,25 +35,25 @@ related:
 
 **When does protecting a world become deciding for the people who live there?**
 
-The *War of Underworld* introduction places outside players, powerful accounts
-and resident forces in the same conflict. Its account of allies entering
-Underworld returns us to the course question about protecting a place. Good
-intentions and the ability to act do not, by themselves, answer who should
-authorise an intervention.
+During the Underworld conflict, outside players entered alongside resident
+forces. Some visitors used accounts with exceptional powers. Their involvement
+raises a question about protecting a place whose inhabitants already have
+interests of their own: who should authorise help, and who can question how
+it is used?
 
 ## Prepare in 25 minutes
 
-Read cards D and E in the [Underworld packet](/sources/underworld/) for
-**8 minutes**, then spend **7 minutes** checking the linked Part 2 introduction.
-Use the final **10 minutes** to bring forward your Week 10 decision and identify
-one group affected by outside help. Write a priority, a source location and a
-question the source leaves open. These short English readings are free; the
-labelled packet paraphrases suffice for practice if an external page fails.
+Read Accounts D and E in the [Underworld case file](/sources/underworld/)
+for **8 minutes**. Spend **7 minutes** rereading D to trace the outside
+intervention. Use the final **10 minutes** to bring forward your Week 10
+decision and identify one group affected by outside help. Write a possible
+priority, an account paragraph and a question the evidence leaves open.
+Keep the conflict in D and the aftermath in E in their relative order.
 
 ## In the seminar: 90 minutes
 
-The **classroom council below is our proposal**, not a negotiation described
-in the series. Work as historians designing conditions from a limited record.
+The **classroom council below is our proposal**, rather than a recorded
+negotiation. Work as historians designing conditions from a limited record.
 
 - **0–15:** Draw an actor map: residents, outside volunteers, privileged account
   users and those controlling access. Label what the sources say about each;
@@ -55,11 +68,11 @@ in the series. Work as historians designing conditions from a limited record.
   which waiting also has costs. Record that hypothetical separately from the
   evidence, then revise a condition without deleting the trade-off.
 - **75–90:** Agree a one-page council minute containing the conditions, two
-  source references, one disagreement and one unanswered question.
+  account references, one disagreement and one unanswered question.
 
 ## Carry forward
 
 Use the minute to strengthen an argument about protection in your
 [Digital history exhibition](/assessments/digital-history-exhibition/).
 Bring its unresolved question to next week's walkthrough: does your exhibition
-show residents' interests, or only what visiting protagonists can do?
+show residents' interests, or only what outside players can do?

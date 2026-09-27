@@ -1,0 +1,42 @@
+---
+import { getPublishedCollection } from "astro-course-university/content";
+import { withBase } from "astro-theme-university/url";
+import TeachingLayout from "../layouts/TeachingLayout.astro";
+import WeeklyRhythm from "../components/WeeklyRhythm.astro";
+import { courseMeta } from "../course-config";
+import { courseActs, courseWeeks } from "../data/course-outline";
+import { historyBriefing } from "../data/history-briefing";
+import { getSessionPreparation, teachingRhythm, seminarTime } from "../data/teaching-rhythm";
+import { formatCourseDate } from "../lib/dates";
+import "../styles/study-guide.css";
+const sessions = await getPublishedCollection("sessions");
+const firstWeek = sessions.find((session) => session.data.week === 1);
+if (!firstWeek) throw new Error("Start here requires the published Week 1 seminar.");
+const preparation = getSessionPreparation(firstWeek);
+const firstStep = preparation.steps[0];
+---
+<TeachingLayout title="Start here" description="Sword Art Online (SAO) was a game its players could not leave. Start with a short reading, then bring your questions to the first Monday seminar." eyebrow={`${courseMeta.code} · First-year history · ${courseMeta.year}`} wide={true} showStudyDesk={false}>
+  <div class="study-guide study-start-launch" slot="notice">
+    <a class="study-begin" href={withBase(`/sessions/${firstWeek.id}/`)}>Begin Week 1 <span aria-hidden="true">↗</span></a>
+    <div><p><strong>{preparation.minutes} minutes of preparation</strong> · first read: {firstStep.title.toLowerCase()} ({firstStep.minutes} min)</p><p><strong>First seminar:</strong> {teachingRhythm.seminarDay}, {formatCourseDate(firstWeek.data.date)} · {seminarTime}, {teachingRhythm.timeZoneLabel}</p><p>{teachingRhythm.location}</p></div>
+  </div>
+  <div class="study-guide study-start">
+    <section class="study-start-opening" aria-labelledby="study-start-title">
+      <div><p class="study-kicker">{courseMeta.title}</p><h2 id="study-start-title">The worlds people entered.<br />The lives they built.</h2><p class="study-start-introduction">{historyBriefing.introduction}</p><p class="study-entry-note">No prior knowledge of SAO or programming is needed. The case files introduce the people, places and events as you meet them.</p></div>
+      <aside class="study-first-step" aria-labelledby="study-first-step-title"><p class="study-kicker">What happens in a seminar?</p><h3 id="study-first-step-title">Discuss it. Make something.</h3><p>A seminar is a 90-minute working session. You compare accounts, test an interpretation with other students and develop a piece of work.</p><div><span>In Week 1, you will make</span><p>{preparation.takeaway}</p></div><small>Lecture notes are short explanations to use when the weekly guide assigns them, before or during class.</small></aside>
+    </section>
+
+    <section class="study-briefing" aria-labelledby="study-briefing-title">
+      <div class="study-section-label"><p class="study-kicker">A short historical briefing</p><h2 id="study-briefing-title">Before we begin</h2><p>These are the starting points. Each teaching week adds people, accounts and questions.</p></div>
+      <ol class="study-briefing-events">{historyBriefing.events.map((event) => <li id={event.id}><p class="study-event-label">{event.label}</p><div><h3>{event.title}</h3><p>{event.description}</p></div></li>)}</ol>
+      <p class="study-credit-link">The <a href={withBase("/sources/credits/")}>source credits</a> explain how the course accounts were prepared.</p>
+    </section>
+
+    <section class="study-glossary" aria-labelledby="study-glossary-title"><div class="study-section-label"><p class="study-kicker">Keep these names to hand</p><h2 id="study-glossary-title">A few terms you will meet</h2></div><dl>{historyBriefing.glossary.map((entry) => <div><dt>{entry.term}</dt><dd>{entry.definition}</dd></div>)}</dl></section>
+
+    <section class="study-course-map" aria-labelledby="study-course-map-title"><div class="study-section-label"><p class="study-kicker">One course → three acts → twelve weeks</p><h2 id="study-course-map-title">How the semester unfolds</h2><p>Follow the history through three connected acts. Each act contains four teaching weeks.</p></div><ol>{courseActs.map((act) => <li><a href={withBase(`/sessions/#act-${act.id}`)}><span class="study-map-numeral" aria-hidden="true">{act.number}</span><div><span class="study-kicker">Weeks {act.range}</span><h3>{act.title}</h3><p>{act.description}</p><span class="study-map-weeks" aria-label={`Weeks ${act.range}`}>{courseWeeks.filter((week) => week.act === act.id).map((week) => <span aria-hidden="true">{String(week.number).padStart(2, "0")}</span>)}</span></div><span class="study-map-arrow" aria-hidden="true">↗</span></a></li>)}</ol></section>
+
+    <WeeklyRhythm />
+    <p class="study-return-note">On later visits, use the <a href={withBase("/sessions/")}>Weekly plan</a> to find your preparation. The <a href={withBase("/library/")}>Library</a> keeps materials, assessment briefs and support in one place.</p>
+  </div>
+</TeachingLayout>

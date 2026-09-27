@@ -8,6 +8,18 @@ date: 2035-03-26
 durationMinutes: 90
 preparationMinutes: 25
 sourcePacket: /sources/returns/
+takeaway: "A hypotheses board and a 140-word investigation brief."
+preparationSteps:
+  - title: "Read the investigation accounts"
+    minutes: 10
+    detail: "Read R3 and R4 about the reported GGO threat and protective cooperation."
+    href: /sources/returns/
+  - title: "List reported observations"
+    minutes: 5
+    detail: "Attach an account paragraph to each observation without adding a cause."
+  - title: "Propose two explanations"
+    minutes: 10
+    detail: "Label two classroom hypotheses and name evidence that could distinguish them."
 teachers:
   - ren-ito
 spec:
@@ -22,27 +34,27 @@ related:
 
 **How do earlier events change the way a later threat is understood?**
 
-The opening Phantom Bullet accounts turn a disturbing report into an
-investigation. We already know why a virtual threat might be taken seriously
-after SAO. That history gives the question urgency; it does not automatically
-supply the answer to a different case.
+Gun Gale Online, or GGO, was the setting of a reported threat associated
+with a player called Death Gun. Kirito entered to investigate; Sinon, a GGO
+player, helped him. The memory of SAO gave this threat urgency. We must
+still test which explanation fits the evidence in this later case.
 
 ## Prepare in 25 minutes
 
-Spend ten minutes on [R3 and R4](/sources/returns/#week-6-a-threat-under-investigation)
-and the short English originals. Use five minutes to list only reported
-observations. In the final ten, suggest two possible explanations and one
-item of evidence that could distinguish them. Label these explanations
-**classroom hypotheses**. No technical account of the deaths is supplied by
-these selected texts, and none is needed for the activity.
+Spend ten minutes on [R3 and R4](/sources/returns/#week-6-a-threat-under-investigation).
+Use five minutes to list only reported observations. In the final ten,
+suggest two possible explanations and one item of evidence that could
+distinguish them. Label these explanations **classroom hypotheses**. The
+assigned accounts leave the cause of the deaths unresolved; the task is to
+plan an investigation that could test an explanation.
 
 ## In the seminar: 90 minutes
 
-- **0-10:** agree what the opening account reports. Put a source location
+- **0-10:** agree what the opening account reports. Put a account paragraph
   beside each observation; keep the threatening claim separate from its proof.
 - **10-30:** construct a hypotheses board. Consider a direct technical
   effect, an action outside the game, and a misleading reported connection
-  as possibilities to test, not as new story facts.
+  as possibilities to test, not as established events.
 - **30-45:** for each possibility, name evidence that would support it and
   evidence that would make it less likely. Exchange boards and challenge
   any test that would accept every explanation equally.

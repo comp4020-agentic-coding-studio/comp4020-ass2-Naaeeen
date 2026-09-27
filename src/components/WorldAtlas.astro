@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
+import StudyDesk from "./StudyDesk.astro";
 import { getPublishedCollection } from "astro-course-university/content";
 import { withBase } from "astro-theme-university/url";
 import { courseMeta } from "../course-config";
@@ -24,6 +25,7 @@ const bands = Array.from({ length: 23 }, (_, i) => ({ y: -88 + i * 6.1, radius: 
 ---
 
 <BaseLayout {...siteConfig} title={`World atlas · ${courseMeta.code}`} description="Explore five settings and interfaces through technology, everyday life, and power. Follow the sources and find the seminars connected to each world." clientRouter={false} colorScheme="light" mainAttrs={{ class: "world-atlas-main" }}>
+  <StudyDesk />
   <div class="world-atlas" data-world-atlas>
     <noscript><style is:inline>body:has(.world-atlas-main) .at-nav-toggle, body:has(.world-atlas-main) .at-search-trigger { display: none; }</style><nav class="wa-shell wa-fallback-nav" aria-label="Course contents">{siteConfig.links?.map((link) => <a href={withBase(link.href)}>{link.text}</a>)}</nav></noscript>
     <header class="wa-header wa-shell">
@@ -111,13 +113,13 @@ const bands = Array.from({ length: 23 }, (_, i) => ({ y: -88 + i * 6.1, radius: 
         return <section id={`world-${world.id}`} class="wa-world-panel" data-world-panel={world.id} aria-labelledby={`world-heading-${world.id}`}>
           <header class="wa-panel-heading"><div><p class="wa-eyebrow"><span>{world.number} / {world.name}</span><span>{world.mode}</span></p><h2 id={`world-heading-${world.id}`} tabindex="-1">{world.title}</h2></div><p>{world.invitation}</p></header>
           <div class="wa-evidence-grid"><div><h3><span>01</span> The interface</h3><p>{world.technology}</p></div><div><h3><span>02</span> A lived world</h3><p>{world.everyday}</p></div><div class="wa-power-question"><h3><span>03</span> A question of power</h3><p>{world.power}</p><span class="wa-interpretation-label">A question for your interpretation</span></div></div>
-          <div class="wa-resource-grid"><div><h3 id={`sources-heading-${world.id}`}>Read the sources</h3><ul class="wa-source-links">{world.sources.map((source) => <li><a href={source.href}>{source.label}<span aria-hidden="true">↗</span></a><p>{source.purpose}</p></li>)}</ul></div><div id={`study-${world.id}`} class="wa-study" tabindex="-1"><h3 id={`study-heading-${world.id}`}>Take it into the seminar</h3><ul>{world.weeks.map((week) => { const link = studyLink(week); return <li><a href={withBase(link.href)}>{link.label}<span aria-hidden="true">↗</span></a></li>; })}</ul></div></div>
+          <div class="wa-resource-grid"><div><h3 id={`sources-heading-${world.id}`}>Read the sources</h3><ul class="wa-source-links">{world.sources.map((source) => <li><a href={withBase(source.href)}>{source.label}<span aria-hidden="true">↗</span></a><p>{source.purpose}</p></li>)}</ul></div><div id={`study-${world.id}`} class="wa-study" tabindex="-1"><h3 id={`study-heading-${world.id}`}>Take it into the seminar</h3><ul>{world.weeks.map((week) => { const link = studyLink(week); return <li><a href={withBase(link.href)}>{link.label}<span aria-hidden="true">↗</span></a></li>; })}</ul></div></div>
           <a class="wa-next-connection" href={`#world-${next.id}`} data-select-world={next.id} data-atlas-connection><span><small>Make a connection · {world.name} to {next.name}</small><strong>{world.connection}</strong></span><span aria-hidden="true">↗</span></a>
           <a class="wa-return-controls" href="#atlas-controls" data-controls-jump>Back to atlas controls ↑</a>
         </section>;
       })}
     </div>
-    <footer class="wa-footnote wa-shell"><p>These official publicity summaries are selected accounts. The questions above are invitations to interpret them. <a href={withBase("/sources/")}>Read the source guide.</a></p><nav aria-label="Course support"><a href={withBase("/people/")}>People &amp; support</a><a href={withBase("/policies/")}>Course policies</a><a href={withBase("/")}>← Return to the course</a></nav></footer>
+    <footer class="wa-footnote wa-shell"><p>Follow each case file for its historical account and the questions we bring to it. <a href={withBase("/sources/")}>Read the source guide.</a></p><nav aria-label="Course support"><a href={withBase("/people/")}>People &amp; support</a><a href={withBase("/policies/")}>Course policies</a><a href={withBase("/")}>← Return to the course</a></nav></footer>
     <p class="visually-hidden" role="status" aria-live="polite" data-atlas-status></p>
   </div>
 </BaseLayout>

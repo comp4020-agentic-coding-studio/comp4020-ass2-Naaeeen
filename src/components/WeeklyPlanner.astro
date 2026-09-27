@@ -1,0 +1,63 @@
+---
+import { getPublishedCollection } from "astro-course-university/content";
+import { withBase } from "astro-theme-university/url";
+import { courseActs, courseWeeks } from "../data/course-outline";
+import { formatCourseDate } from "../lib/dates";
+import { teachingRhythm, seminarTime, getSessionPreparation, formatTeachingDeadline, isDueInTeachingWeek, materialPath } from "../data/teaching-rhythm";
+import "../styles/study-guide.css";
+
+const [sessions, lectures, assessments] = await Promise.all([
+  getPublishedCollection("sessions"), getPublishedCollection("lectures"), getPublishedCollection("assessments"),
+]);
+const sessionsByWeek = new Map(sessions.map((session) => [session.data.week, session]));
+const plans = courseWeeks.map((week) => {
+  const session = sessionsByWeek.get(week.number);
+  if (!session) throw new Error(`The weekly plan needs the published Week ${week.number} seminar.`);
+  const preparation = getSessionPreparation(session);
+  const assignedLectures = lectures.filter((lecture) => preparation.steps.some((step) => step.href && materialPath(step.href) === `/lectures/${lecture.id}`));
+  const seminarLectures = lectures.filter((lecture) => session.data.related.includes(`lectures/${lecture.id}`) && !assignedLectures.includes(lecture));
+  const due = assessments.filter((assessment) => isDueInTeachingWeek(assessment.data.due, session.data.date));
+  const related = assessments.filter((assessment) => session.data.related.includes(`assessments/${assessment.id}`) && !due.includes(assessment));
+  return { week, session, preparation, assignedLectures, seminarLectures, due, related };
+});
+const chronologicalAssessments = [...assessments].sort((left, right) => left.data.due.getTime() - right.data.due.getTime());
+const weekId = (week: number) => `week-${String(week).padStart(2, "0")}`;
+---
+<div class="study-guide study-planner">
+
+
+  <section id="deadlines" class="study-deadlines" aria-labelledby="study-deadlines-title">
+    <div><p class="study-kicker">Plan separate assessment time</p><h2 id="study-deadlines-title">Three hand-ins across the semester</h2></div>
+    <ol>{chronologicalAssessments.map((assessment) => <li><span class="study-deadline-week">Week {assessment.data.week}<strong>{assessment.data.weight}%</strong></span><div><a href={withBase(`/assessments/${assessment.id}/`)}>{assessment.data.title}</a><time datetime={assessment.data.due.toISOString()}>{formatTeachingDeadline(assessment.data.due)}</time></div></li>)}</ol>
+  </section>
+
+  {courseActs.map((act) => (
+    <section id={`act-${act.id}`} class="study-act" aria-labelledby={`study-act-${act.id}`}>
+      <header class="study-act-heading"><p><span>Act {act.number}</span>Weeks {act.range}</p><div><h2 id={`study-act-${act.id}`}>{act.title}</h2><p>{act.description}</p></div></header>
+      {plans.filter(({ week }) => week.act === act.id).map(({ week, session, preparation, assignedLectures, seminarLectures, due, related }) => (
+        <section id={weekId(week.number)} class="study-week" data-week-plan data-week={week.number} data-due-count={due.length} aria-labelledby={`study-week-${week.number}-title`}>
+          <header class="study-week-heading">
+            <div class="study-week-marker"><span>Week</span><strong>{String(week.number).padStart(2, "0")}</strong></div>
+            <div><p class="study-week-date"><time datetime={session.data.date.toISOString().slice(0, 10)}>{formatCourseDate(session.data.date)}</time></p><h3 id={`study-week-${week.number}-title`}><a href={withBase(`/sessions/${session.id}/`)}>{session.data.title}</a></h3><p class="study-week-question">{week.question}</p></div>
+          </header>
+          <div class="study-week-work">
+            <section class="study-week-preparation" aria-label={`Preparation for Week ${week.number}`}>
+              <h4><span>Before</span>Prepare in {preparation.minutes} minutes</h4>
+              <ol class="study-preparation-steps" data-preparation-steps>{preparation.steps.map((step, index) => <li><span class="study-step-index" aria-hidden="true">{index + 1}</span><div><div class="study-step-heading"><h5>{step.href ? <a href={withBase(step.href)}>{step.title}</a> : step.title}</h5><span>{step.minutes} min</span></div><p>{step.detail}</p></div></li>)}</ol>
+              <nav class="study-material-links" aria-label={`Week ${week.number} reading and presentation materials`}>
+                {typeof session.data.sourcePacket === "string" && <a href={withBase(session.data.sourcePacket)}>Case file <span aria-hidden="true">↗</span></a>}
+                {assignedLectures.map((lecture) => <><a href={withBase(`/lectures/${lecture.id}/`)}>Notes: {lecture.data.title} <span aria-hidden="true">↗</span></a>{lecture.data.slides && <a href={withBase(lecture.data.slides)}>Reference slides: {lecture.data.title} <span aria-hidden="true">↗</span></a>}</>)}
+              </nav>
+            </section>
+            <div class="study-week-meeting">
+              <section aria-label={`Week ${week.number} seminar`}><h4><span>Together</span>{teachingRhythm.seminarDay} · {seminarTime}</h4><p class="study-meeting-detail">{teachingRhythm.timeZoneLabel}<br />{teachingRhythm.location}</p>{seminarLectures.length > 0 && <nav class="study-material-links" aria-label={`Week ${week.number} seminar materials`}>{seminarLectures.map((lecture) => <><a href={withBase(`/lectures/${lecture.id}/`)}>Seminar notes: {lecture.data.title} <span aria-hidden="true">↗</span></a>{lecture.data.slides && <a href={withBase(lecture.data.slides)}>Seminar slides: {lecture.data.title} <span aria-hidden="true">↗</span></a>}</>)}</nav>}<p class="study-output-label">You will leave with</p><p class="study-output">{preparation.takeaway}</p></section>
+              <section class="study-follow-up" aria-label={`Week ${week.number} follow-up`}><h4><span>Afterwards</span>About {teachingRhythm.followUpMinutes} minutes</h4><p>Organise your source notes and revise the work you made. Keep your evidence and any unresolved questions together.</p></section>
+            </div>
+          </div>
+          {due.length > 0 && <aside class="study-due-this-week" data-due-this-week aria-label={`Assessment due in Week ${week.number}`}><p class="study-kicker">Due this week</p><ul>{due.map((assessment) => <li><a href={withBase(`/assessments/${assessment.id}/`)}>{assessment.data.title} · {assessment.data.weight}% <span aria-hidden="true">↗</span></a><time datetime={assessment.data.due.toISOString()}>{formatTeachingDeadline(assessment.data.due)}</time></li>)}</ul></aside>}
+          <footer class="study-week-footer"><a class="study-week-open" href={withBase(`/sessions/${session.id}/`)}>Open Week {week.number} seminar <span aria-hidden="true">↗</span></a>{related.length > 0 && <div class="study-related-assessment" data-related-assessments><span>Builds towards</span>{related.map((assessment) => <a href={withBase(`/assessments/${assessment.id}/`)}>{assessment.data.title}</a>)}</div>}</footer>
+        </section>
+      ))}
+    </section>
+  ))}
+</div>
