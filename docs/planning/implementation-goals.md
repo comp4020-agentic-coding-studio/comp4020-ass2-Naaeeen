@@ -1,6 +1,6 @@
 # Implementation goals and human review gates
 
-Status: Gate 2 is verified and ready for human review: approved homepage, a complete Week 2 teaching path and its assessment pattern. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
+Status: Gate 2 was accepted for progression. Gate 3 is in progress: complete twelve concise weekly guides, remaining course information and an interactive atlas. The complete assignment remains unfinished. Deadline supplied by the student: **tomorrow**, relative
 to 27 September 2026 (28 September, Australia/Sydney); exact cutoff time has not
 been supplied. The public course deadline is different. This plan records the
 student's working deadline without claiming that an extension has been verified.
@@ -28,6 +28,13 @@ acceptance criteria and PLAN.md handoff; record the reason and evidence in the
 living research record. Keep completed findings and genuine feedback traceable.
 Refine the plan when needed without quietly dropping earlier requirements or
 turning an unfinished stage into a completed one.
+
+At each gate's start, after a scope change, and before its delivery, use
+[the requirements audit](requirements-audit.md) to revisit the live brief/spec,
+upstream README/revision and the relevant local files. Explicitly separate course
+requirements, project choices and the student's process requirements. Update the
+record when a check changes the plan; do not silently promote an optional feature
+into a required workload.
 
 The student accepted revised C's broad direction: “这个大致方向不错”, and asked to
 continue implementation, commits and pushes under these process requirements.
@@ -263,38 +270,54 @@ Do not spend the remaining time repeating a broad harness benchmark, manufacturi
 red tests or polishing a comparison that cannot change a decision. Necessary
 source checking, genuine user gates and truthful reporting remain in scope.
 
-## Latest checkpoint and Gate 2 execution plan
+## Latest checkpoint and Gate 3 execution plan
 
-The student accepted the revised C direction and repeated the requirements for
-ongoing research, bounded implementation, multiple reviews and comparisons,
-browser testing, concise evidence-backed CLAUDE.md updates, commits/pushes and
-human gates. These remain active requirements, not a one-off research exercise.
+The student approved continuation after Gate 2 and again requested imaginative,
+research-led design work. They also asked whether all twelve weeks were necessary.
+The parent rechecked the official brief and upstream: twelve dated weeks are
+required; twelve full lecture scripts or decks are not. Gate 3 uses that boundary.
 
-Gate 2 will deliver:
+Deliver:
 
-1. The accepted immersive design on the actual homepage, with course metadata in
-   its canonical record and working links into the first complete unit.
-2. Week 2, **The SAO incident**, dated 26 February 2035: accessible preparation,
-   three linked official English sources, a worked evidence ledger, a timed
-   seminar, and an exit argument tied to the course's central question.
-3. A substantive lecture, a real Astromotion deck and readable notes. Inspect
-   every slide at both marking viewports; keep one clear idea per slide.
-4. A complete 20% Source comparison brief due in Week 4, with criteria and source
-   access. Align the 30% and 50% assessment records and dates as draft outlines;
-   complete their briefs at Gate 3. Stage untouched starter Week 1 content honestly.
-5. A same-content A/B comparison of the default reading layout and the proposed
-   unit layout, evaluated for finding the task, sources, expected output and
-   assessment. Record observed differences, not invented learning gains.
-6. A regression-driven repair of the reproduced deck-link test false positive;
-   check actual anchor attributes instead of href-like text inside another value.
-7. Parent-verified source claims, independent review and targeted refinements,
-   the required checks, real browser journeys, current research/process notes,
-   and reviewed private-remote commit/push checkpoints.
+1. Twelve dated, distinct weekly guides. Keep Week 2's existing detailed exemplar;
+   write the others concisely with a question, setting, accessible preparation,
+   activity and concrete output. A target around 250–400 words is an authoring
+   aid, not a grading rule or quota.
+2. A complete source library covering beginnings, aftermath/return, Ordinal Scale
+   and Underworld. Parent-check official sources and keep source purpose, story
+   dates, publication dates and classroom inventions distinguishable.
+3. Selected readable lecture notes, including the opening, care/participation and
+   artificial-life questions. Keep the working Week 2 deck; additional decks are
+   optional teaching decisions, not an invented minimum.
+4. Full 30% Incident study and 50% Digital history exhibition briefs, aligned with
+   the existing 20% source comparison. Complete staff and course policies; remove
+   inherited placeholder content and imagery that this stage replaces.
+5. A visually ambitious world atlas inspired by linked-object museum narratives
+   and responsive visual explanations. Compare an interactive atlas and reading
+   list over the same five settings/interfaces. Use the current stack unless a
+   verified need justifies an addition. Preserve static access, meaningful labels,
+   keyboard navigation, motion controls and small-screen reading.
+6. Integrate the atlas, source library, staff/policies and actual weekly routes
+   into the approved site. Verify content/API dates and weight contracts, inspect
+   non-adjacent weeks and complete source-to-assessment journeys in the browser.
+7. Reconcile independent research/review, update this audit/research/evidence and
+   the smallest justified harness rules, then commit and push reviewed checkpoints.
 
-The whole-assignment Goal remains the umbrella objective. It was initially
-paused at this resume and was subsequently verified active through get_goal.
-Keep its status and this detailed execution record aligned with actual work.
+The existing whole-assignment Goal was verified active when this stage resumed.
+Stop at Gate 3 for the student's review of the complete curriculum and its new
+atlas before the full-site Gate 4 refinement and final Gate 5 evidence/release.
 
-Gate 2 implementation and checks are complete; the detailed results are in
-[the review record](gate-2-review.md). Stop for the student's judgement of teaching
-depth, voice, reading layout and slide usability before expanding all twelve weeks.
+
+### Gate 3 delivery checkpoint — 27 September 2026
+
+The implementation is now [1c27051](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/1c27051bc85009e128952a9afff34729670ddc04). All seven items above are
+implemented and the [review record](gate-3-review.md) gives actual checks and
+limits: 12 dated weeks, 4 selected lecture-note pages, 1 real deck, 3 completed
+assessment briefs, 2 staff profiles, policies, sources/chronology and the atlas.
+The final required site check passes all 36 tests; 42 built pages pass the
+configured accessibility/base/link checks. The evidence gate remains red only
+for the student's unfilled PROCESS account and example hashes.
+
+Human Gate 3 review is pending. Keep the whole-assignment goal paused at that
+requested boundary until the student responds. Gate 4 and Gate 5 remain open;
+no grade, human preference or public deployment has been claimed.

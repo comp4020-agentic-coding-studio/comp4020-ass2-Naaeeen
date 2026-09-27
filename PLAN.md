@@ -76,17 +76,17 @@ The exhibition may use slides or a simple webpage, so programming skill is not a
 prerequisite. Develop detailed briefs, criteria and due dates with the weekly
 content.
 
-## Website direction and next step
+## Website direction
 
 Use the character of a university course site with an archival feel, retaining
 Slop University's fixed identity. Keep weeks, assessments and sources easy to
 find. A simple event timeline will connect the material; distinguish it from the
 course's teaching timetable.
 
-Start implementation with the site structure and one representative week linked
-to a real deck. Use that sample to establish the voice and level of detail before
-expanding the remaining weeks. Exact readings, teaching dates, page layouts and
-interaction details can be settled during implementation.
+Implementation began with the site structure and one representative week linked
+to a real deck. That sample established the voice before the remaining weeks
+were written. The current guides, sources, assessments and review record below
+now carry the settled teaching details.
 
 The published [A2 brief](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/assignment-2/)
 and the repository README remain the assignment and platform requirements.
@@ -95,48 +95,36 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Follow [the detailed goals and five gates](docs/planning/implementation-goals.md),
-[the living research](docs/IMPLEMENTATION-RESEARCH.md), and
-[the process evidence](docs/PROCESS-EVIDENCE.md). The student accepted revised C's
-broad direction and requested continued implementation, commits and pushes.
-Current stage: **Gate 2 verified; awaiting human review**.
+Current stage: **Gate 3 ready for human review**. The student authorized continuation
+from Gate 2; Gate 3 feedback has not yet been supplied. Follow the
+[detailed goals](docs/planning/implementation-goals.md),
+[requirements audit](docs/planning/requirements-audit.md),
+[living research](docs/IMPLEMENTATION-RESEARCH.md),
+[process evidence](docs/PROCESS-EVIDENCE.md) and
+[Gate 3 review record](docs/planning/gate-3-review.md).
 
-The actual homepage now carries the accepted immersive direction and links to a
-complete Week 2 path: seminar, source packet, worked lecture, ten-slide deck and
-20% Source comparison brief. The other assessments are clearly marked 30%/50%
-draft outlines. Untouched Week 1 content/deck is unpublished with markers retained.
-Course metadata is SLOP1897, first year, Semester 1 2035, 19 February–11 May.
+The complete candidate contains twelve dated, distinct seminar guides; four
+lecture-note pages; the existing real ten-slide Week 2 deck; three complete
+20/30/50 assessment briefs; fictional staff/policies; source packets and a story
+chronology; and a five-setting interactive atlas with an equivalent reading list.
+The homepage starts at Week 1 and connects these paths. Twelve weeks are mandatory;
+twelve full lectures/decks are not. Preserve this verified scope distinction.
 
-The parent verified A/B/C source claims, reviewed the whole slice and checked the
-actual browser. Independent reviews prompted a stronger source fallback and a
-concrete SAO explanation, corrected sticky/current-page navigation, and validated
-the parsed-anchor test repair. A/B reading pages render the same content; B is the
-parent recommendation for its direct section navigation. All ten slides fit the
-marking sizes; phone body text is 18px. See the [Gate 2 record](docs/planning/gate-2-review.md)
-for actual checks, additional sizes, refinements and qualified limits.
+Implementation checkpoint: [1c27051](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/1c27051bc85009e128952a9afff34729670ddc04). The final full check passed:
+zero type diagnostics, 42-page build/a11y/links, one deck and 36 spec tests.
+Full dependency audit is zero. The evidence gate now flags only PROCESS.md's
+unfilled template and sample hashes. The student's narrative and public release
+remain unfinished. Do not weaken the gate or write invented personal experience.
 
-Check state: type/build/21-page accessibility/internal links pass; spec 35 pass,
-one expected failure because only Week 2 is a complete published seminar. The
-evidence gate still flags starter Week 1, people/policies, images and PROCESS.md.
-The original deck-link false positive is resolved. The full dependency audit is
-clear after compatible dev-tool patches; fixed platform versions remain Astro
-7.2.8 and Astromotion 0.23.0. Do not apply a wholesale upstream upgrade.
+Parent browser checks and independent reviews found and resolved real atlas
+landmark, sticky-offset, URL/history and native skip-link defects. See the review
+record for exact comparisons, paths, screenshots and limits. The fixed Slop record,
+collection schemas, integration pipeline and dependency versions are unchanged.
 
-Checkpoints: oracle `785b1ce`; teaching implementation/harness `4fc9cde`;
-development-tool patches `2752781`. Research/review delivery `19b7b97` was pushed with a matching remote hash and
-private visibility unchanged. The final keyboard follow-up also fixes Escape on
-teaching menus; its full check and browser retests are recorded at the end of the
-Gate 2 review. Verify the final follow-up push, then wait for human feedback.
-
-Next: obtain the student's review of teaching depth/voice, reading layout and
-mobile slides. After approval, use this pattern to complete the other eleven
-weeks, their dates and distinct activities, the remaining briefs, people/policies
-and source/media work. Do not clone the same question or activity twelve times.
-PROCESS.md remains the student's account, supported by the real evidence bank.
-
-The whole-assignment Goal was verified active during this stage and pauses at the
-requested human-review gate. The full assignment is unfinished. Working deadline
-remains 28 September 2026; exact cutoff unspecified.
+Next action: the student reviews the complete curriculum and atlas. Respond to
+that feedback before Gate 4 whole-site refinement, then Gate 5 evidence/release.
+The whole-assignment Goal is used throughout; pause at this requested review gate,
+rather than marking the assignment complete or advancing without feedback.
 
 ## Authorized external actions
 

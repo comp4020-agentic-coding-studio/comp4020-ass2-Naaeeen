@@ -297,10 +297,65 @@ checks; remaining limits; commit link; real human feedback. Revise this entry wh
 new evidence corrects it. Do not invent failures, timings, personal learning or
 participants to make the eventual PROCESS account look stronger.
 
+## E15 — Requirement checks changed the size of the course work
+
+The student challenged whether twelve complete weeks were necessary. The parent
+reopened the live spec and upstream README: twelve dated weeks are required,
+but only one lecture-linked deck is the minimum. The earlier broad expansion
+plan could have become twelve copies of the long Week 2 example. Instead Gate 3
+uses concise guides with distinct outputs and selected lecture notes. The weekly
+progression now reaches an exhibition rather than multiplying slide packages.
+
+CLAUDE.md now requires a live/local audit at gate starts, material scope changes
+and delivery. The exact requirement/choice distinction lives in the requirements
+audit. [1c27051](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/1c27051bc85009e128952a9afff34729670ddc04) contains the complete dated course and harness change.
+The parent inspected the generated API and the previously red week-coverage check
+now passes with weeks 1–12. No requirement or test was deleted to obtain that pass.
+
+## E16 — An immersive atlas still had to behave like a webpage
+
+The student requested more imaginative UI and motion. The atlas uses original
+SVG settings, animated traces and an equivalent reading list, drawing on
+source-checked responsive visual-story principles. It reuses the installed GSAP;
+no new package or remote service was needed. Both views contain identical source
+notes and study routes, with different presentation and navigation.
+
+The first build found duplicate named landmarks. Independent review exposed a
+sticky toolbar hidden by the site nav, a controls URL that lost its selected
+world, and a history handler that redirected the native skip link to world notes.
+The parent reproduced these in the actual browser before accepting the fixes.
+After the fixes, a phone screenshot still clipped the world's label when focusing
+its heading; scrolling the enclosing panel kept identity and title together.
+
+[1c27051](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/1c27051bc85009e128952a9afff34729670ddc04) records the implementation and the small CLAUDE.md instruction
+to preserve native skip links/history. The parent checked both marking sizes,
+keyboard and pointer selection, reload/Back/Forward, pause/reduced motion,
+offscreen suspension and static HTML. A same-content comparison supports keeping
+both map and reading views for review; it does not prove a learning benefit or
+human preference. The [Gate 3 record](planning/gate-3-review.md) separates actual
+browser observations, mocked review checks and unmeasured behavior.
+
+## E17 — A complete-looking brief left a real student question unanswered
+
+Independent content review found that filenames and deadlines did not explain
+how a student hands work in, or when feedback returns before the next task.
+The parent verified the gap and added one shared procedure, fictional hand-in
+sessions, an access alternative and feedback dates. All three briefs link it.
+Slides/document/webpage options are now consistent across the exhibition brief
+and Week 12. These are proposed course arrangements, awaiting human review.
+
+A later API inspection also caught that planned learning outcomes had not reached
+the student-facing site. Trying the generic integration's optional field failed
+against the starter's narrower local strict schema. The parent checked that
+schema and restored the record unchanged, publishing the outcomes through the
+existing course-outline data instead. The existing validation caught a mistaken
+assumption; it was not relaxed. [1c27051](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/1c27051bc85009e128952a9afff34729670ddc04) preserves the resulting pages.
+
 ## Current checkpoint
 
-Gate 2 is ready for human review: the accepted design is the real homepage,
-Week 2 has a seminar, source packet, lecture and ten-slide deck, and the 20%
-assessment has a full brief. E04 is resolved. The remaining weeks, later briefs,
-people/policies, imagery and student PROCESS.md are unfinished. Public release
-is still a separate authorized step. No human approval of Gate 2 is claimed.
+Gate 3 is ready for the student's review. Gate 2 continuation was explicitly
+authorized. The full site check passes 36 tests and the configured integrity
+checks across 42 pages; the dependency audit has zero advisories. The only
+remaining evidence-gate failures are the PROCESS.md template and its example
+hashes. The student's narrative, Gate 4 whole-site refinement and Gate 5 public
+release remain open. No Gate 3 human acceptance or public deployment is claimed.

@@ -521,3 +521,125 @@ its state. Actual Escape and resize-return cases now close the menu and restore
 focus. The final full check remains 35 passes and the known coverage failure;
 see the review record's last follow-up. The first four Gate 2 commits were pushed
 through 19b7b97 with a matching remote hash and unchanged private visibility.
+
+## Gate 3 — a complete course and a connected atlas (27 September 2026)
+
+### Requirement refresh and scope
+
+The parent reopened the [A2 brief/spec](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/assignment-2/)
+and [upstream README](https://github.com/comp4020-agentic-coding-studio/template-course-site/blob/main/README.md)
+after the student challenged the planned volume. Twelve dated weeks are required;
+twelve complete lectures or decks are not. The chosen response is eleven concise
+new/replacement guides around the established Week 2 example, four selected
+lecture-note pages and the existing ten-slide Week 2 deck. Each guide has a
+different student output. This distinction is now explicit in the goals and
+[requirements audit](planning/requirements-audit.md).
+
+Upstream main was rechecked through GitHub API and remained
+`ecd1d71228e40105310fcb25e1bcf00cc5ed5284`. The private project still had no Pages
+site enabled. No fixed collection, Slop identity, generated API or build integration
+was replaced. The new atlas uses installed GSAP 3.15.0 and original SVG; no extra
+package, paid API, remote model asset or service was needed.
+
+### Claim-level source decisions
+
+The source packets identify their original passages and provide labelled teaching
+paraphrases. Publisher publicity is evidence of a selected account, not independent
+witness testimony. The parent checked the decisive originals as well as the
+research agents' recommendations; the independent content reviewer checked the
+complete set of guides, briefs and source pages and sampled the originals again.
+
+| Material and primary sources | Supported teaching use | Boundary retained |
+| --- | --- | --- |
+| [Aincrad opening](https://www.swordart-onlineusa.com/aincrad/story/), [episode 7](https://www.swordart-onlineusa.com/aincrad/story/?no=07), [episode 8](https://www.swordart-onlineusa.com/aincrad/story/?no=08) | Entry/exit rules, craft dependencies and a shared meal; episode 8 explicitly places its event in October 2024 | The summaries do not establish a complete economy or independent survivor testimony |
+| [Progressive introduction](https://saop-anime.com/intro-character/) and [Scherzo story](https://saop-anime.com/intro-character/story/) | Revisit early Aincrad through Asuna, information and rival groups | A revisit, not a chronological sequel; do not infer an unstated floor number |
+| [Fairy Dance 15](https://www.swordart-onlineusa.com/fairy_dance/story/?no=15) and [16](https://www.swordart-onlineusa.com/fairy_dance/story/?no=16) | Escape leaves recovery unfinished; Kazuto interprets a screenshot and enters ALO with retained data | Character belief is not a demonstrated causal mechanism or clinical diagnosis |
+| [Phantom Bullet introduction](https://www.swordart-onlineusa.com/phantom_bullet/intro/) and [episode 9](https://www.swordart-onlineusa.com/phantom_bullet/story/?no=09) | Reported threat, investigation, cooperation under uncertainty | Parent read the introduction's supplied image alternative; the content reviewer did not independently visually read that image |
+| Mother's Rosario [20](https://www.swordart-onlineusa.com/mothers_rosario/story/?no=20), [23](https://www.swordart-onlineusa.com/mothers_rosario/story/?no=23), [24](https://www.swordart-onlineusa.com/mothers_rosario/story/?no=24) | Yuuki's goals, fictional Medicuboid, school participation and ordinary activities | No claim about real medical-device efficacy; diagnosis is not invented for every guild member |
+| [Ordinal Scale story/device guide](https://sao-movie.net/us/story/story.html) | 2026 Augma, awake AR, location-based collection and ranking | Its promotional safety claim is a claim to analyse. The selected source does not explain memory extraction |
+| [Alicization press release, p. 2](https://aniplexusa.com/pdf/PR_082318_SAOAlicization.pdf), [episode 11](https://sao-alicization.com/1st/story/11.html), [War of Underworld introduction](https://sao-alicization.com/intro/), [episode 22](https://sao-alicization.com/story/?id=ep22) | Artificial life, institutional rules, unequal account powers, outside intervention and Alice's public introduction as AGI | No inference of legal citizenship; hearing/council activities are classroom proposals |
+
+The original Week 9 homepage wording promised an inquiry into memory. Its new
+packet instead gives accessible evidence about AR, bodies, place and ranking.
+Rather than relying on recollected plot detail, the parent aligned the homepage,
+course map and assessment act description with the source-supported guide. Memory
+still has an evidenced role in Alicization; it is not presented as a feature proved
+by the Ordinal Scale promotional page.
+
+Optional real-computing lenses use [Sutherland's 1965 paper](https://cise.ufl.edu/research/lok/teaching/dcvef05/papers/ultimate_display.html),
+[Google SRE's postmortem chapter](https://sre.google/sre-book/postmortem-culture/)
+and [W3C XAUR, section 4.4](https://www.w3.org/TR/xaur/#interaction-and-target-customization).
+They are explicitly optional and do not increase the required preparation budget.
+Sutherland is speculative, not evidence of a working Full-Dive device or influence
+on SAO; the blameless-postmortem model assumes well-intentioned operators, an
+assumption the class can challenge; W3C's input/target needs offer a design lens,
+not a clinical claim about Yuuki.
+
+### Design references and choices
+
+The parent read The Pudding's [responsive scrollytelling discussion](https://pudding.cool/process/responsive-scrollytelling/)
+and [storytelling process](https://pudding.cool/process/how-to-make-dope-shit-part-3/).
+The useful principles here are a central question, complete understandable visual
+states and a small-screen reading route. These older articles do not establish
+current CSS/API compatibility or prove a learning benefit. Their warnings about
+hidden or scroll-dependent content motivated an equivalent reading-list view,
+while direct world selection suits this reference/exploration task better than a
+forced narrative sequence. Both views use the same five DOM panels.
+
+Research agents also identified the British Museum/Google [Museum of the World](https://a.experiments.withgoogle.com/the-museum-of-the-world)
+and Matan Stauber's [Histography](https://histography.io/) as linked-object and
+curated-story references. Parent fetches of the Museum project/Google account and
+Adobe's creator interview failed or timed out. These remain named research leads,
+not claims of a successful live interface walkthrough. No assets or source code
+were copied from either project.
+
+The atlas pairs five original emblems with three lenses: interface, everyday life
+and a question of power. Connection questions lead into the next setting, and
+seminar links come from the published collection. The phone view isolates one
+larger emblem with all five selectors rather than shrinking a desktop map. Motion
+belongs to traces, floating objects and selection; study text stays readable.
+
+### Review evidence and the working method
+
+The earlier OpenAI evaluation and Anthropic delegation/context findings still
+inform this stage: bounded file ownership, task-specific checks and parent
+verification of reviewer claims. We reused them instead of declaring a new
+universal agent recipe. No claim is made that more agents, more packages or more
+animation necessarily produce a better course.
+
+The first full Gate 3 check had zero type diagnostics but a real accessibility
+failure: duplicate named inner landmarks on the atlas. Parent browser checks then
+reproduced the reviewer's covered sticky toolbar, world-state loss at the controls
+URL and the controller stealing focus from the native skip link. Current
+[MDN positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position),
+[scroll margin](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-margin-top)
+and [GSAP context lifecycle](https://gsap.com/docs/v3/GSAP/gsap.context()/)
+documentation support focused fixes; the final browser result, not the suggestion
+alone, determines acceptance. Results are recorded in the Gate 3 review record.
+
+Content review also exposed missing hand-in and feedback arrangements. The course
+now specifies fictional in-person delivery/drop-ins, an accessible alternative
+arranged with the convenor, and feedback before the next assessment needs it. This
+is our course-design choice; no functioning external submission service is claimed.
+Exhibition formats are consistently slides, a document or a self-contained webpage.
+
+The harness gains a small periodic requirement-audit rule after the observed scope
+drift. Detailed audit findings stay in the linked record. PROCESS.md remains the
+student's later account; these notes supply verifiable events, not invented
+personal experience or human preference.
+
+
+A final API inspection showed the generic integration's default empty
+`learningOutcomes` array. The plan already contained four learning outcomes, so
+the homepage now publishes them from the existing course-outline data. An initial
+attempt to add them to `courseMeta` failed: the starter's local strict schema in
+`src/course-config.ts` has a narrower field set than the generic integration.
+The parent checked that actual schema and restored the course record unchanged;
+no validation, fixed API contract or build integration was relaxed. The rejected
+candidate is logged at `/tmp/a2-gate3-candidate-xy1flfse.log`.
+
+Native skip-link interference also justified adding one compact sentence to the
+existing navigation-check rule in CLAUDE.md. A passing controlled DOM review was
+followed by actual browser checks: the skip link's next Tab enters the main
+content, and world/view state survives controls links and browser history. The
+mocked review did not establish sticky geometry or native BFCache behavior.
