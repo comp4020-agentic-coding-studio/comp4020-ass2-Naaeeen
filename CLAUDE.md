@@ -55,6 +55,8 @@ outcome is verified and material issues are resolved, rather than adding iterati
 Record consequential sources, alternatives and observed outcomes in
 `docs/IMPLEMENTATION-RESEARCH.md`. Check reviewer claims against files, sources or
 runtime evidence. A model comparison is not evidence of human preference.
+Keep distinctive problems, decisions and harness revisions in
+`docs/PROCESS-EVIDENCE.md`, with actual checks, commit links and unresolved limits.
 
 ## Commands and verification
 
@@ -81,7 +83,9 @@ all required checks must pass before submission.
 For changed UI/navigation, inspect the built site at 1920×1080 and 390×844 with
 Chrome-compatible tooling, including affected links and console output. For in-page
 navigation, verify destination visibility, keyboard focus and mobile menu state
-after activation. Before submission, read non-adjacent weeks, an assessment and a deck. Report unavailable
+after activation. For enhanced content, inspect the first usable frame, reduced
+motion and the HTML fallback as well as the settled view. Before submission, read
+non-adjacent weeks, an assessment and a deck. Report unavailable
 browser verification honestly; neither a build nor a model review proves student
 appeal, visual quality or curriculum coherence.
 

@@ -77,8 +77,9 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
   updateMotion();
   if (motionButton) motionButton.hidden = false;
 
-  const activateChapter = (index: number, animate: boolean) => {
+  const activateChapter = (index: number, animate: boolean, syncUrl = false) => {
     state.chapter = index;
+    if (syncUrl) history.replaceState(history.state, "", tabs[index].href);
     tabs.forEach((tab, tabIndex) => {
       tab.setAttribute("aria-selected", String(tabIndex === index));
       tab.tabIndex = tabIndex === index ? 0 : -1;
@@ -106,11 +107,12 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
       tab.setAttribute("role", "tab");
       tab.setAttribute("aria-controls", panel.id);
       panel.setAttribute("role", "tabpanel");
+      panel.tabIndex = 0;
       panel.setAttribute("aria-labelledby", tab.id);
       tab.addEventListener("click", (event) => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
-        if (state.chapter !== index) activateChapter(index, true);
+        if (state.chapter !== index) activateChapter(index, true, true);
       }, { signal });
       tab.addEventListener("keydown", (event) => {
         const forward = verticalTabs.matches ? "ArrowDown" : "ArrowRight";
@@ -123,7 +125,7 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
         else if (event.key !== " ") return;
         event.preventDefault();
         tabs[next].focus();
-        activateChapter(next, next !== state.chapter);
+        activateChapter(next, next !== state.chapter, true);
       }, { signal });
     });
     const syncChapterHash = () => {
@@ -131,7 +133,8 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
       if (hashIndex >= 0) activateChapter(hashIndex, false);
     };
     activateChapter(state.chapter, false);
-    syncChapterHash();
+    // A cached return keeps the last chosen tab; explicit hash changes still navigate.
+    if (!state.introduced) syncChapterHash();
     window.addEventListener("hashchange", syncChapterHash, { signal });
   }
 
@@ -168,10 +171,10 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
       sceneFallback?.setAttribute("hidden", "");
       if (sceneControls) sceneControls.hidden = false;
       if (sceneStatus) sceneStatus.textContent = "Interactive miniature ready. Use the view and rotation controls to explore.";
-    } catch {
+    } catch (error) {
       if (disposed) return;
       showSceneFallback();
-      console.warn("Aincrad miniature unavailable; showing the static illustration.");
+      console.warn("Aincrad miniature unavailable; showing the static illustration.", error);
     }
   };
   for (const control of root.querySelectorAll<HTMLButtonElement>("[data-scene-view]")) {
@@ -208,7 +211,7 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
   if (!state.introduced && motionEnabled()) {
     motionContext.add(() => {
       gsap.from(root.querySelectorAll("[data-hero-enter]"), {
-        opacity: 0, y: 20, duration: .6, stagger: .07, ease: "power2.out", clearProps: "opacity,transform",
+        y: 16, duration: .6, stagger: .07, ease: "power2.out", clearProps: "transform",
       });
     });
   }
@@ -271,6 +274,7 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
     panels.forEach((panel) => {
       panel.hidden = false;
       panel.removeAttribute("role");
+      panel.removeAttribute("tabindex");
       const heading = panel.querySelector("h3");
       if (heading) panel.setAttribute("aria-labelledby", heading.id);
     });

@@ -12,8 +12,8 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
   --ic-dark: #242721;
   --ic-paper: #f5f1e8;
   --ic-muted: #686254;
-  --ic-gold: #b97d1c;
-  --ic-bronze: #8a5c13;
+  --ic-gold: var(--at-primary);
+  --ic-bronze: var(--at-secondary);
   --ic-line: #ccc4b3;
   color: var(--ic-ink);
   font-size: 18px;
@@ -26,7 +26,7 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
 .immersive-course button { font: inherit; cursor: pointer; border-radius: 0; }
 .immersive-course [hidden] { display: none !important; }
 .immersive-course :is(a, button):focus-visible { outline: 3px solid var(--ic-bronze); outline-offset: 5px; box-shadow: none; }
-.immersive-course :is(section, header, li, h2)[id] { scroll-margin-top: 110px; }
+.immersive-course :is(section, header, li, h2)[id] { scroll-margin-top: 0; }
 .ic-shell { width: min(1536px, calc(100% - 112px)); margin-inline: auto; }
 .ic-eyebrow { display: flex; flex-wrap: wrap; column-gap: 20px; row-gap: 4px; font-size: 12px; font-weight: 650; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; }
 .ic-review-strip { background: #eee8dd; }
@@ -232,20 +232,20 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
   .ic-subtitle { max-width: 23ch; margin-top: 22px !important; font-size: 21px; }
   .ic-hero-introduction { margin-top: 25px; }
   .ic-hook { font-size: 21px; }
-  .ic-orientation { margin-top: 11px !important; font-size: 15px; line-height: 1.6; }
+  .ic-orientation { margin-top: 11px !important; font-size: 16px; line-height: 1.6; }
   .ic-hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 23px; }
   .ic-primary-link { min-height: 49px; font-size: 13px; }
   .ic-text-link { justify-content: space-between; font-size: 12px; }
   .ic-world { margin-top: 28px !important; }
-  .ic-world-label { padding-inline: 0; font-size: 9px; }
+  .ic-world-label { padding-inline: 0; font-size: 11px; }
   .ic-world-label > span:last-child { display: block; }
   .ic-scene-stage { height: 400px; }
   .ic-world-controls { margin-inline: 0; padding-top: 10px; gap: 5px; }
-  .ic-view-controls button { padding-inline: 8px; font-size: 10px; }
+  .ic-view-controls button { padding-inline: 8px; font-size: 12px; }
   .ic-rotate-controls { gap: 4px; }
   .ic-world-controls button { min-width: 44px; }
-  .ic-world figcaption { margin-inline: 0; margin-top: 12px; font-size: 9px; }
-  .ic-hero-foot { font-size: 9px; letter-spacing: 0; gap: 12px; }
+  .ic-world figcaption { margin-inline: 0; margin-top: 12px; font-size: 11px; flex-wrap: wrap; }
+  .ic-hero-foot { font-size: 11px; letter-spacing: 0; gap: 12px; }
   .ic-hero-foot a { gap: 10px; }
   .ic-invitation { padding-block: 59px 60px; gap: 25px; }
   .ic-invitation h2 { margin-top: 20px; font-size: 34px; line-height: 1.14; }
@@ -293,3 +293,8 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
   .immersive-course *, body:has(.immersive-course-main) .at-nav * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 .immersive-course[data-motion="paused"] * { transition: none !important; }
+
+html:has(.immersive-course[data-motion="paused"]) { scroll-behavior: auto; }
+
+.ic-fallback-nav { display: flex; flex-wrap: wrap; gap: 4px 14px; padding-block: 8px; }
+.ic-fallback-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--ic-ink); }

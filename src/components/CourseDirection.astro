@@ -49,8 +49,9 @@ const plateaus = [
     <aside class="review-strip" aria-label="Design comparison">
       <p><strong>Outline preview</strong><span>Gate 1 · compare the two directions</span></p>
       <nav class="review-options" aria-label="Preview direction">
-        <a href={withBase("/review/a/")} aria-current={archive ? "page" : undefined}>A <span>Archive</span></a>
-        <a href={withBase("/review/b/")} aria-current={!archive ? "page" : undefined}>B <span>Syllabus</span></a>
+        <a href={withBase("/review/a/")} aria-label="Preview A: Archive" aria-current={archive ? "page" : undefined}>A <span>Archive</span></a>
+        <a href={withBase("/review/b/")} aria-label="Preview B: Syllabus" aria-current={!archive ? "page" : undefined}>B <span>Syllabus</span></a>
+        <a href={withBase("/review/c/")} aria-label="Preview C: Immersive">C <span>Immersive</span></a>
       </nav>
     </aside>
 

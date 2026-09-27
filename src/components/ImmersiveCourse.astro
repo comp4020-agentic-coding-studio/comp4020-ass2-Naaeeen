@@ -37,6 +37,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
   unlisted={true}
   mainAttrs={{ class: "immersive-course-main" }}
 >
+  <link slot="head" rel="license" href={withBase("/vendor-notices.txt")} title="Third-party JavaScript notices" />
   <div class="immersive-course" data-immersive-course>
     <aside class="ic-review-strip" aria-label="Design comparison">
       <div class="ic-shell ic-review-inner">
@@ -53,6 +54,13 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
         </div>
       </div>
     </aside>
+
+    <noscript>
+      <style is:inline>body:has(.immersive-course-main) .at-nav-toggle { display: none; }</style>
+      <nav class="ic-shell ic-fallback-nav" aria-label="Course contents">
+        {previewLinks.map((link) => <a href={link.href}>{link.text}</a>)}
+      </nav>
+    </noscript>
 
     <header id="course" class="ic-hero">
       <div class="ic-shell ic-hero-grid">
