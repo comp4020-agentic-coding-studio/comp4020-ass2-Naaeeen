@@ -1,6 +1,6 @@
 # Implementation goals and human review gates
 
-Status: active, Gate 1. Deadline supplied by the student: **tomorrow**, relative
+Status: Gate 1 package ready; awaiting student review. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
 to 27 September 2026 (28 September, Australia/Sydney); exact cutoff time has not
 been supplied. The public course deadline is different. This plan records the
 student's working deadline without claiming that an extension has been verified.

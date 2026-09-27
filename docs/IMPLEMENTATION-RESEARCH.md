@@ -41,7 +41,7 @@ sustained response. They do not specify a number of research papers or agent run
 | Public working submission | Course GitHub Pages URL | Verify deployed URL after explicit shipping authorization |
 
 The supplied README and installed theme are the authority for local implementation
-contracts. Astro is 7.2.x, university theme 0.13.2 and Slop theme 0.1.0 in the current
+contracts. Astro is 7.2.2, university theme 0.13.2 and Slop theme 0.1.0 in the current
 manifest/installation. No new dependency is needed for the first comparison.
 
 ## Course teaching: techniques to carry forward
@@ -158,9 +158,9 @@ statistical significance will be reported.
 
 | ID | Decision | Evidence | State / next check |
 | --- | --- | --- | --- |
-| R01 | Preserve the gold/bronze Slop identity and create original archival artwork | README and installed slop.css; approved historical course premise | Implement preview; inspect contrast and mobile composition |
-| R02 | Use unlisted preview routes before selecting a homepage | User requires review before expansion; avoids presenting unfinished curriculum as complete | Compare A/B in browser, then await real feedback |
-| R03 | Reuse current harness study; add precise review-gate and research pointers | Existing paired results and this explicit user request | Diff-review CLAUDE.md; no new benchmark claim |
+| R01 | Preserve the gold/bronze Slop identity and create original archival artwork | README and installed slop.css; approved historical course premise | Preview built and visually inspected; see Gate 1 review |
+| R02 | Use unlisted preview routes before selecting a homepage | User requires review before expansion; avoids presenting unfinished curriculum as complete | Both variants inspected; human preference remains pending |
+| R03 | Reuse current harness study; add precise review-gate and research pointers | Existing paired results and this explicit user request | Six planning/research lines added, then one navigation-check refinement; no new benchmark claim |
 | R04 | Stage the full curriculum after a complete sample unit | User's gates and incremental-delivery evidence | Gate 2 begins only after Gate 1 feedback |
 | R05 | Keep the existing checkout with exclusive file ownership | Known planning changes and no conflicting implementation worker | Reassess isolation if edits overlap; no mechanical worktree creation |
 
@@ -172,3 +172,28 @@ human feedback alters the goal. For a routine known edit, check the relevant loc
 contract instead of reopening a broad literature survey. Log the question, evidence,
 choice, observed result and unresolved limit. Keep this file useful to the next
 implementation step rather than accumulating unrelated references.
+
+### Evaluator probe, 27 September
+
+A read-only reproduction compared the current lecture-link regex with linkedom
+(the parser already installed with the theme). The invalid fragment
+`<a title="Use href='/comp4020-ass2-Naaeeen/decks/week-01/'">Slides</a>`
+produced one regex match and zero actual anchors with an href. This confirms the
+previous study's blind spot in the current spec implementation. No site content
+was modified by the probe. Correct and regression-test the parser before relying
+on the deck-link assertion for the representative teaching unit. The valid starter
+deck link itself was not shown to be broken.
+
+### Gate 1 outcome
+
+[The review record](planning/gate-1-review.md) records the initial comparison,
+actual browser defects, two refinements and independent review reconciliation.
+We consulted the [W3C disclosure example](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/)
+when fixing mobile fragment navigation. Its ordinary navigation semantics and
+Escape/focus behavior informed a small page-local handler. The example is guidance;
+passing our focused cases does not establish assistive-technology certification.
+
+The first phone composition delayed course orientation. Moving the premise and
+prerequisites into the shared opening brought them into the first viewport in both
+variants. We retained two valid alternatives for the student to judge. No human
+A/B result has been collected, and no full course-completion claim is made.

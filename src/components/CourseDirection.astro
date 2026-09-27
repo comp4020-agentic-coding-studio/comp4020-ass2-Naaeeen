@@ -59,6 +59,7 @@ const plateaus = [
         <p class="eyebrow"><span>{courseMeta.code}</span><span>First-year history · {courseOutline.year}</span></p>
         <h1><span class="course-title">{courseOutline.shortTitle}</span><span class="course-subtitle">{courseOutline.subtitle}</span></h1>
         <p class="course-hook">{courseOutline.hook}</p>
+        <p class="course-orientation">{courseOutline.premise}</p>
         {archive && <a class="course-action" href={anchor("weeks")}>Explore the twelve weeks <span aria-hidden="true">↘</span></a>}
       </header>
 
@@ -81,7 +82,6 @@ const plateaus = [
         <p class="eyebrow">The question we follow</p>
         <h2 id="course-question">{courseOutline.question}</h2>
         <p>{courseOutline.invitation}</p>
-        <p class="course-premise">{courseOutline.premise}</p>
         <p class="course-access">{courseOutline.access}</p>
       </section>
 
@@ -168,3 +168,35 @@ const plateaus = [
     <div class="course-end"><p>{courseMeta.code} <span>After Aincrad</span></p><a href={anchor("course")}>Back to course <span aria-hidden="true">↑</span></a></div>
   </div>
 </BaseLayout>
+
+<script>
+  const nav = document.querySelector<HTMLElement>(".at-nav");
+  const toggle = nav?.querySelector<HTMLButtonElement>(".at-nav-toggle");
+
+  if (nav && toggle) {
+    const mobileMenuOpen = () =>
+      getComputedStyle(toggle).display !== "none" &&
+      toggle.getAttribute("aria-expanded") === "true";
+
+    for (const link of nav.querySelectorAll<HTMLAnchorElement>(".at-nav-links a")) {
+      link.addEventListener("click", (event) => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        if (!mobileMenuOpen()) return;
+        const url = new URL(link.href);
+        if (url.pathname !== location.pathname || !url.hash) return;
+        const target = document.getElementById(url.hash.slice(1));
+        toggle.click();
+        if (target) {
+          target.tabIndex = -1;
+          target.focus({ preventScroll: true });
+        }
+      });
+    }
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && mobileMenuOpen()) {
+        toggle.click();
+        toggle.focus();
+      }
+    });
+  }
+</script>

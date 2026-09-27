@@ -77,8 +77,9 @@ new regressions or authorization to expand the task. Keep passing checks passing
 all required checks must pass before submission.
 
 For changed UI/navigation, inspect the built site at 1920×1080 and 390×844 with
-Chrome-compatible tooling, including affected links and console output. Before
-submission, read non-adjacent weeks, an assessment and a deck. Report unavailable
+Chrome-compatible tooling, including affected links and console output. For in-page
+navigation, verify destination visibility, keyboard focus and mobile menu state
+after activation. Before submission, read non-adjacent weeks, an assessment and a deck. Report unavailable
 browser verification honestly; neither a build nor a model review proves student
 appeal, visual quality or curriculum coherence.
 

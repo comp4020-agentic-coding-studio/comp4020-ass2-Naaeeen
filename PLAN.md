@@ -101,8 +101,23 @@ deadline of 28 September 2026 and human feedback required between five stages.
 record every requested workflow requirement. [The living research record](docs/IMPLEMENTATION-RESEARCH.md)
 will connect sources to decisions, comparisons and observed results.
 
-Current stage: Gate 1, requirements/source verification and browser-viewable
-homepage alternatives. Do not begin Gate 2 until the student reviews Gate 1.
+Current stage: Gate 1 ready for human review. [Review record and preview links](docs/planning/gate-1-review.md).
+Do not begin Gate 2 until the student reviews Gate 1.
 Known pre-implementation state: four spec checks pass; the twelve-week coverage
 check fails because only weeks 1 and 2 exist. The final evidence gate remains red
 for starter content/images and the unfilled PROCESS.md.
+
+The [dated course map](docs/planning/course-map.md) proposes the twelve questions
+and assessment progression for review. A read-only evaluator probe reproduced a
+false-positive deck-link regex case; fix it with valid/invalid fixtures before
+accepting the representative unit. No application source was changed by that probe.
+
+Gate 1 implementation lives only at `/review/a/` and `/review/b/`, sharing one
+outline and original vector artwork. The existing main homepage/catalogue and
+teaching collections have not been presented as complete. Local production
+preview is running on port 4321. Both marking viewport sizes were inspected;
+mobile orientation, fragment navigation and Escape-after-resize issues were fixed
+and rechecked. Final check: type/build/link/accessibility passed, spec four pass /
+one expected coverage failure, evidence gate still red for starter content and
+PROCESS. Independent follow-up review returned no actionable issue. The student's
+choice and feedback are pending; resume with Gate 2 after they respond.

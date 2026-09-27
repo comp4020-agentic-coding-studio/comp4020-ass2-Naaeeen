@@ -6,15 +6,15 @@ export const courseOutline = {
   year: "2035",
   description:
     "A twelve-week, first-year history seminar about technology, everyday life and belonging in the virtual worlds of Sword Art Online.",
-  hook: "The crisis ended. The worlds did not.",
+  hook: "Why would anyone log in again?",
   question:
     "Why do people keep entering, inhabiting and protecting virtual worlds after the SAO incident?",
   premise:
-    "Set in a fictional 2035, this first-year seminar studies the events of Sword Art Online as a history of technology and society.",
+    "An English history seminar in a fictional 2035, treating Sword Art Online as a history of technology and society. No knowledge of the series or programming is required.",
   invitation:
     "Follow the people who build a life inside a virtual world: the friendships they form, the institutions they create and the places they choose to call home.",
   access:
-    "Taught in English. No prior knowledge of Sword Art Online or programming is required; selected scenes and short background notes introduce each period.",
+    "Selected scenes and short background notes introduce each period. Bring a question about the people who lived through it.",
   method:
     "Read scenes as sources, compare perspectives and build an argument. We ask what an account shows, what it leaves out and whose experience it preserves.",
   sourceBoundary:
@@ -46,7 +46,7 @@ export const courseActs = [
 ] as const;
 
 export const courseWeeks = [
-  { number: 1, act: "beginnings", title: "The promise of Full-Dive", question: "What makes an imagined technology worth entering?", material: "Full-Dive and its promise" },
+  { number: 1, act: "beginnings", title: "The promise of Full-Dive", question: "What did Full-Dive promise its first users?", material: "Full-Dive and its promise" },
   { number: 2, act: "beginnings", title: "The SAO incident", question: "How do we reconstruct a crisis from partial accounts?", material: "Aincrad · the incident" },
   { number: 3, act: "beginnings", title: "Everyday life in Aincrad", question: "How does a place of confinement become a society?", material: "Aincrad · work, friendship and ordinary life" },
   { number: 4, act: "beginnings", title: "Another view of the beginning", question: "What changes when a familiar event has another witness?", material: "The two Progressive films · early Aincrad revisited" },
@@ -69,6 +69,6 @@ export const courseAssessments = [
 export const courseSources = [
   { title: "Sword Art Online", detail: "Official series guide · core television material", href: "https://www.swordart-online.net/" },
   { title: "Progressive", detail: "Official story and character guide · revisiting early Aincrad", href: "https://sao-p.net/aria/story-character/" },
-  { title: "Ordinal Scale", detail: "Official film story guide · augmented reality and memory", href: "https://sao-movie.net/us/story/story.html" },
+  { title: "Ordinal Scale", detail: "Official film story guide · augmented reality", href: "https://sao-movie.net/us/story/story.html" },
   { title: "Alicization", detail: "Official introduction · the Underworld period", href: "https://sao-alicization.com/intro/" },
 ] as const;
