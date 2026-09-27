@@ -42,26 +42,97 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
   const sceneFallback = root.querySelector<SVGElement>("[data-scene-fallback]");
   const sceneControls = root.querySelector<HTMLElement>("[data-scene-controls]");
   const sceneStatus = root.querySelector<HTMLElement>("[data-scene-status]");
+  const atmosphere = root.querySelector<HTMLElement>(".ic-atmosphere");
+  const readingTrack = root.querySelector<HTMLElement>("[data-reading-track]");
+  const readingProgress = root.querySelector<HTMLElement>("[data-reading-progress]");
   const tabList = root.querySelector<HTMLElement>("[data-chapter-tabs]");
+  const indicator = root.querySelector<HTMLElement>("[data-chapter-indicator]");
   const tabs = [...root.querySelectorAll<HTMLAnchorElement>("[data-chapter-tab]")];
   const panels = [...root.querySelectorAll<HTMLElement>("[data-chapter-panel]")];
+  const diagrams = [...root.querySelectorAll<SVGSVGElement>("[data-chapter-art]")];
   let scene: AincradScene | null = null;
   let sceneAvailable = false;
   let sceneRequested = false;
   let sceneInView = false;
+  let diagramInView = false;
+  let activeDiagram: SVGSVGElement | null = null;
+  let diagramLoop: gsap.core.Tween | null = null;
+  let indicatorTween: gsap.core.Tween | null = null;
+  let chapterContext: gsap.Context | null = null;
   let disposed = false;
+  let frame = 0;
+  let layoutDirty = true;
+  let lastSceneProgress = -1;
   let motionContext = gsap.context(() => {}, root);
   const motionEnabled = () => !state.userPaused && !reducedMotion.matches;
-  const updateSceneVisibility = () => scene?.setVisible(sceneAvailable && sceneInView && !document.hidden);
+  const clamp = (value: number) => Math.max(0, Math.min(1, value));
+
+  const updateActivity = () => {
+    const visible = sceneInView && !document.hidden;
+    root.dataset.sceneVisible = String(visible);
+    scene?.setVisible(sceneAvailable && visible);
+    diagramLoop?.paused(!motionEnabled() || !diagramInView || document.hidden);
+  };
+
+  const positionIndicator = (animate: boolean) => {
+    const selected = tabs[state.chapter];
+    if (!indicator || !tabList || !selected) return;
+    const listRect = tabList.getBoundingClientRect();
+    const selectedRect = selected.getBoundingClientRect();
+    const vertical = verticalTabs.matches;
+    const pose = {
+      x: vertical ? 0 : selectedRect.left - listRect.left,
+      y: vertical ? selectedRect.top - listRect.top : tabList.clientHeight - 3,
+      width: vertical ? 3 : selectedRect.width,
+      height: vertical ? selectedRect.height : 3,
+    };
+    indicatorTween?.kill();
+    indicator.hidden = false;
+    if (animate && motionEnabled()) {
+      indicatorTween = gsap.to(indicator, { ...pose, duration: .5, ease: "power3.inOut" });
+    } else gsap.set(indicator, pose);
+  };
+
+  const updateFrame = () => {
+    frame = 0;
+    if (disposed || document.hidden) return;
+    const bounds = root.getBoundingClientRect();
+    const read = clamp(-bounds.top / Math.max(1, bounds.height - innerHeight));
+    if (readingProgress) readingProgress.style.transform = `scaleX(${read})`;
+    if (layoutDirty) {
+      positionIndicator(false);
+      layoutDirty = false;
+    }
+    if (motionEnabled() && sceneInView && sceneStage) {
+      const stage = sceneStage.getBoundingClientRect();
+      const progress = clamp((innerHeight * .3 - stage.top) / Math.max(1, stage.height + innerHeight * .3));
+      if (Math.abs(progress - lastSceneProgress) > .001) {
+        scene?.setScrollProgress(progress);
+        atmosphere?.style.setProperty("--ic-atmosphere-y", `${progress * 72}px`);
+        lastSceneProgress = progress;
+      }
+    }
+  };
+  const scheduleFrame = () => {
+    if (!frame && !disposed && !document.hidden) frame = requestAnimationFrame(updateFrame);
+  };
+  const scheduleLayout = () => { layoutDirty = true; scheduleFrame(); };
 
   const updateMotion = () => {
     const enabled = motionEnabled();
     root.dataset.motion = enabled ? "running" : "paused";
     if (!enabled) {
+      // Finish finite content transitions in their readable layout; ambient work freezes.
       motionContext.revert();
       motionContext = gsap.context(() => {}, root);
+      chapterContext?.revert();
+      chapterContext = null;
+      positionIndicator(false);
     }
     scene?.setMotion(enabled);
+    updateActivity();
+    lastSceneProgress = -1;
+    scheduleFrame();
     if (motionButton && motionLabel) {
       motionButton.disabled = reducedMotion.matches;
       motionLabel.textContent = reducedMotion.matches ? "Motion reduced" : enabled ? "Pause motion" : "Resume motion";
@@ -74,32 +145,77 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
     updateMotion();
   }, { signal });
   reducedMotion.addEventListener("change", updateMotion, { signal });
-  updateMotion();
-  if (motionButton) motionButton.hidden = false;
+
+  const prepareDiagram = (panel: HTMLElement) => {
+    const previousDiagram = activeDiagram;
+    const wasInView = diagramInView;
+    diagramLoop?.kill();
+    diagramLoop = null;
+    activeDiagram?.removeAttribute("data-animated");
+    activeDiagram = panel.querySelector<SVGSVGElement>("[data-chapter-art]");
+    diagramInView = activeDiagram === previousDiagram && wasInView;
+    const route = activeDiagram?.querySelector<SVGPathElement>("[data-art-route]");
+    const traveler = activeDiagram?.querySelector<SVGCircleElement>("[data-art-traveler]");
+    const halo = activeDiagram?.querySelector<SVGCircleElement>("[data-art-halo]");
+    if (!route || !traveler || !halo || !activeDiagram) return;
+    const length = route.getTotalLength();
+    const travel = { progress: 0 };
+    const placeTraveler = () => {
+      const point = route.getPointAtLength(length * travel.progress);
+      for (const marker of [traveler, halo]) {
+        marker.setAttribute("cx", String(point.x));
+        marker.setAttribute("cy", String(point.y));
+      }
+    };
+    placeTraveler();
+    activeDiagram.setAttribute("data-animated", "");
+    diagramLoop = gsap.to(travel, {
+      progress: 1, duration: 8, ease: "none", repeat: -1, paused: true, onUpdate: placeTraveler,
+    });
+  };
 
   const activateChapter = (index: number, animate: boolean, syncUrl = false) => {
+    const direction = index >= state.chapter ? 1 : -1;
     state.chapter = index;
     if (syncUrl) history.replaceState(history.state, "", tabs[index].href);
+    chapterContext?.revert();
+    chapterContext = null;
     tabs.forEach((tab, tabIndex) => {
       tab.setAttribute("aria-selected", String(tabIndex === index));
       tab.tabIndex = tabIndex === index ? 0 : -1;
     });
-    panels.forEach((panel, panelIndex) => {
-      gsap.killTweensOf(panel);
-      panel.style.removeProperty("opacity");
-      panel.style.removeProperty("transform");
-      panel.hidden = panelIndex !== index;
-    });
+    panels.forEach((panel, panelIndex) => { panel.hidden = panelIndex !== index; });
     const active = panels[index];
-    if (active && animate && motionEnabled()) {
-      motionContext.add(() => {
-        gsap.fromTo(active, { opacity: .45, y: 10 }, { opacity: 1, y: 0, duration: .3, ease: "power2.out", clearProps: "opacity,transform" });
-      });
+    positionIndicator(animate);
+    if (!active) return;
+    prepareDiagram(active);
+    if (animate && motionEnabled()) {
+      chapterContext = gsap.context(() => {
+        const sequence = gsap.timeline();
+        sequence.from(active.querySelectorAll(".ic-chapter-questions li"), {
+          x: direction * 28, duration: .42, stagger: .06, ease: "power3.out", clearProps: "transform",
+        }, 0);
+        const art = active.querySelector<SVGSVGElement>("[data-chapter-art]");
+        if (art) {
+          sequence.from(art, { x: direction * 52, scale: .84, duration: .72, ease: "power3.out", clearProps: "transform" }, 0);
+          art.querySelectorAll<SVGPathElement>("[data-art-trace]").forEach((path, pathIndex) => {
+            const length = path.getTotalLength();
+            sequence.fromTo(path, { strokeDasharray: length, strokeDashoffset: length }, {
+              strokeDashoffset: 0, duration: 1.05, ease: "power2.inOut", clearProps: "strokeDasharray,strokeDashoffset",
+            }, .12 + pathIndex * .12);
+          });
+        }
+      }, active);
     }
+    updateActivity();
+    scheduleFrame();
   };
   if (tabList && tabs.length === panels.length && tabs.length > 0) {
     tabList.setAttribute("role", "tablist");
-    const updateOrientation = () => tabList.setAttribute("aria-orientation", verticalTabs.matches ? "vertical" : "horizontal");
+    const updateOrientation = () => {
+      tabList.setAttribute("aria-orientation", verticalTabs.matches ? "vertical" : "horizontal");
+      scheduleLayout();
+    };
     updateOrientation();
     verticalTabs.addEventListener("change", updateOrientation, { signal });
     tabs.forEach((tab, index) => {
@@ -144,7 +260,7 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
     sceneFallback?.removeAttribute("hidden");
     if (sceneControls) sceneControls.hidden = true;
     if (sceneStatus) sceneStatus.textContent = "Static illustration.";
-    updateSceneVisibility();
+    updateActivity();
   };
   const loadScene = async () => {
     if (sceneRequested || !sceneHost || disposed) return;
@@ -166,15 +282,17 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
       sceneAvailable = true;
       scene.setMotion(motionEnabled());
       scene.setView(state.view);
-      updateSceneVisibility();
+      lastSceneProgress = -1;
+      updateActivity();
+      scheduleFrame();
       root.dataset.scene = "ready";
       sceneFallback?.setAttribute("hidden", "");
       if (sceneControls) sceneControls.hidden = false;
-      if (sceneStatus) sceneStatus.textContent = "Interactive miniature ready. Use the view and rotation controls to explore.";
+      if (sceneStatus) sceneStatus.textContent = "Aincrad model ready. Use Exterior, Lower ring or Summit and the rotation controls to explore.";
     } catch (error) {
       if (disposed) return;
       showSceneFallback();
-      console.warn("Aincrad miniature unavailable; showing the static illustration.", error);
+      console.warn("Aincrad model unavailable; showing the static illustration.", error);
     }
   };
   for (const control of root.querySelectorAll<HTMLButtonElement>("[data-scene-view]")) {
@@ -184,6 +302,8 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
       if (view !== "world" && view !== "settlement" && view !== "citadel") return;
       state.view = view;
       scene?.setView(view);
+      lastSceneProgress = -1;
+      scheduleFrame();
       root.querySelectorAll<HTMLButtonElement>("[data-scene-view]").forEach((button) => {
         button.setAttribute("aria-pressed", String(button === control));
       });
@@ -192,7 +312,19 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
   for (const control of root.querySelectorAll<HTMLButtonElement>("[data-scene-rotate]")) {
     control.addEventListener("click", () => scene?.rotate(control.dataset.sceneRotate === "-1" ? -1 : 1), { signal });
   }
-  document.addEventListener("visibilitychange", updateSceneVisibility, { signal });
+  document.addEventListener("visibilitychange", () => {
+    updateActivity();
+    if (document.hidden && frame) { cancelAnimationFrame(frame); frame = 0; }
+    else scheduleFrame();
+  }, { signal });
+  window.addEventListener("scroll", scheduleFrame, { signal, passive: true });
+  window.addEventListener("resize", scheduleLayout, { signal, passive: true });
+  const layoutObserver = new ResizeObserver((entries) => {
+    if (entries.some((entry) => entry.target === tabList)) layoutDirty = true;
+    scheduleFrame();
+  });
+  layoutObserver.observe(root);
+  if (tabList) layoutObserver.observe(tabList);
   const loadObserver = new IntersectionObserver((entries) => {
     if (entries.some((entry) => entry.isIntersecting)) {
       loadObserver.disconnect();
@@ -200,19 +332,29 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
     }
   }, { rootMargin: "180px" });
   const visibilityObserver = new IntersectionObserver((entries) => {
-    sceneInView = entries.some((entry) => entry.isIntersecting);
-    updateSceneVisibility();
+    for (const entry of entries) {
+      if (entry.target === sceneStage) sceneInView = entry.isIntersecting;
+      if (entry.target === activeDiagram) diagramInView = entry.isIntersecting;
+    }
+    updateActivity();
+    scheduleFrame();
   });
   if (sceneStage) {
     loadObserver.observe(sceneStage);
     visibilityObserver.observe(sceneStage);
   }
+  diagrams.forEach((diagram) => visibilityObserver.observe(diagram));
 
+  updateMotion();
+  if (motionButton) motionButton.hidden = false;
+  if (readingTrack) readingTrack.hidden = false;
   if (!state.introduced && motionEnabled()) {
     motionContext.add(() => {
-      gsap.from(root.querySelectorAll("[data-hero-enter]"), {
-        y: 16, duration: .6, stagger: .07, ease: "power2.out", clearProps: "transform",
-      });
+      const opening = gsap.timeline();
+      opening.from(root.querySelector(".ic-title-after"), { x: verticalTabs.matches ? 0 : -56, y: verticalTabs.matches ? 32 : 12, duration: .9, ease: "power3.out", clearProps: "transform" }, 0)
+        .from(root.querySelector(".ic-title-aincrad"), { x: verticalTabs.matches ? 0 : 56, y: verticalTabs.matches ? 32 : 12, duration: .9, ease: "power3.out", clearProps: "transform" }, .04)
+        .from(root.querySelectorAll(".ic-hero-index, .ic-subtitle, .ic-hero-introduction, .ic-hero-actions"), { y: 22, duration: .65, stagger: .06, ease: "power3.out", clearProps: "transform" }, 0)
+        .from(root.querySelector("[data-hero-rule]"), { scaleX: 0, duration: .85, ease: "power2.inOut", clearProps: "transform" }, .08);
     });
   }
   state.introduced = true;
@@ -222,7 +364,9 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
       revealObserver.unobserve(entry.target);
       if (motionEnabled()) {
         motionContext.add(() => {
-          gsap.from(entry.target, { opacity: .5, y: 16, duration: .5, ease: "power2.out", clearProps: "opacity,transform" });
+          gsap.from(entry.target, { y: 24, duration: .65, ease: "power3.out", clearProps: "transform" });
+          const rule = entry.target.closest("[data-section-reveal]")?.querySelector("[data-section-rule]");
+          if (rule) gsap.from(rule, { scaleX: 0, duration: 1.1, ease: "power3.inOut", clearProps: "transform" });
         });
       }
     }
@@ -258,14 +402,25 @@ function initialisePreview(root: HTMLElement, state: PreviewState): () => void {
   return () => {
     disposed = true;
     listeners.abort();
+    if (frame) cancelAnimationFrame(frame);
     loadObserver.disconnect();
     visibilityObserver.disconnect();
     revealObserver.disconnect();
+    layoutObserver.disconnect();
     motionContext.revert();
+    chapterContext?.revert();
+    indicatorTween?.kill();
+    diagramLoop?.kill();
+    diagramLoop = null;
+    activeDiagram?.removeAttribute("data-animated");
     scene?.dispose();
     scene = null;
+    sceneInView = false;
     showSceneFallback();
+    atmosphere?.style.removeProperty("--ic-atmosphere-y");
     if (motionButton) motionButton.hidden = true;
+    if (readingTrack) readingTrack.hidden = true;
+    if (indicator) { indicator.hidden = true; indicator.removeAttribute("style"); }
     tabList?.removeAttribute("role");
     tabList?.removeAttribute("aria-orientation");
     tabs.forEach((tab) => {

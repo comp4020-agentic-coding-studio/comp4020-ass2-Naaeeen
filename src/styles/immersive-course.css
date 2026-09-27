@@ -105,7 +105,7 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
 .ic-chapter-intro { display: flex; align-items: flex-start; gap: 37px; padding-top: 17px; }
 .ic-chapter-numeral { font-family: Georgia, "Times New Roman", serif; font-size: 126px; line-height: .8; letter-spacing: -.075em; color: #aa7b35; }
 .ic-chapter-intro h3 { margin-top: 20px; max-width: 13ch; font-family: Georgia, "Times New Roman", serif; font-size: 40px; font-weight: 400; line-height: 1.07; letter-spacing: -.035em; }
-.ic-chapter-intro div > p:last-child { max-width: 29ch; margin-top: 20px; color: #605947; font-size: 16px; }
+.ic-chapter-intro div > p:not(.ic-eyebrow) { max-width: 29ch; margin-top: 20px; color: #605947; font-size: 16px; }
 .ic-chapter-questions li + li { border-top: 1px solid #c5baa6; }
 .ic-chapter-questions a { display: grid; grid-template-columns: 27px minmax(0, 1fr) 20px; align-items: start; gap: 19px; min-height: 95px; padding: 18px 0; text-decoration: none; }
 .ic-question-number { font-size: 11px; padding-top: 3px; color: var(--ic-bronze); font-variant-numeric: tabular-nums; }
@@ -197,7 +197,7 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
   .ic-chapter-intro { gap: 32px; padding-top: 0; }
   .ic-chapter-numeral { font-size: 100px; min-width: 66px; }
   .ic-chapter-intro h3 { max-width: none; margin-top: 13px; font-size: 32px; }
-  .ic-chapter-intro div > p:last-child { margin-top: 11px; max-width: 43ch; }
+  .ic-chapter-intro div > p:not(.ic-eyebrow) { margin-top: 11px; max-width: 43ch; }
   .ic-chapter-questions a { min-height: 92px; }
   .ic-weeks { padding-block: 70px; }
   .ic-week-list > li { grid-template-columns: 31px minmax(0, 1fr); gap: 9px 19px; padding-block: 23px; }
@@ -260,7 +260,7 @@ body:has(.immersive-course-main) .at-nav-links a { display: flex; align-items: c
   .ic-chapter-intro { gap: 20px; }
   .ic-chapter-numeral { font-size: 84px; min-width: 51px; }
   .ic-chapter-intro h3 { font-size: 28px; }
-  .ic-chapter-intro div > p:last-child { font-size: 15px; }
+  .ic-chapter-intro div > p:not(.ic-eyebrow) { font-size: 15px; }
   .ic-chapter-questions a { gap: 13px; grid-template-columns: 23px minmax(0, 1fr) 18px; padding-block: 19px; }
   .ic-chapter-questions strong { font-size: 14px; }
   .ic-chapter-questions a > span:nth-child(2) > span { font-size: 18px; }
@@ -298,3 +298,59 @@ html:has(.immersive-course[data-motion="paused"]) { scroll-behavior: auto; }
 
 .ic-fallback-nav { display: flex; flex-wrap: wrap; gap: 4px 14px; padding-block: 8px; }
 .ic-fallback-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--ic-ink); }
+
+/* A second pass: atmospheric depth, a shared chapter rail and drawn diagrams. */
+.ic-reading-track { position: fixed; inset: 0 0 auto; height: 3px; z-index: 200; pointer-events: none; background: rgb(245 241 232 / .2); }
+.ic-reading-track > span { display: block; width: 100%; height: 100%; background: #b97d1c; transform: scaleX(0); transform-origin: left; }
+.ic-hero { position: relative; background: radial-gradient(ellipse at 80% 40%, #30362f 0%, var(--ic-dark) 57%); }
+.ic-hero-rule { display: block; width: 86px; height: 2px; margin-bottom: 22px; background: #b97d1c; transform-origin: left; }
+.ic-world { position: relative; }
+.ic-scene-stage { background: radial-gradient(ellipse at 56% 48%, rgb(148 174 188 / .085), transparent 66%); }
+.ic-scene-host, .ic-scene-fallback { z-index: 1; }
+.ic-scene-host { mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.ic-scene-fallback { filter: drop-shadow(0 24px 23px rgb(8 12 15 / .3)); }
+.ic-atmosphere { position: absolute; inset: -3% -13%; pointer-events: none; overflow: hidden; transform: translate3d(0, var(--ic-atmosphere-y, 0px), 0); }
+.ic-distant-haze { position: absolute; inset: 5% -15%; background: radial-gradient(ellipse at 45% 66%, rgb(165 192 209 / .16), transparent 47%), radial-gradient(ellipse at 68% 43%, rgb(185 200 204 / .08), transparent 39%); animation: ic-haze-drift 18s ease-in-out infinite alternate; animation-play-state: paused; }
+.ic-haze-light { inset: 9% -5%; background: radial-gradient(ellipse at 63% 34%, rgb(228 222 204 / .12), transparent 41%); animation-name: ic-light-drift; animation-duration: 14s; }
+.immersive-course[data-motion="running"][data-scene-visible="true"] .ic-distant-haze { animation-play-state: running; }
+.ic-world figcaption { align-items: center; }
+.ic-art-reference { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; flex-basis: 100%; color: #c9c6b8 !important; font-size: 11px; }
+.ic-art-reference > span { font-size: 15px; }
+.ic-chapter-tabs { position: relative; }
+.ic-chapter-indicator { position: absolute; top: 0; left: 0; z-index: 2; display: block; width: 0; height: 3px; background: #d8b475; pointer-events: none; }
+.ic-chapter-intro > div { min-width: 0; }
+.ic-chapter-art { display: block; width: 100%; max-width: 320px; height: auto; aspect-ratio: 320 / 164; margin-top: 25px; overflow: visible; pointer-events: none; }
+.ic-art-foundation { fill: none; stroke: #b6a68c; stroke-width: 1.25; }
+.ic-art-trace { fill: none; stroke: #8a5c13; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.ic-art-nodes { fill: #ece4d5; stroke: #8a5c13; stroke-width: 2; }
+.ic-art-traveler { fill: #8a5c13; stroke: #f5edda; stroke-width: 1.5; opacity: 0; }
+.ic-art-traveler-halo { fill: #b97d1c; opacity: 0; }
+.ic-chapter-art[data-animated] .ic-art-traveler { opacity: 1; }
+.ic-chapter-art[data-animated] .ic-art-traveler-halo { opacity: .19; }
+.ic-section-heading { position: relative; padding-bottom: 10px; }
+.ic-section-rule { position: absolute; left: 0; right: 0; bottom: -18px; height: 1px; background: #b2a184; transform-origin: left; }
+.ic-primary-link { position: relative; overflow: hidden; }
+.ic-primary-link::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background: #8a5c13; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+.ic-primary-link:is(:hover, :focus-visible)::after { transform: scaleX(1); }
+.ic-primary-link > span, .ic-source-arrow, .ic-question-arrow, .ic-tab-arrow, .ic-text-link > span, .ic-art-reference > span { transition: transform .3s cubic-bezier(.2,.7,.2,1); }
+.ic-primary-link:is(:hover, :focus-visible) > span, .ic-chapter-tabs > a:is(:hover, :focus-visible) .ic-tab-arrow { transform: translate(5px, 5px); }
+.ic-chapter-questions a:is(:hover, :focus-visible) .ic-question-arrow, .ic-source-list a:is(:hover, :focus-visible) .ic-source-arrow, .ic-art-reference:is(:hover, :focus-visible) > span { transform: translate(6px, -6px); }
+.ic-text-link:is(:hover, :focus-visible) > span { transform: translateY(6px); }
+@keyframes ic-haze-drift { from { transform: translate3d(-9%, 3%, 0) scale(.92); } to { transform: translate3d(9%, -5%, 0) scale(1.12); } }
+@keyframes ic-light-drift { from { transform: translate3d(7%, -4%, 0) scale(.88); } to { transform: translate3d(-9%, 7%, 0) scale(1.16); } }
+@media (max-width: 800px) {
+  .ic-chapter-indicator { width: 3px; }
+  .ic-chapter-art { max-width: 280px; margin-top: 19px; }
+  .ic-art-reference { font-size: 11px; }
+}
+@media (max-width: 480px) {
+  .ic-hero-rule { width: 62px; margin-bottom: 18px; }
+  .ic-chapter-art { max-width: 240px; margin-top: 18px; }
+  .ic-atmosphere { inset-inline: -6%; }
+  .ic-art-reference { line-height: 1.4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ic-distant-haze { animation: none !important; }
+  .ic-primary-link::after { transition: none !important; }
+}
+.immersive-course[data-motion="paused"] .ic-primary-link::after { transition: none !important; }

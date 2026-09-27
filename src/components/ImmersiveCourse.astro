@@ -14,13 +14,12 @@ const previewLinks = [
   { text: "Assessment", href: anchor("assessment") },
   { text: "Sources", href: anchor("sources") },
 ];
-const levels = [
-  { y: 190, rx: 75, ry: 23, depth: 21 },
-  { y: 247, rx: 111, ry: 34, depth: 26 },
-  { y: 312, rx: 151, ry: 46, depth: 29 },
-  { y: 382, rx: 192, ry: 56, depth: 33 },
-  { y: 456, rx: 233, ry: 68, depth: 38 },
-];
+// The closely spaced shell bands follow the exterior silhouette in the linked reference.
+const fortressBands = Array.from({ length: 46 }, (_, index) => {
+  const progress = index / 45;
+  const radius = 17 + Math.pow(progress, .84) * 132;
+  return { y: 116 + progress * 278, radius, curve: radius * .155, major: index % 7 === 0 };
+});
 const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
 ---
 
@@ -39,6 +38,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
 >
   <link slot="head" rel="license" href={withBase("/vendor-notices.txt")} title="Third-party JavaScript notices" />
   <div class="immersive-course" data-immersive-course>
+    <div class="ic-reading-track" data-reading-track hidden aria-hidden="true"><span data-reading-progress></span></div>
     <aside class="ic-review-strip" aria-label="Design comparison">
       <div class="ic-shell ic-review-inner">
         <p><strong>Course preview</strong><span>Gate 1 · direction C</span></p>
@@ -65,6 +65,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
     <header id="course" class="ic-hero">
       <div class="ic-shell ic-hero-grid">
         <div class="ic-hero-copy">
+          <span class="ic-hero-rule" data-hero-rule aria-hidden="true"></span>
           <p class="ic-eyebrow ic-hero-index" data-hero-enter><span>{courseMeta.code}</span><span>First year · twelve weeks</span></p>
           <h1 data-hero-enter><span class="ic-title-after">After</span><span class="ic-title-aincrad">Aincrad<span aria-hidden="true">.</span></span></h1>
           <p class="ic-subtitle" data-hero-enter>{courseOutline.subtitle}</p>
@@ -79,62 +80,65 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
         </div>
 
         <figure class="ic-world">
-          <div class="ic-world-label"><span>Aincrad · study 01</span><span>Worlds we inhabit</span></div>
-          <div class="ic-scene-stage" data-scene-stage role="img" aria-label="An original interpretive miniature of a floating world: layered stone terraces, a settlement and a citadel.">
+          <div class="ic-world-label"><span>Aincrad</span><span>The floating castle</span></div>
+          <div class="ic-scene-stage" data-scene-stage role="img" aria-label="An original interpretation of Aincrad: a densely layered, tapering steel fortress with a suspended underside and radial bridges.">
+            <div class="ic-atmosphere" aria-hidden="true"><span class="ic-distant-haze ic-haze-back"></span><span class="ic-distant-haze ic-haze-light"></span></div>
             <div class="ic-scene-host" data-scene-host aria-hidden="true"></div>
             <svg class="ic-scene-fallback" data-scene-fallback viewBox="0 0 700 620" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="ic-stone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8aa8d"/><stop offset="1" stop-color="#625846"/></linearGradient>
-                <linearGradient id="ic-rock" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#665741"/><stop offset="1" stop-color="#262820"/></linearGradient>
-                <radialGradient id="ic-world-glow"><stop stop-color="#b97d1c" stop-opacity=".14"/><stop offset="1" stop-color="#b97d1c" stop-opacity="0"/></radialGradient>
+                <linearGradient id="ic-steel" x1="0" y1="0" x2="1" y2=".08"><stop stop-color="#333d47"/><stop offset=".28" stop-color="#7b8790"/><stop offset=".48" stop-color="#a6afb3"/><stop offset=".61" stop-color="#68747e"/><stop offset="1" stop-color="#2e3842"/></linearGradient>
+                <linearGradient id="ic-skirt" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#73828b"/><stop offset=".45" stop-color="#444e58"/><stop offset="1" stop-color="#252b33"/></linearGradient>
+                <linearGradient id="ic-arm" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bcc3c1"/><stop offset=".27" stop-color="#89979e"/><stop offset=".32" stop-color="#3d4954"/><stop offset="1" stop-color="#1e2832"/></linearGradient>
+                <radialGradient id="ic-sky-light"><stop stop-color="#c0d5df" stop-opacity=".18"/><stop offset="1" stop-color="#97b4c3" stop-opacity="0"/></radialGradient>
               </defs>
-              <ellipse cx="350" cy="332" rx="316" ry="273" fill="url(#ic-world-glow)" />
-              <g fill="none" stroke="#b8a77f" stroke-opacity=".22" stroke-width="1">
-                <ellipse cx="350" cy="374" rx="296" ry="113" transform="rotate(-17 350 374)" />
-                <path d="M70 479H138M561 242H630M350 31V72M350 564V597" />
-                <circle cx="350" cy="319" r="271" stroke-dasharray="2 9" />
+              <ellipse cx="385" cy="335" rx="320" ry="268" fill="url(#ic-sky-light)" />
+              <g fill="url(#ic-arm)" stroke="#72848d" stroke-width="1">
+                <path d="m233 398-143-9-17 7 153 18ZM466 398l144-9 17 7-153 18Z" />
+                <path d="m225 414-176 18 7 8 177-12ZM475 414l176 18-7 8-177-12Z" />
+                <path d="m241 438-114 50 10 7 118-46ZM459 438l114 50-10 7-118-46Z" />
               </g>
-              {levels.toReversed().map(({ y, rx, ry, depth }) => (
-                <g>
-                  <path d={`M${350-rx} ${y}A${rx} ${ry} 0 0 0 ${350+rx} ${y}L${350+rx-19} ${y+depth}Q350 ${y+ry+depth+40} ${350-rx+19} ${y+depth}Z`} fill="url(#ic-rock)" stroke="#9f8a60" stroke-opacity=".5" />
-                  <ellipse cx="350" cy={y} rx={rx} ry={ry} fill="url(#ic-stone)" stroke="#cfb57c" stroke-opacity=".7" />
-                  <ellipse cx="350" cy={y-2} rx={rx-11} ry={ry-5} fill="none" stroke="#534d3f" stroke-opacity=".65" />
-                  <path d={`M${350-rx+15} ${y+12}Q350 ${y+ry+16} ${350+rx-15} ${y+12}`} fill="none" stroke="#b97d1c" stroke-opacity=".7" />
-                </g>
-              ))}
-              <g fill="#484b3c" stroke="#8e916e" stroke-width=".7">
-                <path d="m208 434 9-32 10 31-9 8Zm33 13 9-39 12 36-11 10Zm218 6 9-36 11 33-10 10Zm32-19 9-29 10 27-9 9ZM236 360l8-25 10 25-9 7Z" />
-                <path d="m439 354 8-27 10 28-9 7ZM275 292l8-24 9 24-8 6Z" />
+              <g fill="url(#ic-skirt)" stroke="#87939a" stroke-width="1">
+                <path d="M173 425Q350 476 527 425L496 474 462 501 417 524 384 541H316L283 524 238 501 204 474Z" />
+                <path d="m195 435 25 48 38 24-20-58Zm44 15 26 65 30 15-15-72Zm222 0-26 65-30 15 15-72Zm44-15-25 48-38 24 20-58Z" fill="#2c3540" />
+                <path d="M305 534H395L383 553 370 561 360 587 347 606 338 579 324 568 316 553Z" />
+                <path d="M350 548v52M325 543l11 23M376 543l-10 29" fill="none" stroke="#bec1b9" stroke-opacity=".45" />
               </g>
-              <g stroke="#5e4c31" stroke-width="1">
-                <path d="m306 377 20-9 18 9v19l-20 9-18-9Z" fill="#c5ad79"/><path d="m303 377 21-20 23 20-21 9Z" fill="#8a5c13"/>
-                <path d="m359 359 18-8 16 8v19l-18 8-16-8Z" fill="#c5ad79"/><path d="m356 359 20-18 20 18-19 8Z" fill="#8a5c13"/>
-                <path d="m389 385 15-7 15 7v16l-15 7-15-7Z" fill="#baaa88"/><path d="m386 385 18-18 18 18-18 7Z" fill="#8a5c13"/>
+              <g fill="url(#ic-steel)" stroke="#a6b2b8" stroke-opacity=".5" stroke-width=".7">
+                <path d="M334 118 341 101 345 100 346 83 350 73 353 99 360 106 367 118Q350 126 334 118Z" />
+                {fortressBands.map(({ y, radius, curve, major }, index) => {
+                  const next = fortressBands[index + 1];
+                  return <g>
+                    {next && <path d={`M${350-radius} ${y}Q350 ${y+curve*2} ${350+radius} ${y}L${350+next.radius} ${next.y}Q350 ${next.y+next.curve*2} ${350-next.radius} ${next.y}Z`} fill="url(#ic-steel)" stroke="none" />}
+                    <path d={`M${350-radius-1} ${y}Q350 ${y+curve*2} ${350+radius+1} ${y}`} fill="none" stroke={major ? "#ccd1ce" : "#bac5ca"} stroke-opacity={major ? ".72" : ".38"} stroke-width={major ? "2.4" : ".9"} />
+                    <path d={`M${350-radius} ${y+2.7}Q350 ${y+curve*2+2.7} ${350+radius} ${y+2.7}`} fill="none" stroke="#202933" stroke-opacity=".8" stroke-width={major ? "2" : "1.5"} />
+                    {major && <path d={`M${350-radius*.68} ${y+curve*.52}l-2 7M${350+radius*.58} ${y+curve*.62}l2 7`} fill="none" stroke="#2d3741" stroke-width="1.2" />}
+                  </g>;
+                })}
+                <path d="M201 394Q350 440 499 394L532 425Q350 490 168 425Z" fill="url(#ic-steel)" />
+                <path d="M175 429Q350 491 525 429M184 421Q350 479 516 421" fill="none" stroke="#c1c8c6" stroke-opacity=".6" stroke-width="1.5" />
+                <path d="m222 402-27 30m67-21-16 36m57-30-6 37m56-35v39m56-40 6 36m41-41 16 34m35-44 25 25" fill="none" stroke="#303b44" stroke-width="4" />
               </g>
-              <g stroke="#4f412d" stroke-width="1.3">
-                <path d="m301 169 47-22 53 23v31l-50 23-50-23Z" fill="#b2a17d"/>
-                <path d="m301 169 50 22 50-21v31l-50 23-50-23Z" fill="#9d8961"/>
-                <path d="M320 180v-48l12-6 12 6v48l-12 6Z" fill="#d0bd92"/><path d="m317 132 15-31 15 31-15 7Z" fill="#8a5c13"/>
-                <path d="M350 175v-77l15-7 15 7v77l-15 7Z" fill="#d6c39b"/><path d="m347 98 18-39 18 39-18 8Z" fill="#b97d1c"/>
-                <path d="M383 183v-43l11-5 11 5v43l-11 5Z" fill="#c3ad82"/><path d="m380 140 14-28 14 28-14 6Z" fill="#8a5c13"/>
-                <path d="M352 213v-22q9-14 18-2v17" fill="#39372f"/>
+              <g fill="url(#ic-arm)" stroke="#9caaaf" stroke-width=".7">
+                <path d="m66 431 3-65 4 3 2 62-4 16Zm26-3 3-70 4 3 2 66-4 16Zm26-3 3-63 4 3 2 59-4 15Z" />
+                <path d="m626 431 3-62 4-3 2 65-4 16Zm-26-3 3-67 4-3 2 70-4 15Zm-26-3 3-60 4-3 2 63-4 15Z" />
+                <path d="m137 483 3-62 4-3 2 62-4 17Zm420 0 3-65 4 3 2 59-4 17Z" />
+                <path d="m230 421 3-59 4 2 2 60-4 15Zm231 0 3-57 4-2 2 60-4 17Z" />
               </g>
-              <g fill="#dfc998"><circle cx="365" cy="120" r="2.5"/><circle cx="332" cy="151" r="2"/><circle cx="394" cy="157" r="2"/></g>
-              <g fill="#b8a77f"><circle cx="115" cy="205" r="2"/><circle cx="569" cy="397" r="2"/><circle cx="518" cy="129" r="1.5"/></g>
+              <g fill="#d9d0b6" opacity=".65"><path d="M347 115h6v3h-6Zm-26 113h5v2h-5Zm35 78h7v2h-7Zm-67 57h6v2h-6Zm116 19h8v2h-8Z" /></g>
             </svg>
           </div>
           <div class="ic-world-controls" data-scene-controls hidden>
-            <div class="ic-view-controls" role="group" aria-label="Miniature view">
-              <button type="button" data-scene-view="world" aria-pressed="true">World</button>
-              <button type="button" data-scene-view="settlement" aria-pressed="false">Settlement</button>
-              <button type="button" data-scene-view="citadel" aria-pressed="false">Citadel</button>
+            <div class="ic-view-controls" role="group" aria-label="Aincrad view">
+              <button type="button" data-scene-view="world" aria-pressed="true">Exterior</button>
+              <button type="button" data-scene-view="settlement" aria-pressed="false">Lower ring</button>
+              <button type="button" data-scene-view="citadel" aria-pressed="false">Summit</button>
             </div>
-            <div class="ic-rotate-controls" role="group" aria-label="Rotate miniature">
-              <button type="button" data-scene-rotate="-1" aria-label="Rotate miniature left"><span aria-hidden="true">↶</span></button>
-              <button type="button" data-scene-rotate="1" aria-label="Rotate miniature right"><span aria-hidden="true">↷</span></button>
+            <div class="ic-rotate-controls" role="group" aria-label="Rotate Aincrad">
+              <button type="button" data-scene-rotate="-1" aria-label="Rotate Aincrad left"><span aria-hidden="true">↶</span></button>
+              <button type="button" data-scene-rotate="1" aria-label="Rotate Aincrad right"><span aria-hidden="true">↷</span></button>
             </div>
           </div>
-          <figcaption><span>A world, and the lives within it.</span><span>Original interpretive model</span></figcaption>
+          <figcaption><span>Aincrad, above the clouds.</span><span>Original 3D interpretation</span><a class="ic-art-reference" href="https://www.swordart-online.net/SAOA/">Visual reference: official SAO artwork <span aria-hidden="true">↗</span></a></figcaption>
           <p class="visually-hidden" role="status" data-scene-status>Static illustration.</p>
         </figure>
       </div>
@@ -149,11 +153,12 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
 
       <section id="explore" class="ic-chapters" aria-labelledby="ic-chapters-title">
         <div class="ic-shell">
-          <div class="ic-section-heading">
+          <div class="ic-section-heading" data-section-reveal><span class="ic-section-rule" data-section-rule aria-hidden="true"></span>
             <div><p class="ic-eyebrow">Explore the course</p><h2 id="ic-chapters-title" data-reveal>Three connected histories.</h2></div>
             <p>Begin with the promise. Follow the return. Consider what remains.</p>
           </div>
           <div class="ic-chapter-tabs" data-chapter-tabs aria-label="Course chapters">
+            <span class="ic-chapter-indicator" data-chapter-indicator hidden aria-hidden="true"></span>
             {courseActs.map((act, index) => (
               <a id={`chapter-tab-${act.id}`} href={anchor(`chapter-${act.id}`)} data-chapter-tab={index}>
                 <span class="ic-tab-number">{act.number}</span><span><strong>{act.title}</strong><small>Weeks {act.range}</small></span><span class="ic-tab-arrow" aria-hidden="true">↘</span>
@@ -163,7 +168,30 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
           <div class="ic-chapter-panels">
             {courseActs.map((act, index) => (
               <section id={`chapter-${act.id}`} class="ic-chapter-panel" data-chapter-panel={index} aria-labelledby={`chapter-title-${act.id}`}>
-                <div class="ic-chapter-intro"><span class="ic-chapter-numeral" aria-hidden="true">{act.number}</span><div><p class="ic-eyebrow">Chapter {act.number} · weeks {act.range}</p><h3 id={`chapter-title-${act.id}`}>{act.title}</h3><p>{act.description}</p></div></div>
+                <div class="ic-chapter-intro"><span class="ic-chapter-numeral" aria-hidden="true">{act.number}</span><div><p class="ic-eyebrow">Chapter {act.number} · weeks {act.range}</p><h3 id={`chapter-title-${act.id}`}>{act.title}</h3><p>{act.description}</p>
+                  <svg class="ic-chapter-art" data-chapter-art viewBox="0 0 320 164" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    {index === 0 && <g>
+                      <g class="ic-art-foundation"><ellipse cx="160" cy="89" rx="102" ry="50"/><ellipse cx="160" cy="89" rx="72" ry="35"/><ellipse cx="160" cy="89" rx="41" ry="20"/><path d="M58 89H22M262 89h36M160 39V14M160 139v12"/></g>
+                      <path class="ic-art-trace" data-art-trace data-art-route d="M58 89a102 50 0 1 0 204 0 102 50 0 1 0-204 0"/>
+                      <path class="ic-art-trace" data-art-trace d="M88 89a72 35 0 1 0 144 0 72 35 0 1 0-144 0"/>
+                      <g class="ic-art-nodes"><circle cx="128" cy="82" r="4"/><circle cx="179" cy="95" r="4"/><circle cx="167" cy="72" r="4"/><circle cx="160" cy="39" r="5"/></g>
+                    </g>}
+                    {index === 1 && <g>
+                      <g class="ic-art-foundation"><circle cx="80" cy="82" r="44"/><circle cx="240" cy="82" r="44"/><circle cx="80" cy="82" r="28"/><circle cx="240" cy="82" r="28"/><path d="M124 82h72M80 38V17M240 126v21"/></g>
+                      <path class="ic-art-trace" data-art-trace data-art-route d="M80 82C110 7 211 7 240 82S111 157 80 82Z"/>
+                      <path class="ic-art-trace" data-art-trace d="M80 82C112 127 208 127 240 82"/>
+                      <g class="ic-art-nodes"><circle cx="80" cy="82" r="6"/><circle cx="160" cy="27" r="4"/><circle cx="240" cy="82" r="6"/><circle cx="160" cy="137" r="4"/></g>
+                    </g>}
+                    {index === 2 && <g>
+                      <g class="ic-art-foundation"><path d="M38 112 90 55 155 86 225 29 281 99 216 135 155 86 111 143 38 112ZM90 55l45-31 90 5M135 24l20 62m61 49 65-36M90 55l21 88"/><circle cx="155" cy="86" r="24"/></g>
+                      <path class="ic-art-trace" data-art-trace data-art-route d="M38 112 90 55 135 24 225 29 281 99 216 135 155 86 111 143Z"/>
+                      <path class="ic-art-trace" data-art-trace d="m90 55 65 31 70-57m-70 57 61 49"/>
+                      <g class="ic-art-nodes"><circle cx="38" cy="112" r="4"/><circle cx="90" cy="55" r="5"/><circle cx="135" cy="24" r="4"/><circle cx="225" cy="29" r="5"/><circle cx="281" cy="99" r="4"/><circle cx="216" cy="135" r="5"/><circle cx="155" cy="86" r="7"/><circle cx="111" cy="143" r="4"/></g>
+                    </g>}
+                    <circle class="ic-art-traveler-halo" data-art-halo cx="160" cy="89" r="12"/>
+                    <circle class="ic-art-traveler" data-art-traveler cx="160" cy="89" r="4.5"/>
+                  </svg>
+                </div></div>
                 <ol class="ic-chapter-questions">
                   {courseWeeks.filter((week) => week.act === act.id).map((week) => (
                     <li><a href={anchor(weekId(week.number))}><span class="ic-question-number">{String(week.number).padStart(2, "0")}</span><span><strong>{week.title}</strong><span>{week.question}</span></span><span class="ic-question-arrow" aria-hidden="true">↗</span></a></li>
@@ -176,7 +204,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
       </section>
 
       <section id="weeks" class="ic-shell ic-weeks" aria-labelledby="ic-weeks-title">
-        <div class="ic-section-heading"><div><p class="ic-eyebrow">The full course outline</p><h2 id="ic-weeks-title" data-reveal>Twelve weeks of inquiry.</h2></div><p>{courseOutline.method}</p></div>
+        <div class="ic-section-heading" data-section-reveal><span class="ic-section-rule" data-section-rule aria-hidden="true"></span><div><p class="ic-eyebrow">The full course outline</p><h2 id="ic-weeks-title" data-reveal>Twelve weeks of inquiry.</h2></div><p>{courseOutline.method}</p></div>
         {courseActs.map((act) => (
           <section class="ic-week-act" aria-label={`Weekly outline: ${act.title}`}>
             <div class="ic-week-act-heading"><span aria-hidden="true">{act.number}</span><h3 id={`outline-${act.id}`}>{act.title}</h3><p>Weeks {act.range}</p></div>
@@ -195,7 +223,7 @@ const weekId = (number: number) => `week-${String(number).padStart(2, "0")}`;
 
       <section id="assessment" class="ic-assessment" aria-labelledby="ic-assessment-title">
         <div class="ic-shell">
-          <div class="ic-section-heading"><div><p class="ic-eyebrow">Assessment</p><h2 id="ic-assessment-title" data-reveal>Make a history<br />you can share.</h2></div><p>Three pieces of work take you from reading an account to curating an argument.</p></div>
+          <div class="ic-section-heading" data-section-reveal><span class="ic-section-rule" data-section-rule aria-hidden="true"></span><div><p class="ic-eyebrow">Assessment</p><h2 id="ic-assessment-title" data-reveal>Make a history<br />you can share.</h2></div><p>Three pieces of work take you from reading an account to curating an argument.</p></div>
           <ol class="ic-assessment-list">
             {courseAssessments.map((assessment) => (
               <li><span class="ic-assessment-number" aria-hidden="true">{assessment.number}</span><div><h3>{assessment.title}</h3><p>{assessment.description}</p></div><p class="ic-assessment-weight">{assessment.weight}<span>%</span><span class="visually-hidden"> of the final grade</span></p></li>
