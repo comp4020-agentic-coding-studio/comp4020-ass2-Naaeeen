@@ -270,6 +270,10 @@ runs were discarded and repeated with actual-size checks and a document reload.
 The short follow-up CLAUDE.md rule makes that verification explicit. These are
 observed evaluator and interface limits, not manufactured red tests.
 [Gate 2's review record](planning/gate-2-review.md) preserves the checks and limits.
+The final keyboard pass also exposed a missing Escape response on reading pages:
+it had worked on the homepage because that component supplied its own handler.
+Reusing the theme toggle in the shared reading layout fixed the observed behavior;
+normal and resize-return browser cases now close and refocus the menu.
 
 ## E14 — A broader audit exposed development-tool dependencies
 

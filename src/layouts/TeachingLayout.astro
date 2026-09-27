@@ -60,4 +60,12 @@ const contents = headings.filter((heading) => heading.depth === 2).map((heading)
       requestAnimationFrame(() => target.focus({ preventScroll: true }));
     });
   });
+  // Use the theme's toggle so its expanded and inert states stay together.
+  const menuToggle = document.querySelector<HTMLButtonElement>(".at-nav-toggle");
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true" && getComputedStyle(menuToggle).display !== "none") {
+      menuToggle.click();
+      menuToggle.focus();
+    }
+  });
 </script>

@@ -110,3 +110,18 @@ Gate 3 onward. Repository visibility/publication are unchanged.
 
 Implementation: [4fc9cde](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/4fc9cde).
 Oracle: [785b1ce](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/785b1ce).
+
+### Final keyboard follow-up
+
+After the first reviewed checkpoints were pushed, the parent activated a contents
+link with Enter and confirmed heading focus. A separate Escape check left the
+mobile reading-page menu expanded. The installed theme supplied a click toggle
+but no Escape handler. TeachingLayout now uses that same toggle to close on Escape
+and return focus, matching the homepage behavior and the
+[W3C disclosure-navigation example](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/).
+Parent retest: expanded true before Escape, false afterwards, focus on Menu.
+The 390 → 1920 → 390 case also closes correctly. Full check log:
+`/tmp/a2-gate2-menu-final-u40zf4b5.log`: zero type diagnostics, 21-page checks pass,
+35 spec tests pass and only unfinished twelve-week coverage fails. This final
+runtime correction is not hidden by the earlier passing build. Browser test
+emulation was reset before handoff.

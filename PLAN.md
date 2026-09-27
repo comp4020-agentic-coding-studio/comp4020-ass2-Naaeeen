@@ -123,8 +123,10 @@ clear after compatible dev-tool patches; fixed platform versions remain Astro
 7.2.8 and Astromotion 0.23.0. Do not apply a wholesale upstream upgrade.
 
 Checkpoints: oracle `785b1ce`; teaching implementation/harness `4fc9cde`;
-development-tool patches `2752781`. Review documentation is committed with the
-handoff. Verify the remote commit after the authorized private push.
+development-tool patches `2752781`. Research/review delivery `19b7b97` was pushed with a matching remote hash and
+private visibility unchanged. The final keyboard follow-up also fixes Escape on
+teaching menus; its full check and browser retests are recorded at the end of the
+Gate 2 review. Verify the final follow-up push, then wait for human feedback.
 
 Next: obtain the student's review of teaching depth/voice, reading layout and
 mobile slides. After approval, use this pattern to complete the other eleven

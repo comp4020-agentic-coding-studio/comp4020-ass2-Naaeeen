@@ -512,3 +512,12 @@ nine-package version family diff and the zero-advisory post-patch audit JSON.
 The student still needs to review teaching depth, voice, layout and slide usability.
 Completing one unit establishes a usable pattern, not the coherence of twelve
 weeks or a promised grade.
+
+A final keyboard walkthrough found that the inherited reading-page navigation
+lacked Escape handling even though the homepage already supplied it. The parent
+verified the theme source and [W3C's disclosure-navigation pattern](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/),
+then reused the theme toggle in TeachingLayout rather than separately manipulating
+its state. Actual Escape and resize-return cases now close the menu and restore
+focus. The final full check remains 35 passes and the known coverage failure;
+see the review record's last follow-up. The first four Gate 2 commits were pushed
+through 19b7b97 with a matching remote hash and unchanged private visibility.
