@@ -87,7 +87,9 @@ after activation. For enhanced content, inspect the first usable frame, reduced
 motion and the HTML fallback as well as the settled view. Before submission, read
 non-adjacent weeks, an assessment and a deck. Report unavailable
 browser verification honestly; neither a build nor a model review proves student
-appeal, visual quality or curriculum coherence.
+appeal, visual quality or curriculum coherence. When depicting a recognizable
+subject, inspect a primary visual reference and compare the rendered silhouette,
+proportions and materials before presenting it for human review.
 
 ## Writing, evidence and handoff
 

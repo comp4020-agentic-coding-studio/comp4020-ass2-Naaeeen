@@ -93,72 +93,51 @@ and the repository README remain the assignment and platform requirements.
 Earlier setup and verification notes are preserved in
 [the setup handoff](docs/planning/setup-handoff.md).
 
-## Implementation control
+## Implementation control and current handoff
 
-The student has now authorized the complete course implementation, with a working
-deadline of 28 September 2026 and human feedback required between five stages.
-[Detailed goals and acceptance criteria](docs/planning/implementation-goals.md)
-record every requested workflow requirement. [The living research record](docs/IMPLEMENTATION-RESEARCH.md)
-will connect sources to decisions, comparisons and observed results.
+Follow [the detailed goals and five review gates](docs/planning/implementation-goals.md),
+[the research record](docs/IMPLEMENTATION-RESEARCH.md), and the curated
+[process evidence](docs/PROCESS-EVIDENCE.md). Working deadline: 28 September 2026,
+exact cutoff unspecified. The Goal is active; the full assignment is unfinished.
 
-Current stage: Gate 1 immersive revision ready for human review. [Current review record](docs/planning/gate-1-motion-review.md).
-Do not begin Gate 2 until the student reviews Gate 1.
-Known pre-implementation state: four spec checks pass; the twelve-week coverage
-check fails because only weeks 1 and 2 exist. The final evidence gate remains red
-for starter content/images and the unfilled PROCESS.md.
+Current stage: **Gate 1 revision after human feedback**. Do not begin Gate 2 until
+the student accepts the revised direction. A/B/C share the proposed course outline
+under `/review/`; the main catalogue and teaching collections remain starter content.
+The [dated course map](docs/planning/course-map.md) proposes twelve distinct questions
+and 20/30/50 assessment progression for the accepted direction.
 
-The [dated course map](docs/planning/course-map.md) proposes the twelve questions
-and assessment progression for review. A read-only evaluator probe reproduced a
-false-positive deck-link regex case; fix it with valid/invalid fixtures before
-accepting the representative unit. No application source was changed by that probe.
+The student reviewed C and found Aincrad insufficiently realistic or faithful to
+the original and the motion insufficient. They invited existing models/images
+as assets or references. Parent inspected the official SAOA exterior and the CC BY
+mhil fan model: a continuous densely layered tapered fortress with lower supports
+and radial bridges, unlike our separated terraces. The model download requires
+login and its viewer reports a device-weight limit; use it as reference, not an
+imported asset. Rebuild the local scene and coordinate clouds, camera movement
+and chapter transitions while keeping readable HTML, native scrolling and motion
+controls. See E11 for the new visual-reference harness rule and actual feedback.
 
-Gate 1 implementation lives only at `/review/a/` and `/review/b/`, sharing one
-outline and original vector artwork. The existing main homepage/catalogue and
-teaching collections have not been presented as complete. Local production
-preview is running on port 4321. Both marking viewport sizes were inspected;
-mobile orientation, fragment navigation and Escape-after-resize issues were fixed
-and rechecked. Final check: type/build/link/accessibility passed, spec four pass /
-one expected coverage failure, evidence gate still red for starter content and
-PROCESS. Independent follow-up review returned no actionable issue. The student's
-choice and feedback are pending; resume with Gate 2 after they respond.
+Prior C baseline: original scene/page `99b0491`, runtime/readability refinements
+`03159e6`, documentation `93bd572`. All pushed. The earlier
+[motion review](docs/planning/gate-1-motion-review.md) records actual results and
+limits; it does not automatically validate this new revision. Preview is served
+at `http://127.0.0.1:4321/comp4020-ass2-Naaeeen/review/c/`.
 
-## Design revision requested on 27 September
+Known acceptance state: type/build/19-page accessibility/internal links pass;
+four spec checks pass and twelve-week coverage fails because collections contain
+only weeks 1 and 2. Evidence remains red for starter material/images and unfilled
+PROCESS.md. E04's reproduced false-positive lecture-link regex is still to be
+corrected before accepting Gate 2's real deck. Native BFCache, GPU frame-rate
+profiling and forced context loss were not browser-verified in the earlier pass.
 
-The student requested a more vivid, immersive design, research beyond course sites,
-and suitable additional packages/APIs within the fixed course platform. The
-[detailed goals](docs/planning/implementation-goals.md) now specify continuous
-review/refinement, motion acceptance and the new authorization to commit and push
-implementation checkpoints. The repository is currently private with push access;
-visibility/publication remain unchanged.
+Next: integrate the bounded scene/UI changes, inspect both marking viewports and
+reference fidelity, reconcile independent review, record actual results, commit
+and push the reviewed checkpoint, then present revised C for human review.
+After approval, build the representative week/source comparison with a real deck
+and correct the test oracle before scaling to twelve weeks.
 
-The Gate 1 revision produced an immersive candidate at `/review/c/`, preserving
-A/B for comparison. The student
-has not selected a final direction. Deliver the revised working preview and
-verification before the next human review. Do not bulk-author twelve weeks before
-that review. The app's Goal status was rechecked and confirmed active during this revision.
+## Authorized external actions
 
-The student also requested a curated record for the later process account.
-[PROCESS-EVIDENCE.md](docs/PROCESS-EVIDENCE.md) now records consequential decisions,
-observed problems, justified harness changes, real checks and commits, including
-explicitly unresolved findings. Keep it current alongside the research and goals;
-it is not the student's final PROCESS.md.
-
-## Immersive review handoff
-
-Candidate C: `http://127.0.0.1:4321/comp4020-ass2-Naaeeen/review/c/`. Production
-preview is running on port 4321 with Astro 7.2.8. Commits: initial scene/page
-`99b0491`; runtime/readability/harness refinements `03159e6`. Dependencies and
-research were already pushed in `e1b037f`; publishing/visibility remain unchanged.
-
-C has original inspectable 3D artwork, progressive chapter tabs, pause/reduced-motion
-support, a static artwork fallback and no-script course navigation. Parent browser
-checks covered exact viewports, keyboard/focus/resize, model views, pause/resume,
-failed module, slow connection and return navigation. Final type/build/a11y/links
-pass; the existing twelve-week test and submission evidence remain incomplete.
-The optional scene size warning is measured and retained. Native BFCache and
-GPU profiling/context-loss are not claimed as browser-verified.
-
-The student has been asked to choose C, request adjustments, or retain A/B. Wait
-for that actual feedback before Gate 2. Next, promote the accepted direction and
-build the planned representative week/source comparison with a real deck; correct
-the reproduced lecture-link regex blind spot before using that acceptance test.
+The student explicitly authorized ordinary commits and pushes during implementation.
+Inspect outgoing changes and verify the remote checkpoint. Repo is private; retain
+visibility. This preview stays private. Public Pages publication, visibility changes
+and the course ship workflow remain separately authorized release tasks.

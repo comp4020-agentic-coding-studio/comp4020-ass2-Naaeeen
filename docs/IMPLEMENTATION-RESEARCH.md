@@ -312,3 +312,39 @@ between A/B and the immersive C direction is the next decision, not an agent sco
 
 Consequential review findings and rule changes now feed the curated
 [process evidence bank](PROCESS-EVIDENCE.md), as explicitly requested by the student.
+
+## Reference-led Aincrad revision — 27 September 2026
+
+**Trigger.** The student found C's Aincrad insufficiently faithful and its motion
+too limited. This is actual negative design feedback, not an inferred preference
+or a failed automated test. They invited existing official/fan imagery and models
+for the private preview.
+
+| Primary source | Verified evidence | Decision / limit |
+| --- | --- | --- |
+| [Official SAOA art award](https://www.swordart-online.net/SAOA/) and [Aincrad exterior](https://www.swordart-online.net/SAOA/img/10/thumb_01.jpg) | Parent inspected the image: continuous tapered grey body, closely layered bands, broad lower mass, radial arms and hanging structures, small summit | Use as the original-anime visual anchor; proportions are observations, not canonical measurements. Reference only, not a copied site asset |
+| [Official episode 2 synopsis](https://www.swordart-online.net/aincrad/story/?id=ep02) | The Japanese synopsis explicitly describes one hundred floors | Support the dense layered structure; no unverified kilometre dimensions |
+| [Castle Aincrad, mhil](https://sketchfab.com/3d-models/castle-aincrad-d1069b4ceb054f328d26fd444e3ea617) | Parent checked public model metadata: CC BY 4.0, downloadable, 169,062 faces and 85,033 vertices. Browser inspection showed its rendered exterior and a device-weight warning. Download opens a login dialog | Useful silhouette reference. No model downloaded, imported or viewer buffers extracted; original file formats/sizes remain unverified |
+| [TheGabmeister: Aincrad](https://thegabmeister.com/p/aincrad/) | Creator describes dynamic lighting, cloud cards/TrueSky and a modified StefansArya mesh | Transfer layered atmosphere and light to a lightweight local illustration; no assumption that the creator's textures/mesh are licensed for reuse |
+| [Three.js LatheGeometry](https://threejs.org/docs/pages/LatheGeometry.html), [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/) | Current primary APIs support a revolved body and scroll-linked composition | Check installed Three 0.186.1 / GSAP 3.15.0 and the actual result. Additional services are unnecessary for this bounded revision |
+
+The first model optimized for a small warm miniature before establishing the
+recognizable structure. Its open terraces and large golden castle were a poor
+match for the reference. Slop's UI palette remains fixed; that does not justify
+recolouring the depicted architecture. The revision retains the course's identity
+while using a cooler material palette inside the artwork.
+
+Implementation and verification are in progress. Compare the new render with the
+inspected reference and the saved old C screenshot, then exercise pause, device
+preference changes, native scroll, responsive tabs and fallback. Do not report a
+build or a source review as proof of resemblance or smooth frame rate.
+
+### Additional primary design accounts checked by the parent
+
+- [Lusion's Oryzo production account](https://blog.lusion.co/oryzo-bts-part-2-7-3d-design-and-motion-graphics) describes testing several representations, then concentrating detail where the camera sees it and combining detailed props with simpler surfaces. Our inference: a constrained, carefully lit fortress and cloud layers can improve this hero without importing its expensive production pipeline. We did not benchmark or copy their splat assets.
+- [Active Theory's founders](https://www.commarts.com/webpicks/active-theory-2) describe a simple navigation structure with scroll-responsive feedback and WebGL atmosphere. Our inference: keep stable HTML course links, use animation to respond to selection, and concentrate visual spectacle in the world. No networked cursor system is needed here.
+- [Three Material documentation](https://threejs.org/docs/pages/Material.html) explains the draw-call cost of double-sided transparent materials and the grain tradeoff of alpha hashing. Use few shared cloud layers and check transparency in the actual renderer.
+- [GSAP matchMedia](https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/) documents automatic animation/trigger reversion on media-query changes and separate custom cleanup. The existing explicit lifecycle may be retained if it covers those same transitions; adding a second lifecycle abstraction is not itself an improvement.
+
+These source accounts inform design decisions. They do not establish that our
+implementation shares those studios' quality, performance or production budget.

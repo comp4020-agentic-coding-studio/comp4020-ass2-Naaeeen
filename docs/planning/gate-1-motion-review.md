@@ -1,7 +1,8 @@
 # Gate 1 motion revision: acceptance and review
 
-Status: verified review candidate, awaiting human design feedback, 27 September 2026. Candidate C will be
-compared with the preserved A/B previews. No human preference has been recorded.
+Status: revision 2 is in progress after human feedback on 27 September 2026.
+The first-candidate results below are retained as history; current work and checks
+appear under Revision 2. The student requested greater fidelity and motion.
 
 ## Declared acceptance cases
 
@@ -105,5 +106,35 @@ Implementation: [99b0491](https://github.com/comp4020-agentic-coding-studio/comp
 Refinements and harness changes: [03159e6](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/03159e6).
 The new review URL is `http://127.0.0.1:4321/comp4020-ass2-Naaeeen/review/c/`.
 
-Human design feedback is pending. Do not extend the full curriculum until the
-student chooses the direction or supplies the next refinement.
+The student subsequently rejected the first model's fidelity and found the motion
+insufficient. The results above describe the first candidate; the next revision
+and its acceptance evidence are recorded below.
+
+## Revision 2: faithful fortress and larger 2D/3D motion
+
+Status: implementation in progress after human review. The student explicitly
+requested existing media/model research, more varied animation and greater
+amplitude. The parent inspected the official original-anime exterior and a CC BY
+fan model; the latter required login for its official download. No asset was
+imported from that model. Keep the prior C screenshot as a before comparison.
+
+Evaluation question: does the revised silhouette resemble the reference and does
+normal mode visibly change the experience beyond the earlier small rotations and
+text shifts, while the course remains readable and easy to navigate? This is a
+paired design comparison, not a randomized user study. Human acceptance is pending.
+
+| Check | Evidence required | Current status |
+| --- | --- | --- |
+| Reference comparison | Continuous tapered body, dense bands, lower foundation and radial bridges, cooler material; visually compare the actual output | Pending |
+| Desktop and phone | Verified 1920x1080 and 390x844, no overflow, readable first frame and usable controls | Pending |
+| Larger normal motion | Observe cloud travel, fortress/camera movement, chapter illustration and reading timeline in use | Pending |
+| Pause / live reduced motion | New 2D and 3D animation stop, interactive state changes remain usable | Pending |
+| Scene views and scroll | All three views and rotation work; native scrolling remains normal and focus targets stay stable | Pending |
+| Chapters and navigation | Pointer/keyboard selection, orientation after resize, fragment/Back state, menu focus | Pending |
+| HTML and module fallback | Useful matching static artwork, all course content, no dead controls | Pending |
+| Independent review and required checks | Resolve supported findings; preserve known incomplete-course failure only | Pending |
+| Cost / outgoing scope | Measure compiled chunks, inspect changed files/credentials, preserve private visibility | Pending |
+
+Saved before image: `gate1-c-before-fidelity-desktop.jpg` in the current local
+visualization directory. Source references and rejected alternatives are in the
+research register and process entry E11.

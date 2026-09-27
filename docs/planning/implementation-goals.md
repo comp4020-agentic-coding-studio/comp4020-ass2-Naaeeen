@@ -1,6 +1,6 @@
 # Implementation goals and human review gates
 
-Status: Gate 1 immersive revision is verified and ready for human review. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
+Status: Gate 1 is being revised after actual human feedback: Aincrad needs a more faithful appearance and the experience needs substantially richer motion. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
 to 27 September 2026 (28 September, Australia/Sydney); exact cutoff time has not
 been supplied. The public course deadline is different. This plan records the
 student's working deadline without claiming that an extension has been verified.
@@ -84,6 +84,23 @@ immersive preview. Develop a distinctive scene and an interactive chapter/period
 explorer, then inspect how motion changes orientation and reading. The first
 candidate may use a procedural 3D illustration with a matching static alternative;
 its value must be demonstrated in the actual browser rather than assumed.
+
+The student rejected the first C model's resemblance to Aincrad and found its
+motion insufficient. The next candidate must use inspected official visual
+references and evaluate existing fan models or images rather than inventing an
+unrelated floating castle. Preserve the previous screenshots as comparison
+evidence. Compare the continuous tapered body, dense floor bands, underside,
+radial bridges, materials and apparent scale with the original anime reference.
+Use a readable matching fallback. The student also explicitly asked for more
+2D/3D animation and greater amplitude: make normal-mode cloud travel, camera
+movement and chapter graphics clearly noticeable, rather than only tiny fades
+and shifts. Add a chapter-linked 2D illustration and a developing reading
+timeline. Keep text and control hit areas stable, with the motion controls below.
+
+The student permits suitable existing models and images for this private working
+preview. Record their creator, source, licence and actual use or reference status.
+Do not change repository visibility or publish the site during this revision.
+The final assignment's public Pages requirement remains a separate release task.
 
 Motion acceptance criteria:
 
@@ -249,8 +266,9 @@ source checking, genuine user gates and truthful reporting remain in scope.
 
 ## Latest checkpoint
 
-Candidate C and its [verification record](gate-1-motion-review.md) are ready for
-review. [The process evidence bank](../PROCESS-EVIDENCE.md) records the consequential
+Candidate C received real feedback: improve canonical resemblance and add more
+motion. A reference-led revision is in progress; prior checks describe the earlier
+version in [the verification record](gate-1-motion-review.md). [The process evidence bank](../PROCESS-EVIDENCE.md) records the consequential
 findings and exact harness changes. The goal was confirmed active during this
 revision; the next stage still depends on the student's design feedback. The
 assignment as a whole is not complete. Once the direction is accepted, continue

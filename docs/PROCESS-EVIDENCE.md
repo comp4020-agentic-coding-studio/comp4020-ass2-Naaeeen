@@ -188,6 +188,29 @@ plain course-contents links were available; the menu toggle was hidden and the
 Assessment link worked. The normal menu/resize path was also rechecked.
 [03159e6](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/03159e6) records the fixes.
 
+## E11 — Human feedback exposed a reference gap in the artwork
+
+**Trigger.** The student said Aincrad was not realistic or close enough to the
+original and requested more and better animation. They explicitly invited existing
+models and images as assets or references. Previous mechanical checks had passed
+for the preview; none established recognizable fidelity or sufficient visual impact.
+
+**Evidence and decision.** Parent inspected the official anime exterior and a CC BY
+fan model. The official image shows a continuous densely layered tapered fortress,
+not the previous model's separated terraces. The fan model's download required
+login and its viewer reported a device-weight limit. Use these as references for
+a local reconstruction and coordinated atmosphere, preserving ordinary HTML and
+the established motion controls. Details and primary links are in the research log.
+
+**Harness refinement.** Added to CLAUDE.md: “When depicting a recognizable subject,
+inspect a primary visual reference and compare the rendered silhouette, proportions
+and materials before presenting it for human review.” This addresses an observed
+failure to ground visual work, rather than adding a generic longer design checklist.
+
+**Status.** Implementation and browser verification pending. No new approval or
+preference is claimed. Record the actual revision, checks and commit below when
+complete; the whole course remains unfinished.
+
 ## Entry checklist
 
 For a new significant event record: trigger; observed evidence; alternative;
@@ -198,7 +221,8 @@ participants to make the eventual PROCESS account look stronger.
 
 ## Current checkpoint
 
-Candidate C is ready for human review. See [the complete motion test record](planning/gate-1-motion-review.md).
+The first C candidate was reviewed by the student; E11 records the requested
+revision now in progress. See [the complete motion test record](planning/gate-1-motion-review.md).
 The actual course collections, student PROCESS.md and public shipping are still
 unfinished. E04 remains an explicit follow-up before the representative unit.
 No human preference or learning outcome has been invented for this record.
