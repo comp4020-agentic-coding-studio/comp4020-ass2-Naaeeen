@@ -799,3 +799,21 @@ with Markdown link targets removed; the evidence gate resolves seven commit IDs.
 No suitable style references were returned by the configured style search, so
 the draft follows the student's stated plain-writing preferences without claiming
 a retrieved style match. Human approval of the account is still required.
+
+## Gate 5 focused process account — 28 September 2026
+
+The student requested a narrower account centred on researching agent practice,
+maintaining working documents and converting review into implementation and harness
+changes. The parent rechecked the live brief/rubric and AI policy, and read the
+actual paired-trial runner, result summary, masked review and relevant commit diffs.
+The rubric rewards justified decisions and demonstrated acceptance; the revised
+account makes those visible through this project's experiments and course choices.
+
+The 510-word narrative recommends the implementation goals, research record and
+process evidence bank, explaining their different jobs. Its concrete examples are
+the grader's missed href counterexample, the coordinated historical-course rewrite
+and browser-led improvements to study navigation and embedded slides. Eighteen
+scored runs, eight cited commits and the external frozen grader are checked against
+repository evidence. The final comparison does not claim a winning model or an
+optimized context setting. The Chinese PROCESS copy is synchronized for student
+review. CLAUDE.md remains unchanged because this revision concerns the account.

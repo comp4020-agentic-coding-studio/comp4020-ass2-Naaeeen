@@ -438,3 +438,15 @@ manifest.json. Independent review found no material issue. Parent citation/link
 checks and pnpm check:evidence pass. The student has not yet approved the narrative.
 No public deployment or additional application-test run is claimed in this prose
 pass. Apply feedback to both languages before completing the release candidate.
+
+### Focused PROCESS revision
+
+The student's follow-up asked for a narrower narrative demonstrating how research,
+maintained goals/docs and substantive review shaped agent use. The current English
+draft is 510 words and directly recommends the goals, research and evidence records
+for tutor inspection. Parent checked the frozen external grader in run_trials.py,
+the 18 scored runs in results-summary.json and the actual rule/implementation diffs.
+Independent review corrected ambiguous wording about the instruction variants and
+made the document-creation citation explicit. The Chinese account is synchronized.
+Student confirmation of the narrative remains pending; this is evidence preparation,
+not a new website implementation or a public release.

@@ -95,32 +95,32 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Current stage: **Gate 5 evidence draft ready for student review**. After Gate 4,
-the student requested preparation and two Chinese translations for checking.
-The working interpretation is PROCESS.md and CLAUDE.md, one translation each;
-an optional clarification was sent. The student has not yet accepted the prose.
+Current stage: **Gate 5 focused PROCESS draft ready for student review**.
+The student asked to concentrate the account on research into agent practice,
+locally evaluated harness changes, maintained working documents, and consequential
+implementation/review cycles. PROCESS.md now develops those points in 510 English
+words and recommends three specific tutor readings with their purpose. The Chinese
+PROCESS review copy has been updated to match; student narrative approval is pending.
 
-`PROCESS.md` now contains a 512-word English draft based on the student's stated
-motivation, requests and feedback and seven verified commit references. The full
-Chinese translations are `docs/review/PROCESS.zh-CN.md` and
-`docs/review/CLAUDE.zh-CN.md`; `docs/review/manifest.json` pins source hashes and
-review status. Canonical CLAUDE.md was not changed for this translation task.
-Independent review found no material factual or translation issue. The parent
-verified citation targets/range, matching URLs, commands and paths; the evidence
-gate now passes. No application code changed, so the previously passing 42-test
-site check remains the last site run, not a newly claimed test execution.
+The parent rechecked the live brief, rubric and AI policy, the relevant research
+and actual experiment runner, results and commits. Independent reviews checked
+evidence and writing focus. Cite the eight real commits resolved by the evidence
+gate; checks establish traceability, while the student's review settles whether
+the first-person account expresses their judgement accurately.
 
-Next: the student checks the Chinese account against their actual reasoning and
-voice; incorporate corrections in English and Chinese together. Then complete
-release-candidate review, inspect any remaining Gate 4 limitations recorded in
-`docs/planning/gate-4-review.md`, and obtain the separately required authorization
-for public release. Do not treat a passing evidence checker as human approval or
-as proof that Pages is live. The existing whole-assignment Goal remains unfinished;
-its tool status was still paused when evidence preparation began.
+The full Chinese goals, research and CLAUDE copies remain in docs/review. Their
+source hashes are pinned in manifest.json; the goals/research copies include the
+new short revision records. Canonical CLAUDE.md and website code are unchanged.
+The last full site check remains 42 passing tests; this writing revision uses
+citation, translation, document-link and evidence checks.
 
-The five-hour report received at 07:01 Canberra time gives a working noon target.
-The explicit request for translated review documents is being completed before
-publication. Repository visibility and Pages settings remain unchanged.
+Next: incorporate the student's narrative corrections, finish release-candidate
+verification against the remaining Gate 4 observations, then obtain the separate
+public-release authorization. Repository visibility and Pages settings are
+unchanged. The existing whole-assignment Goal remains unfinished; its tool status
+was paused when this writing revision began.
+
+The user's five-hour report at 07:01 Canberra time gives a working noon target.
 
 ## Authorized external actions
 

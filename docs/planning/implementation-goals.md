@@ -368,3 +368,11 @@ The 512-word count strips Markdown link targets; human narrative review remains
 pending. Canonical CLAUDE.md and website code were unchanged in this document pass.
 Continue with the student's corrections, then release-candidate verification and
 authorized publication. Keep the existing whole-assignment Goal unfinished.
+
+### Focused PROCESS revision — 28 September 2026
+
+Following the student's request, the 510-word account now foregrounds agent-practice
+research and local evaluation, the purpose of maintained documents, and consequential
+review/refinement. It recommends three tutor readings and cites eight verified
+commits. The Chinese account is synchronized; human approval and public release
+remain pending. Use PLAN.md for the latest handoff.
