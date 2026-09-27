@@ -33,7 +33,7 @@
     "pagefind": "^1.5.2",
     "parse5": "8.0.1",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.11"
   },
   "packageManager": "pnpm@11.9.0"
 }
