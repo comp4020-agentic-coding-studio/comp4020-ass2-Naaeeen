@@ -1,0 +1,16 @@
+[
+  {
+    "file": "eval/fixtures.py",
+    "change": "remove one extra blank line at EOF after experiments",
+    "before_sha256": "d341a0c413aee34aee58e0be283c23a9ce25cd40f4ffa572b89b634546b3c4ca",
+    "after_sha256": "71ff081639a3ec89ec5a5479d0e77b6f274141f1896b004db7f30403cd9073b2",
+    "python_ast_unchanged": true
+  },
+  {
+    "file": "eval/grader.py",
+    "change": "remove one extra blank line at EOF after experiments",
+    "before_sha256": "b919e43e10f023b453cbef7fd4078eaaed377a347b582f4dcb63c09c7ac91d30",
+    "after_sha256": "0d484ef5b94cc67382b3752d2b2c9bcdd66a198ff034c7b7bec3771f6d735ba4",
+    "python_ast_unchanged": true
+  }
+]

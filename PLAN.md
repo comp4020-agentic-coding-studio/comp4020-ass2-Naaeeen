@@ -49,3 +49,19 @@ are a proposed design structure, not extra course rules.
 
 Choose a focused SAO-inspired course premise and target students, then plan its
 learning outcomes, twelve weeks and assessment before authoring the site.
+
+## Harness research update
+
+The user requested an evidence-backed review of Claude/Codex practices and
+controlled comparisons, then asked to accelerate completion. The source register,
+research report, preserved variants and evaluation protocol are in
+`docs/harness-research/`. The final CLAUDE.md uses task-scaled planning, grounding
+and verification, preserves course contracts, and distinguishes faithful help
+with student-supplied process notes from invented personal experience.
+
+Two scored comparison rounds completed: 12 runs on v2 and six focused runs on
+final v3, all passing mechanical artifact checks. These are local observations,
+not proof of universal superiority. Independent review caught a missed HTML
+attribute edge case in a baseline-generated test; it is retained as a limitation
+of the automatic grader. See the report for scope, environment and review limits.
+No SAO course content or PROCESS.md was authored during this research task.
