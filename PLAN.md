@@ -1,67 +1,108 @@
-# Working plan
+# Assignment 2 course plan
 
-## Course direction
+## Course identity
 
-The user wants a course inspired by Sword Art Online, which originally motivated
-them to study computer science. The central question, audience and level are
-still to be chosen. Keep the allocated code suffix 897.
+- **Title:** After Aincrad: A History of the Full-Dive Age
+- **Code:** SLOP1897
+- **Audience:** First-year students interested in technology, history and virtual worlds.
+- **Format:** A twelve-week seminar taught in English at Slop University, set in 2035.
 
-## Verified handoff
+No programming or prior knowledge of the whole SAO series is required. Selected
+scenes and short background notes should make the material accessible.
 
-- `0b50b24`: harness adapted from crit5.
-- `faf6cd0`: Assignment 2 promise checks.
-- Typecheck and production build pass. Four spec tests pass; twelve-week
-  coverage fails because only weeks 1 and 2 exist.
-- The evidence gate reports starter content, images and the unfinished process
-  template. These remain work to complete before submission.
+## Central idea
 
-## Handoff corrections completed
+Treat the selected SAO events as historical events within the course's fictional
+setting. Follow their beginnings, development and consequences, asking:
 
-- Reproduced two false failures (rendered deck links without slides metadata;
-  more than one session in a week) and a false pass (deck metadata retained but
-  its rendered link removed).
-- The deck check now follows rendered lecture links to built deck pages.
-  The week check compares distinct weeks, preserving the 1-12 requirement.
-- The harness now distinguishes known unfinished acceptance checks from
-  regressions and does not require artificial red results.
-- Seven isolated cases match their expected outcomes: metadata and body links,
-  twelve weeks, an extra session in a week, missing weeks, an unlinked deck and
-  a missing deck page. Fixtures were removed after the run.
-- The first fixture invocation was blocked by pnpm's automatic install check;
-  those exits were not test evidence. The rerun used the installed Vitest CLI
-  directly under the pinned Node runtime and produced the results above.
-- Final `pnpm check`: typecheck and production build pass; four spec tests pass
-  and only the known twelve-week coverage check fails. `check:evidence` still
-  identifies the unchanged starter material and unfinished process template.
-- Independent source review found no remaining actionable issue. Diff whitespace
-  checks pass. This verification used the Windows-to-WSL bridge; no visual
-  browser verification was performed and no course content was authored.
+> Why do people continue to enter, inhabit and protect virtual worlds after the
+> SAO incident?
 
-## Confirmed content scope
+History provides the structure. Computing helps explain the technologies and
+decisions that shaped events. Adventure, friendship, ordinary life and belonging
+matter alongside conflict and institutional power.
 
-The [A2 brief](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/assignment-2/)
-requires twelve dated teaching weeks and at least one lecture linked to a real
-deck. It expects coherent, distinct week content but sets no per-week word count
-or requirement for twelve decks. Week-by-week topics, activities and preparation
-are a proposed design structure, not extra course rules.
+The 2035 teaching date is our framing choice, not an addition to SAO canon.
+Briefly identify the fictional premise in the course introduction, then maintain
+a consistent historical voice.
 
-## Next decision
+## Material and source boundaries
 
-Choose a focused SAO-inspired course premise and target students, then plan its
-learning outcomes, twelve weeks and assessment before authoring the site.
+Use the television mainline from Aincrad through *Alicization: War of Underworld*,
+together with *Ordinal Scale*. Use the two *Progressive* films to revisit early
+Aincrad, including different perspectives on the same period.
 
-## Harness research update
+The television continuity is the main narrative reference. Label differences
+between adaptations rather than silently merging them. Light novels can provide
+attributed supplementary material. Game continuities and unreleased stories are
+outside the initial scope.
 
-The user requested an evidence-backed review of Claude/Codex practices and
-controlled comparisons, then asked to accelerate completion. The source register,
-research report, preserved variants and evaluation protocol are in
-`docs/harness-research/`. The final CLAUDE.md uses task-scaled planning, grounding
-and verification, preserves course contracts, and distinguishes faithful help
-with student-supplied process notes from invented personal experience.
+Separate events supported by the chosen works, our historical interpretations,
+and any teaching documents we create. Identify invented documents as teaching
+reconstructions. Keep release dates distinct from dates within the story.
 
-Two scored comparison rounds completed: 12 runs on v2 and six focused runs on
-final v3, all passing mechanical artifact checks. These are local observations,
-not proof of universal superiority. Independent review caught a missed HTML
-attribute edge case in a baseline-generated test; it is retained as a limitation
-of the automatic grader. See the report for scope, environment and review limits.
-No SAO course content or PROCESS.md was authored during this research task.
+## Learning goals and progression
+
+Students should be able to:
+
+- Reconstruct an event timeline using identifiable sources.
+- Compare accounts and explain how perspective affects interpretation.
+- Explain connections between technology, institutions and people's choices.
+- Make an evidence-based argument about life in virtual worlds.
+
+Organize the semester in three phases:
+
+| Weeks | Focus |
+| --- | --- |
+| 1–4 | The promise of Full-Dive, the SAO incident and the emergence of society inside Aincrad, including Progressive material. |
+| 5–8 | Escape and its aftermath: ALO, Phantom Bullet and Mother's Rosario, with attention to continuing relationships and different reasons for returning. |
+| 9–12 | Ordinal Scale, artificial life and the Underworld conflict, followed by a synthesis of the period's legacy. |
+
+Each week needs a distinct question, a small set of selected material and a
+discussion or source-analysis activity. Build connections across weeks rather
+than giving every episode its own summary.
+
+## Assessment direction
+
+These are assessments for students taking the fictional course.
+
+| Assessment | Weight | Purpose |
+| --- | --- | --- |
+| Source comparison | 20% | Compare two accounts of one event and distinguish evidence from interpretation. |
+| Incident study | 30% | Explain a technological and social consequence using selected sources. |
+| Digital history exhibition | 50% | Curate a small exhibition answering the central question through an evidence-based argument. |
+
+The exhibition may use slides or a simple webpage, so programming skill is not a
+prerequisite. Develop detailed briefs, criteria and due dates with the weekly
+content.
+
+## Website direction and next step
+
+Use the character of a university course site with an archival feel, retaining
+Slop University's fixed identity. Keep weeks, assessments and sources easy to
+find. A simple event timeline will connect the material; distinguish it from the
+course's teaching timetable.
+
+Start implementation with the site structure and one representative week linked
+to a real deck. Use that sample to establish the voice and level of detail before
+expanding the remaining weeks. Exact readings, teaching dates, page layouts and
+interaction details can be settled during implementation.
+
+The published [A2 brief](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/assignment-2/)
+and the repository README remain the assignment and platform requirements.
+Earlier setup and verification notes are preserved in
+[the setup handoff](docs/planning/setup-handoff.md).
+
+## Implementation control
+
+The student has now authorized the complete course implementation, with a working
+deadline of 28 September 2026 and human feedback required between five stages.
+[Detailed goals and acceptance criteria](docs/planning/implementation-goals.md)
+record every requested workflow requirement. [The living research record](docs/IMPLEMENTATION-RESEARCH.md)
+will connect sources to decisions, comparisons and observed results.
+
+Current stage: Gate 1, requirements/source verification and browser-viewable
+homepage alternatives. Do not begin Gate 2 until the student reviews Gate 1.
+Known pre-implementation state: four spec checks pass; the twelve-week coverage
+check fails because only weeks 1 and 2 exist. The final evidence gate remains red
+for starter content/images and the unfilled PROCESS.md.

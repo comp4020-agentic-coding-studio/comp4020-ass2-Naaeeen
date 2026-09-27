@@ -10,6 +10,8 @@ ritual. For uncertain or cross-cutting work, record the outcome, constraints and
 verification in `PLAN.md` first. Ask only when missing input materially affects the
 result or an action needs authorization; continue independent work meanwhile.
 Read-only requests do not call for edits, plan updates or commits.
+Respect the human review gates recorded in `PLAN.md`: present the reviewable
+result and wait for the student's feedback before entering the next stage.
 
 Inspect relevant files and Git status. `README.md` owns the fixed platform and
 `PLAN.md` owns current decisions, known failures and next work. Read what the task
@@ -47,6 +49,10 @@ Use bounded delegation for independent research or review when helpful; keep
 dependent steps sequential. Obtain an independent review for substantive changes,
 fix supported findings and rerun affected checks. Finish when the requested
 outcome is verified and material issues are resolved, rather than adding iterations.
+
+Record consequential sources, alternatives and observed outcomes in
+`docs/IMPLEMENTATION-RESEARCH.md`. Check reviewer claims against files, sources or
+runtime evidence. A model comparison is not evidence of human preference.
 
 ## Commands and verification
 
