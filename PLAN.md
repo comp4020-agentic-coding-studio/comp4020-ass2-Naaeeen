@@ -95,24 +95,32 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Current stage: **Gate 4 ready for human review**, implementation [9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b8908915bac9fda81faf8aad5d7cdde1a7dd).
-The student prioritised finishing organisation/classification carefully and supplied
-an arrow/number overlap screenshot. The guided route, direct resource desk, real
-slide viewer and consistent historical accounts are implemented. The overlap is
-fixed; phone week selection now appears in the opening view.
+Current stage: **Gate 5 evidence draft ready for student review**. After Gate 4,
+the student requested preparation and two Chinese translations for checking.
+The working interpretation is PROCESS.md and CLAUDE.md, one translation each;
+an optional clarification was sent. The student has not yet accepted the prose.
 
-Read [the Gate 4 review](docs/planning/gate-4-review.md) for exact browser checks,
-42 passing tests, known runtime/network verification limits and remaining work.
-The latest full site check passed across 45 pages. Evidence remains red only for
-PROCESS.md's unfilled template and two sample hashes. No public deployment exists.
-The whole-assignment Goal pauses for the standing human-review request at delivery.
-Do not advance to Gate 5 until the student accepts continuation or gives revisions.
+`PROCESS.md` now contains a 512-word English draft based on the student's stated
+motivation, requests and feedback and seven verified commit references. The full
+Chinese translations are `docs/review/PROCESS.zh-CN.md` and
+`docs/review/CLAUDE.zh-CN.md`; `docs/review/manifest.json` pins source hashes and
+review status. Canonical CLAUDE.md was not changed for this translation task.
+Independent review found no material factual or translation issue. The parent
+verified citation targets/range, matching URLs, commands and paths; the evidence
+gate now passes. No application code changed, so the previously passing 42-test
+site check remains the last site run, not a newly claimed test execution.
 
-Next after feedback: make requested Gate 4 corrections if needed; otherwise help
-the student assemble their genuine PROCESS account, verify the release candidate,
-and obtain the separate public-release authorization. Preserve all five gates.
-The user's five-hour report at 07:01 Canberra time gives a working noon submission
-target; it does not authorize skipping the current organisation review.
+Next: the student checks the Chinese account against their actual reasoning and
+voice; incorporate corrections in English and Chinese together. Then complete
+release-candidate review, inspect any remaining Gate 4 limitations recorded in
+`docs/planning/gate-4-review.md`, and obtain the separately required authorization
+for public release. Do not treat a passing evidence checker as human approval or
+as proof that Pages is live. The existing whole-assignment Goal remains unfinished;
+its tool status was still paused when evidence preparation began.
+
+The five-hour report received at 07:01 Canberra time gives a working noon target.
+The explicit request for translated review documents is being completed before
+publication. Repository visibility and Pages settings remain unchanged.
 
 ## Authorized external actions
 

@@ -774,3 +774,28 @@ verification remain bounded, explicit limitations. No additional package or
 service was needed. The research-informed workflow remained bounded ownership,
 independent review, parent reproduction and selective harness updates, not a
 claim that a more elaborate agent recipe guarantees quality.
+
+## Gate 5 evidence drafting — 28 September 2026
+
+The parent re-read the [AI policy](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/ai-use-and-integrity/)
+and [assessment guidance](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/).
+The policy permits AI drafting with human accountability, prohibits a false
+process account and requires naming reuse of earlier work. The assignment's
+400–600 words are indicative guidance, not a mechanical penalty threshold.
+
+The student requested preparation plus Chinese review documents. The draft uses
+only their supplied SAO motivation, accepted course direction, explicit research
+and verification requirements, scope questions and UI feedback, tied to real
+commits. Agent browser work is attributed to the agent. Crit 5 reuse is named.
+Eighteen harness trial runs are not misreported as eighteen pairs or universal
+success. Generated-output checks establish structural consistency, not realistic
+learning time, comprehension or human preference. The comparison citation now
+includes the planning/harness commit as well as its subsequent implementation.
+
+A bounded independent review found no material attribution, citation or translation
+issue. Parent verification checked the actual diffs and both translations' URLs,
+commands and important paths. The English draft is 512 whitespace-delimited words
+with Markdown link targets removed; the evidence gate resolves seven commit IDs.
+No suitable style references were returned by the configured style search, so
+the draft follows the student's stated plain-writing preferences without claiming
+a retrieved style match. Human approval of the account is still required.

@@ -1,53 +1,13 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
+Sword Art Online was what first drew me to computing. I suggested treating its events as history; the agreed plan became a first-year course set in 2035, asking why people returned to virtual worlds after Aincrad. I wanted newcomers to understand what happened and know what to do each week. The source comparison, incident study and exhibition develop that direction into an argument built from evidence across the semester ([c14d959](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/c14d959)).
 
-Written by you, for a reader: how you got from the brief to the harness and
-agentic workflow behind this submission. Markers read this file and follow its
-citations; they don't trawl the repo for evidence you didn't point at.
+I reused my Crit 5 harness, adapting its working loop and verification discipline to the Astro/Slop starter ([0b50b24](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/0b50b24)). Claude handled setup; Codex continued the implementation, with CLAUDE.md remaining the shared rules. I asked for research and comparisons before expanding it. Across two rounds, 18 trial runs passed the mechanical checks, but independent review still found a regex that treated href text inside another HTML attribute as a real link. The eventual parser-based check addressed that defect. This was a reason to inspect the evaluator, not evidence that one instruction file was universally better ([2b885c8](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/2b885c8), [785b1ce](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/785b1ce)).
 
-This file is the shape; the course site's
-[assessment page](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#what-you-submit)
-is the requirement, and its
-[word counts](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#word-counts)
-cover every deliverable.
+I also challenged whether the assignment required twelve fully developed weeks. Rechecking the brief separated twelve dated teaching weeks from twelve complete lecture/deck packages. We kept distinct weekly activities and selected notes instead of expanding every week into another long exemplar. CLAUDE.md gained a requirement to refresh the brief and upstream at milestones and distinguish obligations from enhancements. This kept my requests for richer design within the actual assignment ([1c27051](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/1c27051)).
 
-## What I built
+The more consequential correction concerned what students were studying. I wanted SAO treated as historical events, but early Week 2 material still compared publicity and publication dates. My clarification led to a change in the readings, tasks and assessment together. The course now uses readable case accounts with paragraph references; actual media provenance remains in linked credits. The harness asks the agent to introduce unfamiliar terms and connect preparation, a seminar output and assessment. That makes the historical framing part of the teaching method rather than just the opening description ([1c27051...9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/compare/1c27051...9741b89)).
 
-One paragraph: the thing, and the idea behind it.
+My feedback on navigation applied the same standard. I pointed out that a student could struggle to see where to begin, while Atlas and other useful pages also needed to stay visible. The revised site combines a visible weekly route with direct resource links. New checks keep the displayed reading order and preparation totals consistent with the authored plans, and protect the Week 9 link back to Week 2 notes. I left historical voice, visual appeal and whether the course feels worth taking to human review; those judgements cannot be established by these tests ([9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b89)).
 
-## How I got here
-
-The account of the process: how the work actually went, and how you knew the
-result was right. Tell it in whatever order makes it clear. A weekly prototype
-needs a paragraph or two; an assignment needs more.
-
-Cite the record as you go, as links whose text is the commit hash or range and
-whose target is this repo's commit or compare URL, so a reader clicks straight
-to the evidence:
-
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
-
-To pair a prompt with the commit it produced, quote the prompt (curated, not a
-full transcript) next to the citation:
-
-> the prompt, verbatim
-
-Screenshots are welcome where one carries the point better than a sentence does.
-Commit the file to this repo and link it with a **relative** path, which is what
-makes it render on GitHub: `![alt text](docs/before.png)`. Images don't count
-towards the word count and don't replace the citation.
-
-## Before you ship
-
-`pnpm check:evidence` verifies that this comment is gone, that your citations
-resolve to real commits, that a crit week's reflection entry is in
-`reflections/`, and that your `CLAUDE.md` is there. It checks that your account
-is traceable, not that it is good: that is the marker's call.
-
-Images aren't checked: unlike a citation whose SHA doesn't resolve, a broken
-image is visible the moment this file is rendered on GitHub.
+For verification, I asked the agent to open the site at both marking sizes and check reviewer claims. Its browser checks caught clipped slide controls and a buried phone week selector; my screenshot caught arrows overlapping the step numbers. The repairs fed back into CLAUDE.md's checks for embedded slides and visible first actions. The recorded evidence distinguishes browser observations from model review and leaves untested network behaviour explicit. That is how I want the harness to support my judgement: make the result inspectable before I accept it ([7625ae9](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/7625ae9)).

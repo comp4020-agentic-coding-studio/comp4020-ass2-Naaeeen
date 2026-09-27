@@ -1,10 +1,10 @@
 # Implementation goals and human review gates
 
-Status: **Gate 4 ready for human review**. Organisation, weekly study routes,
-visible slides and historical copy are implemented and verified as recorded in
-[the Gate 4 review](gate-4-review.md). Gates 1–3 were accepted for continuation;
-Gate 5 and submission remain unfinished. The user's five-hour report at 07:01
-Canberra time supplies an approximate noon working target on 28 September.
+Status: **Gate 5 evidence draft ready for student review**. The student asked to
+begin preparation after Gate 4 and requested two Chinese translations. The English
+PROCESS draft and full Chinese PROCESS/CLAUDE review copies are ready, with actual
+checks in PLAN.md. Student approval of the narrative and public deployment remain
+unfinished. This does not imply that every Gate 4 verification limitation has gone.
 
 ## Outcome
 
@@ -357,3 +357,14 @@ reviewable checkpoint preserves important direct resource links alongside a clea
 study route, moves the phone week selector into the first screen and corrects the
 reported arrow/number collision. Follow the Gate 4 review record and wait for
 actual human feedback before starting Gate 5. The Goal pauses at this gate.
+
+### Gate 5 evidence preparation — 28 September 2026
+
+The student requested preparation and two Chinese review copies. PROCESS.md is an
+English draft grounded in their actual statements and seven verified commits.
+`docs/review/PROCESS.zh-CN.md` and `docs/review/CLAUDE.zh-CN.md` preserve the source
+meaning; a manifest pins both source hashes. The evidence checker now passes.
+The 512-word count strips Markdown link targets; human narrative review remains
+pending. Canonical CLAUDE.md and website code were unchanged in this document pass.
+Continue with the student's corrections, then release-candidate verification and
+authorized publication. Keep the existing whole-assignment Goal unfinished.

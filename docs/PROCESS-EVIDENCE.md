@@ -1,6 +1,6 @@
 # Process evidence bank
 
-Updated: 27 September 2026. This is a factual working record for the student's
+Updated: 28 September 2026. This is a factual working record for the student's
 later PROCESS.md, not a student reflection. Decisions labelled as recommendations
 or source-level findings are not human feedback or verified runtime outcomes.
 Keep this file selective: preserve events that changed what we asked for, built,
@@ -421,9 +421,20 @@ review also caught a picker-spacing rule losing to a stronger reset; it was fixe
 before the final check. [9741b89](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/9741b8908915bac9fda81faf8aad5d7cdde1a7dd) contains both repairs. This is a genuine
 human-reported defect; no artificial red test or invented participant was needed.
 
-## Current checkpoint
+## Gate 4 checkpoint (historical)
 
-Gate 4 is ready for the student's review; the whole-assignment Goal pauses at this
+Gate 4 was ready for the student's review; the whole-assignment Goal pauses at this
 requested gate. The final site check passes 42 tests across 45 pages. PROCESS.md
 remains the student's unfinished account, with its template and example hashes
 correctly failing the evidence gate. Public release and Gate 5 remain open.
+
+## Current checkpoint — Gate 5 evidence preparation
+
+The student asked to begin preparation and receive two Chinese review copies.
+The English PROCESS draft is grounded in their supplied statements and verified
+commits, with Crit 5 reuse and agent/student roles explicit. Full Chinese PROCESS
+and CLAUDE translations are in docs/review; their source hashes are pinned in
+manifest.json. Independent review found no material issue. Parent citation/link
+checks and pnpm check:evidence pass. The student has not yet approved the narrative.
+No public deployment or additional application-test run is claimed in this prose
+pass. Apply feedback to both languages before completing the release candidate.
