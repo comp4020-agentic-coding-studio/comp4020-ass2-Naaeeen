@@ -41,7 +41,7 @@ sustained response. They do not specify a number of research papers or agent run
 | Public working submission | Course GitHub Pages URL | Verify deployed URL after explicit shipping authorization |
 
 The supplied README and installed theme are the authority for local implementation
-contracts. Astro is 7.2.2, university theme 0.13.2 and Slop theme 0.1.0 in the current
+contracts. The initial snapshot used Astro 7.2.2, university theme 0.13.2 and Slop theme 0.1.0; the later dependency refresh below records Astro 7.2.8 in the current
 manifest/installation. No new dependency is needed for the first comparison.
 
 ## Course teaching: techniques to carry forward
@@ -407,3 +407,108 @@ the connected browser and opening the same local build at localhost produced
 DPR 1 with measured 1920x1080 and 390x844 viewports. No browser profile, global
 setting or permission was changed. The cause of the disappearing tabs was not
 established; the successful replacement checks are the acceptance evidence.
+
+## Gate 2: from an accepted scene to a teachable unit
+
+The student accepted revised C's broad direction and restated the process
+requirements. Continue one slice at a time, then stop for human judgement. The
+[claim ledger](planning/gate-2-source-ledger.md) and
+[comparison/check record](planning/gate-2-review.md) make the next step inspectable.
+
+### Requirements and upstream recheck
+
+The parent re-read the [A2 brief](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/assignment-2/)
+and current [upstream README](https://github.com/comp4020-agentic-coding-studio/template-course-site).
+A representative unit is our review milestone; the final requirements still
+include the whole coherent course, dates, weights, deck, checks and evidence.
+The [week 4 context lecture](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/lectures/week-4/)
+and [week 5 verification lecture](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/lectures/week-5/)
+remain relevant to concise guidance and actual-output verification. Researcher
+findings about lecture guidance are treated as recommendations, not new fixed
+platform rules or permission to install unrelated tools.
+
+Upstream main was reported as ecd1d71228e40105310fcb25e1bcf00cc5ed5284; the parent
+opened [that exact spacing-fix commit](https://github.com/comp4020-agentic-coding-studio/template-course-site/commit/ecd1d71228e40105310fcb25e1bcf00cc5ed5284).
+Its compressHTML option addresses wrapped prose spacing. Check the actual slice
+before adopting it. Local installed Astro 7.2.8 and Astromotion 0.23.0 remain the
+implementation baseline; newer upstream versions do not require a wholesale
+migration. The installed deck route supports published:false and initializes a
+1280x720 Reveal canvas, so phone text needs explicit browser verification.
+
+### External practice, interpreted for this project
+
+| Primary source checked | Finding and project decision | Limit |
+| --- | --- | --- |
+| [OpenAI eval guidance](https://developers.openai.com/api/docs/guides/evaluation-best-practices) | Use task-specific pass/fail checks and a same-content paired comparison; retain human calibration | The guide does not prove a teaching layout improves learning; our walkthrough is not a controlled learner trial |
+| [Anthropic multi-agent account](https://www.anthropic.com/engineering/multi-agent-research-system) | Bounded research questions and owned file sets reduce overlap; parent integrates and verifies | Their research-system gains do not transfer automatically to coding or justify agents for every small task |
+| [Gloaguen et al., inspected v1](https://arxiv.org/html/2602.11988v1) | Conclusion distinguishes marginally negative generated context from marginal developer-written gains, with more steps. Keep the harness compact and tied to this course | Python-heavy issue-resolution evaluation; not a verdict on all safety, maintainability or coursework uses of context files |
+| [Huang et al.](https://arxiv.org/abs/2310.01798) | Intrinsic correction without external feedback can fail; treat model critiques as leads checked against sources, tests and browser output | Older reasoning-model/task evidence, not proof that present reviewers are useless; parent checked abstract, not every experimental detail |
+| [Liang et al.](https://arxiv.org/abs/2403.07183) | Corpus-level vocabulary shifts are not reliable authorship judgements about a single page | Parent checked the abstract/current version metadata; no detector score or banned-word claim follows |
+| [GOV.UK clear-language guidance](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/writing-guidelines/clear-language/) | Replace vague praise with concrete student actions; explain necessary specialist terms | Keep source qualifications that change meaning; do not turn clarity into a ban on passive voice or useful nuance |
+| [CMU Eberly alignment](https://www.cmu.edu/teaching/assessment/basics/alignment.html) | Connect the question, preparation, activity, output and assessment | Our fictional-history design and source choices remain our judgement |
+
+### Bounded harness refinement
+
+Replace the generic instruction to propose learning outcomes with a compact unit
+alignment and source-purpose rule in CLAUDE.md. The official packet supports
+fewer technical claims than common SAO recollection; it is promotional framing,
+not survivor testimony. This is a newly explicit teaching requirement supported
+by inspected sources, not a manufactured failed experiment. Detailed claims and
+paper limitations stay in these linked records rather than inflating the harness.
+
+The existing regex's quoted-title false positive is being corrected with parsed
+HTML anchors and valid/invalid fixtures. parse5 8.0.1 is an exact test-only dev
+dependency already present transitively; the parent inspected the diff and found
+only a direct importer entry added, with existing resolved versions unchanged.
+Actual parent tests, review outcomes and commits will be appended after integration.
+
+### Gate 2 verification, refinements and delivery
+
+The [review record](planning/gate-2-review.md) contains actual outcomes. The
+[teaching implementation](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/4fc9cde)
+promotes the accepted homepage, derives navigation and assessment facts from
+published collections, supplies one full seminar/lecture/deck/assessment, and keeps
+unfinished content explicitly staged or draft. A/B share the same session entry.
+
+Source review found a genuine access gap: B's paraphrase lacked the evidence
+needed for the lesson's worked inference. The fallback now preserves it. The
+parent also accepted the reviewer's editorial suggestion to use SAO's entry,
+exit and collective action as a concrete explanation of the analytical categories.
+The reviewer checked those refinements against the primary packet.
+
+Parent browser checks covered the linked teaching path, responsive reading,
+all ten slides, native slide controls, no-script reading and the corrected
+contents/current-page state. The phone card-spacing issue illustrates why a
+bounding-box pass is not a legibility verdict. Early viewport mismatches and a
+stale stylesheet after hash navigation were rejected as evidence and corrected.
+This supports the small explicit reload/actual-viewport rule added to the harness.
+
+Selected rendered source/lecture paragraphs retained their intended spaces around
+inline links and emphasis. The upstream compressHTML issue was not reproduced in
+this slice, so that configuration update was not applied. This is a scoped
+observation, not a guarantee about every future MDX/HTML composition.
+
+The [oracle repair](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/785b1ce)
+passed all 31 parent-run fixtures. Final required check on patched tooling:
+`/tmp/a2-gate2-patched-final-mk5lpl5s.log`, with zero type diagnostics, passing
+21-page build/a11y/links and 35 passing spec tests. The only failure is honest
+coverage of Week 2 rather than all twelve weeks. A subsequent no-script CSS
+specificity fix passed the build at `/tmp/a2-gate2-noscript-final-469xb2q4.log`.
+The submission evidence gate still rejects the retained starter files/images
+and unfilled PROCESS.md; unpublished staging does not bypass it.
+
+The complete dependency audit additionally found development-only fast-uri and
+Vitest/mocker advisories. Parent and worker checked the maintainers' descriptions:
+[fast-uri IPv6 normalization](https://github.com/fastify/fast-uri/security/advisories/GHSA-f65p-4m7j-42xc)
+requires a consumer that trusts normalized untrusted URLs; the
+[Vitest mocker issue](https://github.com/vitest-dev/vitest/security/advisories/GHSA-82fw-gwwq-j7x9)
+depends on a reachable mock-registration path. The described unauthenticated
+standalone-plugin exposure was not found in this static course configuration.
+No exploit or compromise was claimed. Compatible patches in
+[2752781](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/2752781)
+leave Astro/theme/Astromotion versions intact. The parent inspected the exact
+nine-package version family diff and the zero-advisory post-patch audit JSON.
+
+The student still needs to review teaching depth, voice, layout and slide usability.
+Completing one unit establishes a usable pattern, not the coherence of twelve
+weeks or a promised grade.

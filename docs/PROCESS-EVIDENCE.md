@@ -70,16 +70,20 @@ follow-up source review. No user enjoyment or preference was inferred from them.
 
 ## E04 — A green test can still have a faulty oracle
 
-**Reproduction.** The current lecture-deck regex accepts `href=` text inside a
+**Reproduction.** The original lecture-deck regex accepted `href=` text inside a
 quoted title attribute. An isolated probe returned one regex match but zero real
 anchors with an href when the same fragment was parsed as HTML. The earlier
 harness study had identified this failure pattern, and the parent reproduced it
-against the current expression.
+against the then-current expression.
 
-**Status: unresolved.** The real starter deck link is valid; the probe does not
-show it broken. Replace the faulty extraction and check legitimate and invalid
-cases before accepting the representative unit. Do not present the current green
-assertion as proof that every apparent match is a real link.
+**Status: resolved in Gate 2.** The real starter link was valid; the oracle was
+not reliable. The parent reproduced one match for the fake title href, then ran
+31 passing regression cases against parsed HTML anchors. Independent review found
+no actionable issue. Valid authoring alternatives remain accepted; comments,
+script text, inert templates, missing targets and decoded path escapes are rejected.
+The fixed twelve-week promise is unchanged. [785b1ce](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/785b1ce)
+records the helper, fixtures and the exact test-only parse5 dependency. This check
+still does not establish whether a deck is legible or engaging.
 
 **Evidence.** The probe and pending action are recorded in
 [4fe3d0c](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/4fe3d0c)
@@ -225,6 +229,62 @@ records the goals/research/harness; [06ce955](https://github.com/comp4020-agenti
 records implementation and refinements. Human acceptance of this revision remains
 pending; the whole course is unfinished.
 
+## E12 — A teaching slice made source purpose part of the harness
+
+After the student accepted C's broad direction, Gate 2 developed one full seminar
+before extending all twelve weeks. Official English TV summaries and a dated
+Progressive press release made preparation possible without buying a film. Their
+status also constrained the lesson: they support analysis of narrative selection,
+not a claim to independent survivor testimony.
+
+The parent checked the sources, recorded passage-level support and connected a
+source ledger, a worked lecture, a short argument and the Source comparison
+assessment. The independent content reviewer found that B's fallback omitted the
+very evidence needed for the worked inference. Adding Kirito's difficulty alone
+made that alternative useful for the actual task. A later revision replaced some
+generic explanation with a concrete mapping of entry, exit and collective action.
+
+CLAUDE.md now asks each unit to connect question/preparation with a student action,
+a concrete output and an assessment, and to identify a source's purpose before
+using it as evidence. The precise changes accompany [4fc9cde](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/4fc9cde).
+This implements a course-design position; no learner outcomes or student reasoning
+were invented. See the [claim ledger](planning/gate-2-source-ledger.md).
+
+## E13 — Passing layout bounds did not settle reading quality
+
+A and B render the same Week 2 content; the parent verified the same 14 teaching
+headings. B adds five direct section links and grouped study actions. The walkthrough
+favoured B for locating work, while acknowledging that the parent had already seen
+it and that no learner-time or learning-gain experiment had been run.
+
+Independent review and browser checks found a contents rail hidden under the
+sticky header and two falsely current navigation links. Both were corrected and
+retested. All ten slides fitted the marking viewports, yet a phone card's label
+sat only about 1.6px from its date. Visual review prompted a spacing change to
+about 19.7px. No-script checks separately found inert controls, now replaced by
+plain navigation or hidden when their function needs Reveal.
+
+Browser state also needed checking: requested supplementary dimensions initially
+remained 390x844, and hash navigation retained stale CSS after a rebuild. Those
+runs were discarded and repeated with actual-size checks and a document reload.
+The short follow-up CLAUDE.md rule makes that verification explicit. These are
+observed evaluator and interface limits, not manufactured red tests.
+[Gate 2's review record](planning/gate-2-review.md) preserves the checks and limits.
+
+## E14 — A broader audit exposed development-tool dependencies
+
+The earlier production-only audit was clear. Gate 2's full audit found six entries
+in development chains: four fast-uri URL-normalization advisories and two entries
+for Vitest/mocker's redirect-mock file-read issue. The parent checked primary
+advisories and actual dependency paths; no production exploit was established.
+
+Compatible patches moved fast-uri 3.1.5 to 3.1.6 and the Vitest package family from
+4.1.10 to 4.1.11. The parent inspected the lock diff: fixed platform versions were
+unchanged. Post-patch audit JSON contains zero advisories, and the parent's full
+course check retained only the known missing-weeks failure. [2752781](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/2752781)
+records the small dependency change. A worker's extra 71 tooling/oracle test run
+is labelled separately from the parent's execution.
+
 ## Entry checklist
 
 For a new significant event record: trigger; observed evidence; alternative;
@@ -235,8 +295,8 @@ participants to make the eventual PROCESS account look stronger.
 
 ## Current checkpoint
 
-The first C candidate was reviewed by the student; E11 records the revised
-candidate now ready for another human review. See [the complete motion test record](planning/gate-1-motion-review.md).
-The actual course collections, student PROCESS.md and public shipping are still
-unfinished. E04 remains an explicit follow-up before the representative unit.
-No human preference or learning outcome has been invented for this record.
+Gate 2 is ready for human review: the accepted design is the real homepage,
+Week 2 has a seminar, source packet, lecture and ten-slide deck, and the 20%
+assessment has a full brief. E04 is resolved. The remaining weeks, later briefs,
+people/policies, imagery and student PROCESS.md are unfinished. Public release
+is still a separate authorized step. No human approval of Gate 2 is claimed.

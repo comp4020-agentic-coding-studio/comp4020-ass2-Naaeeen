@@ -81,7 +81,9 @@ new regressions or authorization to expand the task. Keep passing checks passing
 all required checks must pass before submission.
 
 For changed UI/navigation, inspect the built site at 1920×1080 and 390×844 with
-Chrome-compatible tooling, including affected links and console output. For in-page
+Chrome-compatible tooling, including affected links and console output. After a
+rebuild, reload the document and verify its actual viewport size before comparing
+screenshots. For in-page
 navigation, verify destination visibility, keyboard focus and mobile menu state
 after activation. For enhanced content, inspect the first usable frame, reduced
 motion and the HTML fallback as well as the settled view. Before submission, read

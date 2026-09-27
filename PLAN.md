@@ -95,58 +95,46 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Follow [the detailed goals and five review gates](docs/planning/implementation-goals.md),
-[the research record](docs/IMPLEMENTATION-RESEARCH.md), and the curated
-[process evidence](docs/PROCESS-EVIDENCE.md). Working deadline: 28 September 2026,
-exact cutoff unspecified. The Goal is active; the full assignment is unfinished.
+Follow [the detailed goals and five gates](docs/planning/implementation-goals.md),
+[the living research](docs/IMPLEMENTATION-RESEARCH.md), and
+[the process evidence](docs/PROCESS-EVIDENCE.md). The student accepted revised C's
+broad direction and requested continued implementation, commits and pushes.
+Current stage: **Gate 2 verified; awaiting human review**.
 
-Current stage: **Gate 1 revision 2 ready for human review**. Do not begin Gate 2 until
-the student accepts the revised direction. A/B/C share the proposed course outline
-under `/review/`; the main catalogue and teaching collections remain starter content.
-The [dated course map](docs/planning/course-map.md) proposes twelve distinct questions
-and 20/30/50 assessment progression for the accepted direction.
+The actual homepage now carries the accepted immersive direction and links to a
+complete Week 2 path: seminar, source packet, worked lecture, ten-slide deck and
+20% Source comparison brief. The other assessments are clearly marked 30%/50%
+draft outlines. Untouched Week 1 content/deck is unpublished with markers retained.
+Course metadata is SLOP1897, first year, Semester 1 2035, 19 February–11 May.
 
-The student reviewed C and found Aincrad insufficiently realistic or faithful to
-the original and the motion insufficient. They invited existing models/images
-as assets or references. Parent inspected the official SAOA exterior and the CC BY
-mhil fan model: a continuous densely layered tapered fortress with lower supports
-and radial bridges, unlike our separated terraces. The model download requires
-login and its viewer reports a device-weight limit; use it as reference, not an
-imported asset. Rebuild the local scene and coordinate clouds, camera movement
-and chapter transitions while keeping readable HTML, native scrolling and motion
-controls. See E11 for the new visual-reference harness rule and actual feedback.
+The parent verified A/B/C source claims, reviewed the whole slice and checked the
+actual browser. Independent reviews prompted a stronger source fallback and a
+concrete SAO explanation, corrected sticky/current-page navigation, and validated
+the parsed-anchor test repair. A/B reading pages render the same content; B is the
+parent recommendation for its direct section navigation. All ten slides fit the
+marking sizes; phone body text is 18px. See the [Gate 2 record](docs/planning/gate-2-review.md)
+for actual checks, additional sizes, refinements and qualified limits.
 
-Prior C baseline: original scene/page `99b0491`, runtime/readability refinements
-`03159e6`, documentation `93bd572`. All pushed. The earlier
-[motion review](docs/planning/gate-1-motion-review.md) records actual results and
-limits; it does not automatically validate this new revision. Preview is served
-at `http://127.0.0.1:4321/comp4020-ass2-Naaeeen/review/c/`.
+Check state: type/build/21-page accessibility/internal links pass; spec 35 pass,
+one expected failure because only Week 2 is a complete published seminar. The
+evidence gate still flags starter Week 1, people/policies, images and PROCESS.md.
+The original deck-link false positive is resolved. The full dependency audit is
+clear after compatible dev-tool patches; fixed platform versions remain Astro
+7.2.8 and Astromotion 0.23.0. Do not apply a wholesale upstream upgrade.
 
-Known acceptance state: type/build/19-page accessibility/internal links pass;
-four spec checks pass and twelve-week coverage fails because collections contain
-only weeks 1 and 2. Evidence remains red for starter material/images and unfilled
-PROCESS.md. E04's reproduced false-positive lecture-link regex is still to be
-corrected before accepting Gate 2's real deck. Native BFCache, GPU frame-rate
-profiling and forced context loss were not browser-verified in the earlier pass.
+Checkpoints: oracle `785b1ce`; teaching implementation/harness `4fc9cde`;
+development-tool patches `2752781`. Review documentation is committed with the
+handoff. Verify the remote commit after the authorized private push.
 
-Revision 2 is implemented in `06ce955`, following the goals/research/harness change
-`8d518f9`. Parent browser checks covered both marking sizes, scene views/rotation,
-pause/live reduced motion, moving 2D diagrams, responsive keyboard tabs, phone
-menu focus, Back selection and both no-script and blocked-scene fallbacks. The
-independent review's window-placement finding is resolved. Cloud-edge clipping
-and a paragraph selector were refined after inspection. Full required checks
-retain only the known incomplete-course failure; production audit is clear.
+Next: obtain the student's review of teaching depth/voice, reading layout and
+mobile slides. After approval, use this pattern to complete the other eleven
+weeks, their dates and distinct activities, the remaining briefs, people/policies
+and source/media work. Do not clone the same question or activity twelve times.
+PROCESS.md remains the student's account, supported by the real evidence bank.
 
-Implementation and verification checkpoints were pushed through `73ac508`; the
-remote hash matched and the working tree was clean. Repository visibility remains
-private. The current preview is also available at
-`http://localhost:4321/comp4020-ass2-Naaeeen/review/c/`.
-
-Next: wait for human review of revised C's resemblance and motion amplitude.
-Do not infer approval from successful checks. The goal pauses at this requested
-review gate; the assignment itself is still unfinished.
-After approval, build the representative week/source comparison with a real deck
-and correct the test oracle before scaling to twelve weeks.
+The whole-assignment Goal was verified active during this stage and pauses at the
+requested human-review gate. The full assignment is unfinished. Working deadline
+remains 28 September 2026; exact cutoff unspecified.
 
 ## Authorized external actions
 

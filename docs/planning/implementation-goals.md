@@ -1,6 +1,6 @@
 # Implementation goals and human review gates
 
-Status: Gate 1 revision 2 is verified and ready for human review: reference-led Aincrad, larger 3D motion and animated chapter graphics. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
+Status: Gate 2 is verified and ready for human review: approved homepage, a complete Week 2 teaching path and its assessment pattern. The complete course remains unfinished. Deadline supplied by the student: **tomorrow**, relative
 to 27 September 2026 (28 September, Australia/Sydney); exact cutoff time has not
 been supplied. The public course deadline is different. This plan records the
 student's working deadline without claiming that an extension has been verified.
@@ -29,10 +29,11 @@ living research record. Keep completed findings and genuine feedback traceable.
 Refine the plan when needed without quietly dropping earlier requirements or
 turning an unfinished stage into a completed one.
 
-The student resumed work on 27 September and requested a stronger, more immersive
-visual direction. This is a revision of Gate 1, not approval of either existing
-A/B design. Preserve useful comparison evidence and deliver a revised interactive
-preview for another human review before extending the whole curriculum.
+The student accepted revised C's broad direction: “这个大致方向不错”, and asked to
+continue implementation, commits and pushes under these process requirements.
+Gate 1 is accepted for progression; Gate 2 now develops a complete teaching slice.
+Later design refinement remains possible. Preserve the real feedback and comparison
+evidence; do not treat this as approval to skip the remaining human gates.
 
 ## Evidence for the later process account
 
@@ -79,16 +80,14 @@ well-timed transitions and responsive feedback that invite exploration. Animatio
 should connect an event, source or course section with its meaning. Keep course
 orientation, preparation, assessment and navigation easy to read and reach.
 
-For this design revision, compare the existing static direction with a new
-immersive preview. Develop a distinctive scene and an interactive chapter/period
-explorer, then inspect how motion changes orientation and reading. The first
-candidate may use a procedural 3D illustration with a matching static alternative;
-its value must be demonstrated in the actual browser rather than assumed.
+Gate 1 compared static directions with a procedural 3D scene and chapter
+explorer, including a matching static alternative. The student accepted revised C's
+broad direction. Carry that motion language into the course while verifying
+orientation and reading in the browser; do not restart the completed comparison.
 
 The student rejected the first C model's resemblance to Aincrad and found its
-motion insufficient. The next candidate must use inspected official visual
-references and evaluate existing fan models or images rather than inventing an
-unrelated floating castle. Preserve the previous screenshots as comparison
+motion insufficient. Revision 2 used inspected official visual references and evaluated existing
+fan models rather than inventing an unrelated floating castle. Preserve the previous screenshots as comparison
 evidence. Compare the continuous tapered body, dense floor bands, underside,
 radial bridges, materials and apparent scale with the original anime reference.
 Use a readable matching fallback. The student also explicitly asked for more
@@ -264,12 +263,38 @@ Do not spend the remaining time repeating a broad harness benchmark, manufacturi
 red tests or polishing a comparison that cannot change a decision. Necessary
 source checking, genuine user gates and truthful reporting remain in scope.
 
-## Latest checkpoint
+## Latest checkpoint and Gate 2 execution plan
 
-Candidate C received real feedback: improve canonical resemblance and add more
-motion. The reference-led revision is implemented and checked; both candidate
-histories and the new results are retained in [the verification record](gate-1-motion-review.md). [The process evidence bank](../PROCESS-EVIDENCE.md) records the consequential
-findings and exact harness changes. The goal was confirmed active during this
-revision; the next stage still depends on the student's design feedback. The
-assignment as a whole is not complete. Once the direction is accepted, continue
-with the representative teaching unit and the outstanding test-oracle correction.
+The student accepted the revised C direction and repeated the requirements for
+ongoing research, bounded implementation, multiple reviews and comparisons,
+browser testing, concise evidence-backed CLAUDE.md updates, commits/pushes and
+human gates. These remain active requirements, not a one-off research exercise.
+
+Gate 2 will deliver:
+
+1. The accepted immersive design on the actual homepage, with course metadata in
+   its canonical record and working links into the first complete unit.
+2. Week 2, **The SAO incident**, dated 26 February 2035: accessible preparation,
+   three linked official English sources, a worked evidence ledger, a timed
+   seminar, and an exit argument tied to the course's central question.
+3. A substantive lecture, a real Astromotion deck and readable notes. Inspect
+   every slide at both marking viewports; keep one clear idea per slide.
+4. A complete 20% Source comparison brief due in Week 4, with criteria and source
+   access. Align the 30% and 50% assessment records and dates as draft outlines;
+   complete their briefs at Gate 3. Stage untouched starter Week 1 content honestly.
+5. A same-content A/B comparison of the default reading layout and the proposed
+   unit layout, evaluated for finding the task, sources, expected output and
+   assessment. Record observed differences, not invented learning gains.
+6. A regression-driven repair of the reproduced deck-link test false positive;
+   check actual anchor attributes instead of href-like text inside another value.
+7. Parent-verified source claims, independent review and targeted refinements,
+   the required checks, real browser journeys, current research/process notes,
+   and reviewed private-remote commit/push checkpoints.
+
+The whole-assignment Goal remains the umbrella objective. It was initially
+paused at this resume and was subsequently verified active through get_goal.
+Keep its status and this detailed execution record aligned with actual work.
+
+Gate 2 implementation and checks are complete; the detailed results are in
+[the review record](gate-2-review.md). Stop for the student's judgement of teaching
+depth, voice, reading layout and slide usability before expanding all twelve weeks.
