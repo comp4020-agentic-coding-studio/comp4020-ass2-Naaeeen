@@ -7,8 +7,7 @@
 - **Audience:** First-year students interested in technology, history and virtual worlds.
 - **Format:** A twelve-week seminar taught in English at Slop University, set in 2035.
 
-No programming or prior knowledge of the whole SAO series is required. Selected
-scenes and short background notes should make the material accessible.
+No programming or prior knowledge of the whole SAO series is required. Short case accounts and background notes make the material accessible.
 
 ## Central idea
 
@@ -23,8 +22,9 @@ decisions that shaped events. Adventure, friendship, ordinary life and belonging
 matter alongside conflict and institutional power.
 
 The 2035 teaching date is our framing choice, not an addition to SAO canon.
-Briefly identify the fictional premise in the course introduction, then maintain
-a consistent historical voice.
+Use a consistent historical voice in the student journey. Explain the educational
+premise and actual source provenance once in the linked credits; introduce the
+events directly for readers with no prior SAO knowledge.
 
 ## Material and source boundaries
 
@@ -95,36 +95,34 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Current stage: **Gate 3 ready for human review**. The student authorized continuation
-from Gate 2; Gate 3 feedback has not yet been supplied. Follow the
-[detailed goals](docs/planning/implementation-goals.md),
-[requirements audit](docs/planning/requirements-audit.md),
-[living research](docs/IMPLEMENTATION-RESEARCH.md),
-[process evidence](docs/PROCESS-EVIDENCE.md) and
-[Gate 3 review record](docs/planning/gate-3-review.md).
+Current stage: **Gate 4 in progress**, explicitly authorized on 28 September.
+The whole-assignment Goal is active. The student asks for visible lecture slides,
+an obvious first action/reading order, fewer peer-level categories and teaching
+prose that treats SAO as history in 2035 while introducing complete newcomers.
+Follow the [Gate 4 plan](docs/planning/gate-4-plan.md) before and during work.
 
-The complete candidate contains twelve dated, distinct seminar guides; four
-lecture-note pages; the existing real ten-slide Week 2 deck; three complete
-20/30/50 assessment briefs; fictional staff/policies; source packets and a story
-chronology; and a five-setting interactive atlas with an equivalent reading list.
-The homepage starts at Week 1 and connects these paths. Twelve weeks are mandatory;
-twelve full lectures/decks are not. Preserve this verified scope distinction.
+Starting checkpoint: 37075dc, pushed and clean. Gate 3 has 12 seminars, four
+lecture-note entries, one ten-slide deck and complete assessments/source/atlas
+pages. Its final site check passed 36 tests. The only remaining evidence failures
+are the unfilled PROCESS.md template and sample hashes. Preserve that history in
+[the Gate 3 review](docs/planning/gate-3-review.md).
 
-Implementation checkpoint: [1c27051](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/commit/1c27051bc85009e128952a9afff34729670ddc04). The final full check passed:
-zero type diagnostics, 42-page build/a11y/links, one deck and 36 spec tests.
-Full dependency audit is zero. The evidence gate now flags only PROCESS.md's
-unfilled template and sample hashes. The student's narrative and public release
-remain unfinished. Do not weaken the gate or write invented personal experience.
+Primary navigation becomes Start here / Weekly plan / Library. The first route
+introduces the history and leads to Week 1; the planner groups each week's ordered
+preparation, Monday 14:00–15:30 seminar, output, follow-up and deadline. Lecture
+notes are self-paced assigned material, not invented additional live meetings.
 
-Parent browser checks and independent reviews found and resolved real atlas
-landmark, sticky-offset, URL/history and native skip-link defects. See the review
-record for exact comparisons, paths, screenshots and limits. The fixed Slop record,
-collection schemas, integration pipeline and dependency versions are unchanged.
+Required readings become traceable course-compiled historical case accounts.
+Use a historical voice in teaching prose; keep actual works, publisher sources,
+adaptation limits and the educational premise in linked source credits. Do not
+invent witness records or quotations. Align the Week 2 deck, teaching tasks and
+assessments with this model, including supported event chronology instead of the
+old publication-date exercise. Define unfamiliar terms as they appear.
 
-Next action: the student reviews the complete curriculum and atlas. Respond to
-that feedback before Gate 4 whole-site refinement, then Gate 5 evidence/release.
-The whole-assignment Goal is used throughout; pause at this requested review gate,
-rather than marking the assignment complete or advancing without feedback.
+Ownership, shared metadata and acceptance checks are in the Gate 4 plan. Parent
+integrates and independently verifies worker findings, the real browser and final
+source/copy consistency. Commit/push reviewed private checkpoints, then wait for
+Gate 4 human feedback. Gate 5 PROCESS/public release remains open.
 
 ## Authorized external actions
 

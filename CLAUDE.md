@@ -103,11 +103,15 @@ Write direct, concrete student-facing prose. Preserve the user's voice and scope
 omit generic marketing, unnecessary disclaimers and irrelevant implementation
 details. Retain qualifications that affect a reader's understanding or decision.
 
-Separate verified facts, fictional framing and design proposals. For each teaching
-unit, connect its question and preparation to a student action, a concrete output
-and an assessment. Keep teaching claims traceable to source passages; identify a
-source's purpose before treating it as evidence. Record consequential open choices
-and verify citations; do not invent readings, results or feedback.
+Write teaching pages from the course's 2035 historical viewpoint. Introduce
+unfamiliar events and terms before requiring analysis; keep actual work provenance
+and compilation limits in linked source credits. Distinguish an account's report,
+a student's inference and a classroom proposal without inventing archival records.
+For each unit, connect ordered preparation to a timed meeting, concrete output
+and assessment. Verify the first action and cross-week material links, not only
+the resource categories. Keep required accounts readable on site and traceable by
+paragraph. Record consequential choices and verify citations; do not invent
+readings, results or feedback.
 
 `PROCESS.md` must be the student's truthful account of their work and judgement.
 Help assemble commit evidence and faithfully draft or edit from their supplied

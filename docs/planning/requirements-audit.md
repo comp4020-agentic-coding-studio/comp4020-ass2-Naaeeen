@@ -52,3 +52,14 @@ The original starter's local strict course schema rejects the generic integratio
 optional learningOutcomes input. A rejected trial was corrected without altering
 that schema: the four planned outcomes now render from existing course-page data.
 This is why checking a dependency's broader schema alone was insufficient.
+
+
+## Gate 4 start — 28 September 2026
+
+The user accepted Gate 3 and clarified visible slides, a clear weekly/first-use
+path and an in-world historical voice. Parent re-opened the live brief/upstream
+README and rechecked main: ecd1d71228e40105310fcb25e1bcf00cc5ed5284. Fixed scope
+is unchanged. The new criteria are user-directed UX/content choices, not extra
+course obligations. The wording audit exposed a real mismatch: Week 2 currently
+assesses media publicity/production chronology. Update its accounts, activities,
+assessment and deck together, with honest provenance in separate credits.

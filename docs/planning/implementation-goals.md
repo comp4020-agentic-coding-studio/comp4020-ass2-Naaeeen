@@ -1,9 +1,11 @@
 # Implementation goals and human review gates
 
-Status: Gate 2 was accepted for progression. Gate 3 is in progress: complete twelve concise weekly guides, remaining course information and an interactive atlas. The complete assignment remains unfinished. Deadline supplied by the student: **tomorrow**, relative
-to 27 September 2026 (28 September, Australia/Sydney); exact cutoff time has not
-been supplied. The public course deadline is different. This plan records the
-student's working deadline without claiming that an extension has been verified.
+Status: **Gate 4 active**. The student accepted Gate 3 for continuation on
+28 September 2026 and requested visible lecture slides, a clear first action and
+weekly routine, fewer categories, and a consistent 2035 historical voice with an
+accessible introduction for newcomers. Follow [the Gate 4 plan](gate-4-plan.md).
+The working deadline supplied by the student is 28 September; exact cutoff has
+not been supplied. The assignment and Gate 5 remain unfinished.
 
 ## Outcome
 
@@ -38,7 +40,7 @@ into a required workload.
 
 The student accepted revised C's broad direction: “这个大致方向不错”, and asked to
 continue implementation, commits and pushes under these process requirements.
-Gate 1 is accepted for progression; Gate 2 now develops a complete teaching slice.
+Gates 1–3 are accepted for progression; Gate 4 refines the complete course.
 Later design refinement remains possible. Preserve the real feedback and comparison
 evidence; do not treat this as approval to skip the remaining human gates.
 
@@ -318,6 +320,18 @@ The final required site check passes all 36 tests; 42 built pages pass the
 configured accessibility/base/link checks. The evidence gate remains red only
 for the student's unfilled PROCESS account and example hashes.
 
-Human Gate 3 review is pending. Keep the whole-assignment goal paused at that
-requested boundary until the student responds. Gate 4 and Gate 5 remain open;
-no grade, human preference or public deployment has been claimed.
+At the Gate 3 delivery, human review was pending and the Goal was paused. The
+student accepted continuation on 28 September; Gate 4 is now active. Gate 5
+remains open, and no grade or public deployment has been claimed.
+
+
+### Gate 4 user steering — 28 September 2026
+
+The student wants a clear first action and reading sequence, not a larger set of
+categories. Prioritize Start here / Weekly plan / Library, keeping needed materials
+and deadlines beside the relevant task. Present the actual lecture deck visibly.
+Teach SAO as events in the course's 2035 historical world and explain the opening
+crisis/terms for newcomers. Keep actual media provenance and the educational
+framing in source credits; never invent archival evidence. The research and
+source/task consequences are documented in [the Gate 4 plan](gate-4-plan.md).
+Stop for human Gate 4 review after implementation and verification.

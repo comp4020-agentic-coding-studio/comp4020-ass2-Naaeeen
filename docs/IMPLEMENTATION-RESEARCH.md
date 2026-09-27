@@ -643,3 +643,94 @@ existing navigation-check rule in CLAUDE.md. A passing controlled DOM review was
 followed by actual browser checks: the skip link's next Tab enters the main
 content, and world/view state survives controls links and browser history. The
 mocked review did not establish sticky geometry or native BFCache behavior.
+
+
+## Gate 4 research and decisions — 28 September 2026
+
+The student accepted progression and then supplied three linked corrections:
+show lecture slides, make the first action and weekly routine immediately clear,
+and teach SAO as historical events from 2035 for complete newcomers. Further
+steering invited a learning route beyond navigation. These are actual user
+requests, not findings invented by a model review.
+
+The [pre-implementation plan](planning/gate-4-plan.md) records the live brief,
+unchanged upstream ecd1d71228e40105310fcb25e1bcf00cc5ed5284, file ownership,
+source model and acceptance checks. The parent captured the existing 1920×1080
+lecture catalogue: four cards, zero direct deck links and zero inline decks.
+It also dated lectures without explaining their delivery. The metadata/copy audit
+found an unrepresented cross-week assignment: Week 9 reuses Week 2 notes.
+
+### Orientation, progression and resource design
+
+| Primary reference checked | Transfer to this course | Limit |
+| --- | --- | --- |
+| [COMP4020 homepage](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/) | Explain weekly components, semester divisions and resource purposes | Its live lectures/crit schedule is not our seminar timetable |
+| [MIT OCW unit page](https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/pages/lecture-1-introduction/) | Group readings, explanations, media and activity for the same unit | Historical example, not evidence that our redesigned page improves learning |
+| [Calling Bullshit syllabus](https://callingbullshit.org/syllabus.html) | Make required vs supplementary material explicit | Do not copy its provocative voice or assume the same audience |
+| [NN/g progressive disclosure](https://www.nngroup.com/articles/progressive-disclosure/) | Keep common study tasks upfront and reference destinations secondary | Exactly three links is a project choice; hiding useful deadlines would defeat the principle |
+| [GOV.UK start pattern](https://design-system.service.gov.uk/patterns/start-using-a-service/) | A clear action-labelled beginning with enough prior context | This is a course, not a government transaction; no account/eligibility flow is needed |
+| [Duolingo's path explanation](https://blog.duolingo.com/new-duolingo-home-screen-design/) | Show a next step and place learning resources in the route | Language-learning claims and locked progression do not transfer to this course |
+| [Three.js Journey introduction](https://threejs-journey.com/lessons/introduction) | Chapters and lessons can coexist with explicit media/reading choices | No paid access, completion tracking or purchased materials were added |
+
+The chosen design makes the route visible in the page, not only in the menu:
+Start here introduces the incident; a twelve-week itinerary opens each weekly
+dossier; ordered preparation, meeting, output and deadline are shown together.
+Library remains a reference route and the atlas remains optional exploration.
+A freely revisitable itinerary suits a dated seminar better than a locked game
+path or an obligatory cinematic scroll. All links remain usable in plain HTML.
+
+### The source model had to change with the historical viewpoint
+
+Independent review confirmed that a terminology sweep alone was insufficient.
+The old Week 2 assessment required publicity originals and adaptation analysis;
+the deck juxtaposed a 2021 media release with a 2022 event. These tasks enacted
+media analysis rather than the historical course the student wanted.
+
+Required reading is now being revised into substantive course-compiled case
+accounts with stable paragraph locations. Running prose treats people and events
+historically. Source credits retain actual publishers, works, dates, adaptations
+and the educational premise. Accounts are not mislabelled as diaries or independent
+eyewitnesses. The assessment asks students to compare editorial emphasis and
+supported interpretations, using onsite passages. Event chronology replaces the
+old production-date exercise. Narrative context defines unfamiliar people and
+systems before asking newcomers to analyse them.
+
+The parent rechecked launch/first-month sources and the previously inspected
+case sources. The official [Fairy Dance introduction](https://www.swordart-onlineusa.com/fairy_dance/intro/)
+stores its passage in an image with no usable alternative text. Web extraction
+failed; the parent then inspected the original image in the browser. It supports
+Kirito's return after fighting Kayaba/Heathcliff and the 300 people, including
+Asuna, still unconscious. The [November 2024 episode synopsis](https://www.swordart-onlineusa.com/aincrad/story/?no=14)
+dates the late Aincrad sequence but does not by itself supply the exact ending
+day. The briefing uses supported relative chronology and does not claim that all
+100 floors were completed.
+
+### Embedding the real deck
+
+The worker inspected Astromotion 0.23.0 and Reveal 6.0.1 rather than assuming
+framework-level configuration. Astromotion hardcodes its defaults; Reveal merges
+query settings at runtime and supplies a documented
+[postMessage interface](https://revealjs.com/postmessage/). The parent read that
+primary API, [W3C frame-title guidance](https://www.w3.org/WAI/WCAG22/Techniques/html/H64),
+[carousel controls](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/) and
+[reflow explanation](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html).
+The prototype uses the real local deck, explicit outer controls, origin/frame
+checks, a readiness response, persistent reading/presentation links and a generous
+phone frame. The original deck's narrow/short-screen reflow makes a shallow 16:9
+phone frame unsuitable. A load event alone is not counted as a working player.
+
+A deck-owned embedded class hides its once-per-tab hint inside the viewer, where
+visible controls explain navigation. No vendor/export automation flag is changed.
+The native helper still consumes its per-path seen flag; this implementation limit
+is retained for browser/human review. It is not evidence of a fresh ordinary-user
+hint test. No new dependency or paid API was required.
+
+### Verification approach in progress
+
+Bounded workers have separate UI, slide, source and teaching-copy ownership. The
+parent owns integration and independent verification. The new study-navigation
+checks ran against the unchanged Gate 3 build: four genuine failures and one pass.
+They cover per-week preparation routes/order, matching preparation budgets,
+Week 9's cross-week note assignment and consistent meeting facts. They do not
+measure clarity or teaching quality. Final browser outcomes and commit links will
+be recorded after integration rather than predicted here.
