@@ -1,0 +1,170 @@
+---
+import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import { courseMeta } from "../course-config";
+import { siteConfig } from "../site-config";
+import { courseOutline, courseActs, courseWeeks, courseAssessments, courseSources } from "../data/course-outline";
+import "../styles/course-review.css";
+
+interface Props {
+  direction: "a" | "b";
+}
+
+const { direction } = Astro.props;
+const archive = direction === "a";
+const previewPath = `/review/${direction}/`;
+const anchor = (id: string) => withBase(`${previewPath}#${id}`);
+const previewLinks = [
+  { text: "Course", href: anchor("course") },
+  { text: "Twelve weeks", href: anchor("weeks") },
+  { text: "Assessment", href: anchor("assessment") },
+  { text: "Sources", href: anchor("sources") },
+];
+
+// These shapes are an original interpretive illustration, not a floor map.
+const plateaus = [
+  { y: 181, width: 100, depth: 22 },
+  { y: 224, width: 155, depth: 29 },
+  { y: 273, width: 211, depth: 33 },
+  { y: 328, width: 272, depth: 37 },
+  { y: 389, width: 334, depth: 42 },
+  { y: 457, width: 397, depth: 47 },
+];
+---
+
+<BaseLayout
+  {...siteConfig}
+  title={`${courseMeta.code}: ${courseOutline.title} · Preview ${direction.toUpperCase()}`}
+  description={courseOutline.description}
+  socialImage={undefined}
+  socialImageAlt={undefined}
+  links={previewLinks}
+  search={false}
+  clientRouter={false}
+  colorScheme="light"
+  unlisted={true}
+  mainAttrs={{ class: "course-review-main" }}
+>
+  <div class:list={["course-review", `direction-${direction}`]}>
+    <aside class="review-strip" aria-label="Design comparison">
+      <p><strong>Outline preview</strong><span>Gate 1 · compare the two directions</span></p>
+      <nav class="review-options" aria-label="Preview direction">
+        <a href={withBase("/review/a/")} aria-current={archive ? "page" : undefined}>A <span>Archive</span></a>
+        <a href={withBase("/review/b/")} aria-current={!archive ? "page" : undefined}>B <span>Syllabus</span></a>
+      </nav>
+    </aside>
+
+    <div class="course-opening">
+      <header id="course" class="course-heading">
+        <p class="eyebrow"><span>{courseMeta.code}</span><span>First-year history · {courseOutline.year}</span></p>
+        <h1><span class="course-title">{courseOutline.shortTitle}</span><span class="course-subtitle">{courseOutline.subtitle}</span></h1>
+        <p class="course-hook">{courseOutline.hook}</p>
+        {archive && <a class="course-action" href={anchor("weeks")}>Explore the twelve weeks <span aria-hidden="true">↘</span></a>}
+      </header>
+
+      <nav class="course-route" aria-label="Semester route">
+        <div class="route-heading"><span class="eyebrow">The semester</span><p>Twelve weeks. Three connected histories.</p></div>
+        <ol>
+          {courseActs.map((act) => (
+            <li>
+              <a href={anchor(act.id)}>
+                <span class="act-numeral" aria-hidden="true">{act.number}</span>
+                <span class="route-label"><span class="route-range">Weeks {act.range}</span><strong>{act.title}</strong></span>
+                <span class="route-arrow" aria-hidden="true">↘</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <section class="course-about" aria-labelledby="course-question">
+        <p class="eyebrow">The question we follow</p>
+        <h2 id="course-question">{courseOutline.question}</h2>
+        <p>{courseOutline.invitation}</p>
+        <p class="course-premise">{courseOutline.premise}</p>
+        <p class="course-access">{courseOutline.access}</p>
+      </section>
+
+      <figure class="archive-plate">
+        <div class="plate-label"><span>FULL-DIVE / AINCRAD</span><span>STUDY 01</span></div>
+        <svg viewBox="0 0 540 590" role="img" aria-labelledby="archive-plate-title" xmlns="http://www.w3.org/2000/svg">
+          <title id="archive-plate-title">An original abstract illustration of a castle above stacked floating plateaus</title>
+          <g class="plate-guide" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M45 94H495M45 527H495M270 56V553" />
+            <path d="M70 74V547M470 74V547" stroke-dasharray="2 8" />
+            <circle cx="270" cy="125" r="63" />
+            <path d="M55 94H85M70 79V109M455 527H485M470 512V542" />
+          </g>
+          <g class="plate-castle" fill="currentColor">
+            <path d="M231 176V135L238 122L245 135V147H256V110L270 82L284 110V147H295V133L302 119L309 133V176Z" />
+            <path d="M219 176H321L316 185H224Z" />
+          </g>
+          <g class="plate-levels" stroke="currentColor" stroke-width="1.4">
+            {plateaus.map(({ y, width, depth }) => (
+              <g>
+                <path class="plate-top" d={`M${270 - width / 2} ${y} Q270 ${y - depth} ${270 + width / 2} ${y} Q270 ${y + depth} ${270 - width / 2} ${y}Z`} />
+                <path class="plate-side" d={`M${270 - width / 2} ${y} Q270 ${y + depth} ${270 + width / 2} ${y} L${270 + width / 2 - depth} ${y + depth} Q270 ${y + depth * 2} ${270 - width / 2 + depth} ${y + depth}Z`} />
+                <path class="plate-contour" d={`M${270 - width / 2 + 15} ${y + 7} Q270 ${y + depth + 4} ${270 + width / 2 - 15} ${y + 7}`} fill="none" />
+              </g>
+            ))}
+          </g>
+          <g class="plate-guide" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M65 213H155M385 305H476M62 408H101M410 466H478" />
+            <circle cx="155" cy="213" r="3" /><circle cx="385" cy="305" r="3" />
+          </g>
+        </svg>
+        <figcaption><span>A world, and the lives within it.</span><span>Original interpretive illustration</span></figcaption>
+      </figure>
+    </div>
+
+    <section id="weeks" class="course-weeks" aria-labelledby="weeks-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Course outline</p><h2 id="weeks-title">Twelve weeks of inquiry</h2></div>
+        <p>{courseOutline.method}</p>
+      </div>
+      {courseActs.map((act) => (
+        <section id={act.id} class="semester-act" aria-labelledby={`${act.id}-title`}>
+          <div class="act-heading">
+            <p class="act-index">Part {act.number}<span>Weeks {act.range}</span></p>
+            <div><h3 id={`${act.id}-title`}>{act.title}</h3><p>{act.description}</p></div>
+          </div>
+          <ol class="week-list" start={Number(act.range.slice(0, 2))}>
+            {courseWeeks.filter((week) => week.act === act.id).map((week) => (
+              <li id={`week-${week.number.toString().padStart(2, "0")}`}>
+                <span class="week-number" aria-hidden="true">{week.number.toString().padStart(2, "0")}</span>
+                <div class="week-name"><h4><span class="visually-hidden">Week {week.number}: </span>{week.title}</h4><p>{week.material}</p></div>
+                <p class="week-question">{week.question}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+    </section>
+
+    <section id="assessment" class="course-assessment" aria-labelledby="assessment-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Assessment</p><h2 id="assessment-title">From sources to an argument</h2></div>
+        <p>Three pieces of work build towards a history you can share.</p>
+      </div>
+      <ol class="assessment-list">
+        {courseAssessments.map((assessment) => (
+          <li>
+            <span class="assessment-number" aria-hidden="true">{assessment.number}</span>
+            <div><h3>{assessment.title}</h3><p>{assessment.description}</p></div>
+            <p class="assessment-weight">{assessment.weight}<span>%</span><span class="visually-hidden"> of the final grade</span></p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section id="sources" class="course-sources" aria-labelledby="sources-title">
+      <div class="sources-intro"><p class="eyebrow">The source desk</p><h2 id="sources-title">Begin with the works</h2><p>{courseOutline.sourceBoundary}</p></div>
+      <ul class="source-list">
+        {courseSources.map((source) => (
+          <li><a href={source.href}><span><strong>{source.title}</strong><span>{source.detail}</span></span><span class="source-arrow" aria-hidden="true">↗</span></a></li>
+        ))}
+      </ul>
+    </section>
+    <div class="course-end"><p>{courseMeta.code} <span>After Aincrad</span></p><a href={anchor("course")}>Back to course <span aria-hidden="true">↑</span></a></div>
+  </div>
+</BaseLayout>
