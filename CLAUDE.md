@@ -30,12 +30,17 @@ their source so the standing harness stays short and does not drift.
 1. Inspect the brief, `git status`, the relevant files and existing checks.
 2. Write or update a working plan file before a multi-file or structural
    change (new collection, navigation change, cross-page content pass).
-3. Establish a green baseline before editing.
-4. For a mechanical rule, demonstrate RED with a focused test, implement the
-   smallest GREEN change, then refactor while the suite stays green.
+3. Run the baseline before editing. Record unfinished acceptance checks
+   separately from regressions; expected red content checks do not block setup.
+4. For a new behavior or bug, reproduce the missing behavior with a focused
+   test, implement the smallest correction, then verify it. A check protecting
+   behavior the starter already satisfies may begin green; do not manufacture
+   failures just to demonstrate a sequence.
 5. Run the built site and browse it as a prospective student would; code
    review is not a substitute for reading the pages.
-6. Commit only coherent green checkpoints with descriptive messages.
+6. Commit coherent checkpoints with descriptive messages. Preserve checks
+   already passing, and document intentionally red acceptance tests and why
+   they remain red. All required checks must pass before submission.
 
 When a manual check exposes a mechanical bug, reproduce it with a failing test
 before fixing it. When the same correction recurs, promote it into this
@@ -96,6 +101,6 @@ human judgement. Do not pretend a passing check proves it.
 - Preserve unrelated user changes and inspect the diff before every commit.
 - Never use destructive Git commands on an ambiguous target.
 - Never commit keys, tokens or `.claude/` credentials.
-- Commit locally in small green checkpoints.
+- Commit locally in small checkpoints with their actual verification status.
 - Do not push, publish, make the repository public or run the course ship
   skill unless the user explicitly asks.

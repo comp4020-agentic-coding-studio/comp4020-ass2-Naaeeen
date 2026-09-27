@@ -14,7 +14,8 @@ Use this instruction order when guidance overlaps:
 
 Do not duplicate the full harness here: one owner per rule prevents drift.
 Keep changes scoped, preserve unrelated work, collect evidence from commands
-and browser reading, and commit only coherent green checkpoints.
+and browser reading, and commit coherent checkpoints with honest check results.
+Document intentionally red acceptance checks; do not introduce regressions.
 
 The current session is local implementation only. Do not push, publish, change
 repository visibility or invoke the course ship workflow without an explicit
