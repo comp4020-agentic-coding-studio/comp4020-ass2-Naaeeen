@@ -1,17 +1,17 @@
 {
-  "stage": "Gate 5 English submission draft; student review pending",
+  "stage": "Gate 5 candidate audited; public release pending",
   "repository_language": "English",
   "sources": {
     "PROCESS.md": "add399569a5bbabbb69cbeccd89e9e949a26432378a09c8093c4f3b02fffdfca",
     "CLAUDE.md": "3e54bbbf9b9fc232efbdf1d65ec104cef72a787af006721031f4ed2fb91a079e",
-    "docs/planning/implementation-goals.md": "81ef1e85e816c88eb2b0fb77419de3bca7b8bddea8686b6059a4a242ac43218b",
-    "docs/IMPLEMENTATION-RESEARCH.md": "d671e3f596d9261afc1fd299da75be799fc9a139b0b43ec90054a007d5861fad",
-    "docs/harness-research/REPORT.md": "3717122e7caad3b7873f06d008d22f4928f7b9f4b56cc6249bab98c76dbab6bf"
+    "docs/planning/implementation-goals.md": "345c6ec2a751529c8c1a14a7a978f5f7c29b03175c853adf99c80ced2af81451",
+    "docs/IMPLEMENTATION-RESEARCH.md": "f0fb4434b3c2addc33a800725a19bba7b83989caa1b100074e495396fe0f6bd0",
+    "docs/harness-research/REPORT.md": "acb1e7c255ad52dbbbc75953766b34708eb51642f44f8a92058305ab910a1031"
   },
   "process_english_words": 593,
   "student_review": [
-    "Confirm the account matches your decisions and intended reasoning.",
-    "Correct any sentence that does not express your judgement accurately."
+    "PROCESS.md retained at the reviewed version on the student's instruction.",
+    "Review the final audit and authorize public release when ready."
   ],
   "release": "No public publication or repository visibility change.",
   "local_review_copy_policy": "Translated convenience copies are preserved outside this repository in the Windows workspace. They are not submission files.",

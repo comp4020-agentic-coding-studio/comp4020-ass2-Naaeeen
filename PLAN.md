@@ -95,32 +95,23 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Current stage: **Gate 5 English submission account ready for review**.
-The user supplied an opening judgement about preparing an agent framework, asked
-to replace the paragraph about editing PROCESS with substantial implementation
-work, and required all current repository files to be English. PROCESS.md is now
-593 words. It begins with the supplied judgement, names the research/CLAUDE path,
-explains the goals file's agent-practice requirements and ends with the verified
-reference-led Aincrad redesign. The student's learning-flow critique is now a central example: categories obscured the first step, prompting a researched Start here/weekly-plan redesign, retained resource access and a browser-verified phone correction. Ten distinct commit references support the account.
+Current stage: **Gate 5 candidate audited; public release pending**.
 
-The initial harness REPORT is now fully translated into English, retaining its
-historical findings, numbers, links and limits. The four Chinese review copies
-were hash-verified in a separate Windows workspace archive before removal from
-the repository. A Chinese convenience copy for the user's review remains outside
-the submission tree. Canonical current sources are listed in docs/review/manifest.json.
-CLAUDE.md now explicitly requires repository-authored text to be English.
+The final audit rechecked the official brief, upstream, fixed platform, required
+checks, important documents, current-file language, commit evidence and the browser.
+Read [the final submission audit](docs/planning/final-submission-audit.md) for the
+requirement matrix, observed results and remaining limitations. Forty-two spec tests
+pass across 45 built pages. An absent-student support route was completed and reviewed.
+Current submission files are English and the implementation tool is named Codex.
 
-Earlier draft/comparison records remain historical evidence; no Git history was
-rewritten. No new application code or model experiment is included in this pass.
-The last full site check remains 42 passing tests. This pass verifies language,
-links, citations, source hashes and the evidence gate.
+The student requested no further PROCESS.md changes. Its reviewed contents remain
+unchanged; no separate reflection is required or created. The review manifest pins
+the current canonical documents. Historical records remain intact.
 
-Next: show the current manuscript through the working Windows file path, collect
-the student's final narrative corrections, complete release-candidate verification,
-and obtain the separate public-release authorization. The whole-assignment Goal
-remains unfinished. Repository visibility and Pages settings are unchanged.
-
-The five-hour report received at 07:01 Canberra time gives a working noon target.
+Next: present the final candidate and obtain separate authorization for public
+visibility, Pages and the course ship workflow. Then verify public CI and the actual
+live URL. The whole-assignment Goal remains unfinished. Public release has not run.
+The five-hour report received at 07:01 Canberra gives a working noon target.
 
 ## Authorized external actions
 

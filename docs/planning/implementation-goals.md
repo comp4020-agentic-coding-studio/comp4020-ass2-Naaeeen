@@ -1,10 +1,10 @@
 # Implementation goals and human review gates
 
-Status: **Gate 5 English submission draft ready for review**. The current
-593-word PROCESS names the researched working rules and goals-file requirements,
-and ends with the Aincrad implementation example. Current repository files are
-English. Translated convenience copies live outside the repository. Student
-confirmation of the narrative and public deployment remain unfinished.
+Status: **Gate 5 candidate audited; public release pending**. Required local
+checks pass. The final submission audit records the browser results and remaining
+limits. PROCESS.md stays at the student's reviewed version. Current files are
+English; translated convenience copies remain outside the repository. Public
+release and live-URL verification are the remaining mandatory delivery steps.
 
 ## Outcome
 
@@ -418,3 +418,11 @@ the learning flow or categories clearly. The 593-word PROCESS now describes the
 requested redesign, the before-class/meeting/afterwards sequence, direct resource
 access and the actual phone-selector correction. The existing Gate 4 plan, review
 and 9741b89 rule diff substantiate the paragraph. The Aincrad example remains concise.
+
+### Final submission audit — 28 September 2026
+
+The student requested a full requirements, document, language and naming audit.
+The [final audit](final-submission-audit.md) records current results and release
+boundaries. A later instruction froze PROCESS.md; its reviewed version is retained.
+The official brief confirms no separate reflection. Ordinary private push remains
+authorized; public deployment awaits the student's explicit release instruction.

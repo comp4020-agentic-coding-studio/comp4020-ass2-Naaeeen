@@ -875,3 +875,14 @@ requirements are explicit. The whole current submission tree is English: the
 original research report was translated, a user quote paraphrased, and convenience
 translations archived outside the repository before their removal. The language
 change preserves earlier evidence and Git history.
+
+## Final delivery requirements refresh — 28 September 2026
+
+Re-read the [official A2 brief](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/assignment-2/)
+and upstream contract before final verification. The required written account is
+PROCESS.md; the following retro uses that file, with no separate reflection.
+The supplied workflow runs test:template only in the template repository, which
+explains its four missing starter-artwork fixtures after course replacement.
+Keep required submission-check results separate from that maintenance suite.
+The [final audit](planning/final-submission-audit.md) records the source checks,
+browser evidence and public deployment still to complete.

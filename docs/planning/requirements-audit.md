@@ -72,3 +72,13 @@ requirement changed. The new information architecture is the student's design
 choice; the code still preserves SLOP1897, twelve dated weeks, 100% weights, fixed
 collections/API and at least one real deck. All 42 tests pass across 45 built
 pages. Evidence remains incomplete in PROCESS.md; Pages is disabled/private.
+
+## Gate 5 final audit — 28 September 2026
+
+The live A2 brief, assessment rules, upstream README and current upstream revision
+were checked again. The fixed scope is unchanged. Required local checks now pass,
+and PROCESS.md is complete at the student's reviewed version. A2 explicitly uses
+PROCESS.md for its account and following retro; no separate reflection is required.
+See [the final audit](final-submission-audit.md) for the current matrix and browser
+limits. Public Pages publication remains outstanding. Earlier red evidence results
+in this file describe the dated Gate 3/4 checkpoints, not the current candidate.

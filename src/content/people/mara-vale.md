@@ -17,6 +17,8 @@ Ask Mara about assessment scope, extensions, access arrangements or a concern
 that has not been resolved in a seminar discussion. For a private conversation,
 ask at the start or end of class to arrange a consultation. You can describe
 the change you need without disclosing a personal experience to the group.
+If you cannot attend, use the [written-request route](/policies/#contact-when-you-cannot-attend)
+to arrange support through someone you nominate.
 
 For help with a particular citation, caption or source-ledger row,
 [Ren Ito](/people/ren-ito/) is also a good first contact. The

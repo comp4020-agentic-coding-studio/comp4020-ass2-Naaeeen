@@ -10,7 +10,7 @@ The goal is to improve the agent's actual behavior in this Ubuntu / Astro course
 
 Changes are limited to project instructions and the research/evaluation records for this work. Course content, the student's PROCESS.md, personal credentials, global model settings, the sandbox, approval mechanisms, plugins and remote state are outside the scope of these changes.
 
-Locally verified: the source version was `148cd779e18c365957c343f7e54f4e3671951896`; Codex CLI was 0.157.1, with gpt-6-astra configured as the model, ultra as the effort, and workspace-write/on-request; Claude Code in Ubuntu was 2.1.283. These are facts about the environment used for this work, not recommended settings for every project.
+Locally verified: the source version was `148cd779e18c365957c343f7e54f4e3671951896`; Codex CLI was 0.157.1, using the same Codex model configuration throughout, ultra effort, and workspace-write/on-request; Claude Code in Ubuntu was 2.1.283. These are facts about the environment used for this work, not recommended settings for every project.
 
 ## How the Evidence Is Used
 
@@ -31,7 +31,7 @@ The conservative conclusion supported by these studies is to retain the constrai
 
 ## How Official Guidance Becomes Project Rules
 
-- **Use context as needed.** [Claude Code best practices](https://code.claude.com/docs/en/best-practices) and the [Astra-specific article](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) both support scaling planning and reading to the task. We retain constraints and entry points, with README holding platform facts and PLAN holding current state; small changes do not require rereading every document.
+- **Use context as needed.** [Claude Code best practices](https://code.claude.com/docs/en/best-practices) and the [OpenAI prompting article recorded in the original source register](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Naaeeen/blob/2b885c8c9529b744c0c5b4dace351fa5299e72a6/docs/harness-research/sources.md) both support scaling planning and reading to the task. We retain constraints and entry points, with README holding platform facts and PLAN holding current state; small changes do not require rereading every document.
 - **Make completion boundaries clear.** The [current GPT-6 guide](https://developers.openai.com/api/docs/guides/latest-model) supports completing authorized work and then reporting actual verification and remaining limitations. Permission to publish externally still depends on the user's authorization.
 - **Verification should establish cause and effect.** This repository's `check → test → build` chain already includes a build, so running build again would duplicate it. A fix should reproduce the problem and confirm that its checks accept legitimate solutions as well as reject violations; actual UI changes still require browser evidence.
 - **Set a stopping condition for iteration.** [Anthropic's long-running harness case study](https://www.anthropic.com/engineering/harness-design-long-running-apps) notes that changes in model capabilities change what a harness needs, and more iterations are not always better. Use independent review and address evidence-backed findings rather than adding complexity to reach an arbitrary iteration count.
@@ -68,7 +68,7 @@ It is a useful index of practices and examples. Its own rules include committing
 
 | Setting | Decision and reason for this work |
 | --- | --- |
-| Model and reasoning effort | Keep the existing Astra/ultra as a fixed A/B condition. Effort levels were not compared, and no claim is made that ultra is optimal. |
+| Model and reasoning effort | Keep the existing Codex model configuration and ultra effort as fixed A/B conditions. Effort levels were not compared, and no claim is made that ultra is optimal. |
 | sandbox / approvals | Keep the existing settings; no bypass, ignore-rules or new automatic authorization. |
 | context / compaction | Do not change the window or percentage. Use PLAN handoffs at phase boundaries; there is no evidence for a universally optimal restart threshold. |
 | plugins / MCP / hooks | Do not add or automatically import any. Existing scripts and tools are sufficient for the current work. |

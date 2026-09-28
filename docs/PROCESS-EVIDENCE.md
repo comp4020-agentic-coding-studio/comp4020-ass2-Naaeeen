@@ -489,3 +489,17 @@ complete English translation; four Chinese review copies were hash-verified in
 the Windows workspace before removal from this tree. Earlier notes that locate
 those copies in docs/review describe their former locations. Historical commits
 remain intact. Future translations stay outside the submission repository.
+
+## Final audit: support outside attendance — 28 September 2026
+
+Independent review found a circular instruction: an absent student needed Mara
+to arrange support, while the only contact route required attending class. The
+parent added proxy hand-in with a receipt and a sealed written-request route,
+then linked it from both staff profiles and the people index. Independent readback
+found the four-file change consistent. The rebuilt policy anchor works, and the
+full required check still passes 42 tests. The existing CLAUDE requirement to inspect
+student journeys covers this finding; no additional standing rule was needed.
+
+The student froze PROCESS.md during the final audit; the parent restored the
+reviewed version and made no further narrative edits. Full verification and the
+remaining public-release boundary are in the [final audit](planning/final-submission-audit.md).
