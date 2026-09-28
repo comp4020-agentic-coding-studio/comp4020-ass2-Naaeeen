@@ -1,7 +1,7 @@
 # Implementation goals and human review gates
 
 Status: **Gate 5 English submission draft ready for review**. The current
-598-word PROCESS names the researched working rules and goals-file requirements,
+593-word PROCESS names the researched working rules and goals-file requirements,
 and ends with the Aincrad implementation example. Current repository files are
 English. Translated convenience copies live outside the repository. Student
 confirmation of the narrative and public deployment remain unfinished.
@@ -410,3 +410,11 @@ was translated without changing its findings; the Chinese user quote was paraphr
 in English; four Chinese convenience copies were preserved outside the repository
 and removed from the current tree. Earlier references to those copies describe
 the historical drafting stages. Continue reviewing the current English account.
+
+### Learning-route emphasis in the account — 28 September 2026
+
+The student asked to include their concern that an earlier version did not explain
+the learning flow or categories clearly. The 593-word PROCESS now describes the
+requested redesign, the before-class/meeting/afterwards sequence, direct resource
+access and the actual phone-selector correction. The existing Gate 4 plan, review
+and 9741b89 rule diff substantiate the paragraph. The Aincrad example remains concise.

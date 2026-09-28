@@ -2,13 +2,13 @@
   "stage": "Gate 5 English submission draft; student review pending",
   "repository_language": "English",
   "sources": {
-    "PROCESS.md": "3f17dbc5ae81134011f014838e77afc4b1ca7f20957bcd6c27c8089e2db597c3",
+    "PROCESS.md": "add399569a5bbabbb69cbeccd89e9e949a26432378a09c8093c4f3b02fffdfca",
     "CLAUDE.md": "3e54bbbf9b9fc232efbdf1d65ec104cef72a787af006721031f4ed2fb91a079e",
-    "docs/planning/implementation-goals.md": "4c85c73266cf945ab9308bb39098768bec6be7c63a78d083f66c9b000d78cb23",
+    "docs/planning/implementation-goals.md": "81ef1e85e816c88eb2b0fb77419de3bca7b8bddea8686b6059a4a242ac43218b",
     "docs/IMPLEMENTATION-RESEARCH.md": "d671e3f596d9261afc1fd299da75be799fc9a139b0b43ec90054a007d5861fad",
     "docs/harness-research/REPORT.md": "3717122e7caad3b7873f06d008d22f4928f7b9f4b56cc6249bab98c76dbab6bf"
   },
-  "process_english_words": 598,
+  "process_english_words": 593,
   "student_review": [
     "Confirm the account matches your decisions and intended reasoning.",
     "Correct any sentence that does not express your judgement accurately."

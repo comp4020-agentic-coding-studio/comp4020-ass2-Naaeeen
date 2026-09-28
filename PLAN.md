@@ -99,9 +99,9 @@ Current stage: **Gate 5 English submission account ready for review**.
 The user supplied an opening judgement about preparing an agent framework, asked
 to replace the paragraph about editing PROCESS with substantial implementation
 work, and required all current repository files to be English. PROCESS.md is now
-598 words. It begins with the supplied judgement, names the research/CLAUDE path,
+593 words. It begins with the supplied judgement, names the research/CLAUDE path,
 explains the goals file's agent-practice requirements and ends with the verified
-reference-led Aincrad redesign. Ten distinct commit references support the account.
+reference-led Aincrad redesign. The student's learning-flow critique is now a central example: categories obscured the first step, prompting a researched Start here/weekly-plan redesign, retained resource access and a browser-verified phone correction. Ten distinct commit references support the account.
 
 The initial harness REPORT is now fully translated into English, retaining its
 historical findings, numbers, links and limits. The four Chinese review copies
