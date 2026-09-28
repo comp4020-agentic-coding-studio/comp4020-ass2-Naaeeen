@@ -62,3 +62,11 @@ No website code changed. A small CLAUDE.md writing rule now asks for an actual
 request, observation and resulting change, with technical terms explained through
 the example. This responds to the user's repeated feedback about abstract prose.
 The student still reviews and approves the account.
+
+## Subsequent student clarification
+
+The comparison above produced the 520-word checkpoint committed in 9bc8a25. The
+student subsequently asked for the research location, the meaning of the tested
+rules and the way selected findings guided later agents to be explicit. The current
+root PROCESS is a 594-word revision; the comparison samples and final.md remain
+the actual earlier artifacts. See [the clarification audit](technique-clarification.md).

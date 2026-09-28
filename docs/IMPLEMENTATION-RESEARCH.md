@@ -840,3 +840,21 @@ A small CLAUDE.md addition responds to the repeated writing feedback: name the
 actual request, observation and resulting change, and explain technical terms
 through that example. It changes the next writing task's instructions rather than
 merely asking for an unspecified 'better' tone.
+
+## Clarifying the tested rules and adopted findings — 28 September 2026
+
+The student asked for the research location and its operational use to appear in
+the opening, for 'rules' to mean concrete CLAUDE.md directions, and for the wider
+workflow to replace an apparently exhaustive three-practice list. The revised
+594-word account names the research folder, explains selective adoption into
+CLAUDE.md and the AGENTS.md reading requirement, and connects comparisons, review
+and maintained documents to course decisions. The live brief/rubric were checked
+again; the account stays within the 400–600-word guidance.
+
+An independent audit and parent source checks verified the frozen starting
+conditions, 18 scored runs, independent masked review and evaluator repair. Model
+and effort were held fixed; the protocol does not record a separate CoT/effort
+experiment. The account names the actual comparison instead. A final precision
+change uses 'evaluation' rather than 'tests' for reporting-honesty checks because
+semantic review also carried that judgement. The [audit note](review/process-comparison/technique-clarification.md)
+records the sources. Earlier comparison inputs/results remain unchanged.

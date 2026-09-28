@@ -462,3 +462,15 @@ personal-motivation sentence. Actual samples and model-review observations are i
 docs/review/process-comparison; they are not human preference data. A small
 CLAUDE.md rule now asks for concrete requests, observations and resulting changes.
 The English account is 520 words; its Chinese copy is synchronized for user review.
+
+### Research-to-instructions clarification
+
+The student asked where initial agent-practice research was stored, what the
+compared 'rules' actually were, and how selected findings were followed. They
+allowed up to 600 words. The 594-word revision names the research folder and the
+CLAUDE/AGENTS reading path, describes selective adoption and the broader workflow,
+and includes concrete behaviour checks from the evaluation tasks. Parent and
+independent review verified the protocol and runner: the varied factor was CLAUDE
+content, while model/effort were fixed. No CoT A/B was added to the narrative.
+Reporting-honesty checks are described as evaluation, preserving the role of
+semantic review. The Chinese account is synchronized for the student's review.

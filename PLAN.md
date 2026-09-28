@@ -95,31 +95,33 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Current stage: **Gate 5 plain-language PROCESS ready for student review**.
-The student found the earlier prose too abstract and requested concrete agent
-practices, writing research and multiple A/B comparisons. Two recorded editorial
-comparisons, each with two fresh reviewers and reversed sample order, produced a
-520-word account combining clear wording with verified course/agent decisions.
-The comparison record is docs/review/process-comparison/README.md.
+Current stage: **Gate 5 research-to-instructions account ready for review**.
+The student asked the opening to identify where initial research lives and how
+selected practices become instructions the agent follows. They also asked what
+'rules' meant, rejected an exhaustive three-practice framing and allowed up to
+600 words. PROCESS.md now has 594 words and ten real commit references. Its Chinese
+copy is synchronized. Student confirmation of the narrative remains pending.
 
-PROCESS.md and its Chinese review copy are synchronized. The account describes
-research before implementation, testing instructions, checking reviewers, separate
-file ownership, maintained working documents and actual course refinements. It
-recommends three tutor readings and cites nine verified commits. Student approval
-of the account remains pending.
+The account explains controlled CLAUDE.md comparisons, adopted working rules,
+label-hidden independent review, testing the evaluator, task ownership, comparable
+page alternatives, staged teaching work, maintained records and the writing
+comparisons. The parent and an independent auditor verified these against the
+protocol, runner, reports and commits. Model/effort were fixed; no CoT A/B is claimed.
+See docs/review/process-comparison/technique-clarification.md for the audit.
 
-A concise CLAUDE.md writing rule now requires concrete requests, observations and
-resulting changes; its Chinese translation matches. Current source hashes are in
-docs/review/manifest.json. Website code is unchanged; the last full site check
-remains 42 passing tests. This revision uses document/citation/translation checks
-and the evidence gate, not a repeated application build.
+The earlier A/B materials remain unchanged records of the 520-word checkpoint.
+The current revision follows the student's feedback and does not claim a new
+experiment. English/Chinese source hashes are in docs/review/manifest.json.
+CLAUDE.md's existing concrete-writing rule remains appropriate and is unchanged.
+Website code is unchanged; the last full site check remains 42 passing tests.
 
-Next: incorporate the student's judgement of clarity and voice, complete remaining
-release-candidate checks, and obtain separate public-release authorization. The
-repo remains private and no Pages release is claimed. The whole-assignment Goal
-remains unfinished and was paused when this writing task began.
+Deliver a new Windows-readable review snapshot and open the Chinese manuscript,
+because the app could not open the WSL links. Preserve the prior snapshot and any
+student edits. Then use the student's feedback to finish the account and the
+release candidate. The whole-assignment Goal remains unfinished; public-release
+authorization and deployed-site verification are still separate next steps.
 
-The user's five-hour report at 07:01 Canberra time gives a working noon target.
+The five-hour report received at 07:01 Canberra time gives a working noon target.
 
 ## Authorized external actions
 

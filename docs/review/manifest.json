@@ -1,12 +1,12 @@
 {
   "stage": "Gate 5 evidence draft; student review pending",
   "sources": {
-    "PROCESS.md": "c10618a1d2669259e549103a292720c49f6aef6f3e575dee7d23361130b2cc7b",
+    "PROCESS.md": "58aa87d0f42fbba68137d9b87caf40db9e483d850f85a0228d658d022ad58f43",
     "CLAUDE.md": "98435d65f6f98675a90f04391112c1f422bbe0d92ec1e368d82e9fa59008c714",
-    "docs/planning/implementation-goals.md": "c78714d19a8c8cc718c29d87419bf0dec066a9f10666efbb887a759001d0a231",
-    "docs/IMPLEMENTATION-RESEARCH.md": "20ef3672bc608c1d01d07fd36a3dee531a910e4100fc266ee93d9e641ab0b12b"
+    "docs/planning/implementation-goals.md": "97cba29c72c7004820021eba2297197645456db172a451bb9a2ed9561f9e03f2",
+    "docs/IMPLEMENTATION-RESEARCH.md": "f56d853d1d111755af4c294da8ef2645a3eaea7e87164936bf4fdc39058feef8"
   },
-  "process_english_words": 520,
+  "process_english_words": 594,
   "translations": [
     "PROCESS.zh-CN.md",
     "CLAUDE.zh-CN.md",
@@ -19,5 +19,6 @@
   ],
   "release": "No public publication or repository visibility change.",
   "translation_notes": "Current English PROCESS, CLAUDE and appended goals/research records are synchronized with their Chinese review copies. Earlier dated records remain historical.",
-  "process_comparison": "process-comparison/README.md"
+  "process_comparison": "process-comparison/README.md",
+  "latest_process_revision": "process-comparison/technique-clarification.md"
 }

@@ -385,3 +385,13 @@ with explicit agent practices, three tutor readings and nine commit references.
 The Chinese copy and the small CLAUDE writing-rule addition are synchronized.
 This satisfies the requested drafting/comparison work; student narrative approval
 and public release remain pending. See PLAN.md and the comparison record.
+
+### Research-to-instructions clarification — 28 September 2026
+
+The student allowed up to 600 words and requested explicit research storage, tested
+CLAUDE rules, selective adoption and a fuller agent workflow. The current 594-word
+account does that with ten verified commit references. English and Chinese copies
+are synchronized. A protocol/report audit confirmed instruction-file comparisons,
+not a separate CoT/effort experiment. Previous editorial comparisons remain dated
+evidence; no extra experiment is claimed. Open the refreshed Windows review copy
+for the student's final narrative check.
