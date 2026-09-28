@@ -70,3 +70,11 @@ student subsequently asked for the research location, the meaning of the tested
 rules and the way selected findings guided later agents to be explicit. The current
 root PROCESS is a 594-word revision; the comparison samples and final.md remain
 the actual earlier artifacts. See [the clarification audit](technique-clarification.md).
+
+## Later scope and language choice
+
+The student subsequently replaced the account's paragraph about its own writing
+with a reference-led Aincrad implementation example and required an English-only
+submission tree. The current PROCESS is 598 words. These comparison artifacts remain
+the actual earlier drafts and reviews; translated convenience copies now reside
+outside the repository. See [the review index](../README.md).

@@ -1,126 +1,128 @@
-# A2 CLAUDE.md 研究、比较与改进记录
+# A2 CLAUDE.md Research, Comparison and Improvement Record
 
-研究日期：2026-09-27。状态：研究、独立审查、两轮共18次配对运行和最终文件更新已完成。结果属于本项目的探索性证据，不是普遍最优或统计优胜证明。
+> Historical record of the 27 September study, translated into English on 28 September. Installation and verification statements describe that checkpoint. Later work is recorded in [PLAN.md](../../PLAN.md) and [implementation research](../IMPLEMENTATION-RESEARCH.md).
 
-## 决策目标与范围
+Research date: 2026-09-27. Status: research, independent review, 18 runs arranged in pairs across two rounds, and the final file update are complete. The results are exploratory evidence for this project, not proof of universal optimality or statistical superiority.
 
-目标是改善这个 Ubuntu / Astro 课程网站项目中代理的实际行为：完成授权任务、遵守固定平台、有效验证、诚实记录证据，并减少过度研究、重复检查、无关防御性文字和推测性代码。不能仅靠文件更短、规则更多或社区项目更热门来判定质量。
+## Decision Goal and Scope
 
-只修改项目规则及本次研究/评估记录。课程内容、学生的 PROCESS.md、个人凭据、全局模型设置、sandbox、审批机制、插件和远端状态均不属于本次修改目标。
+The goal is to improve the agent's actual behavior in this Ubuntu / Astro course website project: complete authorized tasks, respect the fixed platform, verify effectively, record evidence honestly, and reduce excessive research, repeated checks, irrelevant defensive wording and speculative code. Quality cannot be judged solely by a shorter file, more rules or a more popular community project.
 
-本地核实：源版本为 `148cd779e18c365957c343f7e54f4e3671951896`；Codex CLI 0.157.1，配置模型为 gpt-6-astra、effort 为 ultra，workspace-write/on-request；Ubuntu 中 Claude Code 为 2.1.283。这些是本次环境事实，不是对所有项目的推荐设置。
+Changes are limited to project instructions and the research/evaluation records for this work. Course content, the student's PROCESS.md, personal credentials, global model settings, the sandbox, approval mechanisms, plugins and remote state are outside the scope of these changes.
 
-## 证据怎样使用
+Locally verified: the source version was `148cd779e18c365957c343f7e54f4e3671951896`; Codex CLI was 0.157.1, with gpt-6-astra configured as the model, ultra as the effort, and workspace-write/on-request; Claude Code in Ubuntu was 2.1.283. These are facts about the environment used for this work, not recommended settings for every project.
 
-课程原文和实际仓库决定项目要求。官方产品文档用于确认加载、命令和配置行为；原始实验用于判断其测量范围内的效果；厂商工程文章和作者实践用于提出可测试假设。实验论文也不能取消课程明确要求。
+## How the Evidence Is Used
 
-完整来源与版本见 [sources.md](sources.md)。没有把打不开的社交帖当作已核实原文，也没有把阅读官方演讲幻灯片说成观看了完整录像。
+The course's original requirements and the actual repository determine the project requirements. Official product documentation establishes loading, command and configuration behavior; original experiments inform conclusions within the scope of what they measured; vendor engineering articles and authors' practices suggest testable hypotheses. Research papers cannot override explicit course requirements either.
 
-## 原始研究与能得出的结论
+See [sources.md](sources.md) for the full sources and versions. Inaccessible social posts were not treated as verified original sources, and reading official presentation slides was not described as watching the full recording.
 
-| 研究 | 方法与主要结果 | 不能据此推出什么 |
+## Original Research and the Conclusions It Supports
+
+| Study | Method and main results | What cannot be concluded from it |
 | --- | --- | --- |
-| [Evaluating AGENTS.md v2](https://arxiv.org/html/2602.11988v2)，2026-06-23 | SWE-bench Lite 300 个任务/11 个 Python 仓库，加 CTXbench 138 个任务/12 个仓库，覆盖四种 agent/model 组合。相对无文件，LLM 文件的成功率差异不显著（p=.87/.37），开发者文件相对无文件亦不显著（p=.21）；LLM 文件的平均成本增加约20%/23%。 | 不能沿用旧版“显著降低成功率”的标题；不显著不等于严格等效。长度/类别消融也没有给出固定最佳长度。全部 Python 任务，不能直接代表我们的 Astro 内容创作。 |
-| [Efficiency of AI Coding Agents v2](https://arxiv.org/html/2601.20404v2)，2026-03-30 | 124 个 PR、10 个仓库，只用 GPT-5.2-Codex，比较有/无根指令文件。时间中位数降低28.64%，输出 token 降低16.58%，但总 token 中位数增加1.29%。 | 只有50个任务的人工 sanity check，没有完整功能正确性评估。不能宣称“相同质量下总 token 降低”。 |
-| [Agentless v2](https://arxiv.org/html/2407.01489v2)，2024-10-29 | GPT-4o 与 SWE-bench Lite 300 个任务。候选筛选从多数票77个成功，加入回归测试81个，再加入复现测试96个。 | 213个能在旧代码上失败的复现测试，只有94个在参考补丁上确认修复；单纯看到红灯不是测试正确的证明。不能照搬旧模型的候选数量。 |
-| [Lost in the Middle v3](https://arxiv.org/html/2307.03172v3)，2023-11-20 | 旧模型上的多文档问答和键值检索实验表明，信息位置可影响检索表现，任务与模型之间也有差异。 | 不是当前 Codex/Claude 的指令长度或压缩设置实验，不能推出“到50%必须清空”或“规则要首尾重复”。 |
+| [Evaluating AGENTS.md v2](https://arxiv.org/html/2602.11988v2), 2026-06-23 | SWE-bench Lite: 300 tasks / 11 Python repositories; CTXbench: 138 tasks / 12 repositories; four agent/model combinations. Compared with no file, success-rate differences for LLM-generated files were not significant (p=.87/.37), nor was the difference between developer-written files and no file (p=.21). Average costs with LLM-generated files increased by approximately 20%/23%. | The earlier version's headline claim of a "significant reduction in success rate" cannot be carried forward; a non-significant result does not establish strict equivalence. Length/category ablations did not establish a fixed optimal length either. All tasks were in Python, so they do not directly represent our Astro content-authoring work. |
+| [Efficiency of AI Coding Agents v2](https://arxiv.org/html/2601.20404v2), 2026-03-30 | 124 PRs across 10 repositories, using only GPT-5.2-Codex, comparing runs with and without a root instruction file. Median time fell by 28.64% and output tokens by 16.58%, but median total tokens increased by 1.29%. | Only 50 tasks received a manual sanity check; there was no comprehensive functional-correctness evaluation. This does not support a claim of "fewer total tokens at the same quality." |
+| [Agentless v2](https://arxiv.org/html/2407.01489v2), 2024-10-29 | GPT-4o and 300 SWE-bench Lite tasks. Candidate selection produced 77 successes with majority voting, 81 after adding regression tests, and 96 after also adding reproduction tests. | Of 213 reproduction tests that failed on the old code, only 94 were confirmed as fixed by the reference patch. A failing test alone does not prove the test is correct. Candidate counts used with an older model should not be copied directly. |
+| [Lost in the Middle v3](https://arxiv.org/html/2307.03172v3), 2023-11-20 | Multi-document question-answering and key-value retrieval experiments on older models showed that information position can affect retrieval performance, with differences across tasks and models. | This was not an experiment on instruction length or compaction settings in current Codex/Claude. It does not support rules such as "clear the context at 50%" or "repeat rules at both the beginning and end." |
 
-这些研究支持的保守结论是：保留本项目真实需要的约束，并检验效果；尚无足够证据证明一个跨模型、跨任务的最佳 CLAUDE.md。
+The conservative conclusion supported by these studies is to retain the constraints this project actually needs and test their effects. There is not enough evidence to establish a best CLAUDE.md across models and tasks.
 
-## 官方指导如何转成项目规则
+## How Official Guidance Becomes Project Rules
 
-- **上下文按需使用。** [Claude Code best practices](https://code.claude.com/docs/en/best-practices) 与 [Astra 专项文章](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) 都支持按任务规模决定规划与读取范围。我们保留约束和入口，让 README 保存平台事实、PLAN 保存当前状态；不要求每个小改动重新读全部文档。
-- **完成边界明确。** [当前 GPT-6 指南](https://developers.openai.com/api/docs/guides/latest-model) 支持完成已授权工作，再报告真实验证和剩余限制。外部发布权限仍按用户授权处理。
-- **验证要有因果意义。** 本仓库 `check → test → build` 已包含构建，额外再跑 build 会重复。修复应复现问题，并确认检查同时接受合法方案、拒绝违规方案；真实 UI 修改仍需浏览器证据。
-- **迭代有停止条件。** [Anthropic 长程 harness 案例](https://www.anthropic.com/engineering/harness-design-long-running-apps) 提醒，模型能力变化会改变 harness 需求，更多轮次不总是更好。采用独立审查并处理有证据的发现，而不为凑轮次持续增加复杂度。
-- **规则文件并不强制执行。** [Claude memory](https://code.claude.com/docs/en/memory) 与 [Codex discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md) 的加载机制不同。保留相同 AGENTS 桥接，核查实际读取；文字规则不替代运行时权限和测试。
+- **Use context as needed.** [Claude Code best practices](https://code.claude.com/docs/en/best-practices) and the [Astra-specific article](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra) both support scaling planning and reading to the task. We retain constraints and entry points, with README holding platform facts and PLAN holding current state; small changes do not require rereading every document.
+- **Make completion boundaries clear.** The [current GPT-6 guide](https://developers.openai.com/api/docs/guides/latest-model) supports completing authorized work and then reporting actual verification and remaining limitations. Permission to publish externally still depends on the user's authorization.
+- **Verification should establish cause and effect.** This repository's `check → test → build` chain already includes a build, so running build again would duplicate it. A fix should reproduce the problem and confirm that its checks accept legitimate solutions as well as reject violations; actual UI changes still require browser evidence.
+- **Set a stopping condition for iteration.** [Anthropic's long-running harness case study](https://www.anthropic.com/engineering/harness-design-long-running-apps) notes that changes in model capabilities change what a harness needs, and more iterations are not always better. Use independent review and address evidence-backed findings rather than adding complexity to reach an arbitrary iteration count.
+- **Instruction files do not enforce themselves.** [Claude memory](https://code.claude.com/docs/en/memory) and [Codex discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md) have different loading mechanisms. Retain the same AGENTS bridge and check what is actually read; written rules do not replace runtime permissions or tests.
 
-## “Defensive writing”分开评估
+## Evaluate "Defensive Writing" Separately
 
-1. **表达层面：**结论明确，使用具体语言，避免不必要的免责声明、套话、夸张营销和重复解释。真实限制仍必须说明。
-2. **认识层面：**区分官方要求、仓库事实、设计提议与未验证的判断。不能为显得果断而虚构来源或把构建通过说成浏览器通过。
-3. **代码层面：**沿用已有 schema，验证真实外部边界，保留可诊断错误；避免为不存在的情境添加静默 fallback、宽泛 catch 或新抽象。这是待本地验证的工程建议，并不等于禁止错误处理。
+1. **Expression:** State conclusions clearly, use concrete language, and avoid unnecessary disclaimers, stock phrases, exaggerated marketing and repeated explanations. Real limitations must still be stated.
+2. **Knowledge claims:** Distinguish official requirements, repository facts, design proposals and unverified judgments. Do not invent sources to appear decisive or describe a successful build as successful browser verification.
+3. **Code:** Use existing schemas, validate real external boundaries, and retain errors that support diagnosis; avoid adding silent fallbacks, broad catches or new abstractions for nonexistent scenarios. This is engineering guidance to be tested locally, not a ban on error handling.
 
-[Claude prompting guidance](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) 对某些 Claude 版本的过度触发、过度认真和防御代码有明确建议，但不能当作 GPT-6 上已完成的因果实验。
+[Claude prompting guidance](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) explicitly addresses over-triggering, excessive thoroughness and defensive code for certain Claude versions, but it cannot be treated as a completed causal experiment on GPT-6.
 
-文案质量采用匿名输出的独立评分，按事实保留、自然清楚和必要限制评估；不通过禁词计数或单纯字数给质量打分。
+Writing quality is assessed through independent scoring of anonymized outputs for factual preservation, natural clarity and necessary qualifications; it is not scored by counting prohibited words or simply measuring length.
 
-## 常见方法的取舍
+## Choices Among Common Methods
 
-| 方法 | 采用方式 |
+| Method | How it is used |
 | --- | --- |
-| Explore → Plan → Implement → Verify | 有不确定性或跨文件影响时先计划；小而明确的任务直接完成。 |
-| 独立 reviewer / 并行研究 | 用于边界清晰的研究和审查；课程目标、考核与十二周叙事相互依赖，不默认拆成十二个独立作者。参见[官方演讲材料](https://resources.anthropic.com/hubfs/Claude%20Code%20Advanced%20Patterns_%20Subagents,%20MCP,%20and%20Scaling%20to%20Real%20Codebases.pdf)。 |
-| Command → Agent → Skill | 参考[作者原始例子](https://github.com/shanraisshan/claude-code-best-practice/blob/b70072cc2fed48b710ddb555b66c3d0ad7c40641/orchestration-workflow/orchestration-workflow.md)的职责划分；不为已有课程脚本增加三层包装。 |
-| Ralph 持续循环 | 不作为默认流程。[官方版本](https://github.com/anthropics/claude-plugins-official/tree/fa59bc9037741ecfa131aa27938272605710d7b2/plugins/ralph-loop)通过 Stop hook 重发提示；promise 匹配并非独立验收。A2 的未完成内容和本人过程叙述不能靠无限循环解决。 |
+| Explore → Plan → Implement → Verify | Plan first when there is uncertainty or an effect across files; complete small, clear tasks directly. |
+| Independent reviewer / parallel research | Use for research and review with clear boundaries. Course objectives, assessment and the twelve-week narrative depend on each other, so the default is not to split the work among twelve independent authors. See the [official presentation materials](https://resources.anthropic.com/hubfs/Claude%20Code%20Advanced%20Patterns_%20Subagents,%20MCP,%20and%20Scaling%20to%20Real%20Codebases.pdf). |
+| Command → Agent → Skill | Draw on the division of responsibilities in the [author's original example](https://github.com/shanraisshan/claude-code-best-practice/blob/b70072cc2fed48b710ddb555b66c3d0ad7c40641/orchestration-workflow/orchestration-workflow.md); do not add three wrapper layers around existing course scripts. |
+| Ralph continuous loop | Do not use as the default workflow. The [official version](https://github.com/anthropics/claude-plugins-official/tree/fa59bc9037741ecfa131aa27938272605710d7b2/plugins/ralph-loop) resends the prompt through a Stop hook; matching a promise is not independent acceptance. An endless loop cannot resolve A2's unfinished content or produce the student's own process account. |
 
-Ralph 默认脚本没有正数迭代上限，但客户端另有防止无进展 Stop 阻塞的机制，故也不能简单说“必然无限运行”。未安装或启用任何循环。
+Ralph's default script has no positive iteration limit, but the client has a separate mechanism to prevent Stop from blocking without progress, so it would also be inaccurate to say it "must run forever." No loop was installed or enabled.
 
-## 对用户指定实践仓库的审计
+## Audit of the Practice Repository Specified by the User
 
-固定检查 [b70072cc2fed48b710ddb555b66c3d0ad7c40641](https://github.com/shanraisshan/claude-code-best-practice/tree/b70072cc2fed48b710ddb555b66c3d0ad7c40641)，而非混用搜索缓存版本。
+The audit was pinned to [b70072cc2fed48b710ddb555b66c3d0ad7c40641](https://github.com/shanraisshan/claude-code-best-practice/tree/b70072cc2fed48b710ddb555b66c3d0ad7c40641), rather than mixing versions from search caches.
 
-它是有价值的实践索引与示范。其自身规则包含逐文件提交、约50%手动 compact，配置包含广泛工具允许项、自动启用项目 MCP 和声音 hooks。这些并非其效果已经通过对照实验验证的证据，也不适合整包复制到 A2。保留连贯修改提交、任务相关工具和现有授权边界。
+It is a useful index of practices and examples. Its own rules include committing each file separately and manually compacting at approximately 50%; its configuration includes broad tool allowlists, automatic enablement of project MCP servers and sound hooks. These features are not evidence that their effectiveness has been established by controlled experiments, and copying the whole package into A2 would not be appropriate. Retain coherent commits, task-relevant tools and the existing authorization boundaries.
 
-## 设置决策
+## Settings Decisions
 
-| 设置 | 本次决定与理由 |
+| Setting | Decision and reason for this work |
 | --- | --- |
-| 模型与 reasoning effort | 保持现有 Astra/ultra，作为 A/B 的固定条件。未做 effort 比较，不声称 ultra 最优。 |
-| sandbox / approvals | 保持现有设置；没有 bypass、ignore-rules 或新增自动授权。 |
-| context / compaction | 不改窗口或百分比。采用阶段性 PLAN 交接；无通用最优重启阈值证据。 |
-| plugins / MCP / hooks | 不新增、不自动导入。已有脚本和工具足以完成当前工作。 |
-| CLAUDE / AGENTS | 保留课程要求的 CLAUDE 正文及短 AGENTS 入口。默认加载另行观察，不与文字效果混为一谈。 |
-| 验证频率 | 由真实改动、失败或未解疑点触发；文档小改不强行创造应用单测。 |
+| Model and reasoning effort | Keep the existing Astra/ultra as a fixed A/B condition. Effort levels were not compared, and no claim is made that ultra is optimal. |
+| sandbox / approvals | Keep the existing settings; no bypass, ignore-rules or new automatic authorization. |
+| context / compaction | Do not change the window or percentage. Use PLAN handoffs at phase boundaries; there is no evidence for a universally optimal restart threshold. |
+| plugins / MCP / hooks | Do not add or automatically import any. Existing scripts and tools are sufficient for the current work. |
+| CLAUDE / AGENTS | Retain the CLAUDE body required by the course and the short AGENTS entry point. Observe default loading separately rather than conflating it with the effect of the text. |
+| Verification frequency | Trigger verification through actual changes, failures or unresolved questions; do not manufacture application unit tests for small documentation edits. |
 
-## 对照实验协议
+## Controlled Experiment Protocol
 
-固定模型、effort、全局规则、依赖和初始源版本。每次使用新的独立 fixture 和 ephemeral 会话；只替换 CLAUDE 内容。两组先显式读取相同位置的 AGENTS 与各自的 CLAUDE，以测量已加载指导的效果；这不同于默认加载可靠性。
+Hold the model, effort, global rules, dependencies and initial source version fixed. Each run uses a new, independent fixture and an ephemeral session; only the CLAUDE content changes. Both groups first explicitly read AGENTS at the same location and their respective CLAUDE files, measuring the effect of guidance once loaded; this differs from measuring default-loading reliability.
 
-六个开发实例：修正过强 deck 检查、只读解释已知失败、小型元数据修改、显示标签修改、准备本人 PROCESS 的事实材料、简短学生文案。两个预留实例用于最终版本确认；作者知道其大致类型，所以不能称完全未知盲测。
+There are six development cases: correct an overly strict deck check, give a read-only explanation of known failures, make a small metadata change, change a display label, prepare factual material for the student's own PROCESS, and write brief student-facing copy. Two held-out cases are reserved for confirmation of the final version; the author knew their broad types, so they cannot be described as fully unseen blind tests.
 
-最初计划28次；用户要求加快后，保留首轮六案的A/B共12次，最终稿只复测D6写作及预留H1/H2，共6次。总计18次。调整在预留任务结果出现之前记录，判据不变。每个 trial 上限480秒，最多两个 case pair 并行，配对顺序交替并在第二轮反转。共享机器和服务缓存会影响时间，时间记录不等于严格速度基准。
+The original plan was 28 runs. After the user requested a faster process, the first round retained A/B runs for all six cases, totaling 12 runs; the final draft was retested only on D6 writing and the held-out H1/H2 cases, totaling another 6 runs. The overall total was 18 runs. This adjustment was recorded before the held-out task results were available, and the criteria were unchanged. Each trial had a 480-second limit, with at most two case pairs running in parallel; paired order alternated and was reversed in the second round. Shared hardware and service caches can affect timing, so these records are not a rigorous speed benchmark.
 
-评分器先接受正确结果、拒绝合理错误结果，再冻结。评分器与判据位于被测代理工作区之外并校验哈希。客观属性以最终文件和真实测试为准；主观结果另做独立匿名审查。基础设施失败、超时和模型行为失败分别记录，不静默删除。原始轨迹只在本地保留，丢弃 reasoning 文本。
+The scorer was first checked to accept correct outcomes and reject plausible incorrect outcomes, then frozen. The scorer and criteria were kept outside the tested agent's workspace, with hashes checked. Objective properties were judged from final files and actual tests; subjective results received a separate independent anonymized review. Infrastructure failures, timeouts and model-behavior failures were recorded separately rather than silently excluded. Raw traces were retained only locally, with reasoning text discarded.
 
-## 静态审查与版本
+## Static Review and Versions
 
-- A：现有文件，810个空白分隔词，106行。
-- v1：首稿，906词，58行。行数更少不代表上下文更短。
-- v2：根据独立审查修复三处措辞，953词，58行，作为首个运行候选。修复保护错误断言、只读任务触发写入、禁止虚构误伤设计提议的问题。
-- 这些数字是描述性指标，不是质量评分。详情见 [review-01.md](review-01.md)。
+- A: the existing file, 810 whitespace-separated words and 106 lines.
+- v1: the first draft, 906 words and 58 lines. Fewer lines do not mean a shorter context.
+- v2: three wording issues were fixed after independent review, producing 953 words and 58 lines as the first candidate used in runs. The fixes addressed protecting incorrect assertions, triggering writes for read-only tasks, and a ban on fabrication that inadvertently restricted design proposals.
+- These numbers are descriptive measures, not quality scores. See [review-01.md](review-01.md) for details.
 
-## 实验结果与最终选择
+## Experimental Results and Final Selection
 
-已安装v3：844词、103行；与v2的953词相比删去了重复表达，但仍比原稿810词略长。增加的是来源判断、写作与授权边界，不能用长度单独评价质量。独立内容审查未发现阻断问题。
+Installed v3: 844 words and 103 lines. Repeated wording was removed relative to v2's 953 words, but it remains slightly longer than the original 810 words. The added material concerns source judgment, writing and authorization boundaries; length alone cannot assess its quality. Independent content review found no blocking issues.
 
-| 对照 | 范围 | 机械验收 |
+| Comparison | Scope | Automated acceptance |
 | --- | --- | --- |
-| 原稿 A vs v2 B | D1–D6，六组配对 | 12/12通过 |
-| 原稿 A vs最终v3 B | D6、H1、H2，三组配对 | 6/6通过 |
+| Original A vs v2 B | D1–D6, six pairs | 12/12 passed |
+| Original A vs final v3 B | D6, H1, H2, three pairs | 6/6 passed |
 
-最终v3只重测了后三类任务，不能说它经过了六类任务的完整重复验证。参见 [结果摘要](results-summary.json)、[第一轮匿名审查](blind-review-r1.json)和[最终匿名审查](blind-review-final.json)。
+Final v3 was retested only on the latter three task types; it cannot be described as having undergone a complete repeat evaluation across all six. See the [results summary](results-summary.json), [first-round anonymized review](blind-review-r1.json) and [final anonymized review](blind-review-final.json).
 
-第一轮独立匿名审查发现一个自动评分漏检的P2：原稿条件下生成的某个正则，会把其他HTML属性内的href文字当作真正链接。父代理用精确正则复现了这个提取错误。候选条件下的对应产物包含该反例且正确处理。这个单一观察支持保留独立审查，不能证明候选在所有编码任务上更强，也不能把机械全绿等同完整正确。
+The first independent anonymized review found a P2 issue missed by the automated scorer: a regular expression produced under the original-file condition treated href text within another HTML attribute as a real link. The parent agent reproduced this extraction error using the exact regular expression. The corresponding artifact under the candidate condition included this counterexample and handled it correctly. This single observation supports retaining independent review; it cannot establish that the candidate is better at all coding tasks, and all-green automated checks must not be equated with complete correctness.
 
-最终六份匿名产物未发现实质虚构、验证夸大或来源层级错误；必要的诚实限制不作为坏的防御性写作扣分。部分遮蔽/省略记录不能独立重建，审查保留uncertain项。
+The final six anonymized artifacts showed no substantive fabrication, overstated verification or source-hierarchy errors. Necessary, honest qualifications were not penalized as poor defensive writing. Some masked/omitted records could not be reconstructed independently, so the review retained uncertain items.
 
-首轮耗时有快有慢，不支持“新版全面更快”。输入、缓存输入、输出token及命令次数按客户端实测保存在摘要；不把它们合并成一个质量分数或货币成本。
+First-round timings were mixed and do not support a claim that "the new version is faster across the board." Input tokens, cached input tokens, output tokens and command counts measured by the client are stored in the summary; they are not combined into a single quality score or monetary cost.
 
-初次控制批次只启动了2个任务，另10个未启动。Codex自动在配置中登记临时仓库触发了过严的原始哈希检查；删除仅那两个登记块的内存副本，能精确恢复原哈希。模型、effort、sandbox、审批和其他配置内容未变。后续仅排除本轮精确预声明路径的正常trusted登记，同时记录原始哈希。没有手工修改真实个人配置。详情见 [环境控制修订](environment-control-amendment.md)。
+Only 2 tasks started in the initial controlled batch; another 10 did not start. Codex automatically registered temporary repositories in its configuration, triggering an overly strict raw-hash check. Removing only those two registration blocks from an in-memory copy exactly restored the original hash. The model, effort, sandbox, approvals and all other configuration content were unchanged. Subsequent checks excluded only normal trusted registrations for this round's exact, predeclared paths, while also recording the raw hash. The actual personal configuration was not edited manually. See the [environment-control amendment](environment-control-amendment.md) for details.
 
-另一个初期评分错误是隐藏地禁止D1新增合理helper/tests和PLAN记录；已由独立审查纠正并重新校准。原记录保留，未把它包装成原稿缺陷。见 [范围控制修订](scope-control-amendment.md)。
+Another early scoring error silently prohibited reasonable helper/tests additions and PLAN entries in D1; independent review corrected this and the scorer was recalibrated. The original records were retained, and the error was not presented as a defect in the original instruction file. See the [scope-control amendment](scope-control-amendment.md).
 
-部分被测代理的pnpm命令触发自动依赖安装并受到sandbox限制；独立评分器用已安装、固定版本的Astro/Vitest入口验证最终产物。这证明的是产物检查结果，不是代理自行成功执行了所有命令。代理是否诚实说明限制另由匿名审查判断。
+Some tested agents' pnpm commands triggered automatic dependency installation and encountered sandbox restrictions. The independent scorer verified the final artifacts using already installed, fixed-version Astro/Vitest entry points. This establishes the artifact-check results, not that the agents themselves successfully executed every command. Whether agents honestly reported the limitations was assessed separately through anonymized review.
 
-本次模型运行使用Codex CLI，而不是Claude模型的跨提供商比较；Claude部分依据其官方文档、原始工程材料和本机版本。A/B统一显式读取指令，验证已加载文本的行为；未额外声称桌面当前聊天或普通网页ChatGPT会自动同步Ubuntu文件。
+The model runs used Codex CLI; this was not a cross-provider comparison with a Claude model. The Claude-related discussion draws on its official documentation, original engineering materials and the locally installed version. Both A/B conditions explicitly read the instructions, testing the behavior of loaded text; no additional claim was made that the current desktop chat or ordinary web ChatGPT automatically synchronizes Ubuntu files.
 
-最后，重新核对[课程AI政策](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/ai-use-and-integrity/)后，修正了过度限制PROCESS协助的措辞：课程允许AI草拟但由人负责，禁止虚假过程叙述。我们的应用是可以按请求忠实整理、起草或编辑用户提供的真实笔记；不能编造经历、动机和验证结果，或自主填满模板。这是对两份课程文件的协调解释，不是捏造一个额外禁令。
+Finally, after rechecking the [course AI policy](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/ai-use-and-integrity/), wording that excessively restricted PROCESS assistance was corrected: the course permits AI drafting with human responsibility and prohibits false process accounts. Our application is that, when requested, the agent may faithfully organize, draft or edit the user's supplied factual notes; it must not invent experiences, motivations or verification results, or fill the template autonomously. This reconciles the two course documents rather than inventing an additional prohibition.
 
-选择v3的理由是约束和触发条件更清楚、去除重复验证、保留真实反馈和必要限制，并通过独立审查及重点回归验证。没有证据声称它是所有模型和任务的最佳文件。
+v3 was selected because its constraints and triggers are clearer, it removes duplicate verification, retains real feedback and necessary qualifications, and passed independent review and focused regression checks. There is no evidence that it is the best file for all models and tasks.
 
-## 应用与验证范围
+## Application and Verification Scope
 
-实际根CLAUDE.md与受测v3逐字节相同。AGENTS入口保持原样；课程源码、spec、包配置和PROCESS.md未改。Markdown差异与一致性检查通过。项目原有的缺周和starter证据红灯仍属于课程内容待办。
+The actual root CLAUDE.md was byte-for-byte identical to the tested v3. The AGENTS entry point was unchanged; course source, specs, package configuration and PROCESS.md were not modified. Markdown diff and consistency checks passed. Existing failures for missing weeks and starter evidence remain course-content work to be completed.
 
-原始运行轨迹仅本地保存且忽略Git；可提交的文档保留来源、协议、评估器、候选历史、审查与去敏摘要。没有发布、推送或启用新工具。
+Raw run traces are stored only locally and ignored by Git; committable documents retain sources, the protocol, evaluator, candidate history, reviews and sanitized summaries. Nothing was published or pushed, and no new tools were enabled.

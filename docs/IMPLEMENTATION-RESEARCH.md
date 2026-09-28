@@ -858,3 +858,20 @@ experiment. The account names the actual comparison instead. A final precision
 change uses 'evaluation' rather than 'tests' for reporting-honesty checks because
 semantic review also carried that judgement. The [audit note](review/process-comparison/technique-clarification.md)
 records the sources. Earlier comparison inputs/results remain unchanged.
+
+## Selecting the implementation ending and standardising language — 28 September 2026
+
+The user asked to remove the paragraph about editing PROCESS and replace it with
+a more consequential website example. Parent and independent review selected the
+Aincrad reconstruction: the student's fidelity criticism led to primary-reference
+inspection, a rebuilt layered fortress, a reusable visual-reference rule and real
+motion/fallback checks. This complements the earlier evaluator and curriculum
+examples. The parent checked the exact 8d518f9 rule diff, 06ce955 implementation and
+Revision 2 browser record; no new resemblance or performance measurement is claimed.
+
+The user's supplied opening judgement about a prepared agent framework is now
+reflected in the 598-word English account. The goals file's A/B/research/review
+requirements are explicit. The whole current submission tree is English: the
+original research report was translated, a user quote paraphrased, and convenience
+translations archived outside the repository before their removal. The language
+change preserves earlier evidence and Git history.

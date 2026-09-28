@@ -428,7 +428,7 @@ requested gate. The final site check passes 42 tests across 45 pages. PROCESS.md
 remains the student's unfinished account, with its template and example hashes
 correctly failing the evidence gate. Public release and Gate 5 remain open.
 
-## Current checkpoint — Gate 5 evidence preparation
+## Gate 5 evidence preparation (historical checkpoint)
 
 The student asked to begin preparation and receive two Chinese review copies.
 The English PROCESS draft is grounded in their supplied statements and verified
@@ -474,3 +474,18 @@ independent review verified the protocol and runner: the varied factor was CLAUD
 content, while model/effort were fixed. No CoT A/B was added to the narrative.
 Reporting-honesty checks are described as evaluation, preserving the role of
 semantic review. The Chinese account is synchronized for the student's review.
+
+## Current checkpoint — English submission draft
+
+The student asked to replace discussion of PROCESS editing with an implementation
+case. The selected ending uses E11: their rejection of Aincrad's first likeness,
+primary-reference research, the actual reconstruction and its CLAUDE/browser checks.
+The opening reflects their newly supplied judgement about preparing a good agent
+framework. PROCESS is 598 words; the goals-file requirements for agent practice are
+explicit. No grade or new experimental result is claimed.
+
+The student required all current files to be English. The harness report has a
+complete English translation; four Chinese review copies were hash-verified in
+the Windows workspace before removal from this tree. Earlier notes that locate
+those copies in docs/review describe their former locations. Historical commits
+remain intact. Future translations stay outside the submission repository.

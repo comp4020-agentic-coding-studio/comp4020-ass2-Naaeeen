@@ -1,10 +1,10 @@
 # Implementation goals and human review gates
 
-Status: **Gate 5 evidence draft ready for student review**. The student asked to
-begin preparation after Gate 4 and requested two Chinese translations. The English
-PROCESS draft and full Chinese PROCESS/CLAUDE review copies are ready, with actual
-checks in PLAN.md. Student approval of the narrative and public deployment remain
-unfinished. This does not imply that every Gate 4 verification limitation has gone.
+Status: **Gate 5 English submission draft ready for review**. The current
+598-word PROCESS names the researched working rules and goals-file requirements,
+and ends with the Aincrad implementation example. Current repository files are
+English. Translated convenience copies live outside the repository. Student
+confirmation of the narrative and public deployment remain unfinished.
 
 ## Outcome
 
@@ -37,7 +37,7 @@ requirements, project choices and the student's process requirements. Update the
 record when a check changes the plan; do not silently promote an optional feature
 into a required workload.
 
-The student accepted revised C's broad direction: “这个大致方向不错”, and asked to
+The student accepted revised C's broad direction and asked to
 continue implementation, commits and pushes under these process requirements.
 Gates 1–3 are accepted for progression; Gate 4 refines the complete course.
 Later design refinement remains possible. Preserve the real feedback and comparison
@@ -151,6 +151,7 @@ for that effect before pushing; the repo was verified private at this revision.
 | Inspect the actual website | Use browser navigation, keyboard, resizing, console and visual checks at the marking viewports | Recorded browser observations, screenshots where useful and unresolved limits |
 | Maintain CLAUDE.md thoughtfully | Add the smallest reusable rule supported by observed failure or a current explicit requirement; check for conflicts and remove superseded wording | Before/after diff and reason, linked to evidence |
 | Use tools and agents critically | Delegate independent research/review with bounded ownership, then verify claims against sources, files and actual output | Sources checked by the parent, reconciled review findings |
+| English submission files | Keep all repository-authored text in English; store requested translations outside the repository | Current-file language audit and preserved local review copies |
 | Natural English; no defensive writing | Prefer specific questions, concrete activity verbs and evidence; remove filler, repeated disclaimers and empty prestige claims | Editorial comparison and human judgement, not an AI detector score |
 | Rich media where useful | Use original/reusable media or official permitted embeds, with provenance and meaningful alternatives | Media ledger, attribution and accessibility checks |
 | Immersive design and suitable extra tools | Research notable sites and primary implementation docs; adopt justified APIs/packages within platform rules; compare the actual result | Source-to-design decisions, dependency changes, motion/fallback tests and human feedback |
@@ -395,3 +396,17 @@ are synchronized. A protocol/report audit confirmed instruction-file comparisons
 not a separate CoT/effort experiment. Previous editorial comparisons remain dated
 evidence; no extra experiment is claimed. Open the refreshed Windows review copy
 for the student's final narrative check.
+
+### Implementation ending and English submission files — 28 September 2026
+
+The user replaced the self-referential writing-comparison ending with substantive
+website work and supplied an opening judgement about preparing the agent framework.
+The current 598-word PROCESS uses the reference-led Aincrad reconstruction, its
+CLAUDE rule and actual browser checks. It explicitly states the goals file's
+requirements for research, A/B comparisons, verified reviews and human checkpoints.
+
+The user also required English across the repository. The initial harness report
+was translated without changing its findings; the Chinese user quote was paraphrased
+in English; four Chinese convenience copies were preserved outside the repository
+and removed from the current tree. Earlier references to those copies describe
+the historical drafting stages. Continue reviewing the current English account.

@@ -95,31 +95,30 @@ Earlier setup and verification notes are preserved in
 
 ## Implementation control and current handoff
 
-Current stage: **Gate 5 research-to-instructions account ready for review**.
-The student asked the opening to identify where initial research lives and how
-selected practices become instructions the agent follows. They also asked what
-'rules' meant, rejected an exhaustive three-practice framing and allowed up to
-600 words. PROCESS.md now has 594 words and ten real commit references. Its Chinese
-copy is synchronized. Student confirmation of the narrative remains pending.
+Current stage: **Gate 5 English submission account ready for review**.
+The user supplied an opening judgement about preparing an agent framework, asked
+to replace the paragraph about editing PROCESS with substantial implementation
+work, and required all current repository files to be English. PROCESS.md is now
+598 words. It begins with the supplied judgement, names the research/CLAUDE path,
+explains the goals file's agent-practice requirements and ends with the verified
+reference-led Aincrad redesign. Ten distinct commit references support the account.
 
-The account explains controlled CLAUDE.md comparisons, adopted working rules,
-label-hidden independent review, testing the evaluator, task ownership, comparable
-page alternatives, staged teaching work, maintained records and the writing
-comparisons. The parent and an independent auditor verified these against the
-protocol, runner, reports and commits. Model/effort were fixed; no CoT A/B is claimed.
-See docs/review/process-comparison/technique-clarification.md for the audit.
+The initial harness REPORT is now fully translated into English, retaining its
+historical findings, numbers, links and limits. The four Chinese review copies
+were hash-verified in a separate Windows workspace archive before removal from
+the repository. A Chinese convenience copy for the user's review remains outside
+the submission tree. Canonical current sources are listed in docs/review/manifest.json.
+CLAUDE.md now explicitly requires repository-authored text to be English.
 
-The earlier A/B materials remain unchanged records of the 520-word checkpoint.
-The current revision follows the student's feedback and does not claim a new
-experiment. English/Chinese source hashes are in docs/review/manifest.json.
-CLAUDE.md's existing concrete-writing rule remains appropriate and is unchanged.
-Website code is unchanged; the last full site check remains 42 passing tests.
+Earlier draft/comparison records remain historical evidence; no Git history was
+rewritten. No new application code or model experiment is included in this pass.
+The last full site check remains 42 passing tests. This pass verifies language,
+links, citations, source hashes and the evidence gate.
 
-Deliver a new Windows-readable review snapshot and open the Chinese manuscript,
-because the app could not open the WSL links. Preserve the prior snapshot and any
-student edits. Then use the student's feedback to finish the account and the
-release candidate. The whole-assignment Goal remains unfinished; public-release
-authorization and deployed-site verification are still separate next steps.
+Next: show the current manuscript through the working Windows file path, collect
+the student's final narrative corrections, complete release-candidate verification,
+and obtain the separate public-release authorization. The whole-assignment Goal
+remains unfinished. Repository visibility and Pages settings are unchanged.
 
 The five-hour report received at 07:01 Canberra time gives a working noon target.
 

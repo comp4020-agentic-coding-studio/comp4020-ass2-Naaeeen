@@ -103,6 +103,9 @@ proportions and materials before presenting it for human review.
 
 ## Writing, evidence and handoff
 
+All repository-authored text, including documentation and code comments, must be
+in English. Keep translated review copies outside the repository.
+
 Write direct, concrete student-facing prose. Preserve the user's voice and scope;
 omit generic marketing, unnecessary disclaimers and irrelevant implementation
 details. Retain qualifications that affect a reader's understanding or decision.

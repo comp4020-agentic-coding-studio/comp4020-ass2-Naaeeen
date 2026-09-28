@@ -1,24 +1,20 @@
 {
-  "stage": "Gate 5 evidence draft; student review pending",
+  "stage": "Gate 5 English submission draft; student review pending",
+  "repository_language": "English",
   "sources": {
-    "PROCESS.md": "58aa87d0f42fbba68137d9b87caf40db9e483d850f85a0228d658d022ad58f43",
-    "CLAUDE.md": "98435d65f6f98675a90f04391112c1f422bbe0d92ec1e368d82e9fa59008c714",
-    "docs/planning/implementation-goals.md": "97cba29c72c7004820021eba2297197645456db172a451bb9a2ed9561f9e03f2",
-    "docs/IMPLEMENTATION-RESEARCH.md": "f56d853d1d111755af4c294da8ef2645a3eaea7e87164936bf4fdc39058feef8"
+    "PROCESS.md": "3f17dbc5ae81134011f014838e77afc4b1ca7f20957bcd6c27c8089e2db597c3",
+    "CLAUDE.md": "3e54bbbf9b9fc232efbdf1d65ec104cef72a787af006721031f4ed2fb91a079e",
+    "docs/planning/implementation-goals.md": "4c85c73266cf945ab9308bb39098768bec6be7c63a78d083f66c9b000d78cb23",
+    "docs/IMPLEMENTATION-RESEARCH.md": "d671e3f596d9261afc1fd299da75be799fc9a139b0b43ec90054a007d5861fad",
+    "docs/harness-research/REPORT.md": "3717122e7caad3b7873f06d008d22f4928f7b9f4b56cc6249bab98c76dbab6bf"
   },
-  "process_english_words": 594,
-  "translations": [
-    "PROCESS.zh-CN.md",
-    "CLAUDE.zh-CN.md",
-    "implementation-goals.zh-CN.md",
-    "IMPLEMENTATION-RESEARCH.zh-CN.md"
-  ],
+  "process_english_words": 598,
   "student_review": [
-    "Confirm the first-person account matches your decisions and intended reasoning.",
-    "Correct or rewrite any sentence that does not sound like you."
+    "Confirm the account matches your decisions and intended reasoning.",
+    "Correct any sentence that does not express your judgement accurately."
   ],
   "release": "No public publication or repository visibility change.",
-  "translation_notes": "Current English PROCESS, CLAUDE and appended goals/research records are synchronized with their Chinese review copies. Earlier dated records remain historical.",
+  "local_review_copy_policy": "Translated convenience copies are preserved outside this repository in the Windows workspace. They are not submission files.",
   "process_comparison": "process-comparison/README.md",
   "latest_process_revision": "process-comparison/technique-clarification.md"
 }
