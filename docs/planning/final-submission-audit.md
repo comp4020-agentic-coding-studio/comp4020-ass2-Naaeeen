@@ -1,8 +1,9 @@
 # Final submission audit — 28 September 2026
 
 Status: the local candidate passes the required submission checks. Public release
-and verification of its live URL remain outstanding. The student requested that
-PROCESS.md stay unchanged; the reviewed account is preserved byte for byte.
+and verification of its live URL remain outstanding. At the audit checkpoint the student requested that PROCESS.md stay unchanged.
+They subsequently authorized the focused 600-word [course-judgement revision](../review/process-comparison/course-judgement-revision.md),
+which preserves the verified process facts and strengthens the last two paragraphs.
 
 ## Authorities checked
 
@@ -27,7 +28,7 @@ provisioned course code is SLOP1897 at `f95cbb6`.
 | Fixed platform | Branding, palette ownership, collection keys and API remain intact. Fixed configuration, schema, workflow, Pages helper, evidence checker and README match the provisioned revision. |
 | Own spec checks | Course promises and study-navigation checks cover weeks, weights, suffix, actual deck links, preparation order/allowances, cross-week material and timetable consistency. |
 | Required checks | Fresh `pnpm check`: exit 0, 42 tests pass, 45 built pages, no reported type, configured accessibility, base-path or internal-link failures. `pnpm check:evidence` passes. |
-| Process evidence | PROCESS.md, CLAUDE.md and growing commit history are present. All ten distinct cited commits resolve. Important document links resolve locally; the review manifest pins current source hashes. |
+| Process evidence | PROCESS.md, CLAUDE.md and growing commit history are present. All nine distinct cited commits in the revised account resolve. Important document links resolve locally; the review manifest pins current source hashes. |
 | Reflection | Official A2 uses PROCESS.md; there is no separate reflection requirement. The following retro draws from the same account. No duplicate reflection file was created. |
 | Public live site | Outstanding: GitHub still reports a private repository with Pages disabled. The local build is not evidence of a public deployment. |
 
@@ -83,6 +84,8 @@ The student-required checks passed; no starter images were restored or checks we
 
 Local command logs are in `/tmp/a2-final-audit-ys8v1wyg/`, including
 `check-final.log`, `evidence.log`, `dependencies.log` and `tooling.log`.
+The process-only follow-up is recorded in `evidence-course-judgement.log`; it
+does not change the website, dependencies or previous browser observations.
 
 Before submission, obtain the student's public-release authorization, enable and
 publish through the course workflow, inspect CI including its full secret scan,

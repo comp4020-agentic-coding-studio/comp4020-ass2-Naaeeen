@@ -104,9 +104,13 @@ requirement matrix, observed results and remaining limitations. Forty-two spec t
 pass across 45 built pages. An absent-student support route was completed and reviewed.
 Current submission files are English and the implementation tool is named Codex.
 
-The student requested no further PROCESS.md changes. Its reviewed contents remain
-unchanged; no separate reflection is required or created. The review manifest pins
-the current canonical documents. Historical records remain intact.
+After the audit, the student authorized improving PROCESS.md's course-design
+rationale and acceptance evidence, using approximately 600 English words. The
+600-word body replaces the 3D ending with the guided-route/resource-access tradeoff,
+actual agent browser checks and the judgement deliberately kept for human review.
+Independent review found the revised ending supported and clearly attributed.
+No separate reflection is required or created. The review manifest pins current
+sources; historical records remain intact.
 
 Next: present the final candidate and obtain separate authorization for public
 visibility, Pages and the course ship workflow. Then verify public CI and the actual

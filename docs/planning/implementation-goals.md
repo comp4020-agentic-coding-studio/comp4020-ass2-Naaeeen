@@ -2,7 +2,8 @@
 
 Status: **Gate 5 candidate audited; public release pending**. Required local
 checks pass. The final submission audit records the browser results and remaining
-limits. PROCESS.md stays at the student's reviewed version. Current files are
+limits. The student authorized a 600-word PROCESS revision explaining course choices
+and acceptance evidence. Current files are
 English; translated convenience copies remain outside the repository. Public
 release and live-URL verification are the remaining mandatory delivery steps.
 
@@ -426,3 +427,12 @@ The [final audit](final-submission-audit.md) records current results and release
 boundaries. A later instruction froze PROCESS.md; its reviewed version is retained.
 The official brief confirms no separate reflection. Ordinary private push remains
 authorized; public deployment awaits the student's explicit release instruction.
+
+### Course-judgement revision after audit — 28 September 2026
+
+The student explicitly reopened PROCESS.md for the two weaknesses identified in
+the read-only assessment: explaining the choice between plausible learning
+structures and explaining the evidence used before progression. The 600-word
+revision removes the 3D ending and retains the researched agent workflow. It also
+explains why coherence, voice and appeal remain human judgements. The prior freeze
+applied to the audit checkpoint and is superseded by this request.

@@ -475,7 +475,7 @@ content, while model/effort were fixed. No CoT A/B was added to the narrative.
 Reporting-honesty checks are described as evaluation, preserving the role of
 semantic review. The Chinese account is synchronized for the student's review.
 
-## Current checkpoint — English submission draft
+## English submission draft — historical checkpoint
 
 The student asked to replace discussion of PROCESS editing with an implementation
 case. The selected ending uses E11: their rejection of Aincrad's first likeness,
@@ -503,3 +503,14 @@ student journeys covers this finding; no additional standing rule was needed.
 The student froze PROCESS.md during the final audit; the parent restored the
 reviewed version and made no further narrative edits. Full verification and the
 remaining public-release boundary are in the [final audit](planning/final-submission-audit.md).
+
+## Course judgement in the final account — 28 September 2026
+
+The student subsequently authorized a targeted PROCESS revision and asked for
+approximately 600 English words. The revised ending explains why guided weekly
+study and visible reference pages were both necessary, what the agent checked
+before progression, and why coherence, voice and appeal remain human judgements.
+The 3D likeness example was removed from the short account; its implementation
+evidence remains in the earlier entries. The parent checked the actual plan,
+review and cited diffs; independent readback found the new claims supported.
+See the [focused revision record](review/process-comparison/course-judgement-revision.md).
